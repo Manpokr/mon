@@ -31,10 +31,10 @@ touch /var/lib/kdevn9/data-user-sstp
 country=MY
 state=Malaysia
 locality=Malaysia
-organization=kdev
+organization=Ternet
 organizationalunit=vpn
-commonname=kdevvpn
-email=kdevn9@gmail.com
+commonname=Ternet
+email=manpokr@gmail.com
 
 #install sstp
 apt-get install -y build-essential cmake gcc linux-headers-`uname -r` git libpcre3-dev libssl-dev liblua5.1-0-dev ppp
