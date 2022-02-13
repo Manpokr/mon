@@ -6,16 +6,6 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -37,9 +27,9 @@ touch /etc/trojan-go/uuid.txt
 mkdir -p /etc/trojan-go/
 chmod 777 /etc/trojan-go/
 touch /etc/trojan-go/trojan-go.pid
-wget -O /etc/trojan-go/trojan-go https://raw.githubusercontent.com/castleUI/NewSCv2/main/core/trojan-go
-wget -O /etc/trojan-go/geoip.dat https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/geoip.dat
-wget -O /etc/trojan-go/geosite.dat https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/geosite.dat
+wget -O /etc/trojan-go/trojan-go https://raw.githubusercontent.com/Manpokr/mon/main/core/trojan-go
+wget -O /etc/trojan-go/geoip.dat https://raw.githubusercontent.com/Manpokr/mon/main/addon/geoip.dat
+wget -O /etc/trojan-go/geosite.dat https://raw.githubusercontent.com/Manpokr/mon/main/addon/geosite.dat
 chmod +x /etc/trojan-go/trojan-go
 cat <<EOF > /etc/trojan-go/config.json
 {

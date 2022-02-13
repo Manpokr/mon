@@ -4,16 +4,6 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
 clear
 # ==================================================
 # initializing var
@@ -34,7 +24,7 @@ commonname=kdevvpn
 email=kdevn9@gmail.com
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Manpokr/mon/main/addon/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -135,8 +125,8 @@ echo "menu" >> .profile
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-curl https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/nginx.conf > /etc/nginx/nginx.conf
-curl https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/vps.conf > /etc/nginx/conf.d/vps.conf
+curl https://raw.githubusercontent.com/Manpokr/mon/main/addon/nginx.conf > /etc/nginx/nginx.conf
+curl https://raw.githubusercontent.com/Manpokr/mon/main/addon/vps.conf > /etc/nginx/conf.d/vps.conf
 sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
 useradd -m vps;
 mkdir -p /home/vps/public_html
@@ -144,13 +134,13 @@ echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/index.html"
+wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Manpokr/mon/main/addon/index.html"
 /etc/init.d/nginx restart
 cd
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Manpokr/mon/main/addon/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -180,7 +170,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Manpokr/mon/main/addon/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # Install SSLH
@@ -264,7 +254,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/castleUI/NewSCv2/main/setup/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -301,10 +291,10 @@ echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 # Install BBR
-wget https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 
 # Ganti Banner
-wget -O /etc/issue.net "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/Manpokr/mon/main/addon/issue.net"
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -325,50 +315,50 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O addhost "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addhost.sh"
-wget -O about "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/onabout.sh"
-wget -O menu "https://raw.githubusercontent.com/castleUI/NewSCv2/main/setup/menu.sh"
-wget -O addssh "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addssh.sh"
-wget -O trialssh "https://raw.githubusercontent.com/castleUI/NewSCv2/main/trial/trialssh.sh"
-wget -O delssh "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delssh.sh"
-wget -O member "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/member.sh"
-wget -O delexp "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delexp.sh"
-wget -O cekssh "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/cekssh.sh"
-wget -O restart "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/info.sh"
-wget -O ram "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/ram.sh"
-wget -O renewssh "https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewssh.sh"
-wget -O autokill "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/ceklim.sh"
-wget -O clearlog "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/clearlog.sh"
-wget -O changeport "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/changeport.sh"
-wget -O portovpn "https://raw.githubusercontent.com/castleUI/NewSCv2/main/port/portovpn.sh"
-wget -O portwg "https://raw.githubusercontent.com/castleUI/NewSCv2/main/port/portwg.sh"
-wget -O porttrojan "https://raw.githubusercontent.com/castleUI/NewSCv2/main/port/porttrojan.sh"
-wget -O portsstp "https://raw.githubusercontent.com/castleUI/NewSCv2/main/port/portsstp.sh"
-wget -O portsquid "https://raw.githubusercontent.com/castleUI/NewSCv2/main/port/portsquid.sh"
-wget -O portvlm "https://raw.githubusercontent.com/castleUI/NewSCv2/main/port/portvlm.sh"
-wget -O wbmn "https://raw.githubusercontent.com/castleUI/NewSCv2/main/setup/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/xp.sh"
-wget -O swapkvm "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/swapkvm.sh"
-wget -O addxvmess "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addxv2ray.sh"
-wget -O addxvless "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addxvless.sh"
-wget -O addxtrojan "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addxtrojan.sh"
-wget -O delxvmess "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delxv2ray.sh"
-wget -O delxvless "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delxvless.sh"
-wget -O delxtrojan "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delxrojan.sh"
-wget -O cekxvmess "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/cekxv2ray.sh"
-wget -O cekxvless "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/cekxvless.sh"
-wget -O cekxtrojan "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/cekxrojan.sh"
-wget -O renewxvmess "https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewxv2ray.sh"
-wget -O renewxvless "https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewxvless.sh"
-wget -O renewxtrojan "https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewxtrojan.sh"
-wget -O cert "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/certv2ray.sh"
-wget -O addtrgo "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addtrgo.sh"
-wget -O deltrgo "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/deltrgo.sh"
-wget -O renewtrgo "https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewtrgo.sh"
-wget -O cektrgo "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/cektrgo.sh"
+wget -O addhost "https://raw.githubusercontent.com/Manpokr/mon/main/add/addhost.sh"
+wget -O about "https://raw.githubusercontent.com/Manpokr/mon/main/add/onabout.sh"
+wget -O menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/menu.sh"
+wget -O addssh "https://raw.githubusercontent.com/Manpokr/mon/main/add/addssh.sh"
+wget -O trialssh "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialssh.sh"
+wget -O delssh "https://raw.githubusercontent.com/Manpokr/mon/main/del/delssh.sh"
+wget -O member "https://raw.githubusercontent.com/Manpokr/mon/main/cek/member.sh"
+wget -O delexp "https://raw.githubusercontent.com/Manpokr/mon/main/del/delexp.sh"
+wget -O cekssh "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekssh.sh"
+wget -O restart "https://raw.githubusercontent.com/Manpokr/mon/main/addon/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/Manpokr/mon/main/addon/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/Manpokr/mon/main/addon/info.sh"
+wget -O ram "https://raw.githubusercontent.com/Manpokr/mon/main/addon/ram.sh"
+wget -O renewssh "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewssh.sh"
+wget -O autokill "https://raw.githubusercontent.com/Manpokr/mon/main/addon/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/Manpokr/mon/main/cek/ceklim.sh"
+wget -O clearlog "https://raw.githubusercontent.com/Manpokr/mon/main/addon/clearlog.sh"
+wget -O changeport "https://raw.githubusercontent.com/Manpokr/mon/main/addon/changeport.sh"
+wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
+wget -O portwg "https://raw.githubusercontent.com/Manpokr/mon/main/port/portwg.sh"
+wget -O porttrojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/porttrojan.sh"
+wget -O portsstp "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsstp.sh"
+wget -O portsquid "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsquid.sh"
+wget -O portvlm "https://raw.githubusercontent.com/Manpokr/mon/main/port/portvlm.sh"
+wget -O wbmn "https://raw.githubusercontent.com/Manpokr/mon/main/setup/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
+wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
+wget -O addxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxv2ray.sh"
+wget -O addxvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvless.sh"
+wget -O addxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtrojan.sh"
+wget -O delxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxv2ray.sh"
+wget -O delxvless "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxvless.sh"
+wget -O delxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxrojan.sh"
+wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
+wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
+wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxrojan.sh"
+wget -O renewxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxv2ray.sh"
+wget -O renewxvless "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxvless.sh"
+wget -O renewxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtrojan.sh"
+wget -O cert "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
+wget -O addtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrgo.sh"
+wget -O deltrgo "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgo.sh"
+wget -O renewtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgo.sh"
+wget -O cektrgo "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgo.sh"
 chmod +x addhost
 chmod +x menu
 chmod +x addssh

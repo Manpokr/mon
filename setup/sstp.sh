@@ -4,16 +4,6 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
 clear
 MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -56,7 +46,7 @@ make
 cpack -G DEB
 dpkg -i accel-ppp.deb
 mv /etc/accel-ppp.conf.dist /etc/accel-ppp.conf
-wget -O /etc/accel-ppp.conf "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/accel.conf"
+wget -O /etc/accel-ppp.conf "https://raw.githubusercontent.com/Manpokr/mon/main/addon/accel.conf"
 sed -i $MYIP2 /etc/accel-ppp.conf
 chmod +x /etc/accel-ppp.conf
 systemctl start accel-ppp
@@ -78,8 +68,8 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 #input perintah sstp
-wget -O /usr/bin/addsstp https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addsstp.sh && chmod +x /usr/bin/addsstp
-wget -O /usr/bin/delsstp https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delsstp.sh && chmod +x /usr/bin/delsstp
-wget -O /usr/bin/ceksstp https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/ceksstp.sh && chmod +x /usr/bin/ceksstp
-wget -O /usr/bin/renewsstp https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewsstp.sh && chmod +x /usr/bin/renewsstp
+wget -O /usr/bin/addsstp https://raw.githubusercontent.com/Manpokr/mon/main/add/addsstp.sh && chmod +x /usr/bin/addsstp
+wget -O /usr/bin/delsstp https://raw.githubusercontent.com/Manpokr/mon/main/del/delsstp.sh && chmod +x /usr/bin/delsstp
+wget -O /usr/bin/ceksstp https://raw.githubusercontent.com/Manpokr/mon/main/cek/ceksstp.sh && chmod +x /usr/bin/ceksstp
+wget -O /usr/bin/renewsstp https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewsstp.sh && chmod +x /usr/bin/renewsstp
 rm -f /root/sstp.sh

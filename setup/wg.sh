@@ -5,16 +5,7 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
+
 clear
 # Check OS version
 if [[ -e /etc/debian_version ]]; then
@@ -99,9 +90,9 @@ WG_RUNNING=$?
 
 # Tambahan
 cd /usr/bin
-wget -O addwg "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addwg.sh"
-wget -O delwg "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delwg.sh"
-wget -O renewwg "https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewwg.sh"
+wget -O addwg "https://raw.githubusercontent.com/Manpokr/mon/main/add/addwg.sh"
+wget -O delwg "https://raw.githubusercontent.com/Manpokr/mon/main/del/delwg.sh"
+wget -O renewwg "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewwg.sh"
 chmod +x addwg
 chmod +x delwg
 chmod +x renewwg

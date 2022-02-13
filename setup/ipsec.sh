@@ -5,16 +5,6 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
 clear
 VPN_IPSEC_PSK='myvpn'
 NET_IFACE=$(ip -o $NET_IFACE -4 route show to default | awk '{print $5}');
@@ -288,12 +278,13 @@ mkdir -p /run/pluto
 service fail2ban restart 2>/dev/null
 service ipsec restart 2>/dev/null
 service xl2tpd restart 2>/dev/null
-wget -O /usr/bin/addl2tp https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addl2tp.sh && chmod +x /usr/bin/addl2tp
-wget -O /usr/bin/dell2tp https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/dell2tp.sh && chmod +x /usr/bin/dell2tp
-wget -O /usr/bin/addpptp https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addpptp.sh && chmod +x /usr/bin/addpptp
-wget -O /usr/bin/delpptp https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delpptp.sh && chmod +x /usr/bin/delpptp
-wget -O /usr/bin/renewpptp https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewpptp.sh && chmod +x /usr/bin/renewpptp
-wget -O /usr/bin/renewl2tp https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewl2tp.sh && chmod +x /usr/bin/renewl2tp
+wget -O /usr/bin/addl2tp https://raw.githubusercontent.com/Manpokr/mon/main/add/addl2tp.sh && chmod +x /usr/bin/addl2tp
+wget -O /usr/bin/dell2tp https://raw.githubusercontent.com/Manpokr/mon/main/del/dell2tp.sh && chmod +x /usr/bin/dell2tp
+wget -O /usr/bin/addpptp https://raw.githubusercontent.com/Manpokr/mon/main/add/addpptp.sh && chmod +x /usr/bin/addpptp
+wget -O /usr/bin/delpptp https://raw.githubusercontent.com/Manpokr/mon/main/del/delpptp.sh && chmod +x /usr/bin/delpptp
+wget -O /usr/bin/renewpptp https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewpptp.sh && chmod +x /usr/bin/renewpptp
+wget -O /usr/bin/renewl2tp https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewl2tp.sh && chmod +x /usr/bin/renewl2tp
 touch /var/lib/kdevn9/data-user-l2tp
 touch /var/lib/kdevn9/data-user-pptp
 rm -f /root/ipsec.sh
+

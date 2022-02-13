@@ -4,16 +4,7 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
+
 clear
 source /etc/os-release
 OS=$ID
@@ -103,10 +94,10 @@ iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2443:3543 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 ip6tables-save > /etc/ip6tables.up.rules
 cd /usr/bin
-wget -O addss "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addss.sh"
-wget -O delss "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delss.sh"
-wget -O cekss "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/cekss.sh"
-wget -O renewss "https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewss.sh"
+wget -O addss "https://raw.githubusercontent.com/Manpokr/mon/main/add/addss.sh"
+wget -O delss "https://raw.githubusercontent.com/Manpokr/mon/main/del/delss.sh"
+wget -O cekss "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekss.sh"
+wget -O renewss "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewss.sh"
 chmod +x addss
 chmod +x delss
 chmod +x cekss

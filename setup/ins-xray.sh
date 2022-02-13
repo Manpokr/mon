@@ -7,16 +7,6 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
 clear
 domain=$(cat /etc/xray/domain)
 
@@ -24,9 +14,9 @@ domain=$(cat /etc/xray/domain)
 mkdir -p /usr/local/xray/
 
 # // Installation XRay Core
-wget -q -O /usr/local/xray/xray "https://raw.githubusercontent.com/castleUI/NewSCv2/main/core/xray" 
-wget -q -O /usr/local/xray/geosite.dat "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/geosite.dat"
-wget -q -O /usr/local/xray/geoip.dat "https://raw.githubusercontent.com/castleUI/NewSCv2/main/addon/geoip.dat"
+wget -q -O /usr/local/xray/xray "https://raw.githubusercontent.com/Manpokr/mon/main/core/xray" 
+wget -q -O /usr/local/xray/geosite.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geosite.dat"
+wget -q -O /usr/local/xray/geoip.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geoip.dat"
 chmod +x /usr/local/xray/xray
 
 # // Make XRay Mini Root Folder
@@ -178,7 +168,7 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
-wget https://raw.githubusercontent.com/castleUI/NewSCv2/main/setup/plugin-xray.sh && chmod +x plugin-xray.sh && ./plugin-xray.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/plugin-xray.sh && chmod +x plugin-xray.sh && ./plugin-xray.sh
 rm -f /root/plugin-xray.sh
 service squid start
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -945,10 +935,10 @@ systemctl restart vless-grpc
 
 cd /usr/bin
 
-wget -O addgrpc "https://raw.githubusercontent.com/castleUI/NewSCv2/main/add/addxvgrpc.sh"
-wget -O delgrpc "https://raw.githubusercontent.com/castleUI/NewSCv2/main/del/delgrpc.sh"
-wget -O renewgrpc "https://raw.githubusercontent.com/castleUI/NewSCv2/main/renew/renewgrpc.sh"
-wget -O cekgrpc "https://raw.githubusercontent.com/castleUI/NewSCv2/main/cek/cekgrpc.sh"
+wget -O addgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvgrpc.sh"
+wget -O delgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/delgrpc.sh"
+wget -O renewgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewgrpc.sh"
+wget -O cekgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekgrpc.sh"
 chmod +x addgrpc
 chmod +x delgrpc
 chmod +x renewgrpc

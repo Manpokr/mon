@@ -11,10 +11,8 @@ CYAN='\033[0;36m'
 NC='\033[0;37m'
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
-name=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ipvps | grep $MYIP | awk '{print $2}')
-exp=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ipvps | grep $MYIP | awk '{print $3}')
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${BLUE}║       AutoScript VPN By KDevN9         ║${NC}"
+echo -e "${BLUE}║       AutoScript VPN By Manpok         ║${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "Uptime : $(neofetch | grep Uptime | cut -d " " -f 2-100)"
 echo -e "Domain : $(cat /etc/xray/domain)"
@@ -35,8 +33,8 @@ echo -e "Version : ${BLUE}$(cat /home/ver)${NC}"
 echo -e "Client Name : $name"
 echo -e "Expired Date : $exp"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Telegram : t.me/kdevn9"
-echo -e "Github   : https://github.com/KDevN9/scvps"
+echo -e "Telegram : t.me/Manpok"
+echo -e "Github   : https://github.com/Manpok/scvps"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 read -p "Select Menu Options [ 1 - 7 ] : " menu
 case $menu in
