@@ -1,5 +1,5 @@
 #!/bin/bash
-# My Telegram : https://t.me/kdevn9
+# My Telegram : https://t.me/Manternet
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -14,12 +14,6 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/Manpokr/mon/main/ipvps/ip | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
 exit 0
 fi
 clear
@@ -63,4 +57,4 @@ echo -e "Expired    : $exp"
 echo -e "========================="
 echo -e "Link TrGo  : ${link}"
 echo -e "========================="
-echo -e "Script By KDevN9"
+echo -e "Script By Manternet"
