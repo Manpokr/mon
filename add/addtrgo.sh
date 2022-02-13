@@ -14,8 +14,6 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-exit 0
-fi
 clear
 uuid=$(cat /etc/trojan-go/uuid.txt)
 source /var/lib/kdevn9/ipvps.conf
