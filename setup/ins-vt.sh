@@ -4,7 +4,6 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 clear
  #V2Ray Core
 domain=$(cat /etc/v2ray/domain)
