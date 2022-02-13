@@ -1,5 +1,5 @@
 #!/bin/bash
-# My Telegram : https://t.me/kdevn9
+# My Telegram : https://t.me/Manternet
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -49,31 +49,16 @@ else
 res="Permission Accepted..."
 fi
 }
-
-PERMISSION () {
-    MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ipvps/ip | awk '{print $4}' | grep $MYIP )
-    if [ "$MYIP" = "$IZIN" ]; then
-    Bloman
-    else
-    res="Permission Denied!"
-    fi
-    BURIQ
-}
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-PERMISSION
 if [ -f /home/needupdate ]; then
 red "Your script need to update first !"
 exit 0
 elif [ "$res" = "Permission Accepted..." ]; then
 green "Permission Accepted !"
-else
-red "Permission Denied !"
-rm setup.sh > /dev/null 2>&1
 sleep 10
 exit 0
 fi
@@ -168,5 +153,5 @@ echo -e "Expired  : $exp"
 echo -e "======================="
 echo -e "Link WG  : http://$MYIP:89/$CLIENT_NAME.conf"
 echo -e "======================="
-echo -e "Script By KDevN9"
+echo -e "Script By Manternet"
 rm -f /root/wg0-client-$CLIENT_NAME.conf
