@@ -13,16 +13,6 @@ LIGHT='\033[0;37m'
 # ==========================================
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ipvps/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
 clear
 read -rp "Domain/Host : " -e domain
 echo $domain > /etc/xray/domain
@@ -36,4 +26,4 @@ systemctl start vmess-grpc.service
 echo Done
 sleep 1.5
 clear
-neofetch --ascii_distro virus echo && echo "AutoScript By KDevN9" &&  echo "t.me/kdevn9" 
+neofetch --ascii_distro virus echo && echo "AutoScript By Manpokr" &&  echo "t.me/Manpokr" 
