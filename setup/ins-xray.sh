@@ -1,6 +1,6 @@
 #!/bin/bash
 # XRay Installation
-# Coded By BotVPN
+# Mod by Manternet
 # ==================================
 red='\e[1;31m'
 green='\e[0;32m'
