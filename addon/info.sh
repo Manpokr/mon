@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-neofetch --ascii_distro virus echo && echo "AutoScript By KDevN9" &&  echo "t.me/kdevn9" 
+neofetch --ascii_distro virus echo && echo "AutoScript By Manpok" &&  echo "t.me/Manpok" 
 
-echo "AutoScript VPN By KDevN9"
-echo "t.me/kdevn9"
+echo "AutoScript VPN By Manpok"
+echo "t.me/Manpok"
