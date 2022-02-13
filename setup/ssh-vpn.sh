@@ -18,10 +18,10 @@ ver=$VERSION_ID
 country=MY
 state=Malaysia
 locality=Malaysia
-organization=kdev
-organizationalunit=kdev
-commonname=kdevvpn
-email=kdevn9@gmail.com
+organization=Ternet
+organizationalunit=Ternet
+commonname=manpokr
+email=manpokr@gmail.com
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Manpokr/mon/main/addon/password"
