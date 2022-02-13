@@ -59,7 +59,6 @@ red "Your script need to update first !"
 exit 0
 elif [ "$res" = "Permission Accepted..." ]; then
 green "Permission Accepted !"
-else
 sleep 10
 exit 0
 fi
