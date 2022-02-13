@@ -14,7 +14,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-exp=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ipvps | grep $MYIP | awk '{print $3}')
+exp=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ipvps/ip | grep $MYIP | awk '{print $3}')
 serverdate=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date=`date +"%Y-%m-%d" -d "$serverdate -1 days"`
 if [[ $date = $exp ]]; then
