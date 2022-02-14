@@ -62,7 +62,7 @@ green "Permission Accepted !"
 sleep 10
 exit 0
 fi
-#Optimasi Speed By KDevN9
+#Optimasi Speed By Manternet
 Add_To_New_Line(){
 	if [ "$(tail -n1 $1 | wc -l)" == "0"  ];then
 		echo "" >> "$1"
