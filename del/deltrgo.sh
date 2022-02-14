@@ -1,5 +1,5 @@
 #!/bin/bash
-# My Telegram : https://t.me/castleUI
+# My Telegram : https://t.me/Manternet
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -14,13 +14,6 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl https://raw.githubusercontent.com/castleUI/ipscvps/main/ipvps | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-
 exit 0
 fi
 clear
@@ -59,4 +52,4 @@ echo "============================"
 echo "Username : $user"
 echo "Expired  : $exp"
 echo "============================"
-echo "Script By castleUI"
+echo "Script By Manternet"
