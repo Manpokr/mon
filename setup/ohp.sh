@@ -6,7 +6,7 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
 # Ohp Script
-# My Telegram : https://t.me/kdevn9
+# My Telegram : https://t.me/Manternet
 # ==========================================
 # Color
 RED='\033[0;31m'
