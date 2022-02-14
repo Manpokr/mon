@@ -55,6 +55,10 @@ Username : $Name
 IP       : $MYIP
 ━━━━━━━━━━━━━━━━━━━━━" | mail -s "Client Installation Data" kdevn9@gmail.com 
 
+#Warna
+apt install lolcat -y
+apt install toilet - y
+
 #Domain
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh
 chmod +x cf.sh
