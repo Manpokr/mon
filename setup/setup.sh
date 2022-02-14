@@ -65,11 +65,6 @@ wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssh-vpn.sh
 chmod +x ssh-vpn.sh 
 screen -S ssh-vpn ./ssh-vpn.sh
 
-#SSTP
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/sstp.sh
-chmod +x sstp.sh
-screen -S sstp ./sstp.sh
-
 #ShadowsocksR
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssr.sh
 chmod +x ssr.sh
@@ -94,11 +89,6 @@ screen -S xray ./ins-xray.sh
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-vt.sh
 chmod +x ins-vt.sh
 screen -S vt ./ins-vt.sh
-
-#L2TP
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ipsec.sh
-chmod +x ipsec.sh
-screen -S ipsec ./ipsec.sh
 
 #Backup
 wget https://raw.githubusercontent.com/Manpokr/mon/main/backup/set-br.sh
@@ -134,7 +124,6 @@ wget -O port-trojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/por
 wget -O cekxtls "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxray.sh"
 wget -O port-grpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-grpc.sh"
 wget -O menu-ssh "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssh.sh"
-wget -O menu-accel "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-accel.sh"
 wget -O menu-wg "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-wg.sh"
 wget -O menu-ssr "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssr.sh"
 wget -O menu-xray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-xray.sh"
@@ -142,9 +131,6 @@ wget -O menu-v2ray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu
 wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/system-menu.sh"
 wget -O trial-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/trial-menu.sh"
 wget -O trialgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialgrpc.sh"
-wget -O triall2tp "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialgrpc.sh"
-wget -O trialpptp  "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialpptp.sh"
-wget -O trialsstp "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialsstp.sh"
 wget -O trialss "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialss.sh"
 wget -O trialssr "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialssr.sh"
 wget -O trialtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialtrojan.sh"
@@ -155,9 +141,6 @@ wget -O trialxvless "https://raw.githubusercontent.com/Manpokr/mon/main/trial/tr
 wget -O trialxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvmess.sh"
 chmod +x trialgrpc
 chmod +x trial-menu
-chmod +x triall2tp
-chmod +x trialpptp
-chmod +x trialsstp
 chmod +x trialss 
 chmod +x trialssr
 chmod +x trialtrojan
@@ -167,7 +150,6 @@ chmod +x trialxtrojan
 chmod +x trialxvless
 chmod +x trialxvmess
 chmod +x menu-ssh
-chmod +x menu-accel
 chmod +x menu-wg
 chmod +x menu-ssr
 chmod +x menu-xray
@@ -185,7 +167,6 @@ chmod +x cekxtls
 chmod +x port-grpc
 cd
 rm -f /root/ssh-vpn.sh
-rm -f /root/sstp.sh
 rm -f /root/wg.sh
 rm -f /root/ss.sh
 rm -f /root/ssr.sh
