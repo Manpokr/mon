@@ -11,55 +11,51 @@ CYAN='\033[0;36m'
 NC='\033[0;37m'
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${BLUE}║       AutoScript VPN By Manpok         ║${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Uptime : $(neofetch | grep Uptime | cut -d " " -f 2-100)"
-echo -e "Domain : $(cat /etc/xray/domain)"
-echo -e "IP VPS : $MYIP"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
+echo -e " ║       AutoScript VPN By Manpok         ║ "|lolcat
+echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
+echo -e "Uptime : $(neofetch | grep Uptime | cut -d " " -f 2-100)" |lolcat
+echo -e "Domain : $(cat /etc/xray/domain)" |lolcat
+echo -e "IP VPS : $MYIP" |lolcat
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
 echo -e ""
-echo -e "[${CYAN}1${NC}] • >> SSH / OPenVPN Menu"
-echo -e "[${CYAN}2${NC}] • >> L2TP PPTP & SSTP Menu"
-echo -e "[${CYAN}3${NC}] • >> Wireguard Menu"
-echo -e "[${CYAN}4${NC}] • >> SS / SSR Menu"
-echo -e "[${CYAN}5${NC}] • >> XRay Core Menu"
-echo -e "[${CYAN}6${NC}] • >> V2Ray Core Menu"
-echo -e "[${CYAN}7${NC}] • >> ALL TRial Menu"
-echo -e "[${CYAN}8${NC}] • >> System  Menu"
+echo -e "[${CYAN}1${NC}] • >> SSH / OPenVPN Menu" |lolcat
+echo -e "[${CYAN}2${NC}] • >> Wireguard Menu" |lolcat
+echo -e "[${CYAN}3${NC}] • >> SS / SSR Menu" |lolcat
+echo -e "[${CYAN}4${NC}] • >> XRay Core Menu" |lolcat
+echo -e "[${CYAN}5${NC}] • >> V2Ray Core Menu" |lolcat
+echo -e "[${CYAN}6${NC}] • >> ALL TRial Menu" |lolcat
+echo -e "[${CYAN}7${NC}] • >> System  Menu" |lolcat
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Version : ${BLUE}$(cat /home/ver)${NC}"
-echo -e "Client Name : $name"
-echo -e "Expired Date : $exp"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "Telegram : t.me/Manpok"
-echo -e "Github   : https://github.com/Manpok/scvps"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
+echo -e "Version : ${BLUE}$(cat /home/ver)${NC}" |lolcat
+echo -e "Client Name : $name" |lolcat
+echo -e "Expired Date : $exp" |lolcat
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
+echo -e "Telegram : t.me/Manternet" |lolcat
+echo -e "Github   : https://github.com/Manternet" |lolcat
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
 read -p "Select Menu Options [ 1 - 7 ] : " menu
 case $menu in
 1)
 menu-ssh
 ;;
 2)
-menu-accel
-;;
-3)
 menu-wg
 ;;
-4)
+3)
 menu-ssr
 ;;
-5)
+4)
 menu-xray
 ;;
-6)
+5)
 menu-v2ray
 ;;
-7)
+6)
 trial-menu
 ;;
-8)
+7)
 system-menu
 ;;
 *)
