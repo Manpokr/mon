@@ -12,7 +12,7 @@ NC='\033[0;37m'
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
-echo -e " ║       AutoScript VPN By Manpok         ║ "|lolcat
+echo -e " ║       AutoScript VPN By Manternet       ║ "|lolcat
 echo -e " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
 echo -e "Uptime : $(neofetch | grep Uptime | cut -d " " -f 2-100)" |lolcat
 echo -e "Domain : $(cat /etc/xray/domain)" |lolcat
@@ -29,8 +29,7 @@ echo -e "[${CYAN}7${NC}] • >> System  Menu" |lolcat
 echo -e ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
 echo -e "Version : ${BLUE}$(cat /home/ver)${NC}" |lolcat
-echo -e "Client Name : $name" |lolcat
-echo -e "Expired Date : $exp" |lolcat
+echo -e "Client Name : Manternet" |lolcat
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
 echo -e "Telegram : t.me/Manternet" |lolcat
 echo -e "Github   : https://github.com/Manternet" |lolcat
