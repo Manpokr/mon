@@ -46,4 +46,11 @@ else
 echo -e "${RED}Error ! ${NC}Port $tr1 Is Already Used"
 fi
 ;;
+x)
+exit
+menu
+;;
+*)
+echo "Please enter an correct number"
+;;
 esac
