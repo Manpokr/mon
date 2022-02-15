@@ -66,7 +66,7 @@ fi
 
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/websocket https://raw.githubusercontent.com/castleUI/NewSCv2/main/websocket/websocket.py
+wget -q -O /usr/local/bin/websocket https://raw.githubusercontent.com/Manpokr/mon/main/websocket/websocket.py
 chmod +x /usr/local/bin/websocket
 
 # Installing Service
@@ -94,7 +94,7 @@ systemctl enable websocket
 systemctl restart websocket
 
 # Getting Proxy Template
-wget -q -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/castleUI/NewSCv2/main/websocket/ws-ovpn.py
+wget -q -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-ovpn.py
 chmod +x /usr/local/bin/ws-ovpn
 
 # Installing Service
