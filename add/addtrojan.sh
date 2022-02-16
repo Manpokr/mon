@@ -15,7 +15,7 @@ clear
 clear
 IP=$( curl -s ipinfo.io/ip );
 uuid=$(cat /etc/trojan/uuid.txt)
-source /var/lib/kdevn9/ipvps.conf
+source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 fi
