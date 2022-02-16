@@ -23,8 +23,8 @@ LIGHT='\033[0;37m'
 # Getting
 
 #Folder
-mkdir /var/lib/kdevn9;
-echo "IP=" >> /var/lib/kdevn9/ipvps.conf
+mkdir /var/lib/Manpokr;
+echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 clear
 apt install msmtp-mta ca-certificates bsd-mailx -y
 cat > /etc/msmtprc << EOF
@@ -36,13 +36,13 @@ auth on
 logfile        ~/.msmtp.log
 
 # akun smpt
-account        KyzoProject
-host           smtp.gmail.com
+account        manternetProject
+host           manternet.xyz
 port           587
-from           KDevN9 - VPS Services
-user           kyzoproject@gmail.com
-password       oayepaczarvqqyoo
-account default : KyzoProject
+from           Manternet - VPS Services
+user           manpokr@gmail.com
+password       123456
+account default : manternet
 EOF
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
