@@ -16,7 +16,7 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
 uuid=$(cat /etc/trojan-go/uuid.txt)
-source /var/lib/kdevn9/ipvps.conf
+source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
