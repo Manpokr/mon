@@ -15,7 +15,8 @@ LIGHT='\033[0;37m'
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-source /var/lib/kdevn9/ipvps.conf
+clear
+source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP2" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
