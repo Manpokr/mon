@@ -15,7 +15,7 @@ echo "Checking VPS"
 clear
 IP=$( curl -s ipinfo.io/ip );
 clear
-source /var/lib/kdevn9/ipvps.conf
+source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 else
