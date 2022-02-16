@@ -72,8 +72,8 @@ chmod +x /usr/local/bin/websocket
 # Installing Service
 cat > /etc/systemd/system/websocket.service << END
 [Unit]
-Description=Python Proxy Mod By KDevN9
-Documentation=kdevn9.xyz
+Description=Python Proxy Mod By manpokr
+Documentation=manternet.xyz
 After=network.target nss-lookup.target
 
 [Service]
@@ -101,7 +101,7 @@ chmod +x /usr/local/bin/ws-ovpn
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
 Description=SSHWS
-Documentation=kdevn9.xyz
+Documentation=manternet.xyz
 After=network.target nss-lookup.target
 
 [Service]
