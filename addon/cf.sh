@@ -12,11 +12,11 @@ touch /root/domain
 touch /etc/v2ray/domain
 touch /etc/xray/Domain
 apt install jq curl -y
-DOMAIN=kdev.my.id
+DOMAIN=manternet.xyz
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.kdev.my.id
-CF_ID=fitrixxxshop@gmail.com
-CF_KEY=2e515cdc7e4fd5b796904e3702aec6b1f3a91
+SUB_DOMAIN=${sub}.manternet.xyz
+CF_ID=manpokr7@gmail.com
+CF_KEY=7f6afc11c48c8ec0c88fd93427373bd1b1d40
 set -euo pipefail
 IP=$(wget -qO- ipinfo.io/ip);
 echo "Updating DNS for ${SUB_DOMAIN}..."
