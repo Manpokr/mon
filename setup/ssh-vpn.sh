@@ -227,6 +227,7 @@ rm -rf /root/vnstat-2.6
 # install stunnel
 apt install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
+pid = /var/run/stunnel.pid
 cert = /etc/stunnel/stunnel.pem
 client = no
 socket = a:SO_REUSEADDR=1
@@ -239,7 +240,7 @@ connect = 127.0.0.1:109
 accept = 777
 connect = 127.0.0.1:22
 [ws-ssl]
-accept = 443
+accept = 444
 connect = 700
 [openvpn]
 accept = 442
