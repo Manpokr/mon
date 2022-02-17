@@ -5,14 +5,15 @@ echo "║                        ┃ System MENU ┃                          �
 echo "╚═════════════════════════════════════════════════════════════════╝" 
 echo "║ 1.Add Or Change Subdomain Host For VPS                          ║"
 echo "║ 2.Change Port Of Some Service                                   ║"
-echo "║ 3.Autobackup Data VPS                                           ║"
-echo "║ 4.Backup Data VPS                                               ║"
-echo "║ 5.Restore Data VPS                                              ║"
-echo "║ 6.Webmin Menu                                                   ║"
-echo "║ 7.Limit Bandwith Speed Server                                   ║"
-echo "║ 8.Speedtest Server                                              ║"
-echo "║ 9.Reboot VPS                                                    ║"
-echo "║ 10.Exit Menu                                                    ║"
+echo "║ 3.Renew Certificate V2RAY                                       ║"
+echo "║ 4.Autobackup Data VPS                                           ║"
+echo "║ 5.Backup Data VPS                                               ║"
+echo "║ 6.Restore Data VPS                                              ║"
+echo "║ 7.Webmin Menu                                                   ║"
+echo "║ 8.Limit Bandwith Speed Server                                   ║"
+echo "║ 9.Speedtest Server                                              ║"
+echo "║ 10.Reboot VPS                                                    ║"
+echo "║ 11.Exit Menu                                                    ║"
 echo "╚═════════════════════════════════════════════════════════════════╝" 
 read -p "     Select From Options [1-10 or x] :  " menu
 case $menu in 
@@ -23,27 +24,30 @@ addhost
 changeport
 ;;
 3)
-autobackup
+certv2ray
 ;;
 4)
-backup
+autobackup
 ;;
 5)
-restore
+backup
 ;;
 6)
-wbmn
+restore
 ;;
 7)
-limitspeed
+wbmn
 ;;
 8)
-speedtest
+limitspeed
 ;;
 9)
-reboot
+speedtest
 ;;
 10)
+reboot
+;;
+11)
 exit
 ;;
 *)
