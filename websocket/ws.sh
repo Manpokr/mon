@@ -120,3 +120,30 @@ END
 systemctl daemon-reload
 systemctl enable ws-ovpn
 systemctl restart ws-ovpn
+
+# Installing Service ws-stunnel
+wget -q -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-stunnel.py
+chmod +x /usr/local/bin/ws-stunnel
+
+# Create system Service ws-stunnel
+cat > /etc/systemd/system/ws-stunnel.service <<END
+[Unit]
+Description=SSHSL
+Documentation=manternet.xyz
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-stunnel
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
+END
+
+systemctl daemon-reload
+systemctl enable ws-stunnel
+systemctl restart ws-stunnel
