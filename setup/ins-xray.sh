@@ -717,7 +717,7 @@ cat > /etc/xray/trojan.json <<END
     },
     "inbounds": [
         {
-            "port": 443,
+            "port": 2089,
             "protocol": "trojan",
             "settings": {
                 "clients": [
