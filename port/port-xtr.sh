@@ -20,7 +20,7 @@ echo -e ""
 case $port in
 1)
 read -p "Type New Port For Xray Trojan : " tr2
-if [ -z $tr1 ]; then
+if [ -z $tr2 ]; then
 echo "Please Input Port"
 exit 0
 fi
