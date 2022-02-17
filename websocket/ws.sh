@@ -1,5 +1,4 @@
 #!/bin/bash
-# Proxy For Edukasi & Imclass
 # My Telegram : https://t.me/Manternet
 # ==========================================
 # Color
@@ -73,7 +72,7 @@ chmod +x /usr/local/bin/websocket
 cat > /etc/systemd/system/websocket.service << END
 [Unit]
 Description=Python Proxy Mod By manpokr
-Documentation=manternet.xyz
+Documentation=https://github.com/Manpokr/mon
 After=network.target nss-lookup.target
 
 [Service]
@@ -89,10 +88,6 @@ Restart=on-failure
 WantedBy=multi-user.target
 END
 
-systemctl daemon-reload
-systemctl enable websocket
-systemctl restart websocket
-
 # Getting Proxy Template
 wget -q -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-ovpn.py
 chmod +x /usr/local/bin/ws-ovpn
@@ -101,7 +96,7 @@ chmod +x /usr/local/bin/ws-ovpn
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
 Description=SSHWS
-Documentation=manternet.xyz
+Documentation=https://github.com/Manpokr/mon
 After=network.target nss-lookup.target
 
 [Service]
@@ -117,10 +112,6 @@ Restart=on-failure
 WantedBy=multi-user.target
 END
 
-systemctl daemon-reload
-systemctl enable ws-ovpn
-systemctl restart ws-ovpn
-
 # Installing Service ws-stunnel
 wget -q -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-stunnel.py
 chmod +x /usr/local/bin/ws-stunnel
@@ -128,8 +119,8 @@ chmod +x /usr/local/bin/ws-stunnel
 # Create system Service ws-stunnel
 cat > /etc/systemd/system/ws-stunnel.service <<END
 [Unit]
-Description=SSHSL
-Documentation=manternet.xyz
+Description=SSHSSl
+Documentation=https://github.com/Manpokr/mon
 After=network.target nss-lookup.target
 
 [Service]
@@ -144,6 +135,12 @@ Restart=on-failure
 WantedBy=multi-user.target
 END
 
+systemctl daemon-reload
+systemctl enable websocket
+systemctl restart websocket
+systemctl daemon-reload
+systemctl enable ws-ovpn
+systemctl restart ws-ovpn
 systemctl daemon-reload
 systemctl enable ws-stunnel
 systemctl restart ws-stunnel
