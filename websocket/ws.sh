@@ -113,7 +113,7 @@ WantedBy=multi-user.target
 END
 
 # Installing Service ws-stunnel
-wget -q -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-stunnel.py
+wget -q -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-stunnel
 chmod +x /usr/local/bin/ws-stunnel
 
 # Create system Service ws-stunnel
