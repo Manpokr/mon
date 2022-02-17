@@ -78,8 +78,6 @@ systemctl restart xr-vl-ntls
 systemctl restart vmess-grpc 
 systemctl restart vless-grpc
 systemctl restart shadowsocks-libev
-systemctl restart xl2tpd
-systemctl restart pptpd
 systemctl restart ipsec
 systemctl restart accel-ppp
 systemctl restart ws-ovpn
@@ -92,7 +90,7 @@ systemctl restart trojan-go
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
 /etc/init.d/sslh restart
-/etc/init.d/stunnel5 restart
+/etc/init.d/stunnel4 restart
 /etc/init.d/openvpn restart
 /etc/init.d/fail2ban restart
 /etc/init.d/cron restart
