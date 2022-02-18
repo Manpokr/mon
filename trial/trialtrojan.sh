@@ -13,7 +13,7 @@ echo "Checking VPS"
 clear
 IP=$( curl -s ipinfo.io/ip );
 uuid=$(cat /etc/trojan/uuid.txt)
-source /var/lib/kdevn9/ipvps.conf
+source /var/lib/manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 fi
@@ -23,7 +23,7 @@ exp=1
 domain=$(cat /etc/v2ray/domain)
 read -p "Expired (days): " masaaktif
 read -p "SNI (BUG)     : " sni
-read -p "Subdomain (EXP : kdevn9.xyz. / Press Enter If Only Using Hosts) : " sub
+read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
 sed -i '/"'""$uuid""'"$/a\,"'""$user""'"' /etc/trojan/config.json
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
