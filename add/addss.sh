@@ -1,5 +1,5 @@
 #!/bin/bash
-# My Telegram : https://t.me/kdevn9
+# My Telegram : https://t.me/Manternet
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -29,7 +29,7 @@ http=3443
 else
 http="$((lastport2+1))"
 fi
-source /var/lib/kdevn9/ipvps.conf
+source /var/lib/manpokr/ipvps.conf
 if [[ "$IP2" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
@@ -112,4 +112,4 @@ echo -e "Link TLS    : $linkss1"
 echo -e "========================="
 echo -e "Link No TLS : $linkss2"
 echo -e "========================="
-echo -e "Script By KDevN9"
+echo -e "Script By Manternet"
