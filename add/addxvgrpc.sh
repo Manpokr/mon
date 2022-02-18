@@ -48,10 +48,8 @@ EOF
 vmess_base641=$( base64 -w 0 <<< $vmess_json1)
 vmesslink1="vmess://$(base64 -w 0 /etc/xray/$user-tls.json)"
 vlesslink1="vless://${uuid}@${dom}:${vl}?mode=gun&security=tls&encryption=none&type=grpc&serviceName=GunService&sni=$sni#$user"
-trojanlink1=trojan://${id}@${host}:${port}?encryption=none&peer=${sni}&security=tls&type=grpc&sni=${sni}&alpn=h2&path=mantrojangrpc&serviceName=mantrojangrpc#${host}_trojan_grpc\n"
 systemctl restart vmess-grpc.service
 systemctl restart vless-grpc.service
-systemctl restart trojan-grpc.service
 service cron restart
 clear
 echo -e "================================="
@@ -74,9 +72,6 @@ echo -e "${vmesslink1}"
 echo -e "================================="
 echo -e "Link VLess GRPC  : "
 echo -e "${vlesslink1}"
-echo -e "================================="
-echo -e "Link Trojan GRPC  : "
-echo -e "${trojanlink1}"
 echo -e "================================="
 echo -e "Expired On     : $exp"
 echo -e "=================================" 
