@@ -351,7 +351,7 @@ wget -O addxvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvl
 wget -O addxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtrojan.sh"
 wget -O delxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxv2ray.sh"
 wget -O delxvless "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxvless.sh"
-wget -O delxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxrojan.sh"
+wget -O delxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtrojan.sh"
 wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
 wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
 wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxrojan.sh"
