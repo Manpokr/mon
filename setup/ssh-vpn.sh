@@ -320,7 +320,7 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 wget -O addhost "https://raw.githubusercontent.com/Manpokr/mon/main/add/addhost.sh"
-wget -O about "https://raw.githubusercontent.com/Manpokr/mon/main/add/onabout.sh"
+wget -O about "https://raw.githubusercontent.com/Manpokr/mon/main/add/about.sh"
 wget -O menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/menu.sh"
 wget -O addssh "https://raw.githubusercontent.com/Manpokr/mon/main/add/addssh.sh"
 wget -O trialssh "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialssh.sh"
