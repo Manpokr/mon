@@ -168,6 +168,24 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
+cat > /etc/systemd/system/xtr-grpc.service << EOF
+[Unit]
+Description=XRay Trojan GRPC Service
+Documentation=https://speedtest.net https://github.com/XTLS/Xray-core
+After=network.target nss-lookup.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/usr/local/xray/xray -config /etc/xray/xtr-grpc.json
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/plugin-xray.sh && chmod +x plugin-xray.sh && ./plugin-xray.sh
 rm -f /root/plugin-xray.sh
 service squid start
@@ -853,6 +871,38 @@ cat > /etc/xray/vlessgrpc.json << END
 }
 END
 
+cat > /etc/xray/trojan-grpc.json <<END
+{
+  "inbounds": [
+    {
+      "port": 8989,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "tag": "trojanGRPC",
+      "settings": {
+        "clients": [
+          {
+            "password": "dev",
+            "email": ""
+          }
+        ],
+        "fallbacks": [
+          {
+            "dest": "31300"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "mantrojangrpc"
+        }
+      }
+    }
+  ]
+}
+EOF
+
 cat > /etc/systemd/system/vmess-grpc.service << EOF
 [Unit]
 Description=XRay VMess GRPC Service
@@ -887,6 +937,25 @@ LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
+EOF
+
+cat > /etc/systemd/system/trojan-grpc.service << EOF
+[Unit]
+Description=XRay Trojan GRPC Service
+Documentation=https://speedtest.net https://github.com/XTLS/Xray-core
+After=network.target nss-lookup.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/usr/local/xray/xray -config /etc/xray/trojangrpc.json
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target
+
 EOF
 
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6565-j ACCEPT
@@ -932,6 +1001,8 @@ systemctl enable vmess-grpc
 systemctl restart vmess-grpc
 systemctl enable vless-grpc
 systemctl restart vless-grpc
+systemctl enable trojan-grpc
+systemctl restart trojan-grpc
 
 cd /usr/bin
 
