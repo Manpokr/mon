@@ -143,6 +143,7 @@ wget -O trialvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/tri
 wget -O trialxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxtrojan.sh"
 wget -O trialxvless "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvless.sh"
 wget -O trialxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvmess.sh"
+whet -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
 chmod +x trialgrpc
 chmod +x trial-menu
 chmod +x trialss 
