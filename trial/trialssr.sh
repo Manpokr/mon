@@ -20,7 +20,7 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
 IP=$(wget -qO- ipinfo.io/ip);
 ssr_user=dev-`</dev/urandom tr -dc X-Z0-9 | head -c4`
-source /var/lib/kdevn9/ipvps.conf
+source /var/lib/manpokr/ipvps.conf
 if [[ "$IP2" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
