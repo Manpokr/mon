@@ -16,7 +16,7 @@ clear
 
 IP=$( curl -s ipinfo.io/ip );
 clear
-source /var/lib/kdevn9/ipvps.conf
+source /var/lib/manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 else
@@ -28,7 +28,7 @@ user=dev-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 exp=1
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "SNI (BUG)     : " sni
-read -p "Subdomain (EXP : kdevn9.xyz. / Press Enter If Only Using Hosts) : " sub
+read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
