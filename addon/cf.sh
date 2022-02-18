@@ -5,7 +5,6 @@ NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
-clear
 mkdir -p /etc/v2ray
 mkdir -p /etc/xray
 touch /root/domain
