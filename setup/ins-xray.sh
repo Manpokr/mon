@@ -939,40 +939,51 @@ cd /usr/bin
 wget -O addxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxv2ray.sh"
 wget -O addxvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvless.sh"
 wget -O addxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtrojan.sh"
+wget -O addxtls "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtls.sh"
+wget -O addgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvgrpc.sh"
 wget -O delxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxv2ray.sh"
 wget -O delxvless "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxvless.sh"
 wget -O delxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtrojan.sh"
+wget -O delxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtls.sh"
+wget -O delgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/delgrpc.sh"
 wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
 wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
 wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxrojan.sh"
+wget -O cekxtls "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxray.sh"
+wget -O cekgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekgrpc.sh"
 wget -O renewxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxv2ray.sh"
 wget -O renewxvless "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxvless.sh"
 wget -O renewxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtrojan.sh"
-wget -O addgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvgrpc.sh"
-wget -O delgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/delgrpc.sh"
-wget -O renewgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewgrpc.sh"
-wget -O cekgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekgrpc.sh"
-wget -O addxtls "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtls.sh"
-wget -O delxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtls.sh"
 wget -O renewxtls "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtls.sh"
+wget -O renewgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewgrpc.sh"
+wget -O trialxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvmess.sh"
+wget -O trialxvless "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvless.sh"
+wget -O trialxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxtrojan.sh"
+wget -O trialgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialgrpc.sh"
 chmod +x addxvmess
 chmod +x addxvless
 chmod +x addxtrojan
+chmod +x addxtls
+chmod +x addgrpc
 chmod +x delxvless
 chmod +x delxvmess
 chmod +x delxtrojan
+chmod +x delxtls
+chmod +x delgrpc
 chmod +x cekxvmess
 chmod +x cekxvless
 chmod +x cekxtrojan
+chmod +x cekxtls
+chmod +x cekgrpc
 chmod +x renewxvmess
 chmod +x renewxvless
 chmod +x renewxtrojan
-chmod +x addgrpc
-chmod +x delgrpc
-chmod +x renewgrpc
-chmod +x cekgrpc
 chmod +x renewxtls
-chmod +x addxtls
-chmod +x delxtls
+chmod +x renewgrpc
+chmod +x trialxvmess
+chmod +x trialxvmess
+chmod +x trialgrpc
+
+
 cd
 rm -f install-xray.sh
