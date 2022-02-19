@@ -186,4 +186,18 @@ systemctl daemon-reload
 systemctl enable trojan-go.service
 systemctl start trojan-go
 systemctl enable trojan-go@.service
-systemctl start trojan-go
+systemctl start trojan-go@
+
+# Download
+cd /usr/bin
+wget -O addtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrgo.sh"
+wget -O deltrgo "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgo.sh"
+wget -O renewtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgo.sh"
+wget -O cektrgo "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgo.sh"
+chmod +x addtrgo
+chmod +x deltrgo
+chmod +x renewtrgo
+chmod +x cektrgo
+
+cd
+rm -f install-trgo.sh
