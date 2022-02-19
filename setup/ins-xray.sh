@@ -952,6 +952,9 @@ wget -O addgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvgrp
 wget -O delgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/delgrpc.sh"
 wget -O renewgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewgrpc.sh"
 wget -O cekgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekgrpc.sh"
+wget -O addxtls "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtls.sh"
+wget -O delxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtls.sh"
+wget -O renewxtls "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtls.sh"
 chmod +x addxvmess
 chmod +x addxvless
 chmod +x addxtrojan
@@ -968,5 +971,8 @@ chmod +x addgrpc
 chmod +x delgrpc
 chmod +x renewgrpc
 chmod +x cekgrpc
+chmod +x renewxtls
+chmod +x addxtls
+chmod +x delxtls
 cd
 rm -f install-xray.sh
