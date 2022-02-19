@@ -26,6 +26,7 @@ echo -e "[${CYAN}4${NC}] • >> XRay Core Menu" |lolcat
 echo -e "[${CYAN}5${NC}] • >> V2Ray Core Menu" |lolcat
 echo -e "[${CYAN}6${NC}] • >> ALL TRial Menu" |lolcat
 echo -e "[${CYAN}7${NC}] • >> System  Menu" |lolcat
+echo -e "[${CYAN}7${NC}] • >> Menu Bot" |lolcat
 echo -e ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
 echo -e "Version : ${BLUE}$(cat /home/ver)${NC}" |lolcat
@@ -56,6 +57,9 @@ trial-menu
 ;;
 7)
 system-menu
+;;
+8)
+menu-bbt
 ;;
 *)
 clear
