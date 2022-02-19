@@ -260,6 +260,11 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 #OpenVPN
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
+# stunnel5
+wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/stunnel5.init && chmod +x stunnel5.init && ./stunnel5.init 
+unzip stunnel5.init
+rm -f stunnel5.init
+
 # install fail2ban
 apt -y install fail2ban
 
@@ -382,6 +387,7 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/openvpn restart
 /etc/init.d/cron restart
 /etc/init.d/ssh restart
+/etc/init.d/stunnel5 restart
 /etc/init.d/dropbear restart
 /etc/init.d/fail2ban restart
 /etc/init.d/sslh restart
