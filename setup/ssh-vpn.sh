@@ -347,10 +347,6 @@ wget -O wbmn "https://raw.githubusercontent.com/Manpokr/mon/main/setup/webmin.sh
 wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
 wget -O cert "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
-wget -O addtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrgo.sh"
-wget -O deltrgo "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgo.sh"
-wget -O renewtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgo.sh"
-wget -O cektrgo "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgo.sh"
 chmod +x addhost
 chmod +x menu
 chmod +x addssh
@@ -380,10 +376,6 @@ chmod +x wbmn
 chmod +x xp
 chmod +x swapkvm
 chmod +x cert
-chmod +x addtrgo
-chmod +x deltrgo
-chmod +x renewtrgo
-chmod +x cektrgo
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
