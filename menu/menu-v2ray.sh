@@ -6,13 +6,16 @@ echo "╚═══════════════════════�
 echo "║ 1.Create Account VMess                                          ║"
 echo "║ 2.Create Account VLess                                          ║"
 echo "║ 3.Create Account Trojan                                         ║"
-echo "║ 4.Delete Account VMess                                          ║"
-echo "║ 5.Delete Account VLess                                          ║"
-echo "║ 6.Delete Account Trojan                                         ║"
-echo "║ 7.Renews Account VMess                                          ║"
-echo "║ 8.Renews Account VLess                                          ║"
-echo "║ 9.Renews Account Trojan                                         ║"
-echo "║ 10.Exit Menu                                                    ║"
+echo "║ 4.Create Account Trojan-go                                      ║"
+echo "║ 5.Delete Account VMess                                          ║"
+echo "║ 6.Delete Account VLess                                          ║"
+echo "║ 7.Delete Account Trojan                                         ║"
+echo "║ 8.Delete Account Trojan-go                                      ║"
+echo "║ 9.Renews Account VMess                                          ║"
+echo "║ 10.Renews Account VLess                                         ║"
+echo "║ 11.Renews Account Trojan                                        ║"
+echo "║ 12.Renews Account Trojan-go                                     ║"
+echo "║ 13.Exit Menu                                                    ║"
 echo "╚═════════════════════════════════════════════════════════════════╝" 
 read -p "     Select From Options [1-10 ] :  " menu
 case $menu in 
@@ -26,22 +29,31 @@ addvless
 addtrojan
 ;;
 4)
-delvmess
+addtrgo
 ;;
 5)
-delvless
-;;
-6)
-deltrojan
+delvmess
 ;;
 7)
-renewvmess
+delvless
+;;
+7)
+deltrojan
 ;;
 8)
-renewtrojan
+deltrgo
 ;;
 9)
+renewvmess
+;;
+10)
 renewvless
+;;
+11)
+renewtrojan
+;;
+12)
+renewtrgo
 ;;
 10)
 exit
