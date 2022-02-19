@@ -9,7 +9,7 @@ echo "║ 3.Restart Bot Services                                          ║"
 echo "║ 4.Exit                                                          ║" 
 echo "╚═════════════════════════════════════════════════════════════════╝" 
 read -p "     Select From Options [1-4] :  " menu
-case $bot in 
+case $menu in 
 1)
 addbbt
 ;;
