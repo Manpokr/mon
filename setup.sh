@@ -118,6 +118,12 @@ chmod +x cert.sh
 
 #Addon
 cd /usr/bin
+wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
+wget -O portsquid "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsquid.sh"
+wget -O portwg "https://raw.githubusercontent.com/Manpokr/mon/main/port/portwg.sh"
+wget -O portvlm "https://raw.githubusercontent.com/Manpokr/mon/main/port/portvlm.sh"
+wget -O porttrojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/porttrojan.sh"
+wget -O port-trojango "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojango.sh"
 wget -O port-xws "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xws.sh"
 wget -O port-xvl "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xvl.sh"
 wget -O port-xtr "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xtr.sh"
@@ -125,7 +131,6 @@ wget -O port-xtls "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-
 wget -O port-vmess "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-vmess.sh"
 wget -O port-vless "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-vless.sh"
 wget -O port-trojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojan.sh"
-wget -O cekxtls "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxray.sh"
 wget -O port-grpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-grpc.sh"
 wget -O menu-ssh "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssh.sh"
 wget -O menu-wg "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-wg.sh"
@@ -134,33 +139,13 @@ wget -O menu-xray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-
 wget -O menu-v2ray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-v2ray.sh"
 wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/system-menu.sh"
 wget -O trial-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/trial-menu.sh"
-wget -O trialgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialgrpc.sh"
-wget -O trialss "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialss.sh"
-wget -O trialssr "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialssr.sh"
-wget -O trialtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialtrojan.sh"
-wget -O trialvless "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialvless.sh"
-wget -O trialvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialvmess.sh"
-wget -O trialxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxtrojan.sh"
-wget -O trialxvless "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvless.sh"
-wget -O trialxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvmess.sh"
-whet -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
-chmod +x trialgrpc
-chmod +x trial-menu
-chmod +x trialss 
-chmod +x trialssr
-chmod +x trialtrojan
-chmod +x trialvless
-chmod +x trialvmess
-chmod +x trialxtrojan
-chmod +x trialxvless
-chmod +x trialxvmess
-chmod +x menu-ssh
-chmod +x menu-wg
-chmod +x menu-ssr
-chmod +x menu-xray
-chmod +x menu-v2ray
-chmod +x menu-bbt
-chmod +x system-menu
+wget -O menu-bbt "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bbt.sh"
+chmod +x portovpn
+chmod +x portsquid
+chmod +x portwg
+chmod +x portvlm
+chmod +x porttrojan
+chmod +x port-trojango
 chmod +x port-xws
 chmod +x port-xvl
 chmod +x port-xtr
@@ -168,13 +153,20 @@ chmod +x port-xtls
 chmod +x port-vmess
 chmod +x port-vless
 chmod +x port-trojan
-chmod +x cekxtls
 chmod +x port-grpc
+chmod +x trial-menu
+chmod +x menu-ssh
+chmod +x menu-wg
+chmod +x menu-ssr
+chmod +x menu-xray
+chmod +x menu-v2ray
+chmod +x menu-bbt
+chmod +x system-menu
+
 cd
+rm -f /root/sodosok.sh
 rm -f /root/ssh-vpn.sh
-rm -f /root/sstp.sh
 rm -f /root/wg.sh
-rm -f /root/ss.sh
 rm -f /root/ssr.sh
 rm -f /root/ins-xray.sh
 rm -f /root/ins-vt.sh
