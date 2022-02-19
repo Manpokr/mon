@@ -337,11 +337,6 @@ wget -O autokill "https://raw.githubusercontent.com/Manpokr/mon/main/addon/autok
 wget -O ceklim "https://raw.githubusercontent.com/Manpokr/mon/main/cek/ceklim.sh"
 wget -O clearlog "https://raw.githubusercontent.com/Manpokr/mon/main/addon/clearlog.sh"
 wget -O changeport "https://raw.githubusercontent.com/Manpokr/mon/main/addon/changeport.sh"
-wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
-wget -O portwg "https://raw.githubusercontent.com/Manpokr/mon/main/port/portwg.sh"
-wget -O porttrojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/porttrojan.sh"
-wget -O portsquid "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsquid.sh"
-wget -O portvlm "https://raw.githubusercontent.com/Manpokr/mon/main/port/portvlm.sh"
 wget -O wbmn "https://raw.githubusercontent.com/Manpokr/mon/main/setup/webmin.sh"
 wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
@@ -365,11 +360,6 @@ chmod +x ram
 chmod +x renewssh
 chmod +x clearlog
 chmod +x changeport
-chmod +x portovpn
-chmod +x portwg
-chmod +x porttrojan
-chmod +x portsquid
-chmod +x portvlm
 chmod +x wbmn
 chmod +x xp
 chmod +x swapkvm
