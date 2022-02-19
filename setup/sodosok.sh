@@ -98,9 +98,11 @@ wget -O addss "https://raw.githubusercontent.com/Manpokr/mon/main/add/addss.sh"
 wget -O delss "https://raw.githubusercontent.com/Manpokr/mon/main/del/delss.sh"
 wget -O cekss "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekss.sh"
 wget -O renewss "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewss.sh"
+wget -O trialss "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialss.sh"
 chmod +x addss
 chmod +x delss
 chmod +x cekss
 chmod +x renewss
+chmod +x trialss
 cd
 rm -f /root/sodosok.sh
