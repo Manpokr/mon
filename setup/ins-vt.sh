@@ -500,9 +500,6 @@ wget -O cektrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektro
 wget -O renewvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewvmess.sh"
 wget -O renewvless "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewvless.sh"
 wget -O renewtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrojan.sh"
-wget -O addxtls "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtls.sh"
-wget -O delxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtls.sh"
-wget -O renewxtls "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtls.sh"
 chmod +x addvmess
 chmod +x addvless
 chmod +x addtrojan
@@ -515,9 +512,6 @@ chmod +x cektrojan
 chmod +x renewvmess
 chmod +x renewvless
 chmod +x renewtrojan
-chmod +x renewxtls
-chmod +x addxtls
-chmod +x delxtls
 cd
 rm -f ins-vt.sh
 
