@@ -500,6 +500,9 @@ wget -O cektrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektro
 wget -O renewvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewvmess.sh"
 wget -O renewvless "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewvless.sh"
 wget -O renewtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrojan.sh"
+wget -O trialvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialvmess.sh"
+wget -O trialvless "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialvless.sh"
+wget -O trialtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialtrojan.sh"
 chmod +x addvmess
 chmod +x addvless
 chmod +x addtrojan
@@ -512,6 +515,9 @@ chmod +x cektrojan
 chmod +x renewvmess
 chmod +x renewvless
 chmod +x renewtrojan
+chmod +x trialvmess
+chmod +x trialvless
+chmod +x trialtrojan
 cd
 rm -f ins-vt.sh
 
