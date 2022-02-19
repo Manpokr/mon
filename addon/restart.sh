@@ -21,9 +21,11 @@ clear
 
 echo -e "Starting Restart All Service"
 sleep 2
+systemctl restart ws-dropbear
+systemctl restart ws-stunnel
 systemctl restart ssrmu
-systemctl restart ws-tls
-systemctl restart ws-nontls
+systemctl restart v2ray@none
+systemctl restart v2ray@vnone
 systemctl restart xray.service
 systemctl restart x-tr 
 systemctl restart xr-vm-tls
