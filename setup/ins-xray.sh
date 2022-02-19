@@ -936,10 +936,34 @@ systemctl restart vless-grpc
 
 cd /usr/bin
 
+wget -O addxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxv2ray.sh"
+wget -O addxvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvless.sh"
+wget -O addxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtrojan.sh"
+wget -O delxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxv2ray.sh"
+wget -O delxvless "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxvless.sh"
+wget -O delxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtrojan.sh"
+wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
+wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
+wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxrojan.sh"
+wget -O renewxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxv2ray.sh"
+wget -O renewxvless "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxvless.sh"
+wget -O renewxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtrojan.sh"
 wget -O addgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvgrpc.sh"
 wget -O delgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/delgrpc.sh"
 wget -O renewgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewgrpc.sh"
 wget -O cekgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekgrpc.sh"
+chmod +x addxvmess
+chmod +x addxvless
+chmod +x addxtrojan
+chmod +x delxvless
+chmod +x delxvmess
+chmod +x delxtrojan
+chmod +x cekxvmess
+chmod +x cekxvless
+chmod +x cekxtrojan
+chmod +x renewxvmess
+chmod +x renewxvless
+chmod +x renewxtrojan
 chmod +x addgrpc
 chmod +x delgrpc
 chmod +x renewgrpc
