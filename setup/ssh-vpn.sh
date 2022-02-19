@@ -340,7 +340,6 @@ wget -O changeport "https://raw.githubusercontent.com/Manpokr/mon/main/addon/cha
 wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
 wget -O portwg "https://raw.githubusercontent.com/Manpokr/mon/main/port/portwg.sh"
 wget -O porttrojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/porttrojan.sh"
-wget -O portsstp "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsstp.sh"
 wget -O portsquid "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsquid.sh"
 wget -O portvlm "https://raw.githubusercontent.com/Manpokr/mon/main/port/portvlm.sh"
 wget -O wbmn "https://raw.githubusercontent.com/Manpokr/mon/main/setup/webmin.sh"
@@ -369,7 +368,6 @@ chmod +x changeport
 chmod +x portovpn
 chmod +x portwg
 chmod +x porttrojan
-chmod +x portsstp
 chmod +x portsquid
 chmod +x portvlm
 chmod +x wbmn
