@@ -35,7 +35,7 @@ cat <<EOF > /etc/trojan-go/config.json
 {
     "run_type": "server",
     "local_addr": "0.0.0.0",
-    "local_port": 2096,
+    "local_port": 2053,
     "remote_addr": "127.0.0.1",
     "remote_port": 81,
     "log_level": 1,
@@ -87,7 +87,7 @@ cat <<EOF > /etc/trojan-go/config.json
   },
   "websocket": {
     "enabled": true,
-    "path": "/brody",
+    "path": "/xzvnct",
     "host": "$domain"
   },
   "shadowsocks": {
@@ -133,12 +133,12 @@ cat <<EOF > /etc/trojan-go/config.json
   }
 }
 EOF
+
 cat <<EOF > /etc/systemd/system/trojan-go.service
 [Unit]
 Description=Trojan-Go 
 Documentation=https://p4gefau1t.github.io/trojan-go/
 After=network.target nss-lookup.target
-
 [Service]
 User=root
 NoNewPrivileges=true
@@ -146,34 +146,14 @@ ExecStart=/etc/trojan-go/trojan-go -config /etc/trojan-go/config.json
 Restart=on-failure
 RestartSec=10s
 LimitNOFILE=infinity
-
 [Install]
 WantedBy=multi-user.target
+END
 
-EOF
-
-cat <<EOF > /etc/systemd/system/trojan-go@.service 
-[Unit]
-Description=Trojan-Go
-Documentation=https://p4gefau1t.github.io/trojan-go/
-After=network.target nss-lookup.target
-
-[Service]
-User=root
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/etc/trojan-go/trojan-go -config /etc/trojan-go/%i.json
-Restart=on-failure
-RestartSec=10s
-LimitNOFILE=infinity
-
-[Install]
-WantedBy=multi-user.target
-
+# Trojan uuid
 cat <<EOF > /etc/trojan-go/uuid.txt
 $uuid
-EOF
+END
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
 iptables-save >/etc/iptables.rules.v4
@@ -199,4 +179,4 @@ chmod +x addtrgo
 chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
-cd
+
