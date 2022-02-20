@@ -145,6 +145,7 @@ wget -O menu-v2ray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu
 wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/system-menu.sh"
 wget -O trial-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/trial-menu.sh"
 wget -O menu-bbt "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bbt.sh"
+wget -O running "https://raw.githubusercontent.com/Manpokr/mon/main/menu/running.sh"
 chmod +x portovpn
 chmod +x portsquid
 chmod +x portwg
@@ -167,7 +168,7 @@ chmod +x menu-xray
 chmod +x menu-v2ray
 chmod +x menu-bbt
 chmod +x system-menu
-
+chmod +x running
 cd
 rm -f /root/sodosok.sh
 rm -f /root/ssh-vpn.sh
