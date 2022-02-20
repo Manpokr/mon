@@ -43,7 +43,7 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xray-trojan$/a\#&# '"$user na$exp"'\
 },{"password": "'""$userna""'","email": "'""$userna""'"' /etc/xray/trojan.json
 systemctl restart x-tr.service
-trojanlink="trojan://${user}@${dom}:${tr}?sni=$sni#$user"
+trojanlink="trojan://${user}@${domain}:${tr}"
 service cron restart
 clear
 
