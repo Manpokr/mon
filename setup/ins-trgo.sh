@@ -200,4 +200,3 @@ chmod +x deltrgo
 chmod +x renewtrgo
 chmod +x cektrgo
 cd
-rm -f install-trgo.sh
