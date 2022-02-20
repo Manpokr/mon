@@ -985,5 +985,4 @@ chmod +x trialxvmess
 chmod +x trialgrpc
 
 
-cd
-rm -f install-xray.sh
+
