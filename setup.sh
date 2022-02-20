@@ -173,9 +173,6 @@ rm -f /root/sodosok.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/wg.sh
 rm -f /root/ssr.sh
-rm -f /root/ins-xray.sh
-rm -f /root/ins-vt.sh
-rm -f /root/ins-trgo.sh
 rm -f /etc/ipsec.sh
 rm -f /root/set-br.sh
 rm -f /root/ohp.sh
