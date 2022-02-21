@@ -196,21 +196,21 @@ echo -e " x-tr              : x-tr Service is "$green"running"$NC""
 else                                                                                    
 echo -e " x-tr              : x-tr Service is "$red"not running (Error)"$NC""        
 fi
-status="$(systemctl show dropbear.service --no-page)"                                   
+status="$(systemctl show vmess-grpc.service --no-page)"                                   
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
 if [ "${status_text}" == "active" ]                                                     
 then                                                                                    
-echo -e " DropBear          : DropBear Service is "$green"running"$NC""                  
+echo -e " vmess-grpc        : vmess-grpc Service is "$green"running"$NC""                  
 else                                                                                    
-echo -e " DropBear          : DropBear Service is "$red"not running (Error)"$NC""        
+echo -e " vmess-grpc        : vmess-grpc Service is "$red"not running (Error)"$NC""        
 fi
 status="$(systemctl show dropbear.service --no-page)"                                   
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
 if [ "${status_text}" == "active" ]                                                     
 then                                                                                    
-echo -e " DropBear          : DropBear Service is "$green"running"$NC""                  
+echo -e " vless-grpc          : vless-grpc Service is "$green"running"$NC""                  
 else                                                                                    
-echo -e " DropBear          : DropBear Service is "$red"not running (Error)"$NC""        
+echo -e " vless-grpc          : vless-grpc Service is "$red"not running (Error)"$NC""        
 fi
 status="$(systemctl show dropbear.service --no-page)"                                   
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
