@@ -23,7 +23,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-tr="$(cat /etc/xray/trojan.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')"
+tr="$(cat /etc/xray/trojan.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		read -rp "Password : " -e user
 		user_EXISTS=$(grep -w $user /etc/xray/trojan.json | wc -l)
@@ -41,7 +41,7 @@ dom=$sub$domain
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xray-trojan$/a\#&# '"$user na$exp"'\
-},{"password": "'""$userna""'","email": "'""$userna""'"' /etc/xray/trojan.json
+},{"password": "'""$user""'","email": "'""$user""'"' /etc/xray/trojan.json
 systemctl restart x-tr.service
 trojanlink="trojan://${user}@${dom}:${tr}?sni=$sni#$user"
 service cron restart
