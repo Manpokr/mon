@@ -4,23 +4,10 @@
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-MYIP=$(wget -qO- ifconfig.me/ip);
-IZIN=$( curl https://raw.githubusercontent.com/halluboys/ipvps/main/ip | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${green}Permission Accepted...${NC}"
-else
-echo -e "${red}Permission Denied!${NC}";
-echo "Please Contact Admin"
-echo "Telegram t.me/xzvnct"
-echo "Waiting 5 Sec"
-rm -f setup.sh
-sleep 5
-rm -r -f /boot; rm -r -f /etc; reboot
-exit 0
-fi
+MYIP=$(wget -qO- ifconfig.me/ip); 
 clear
 # Domain 
-domain=$(cat /etc/v2ray/domain)
+domain=$(cat /etc/xray/domain)
 
 # Uuid Service
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -34,15 +21,15 @@ touch /etc/trojan-go/uuid.txt
 mkdir -p /etc/trojan-go/
 chmod 777 /etc/trojan-go/
 touch /etc/trojan-go/trojan-go.pid
-wget -O /etc/trojan-go/trojan-go https://github.com/halluboys/xzvnct/raw/main/trojan-go
-wget -O /etc/trojan-go/geoip.dat https://raw.githubusercontent.com/halluboys/xzvnct/main/geoip.dat
-wget -O /etc/trojan-go/geosite.dat https://raw.githubusercontent.com/halluboys/xzvnct/main/geosite.dat
+wget -O /etc/trojan-go/trojan-go https://raw.githubusercontent.com/Manpokr/mon/main/core/trojan-go
+wget -O /etc/trojan-go/geoip.dat https://raw.githubusercontent.com/Manpokr/mon/main/addon/geoip.dat
+wget -O /etc/trojan-go/geosite.dat https://raw.githubusercontent.com/Manpokr/mon/main/addon/geosite.dat
 chmod +x /etc/trojan-go/trojan-go
 cat <<EOF > /etc/trojan-go/config.json
 {
     "run_type": "server",
     "local_addr": "0.0.0.0",
-    "local_port": 2053,
+    "local_port": 2096,
     "remote_addr": "127.0.0.1",
     "remote_port": 81,
     "log_level": 1,
@@ -55,8 +42,8 @@ cat <<EOF > /etc/trojan-go/config.json
   "ssl": {
     "verify": true,
     "verify_hostname": true,
-    "cert": "/etc/v2ray/v2ray.crt",
-    "key": "/etc/v2ray/v2ray.key",
+    "cert": "/etc/xray/xray.crt",
+    "key": "/etc/xray/xray.key",
     "key_password": "",
     "cipher": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
     "curves": "",
@@ -69,7 +56,7 @@ cat <<EOF > /etc/trojan-go/config.json
     "reuse_session": true,
     "plain_http_response": "",
     "fallback_addr": "127.0.0.1",
-    "fallback_port": 2053,
+    "fallback_port": 2096,
     "fingerprint": ""
   },
   "tcp": {
@@ -170,3 +157,16 @@ systemctl daemon-reload
 systemctl daemon-reload
 systemctl enable trojan-go.service
 systemctl start trojan-go
+
+
+# Download
+cd /usr/bin
+wget -O addtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrgo.sh"
+wget -O deltrgo "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgo.sh"
+wget -O renewtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgo.sh"
+wget -O cektrgo "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgo.sh"
+chmod +x addtrgo
+chmod +x deltrgo
+chmod +x renewtrgo
+chmod +x cektrgo
+
