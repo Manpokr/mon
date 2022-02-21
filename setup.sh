@@ -95,9 +95,9 @@ chmod +x ins-vt.sh
 screen -S vt ./ins-vt.sh
 
 #trojango
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-trgo.sh
-chmod +x ins-trgo.sh
-./ins-trgo.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/trojan-go.sh
+chmod +x trojan-go.sh
+./trojan-go.sh
 
 #Backup
 wget https://raw.githubusercontent.com/Manpokr/mon/main/backup/set-br.sh
