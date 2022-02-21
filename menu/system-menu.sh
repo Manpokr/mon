@@ -12,8 +12,9 @@ echo "║ 6.Restore Data VPS                                              ║"
 echo "║ 7.Webmin Menu                                                   ║"
 echo "║ 8.Limit Bandwith Speed Server                                   ║"
 echo "║ 9.Speedtest Server                                              ║"
-echo "║ 10.Reboot VPS                                                    ║"
-echo "║ 11.Exit Menu                                                    ║"
+echo "║ 10.Reboot VPS                                                   ║"
+echo "║ 11.System Running.                                              ║ 
+echo "║ 12.Exit Menu                                                    ║"
 echo "╚═════════════════════════════════════════════════════════════════╝" 
 read -p "     Select From Options [1-10 or x] :  " menu
 case $menu in 
@@ -48,6 +49,9 @@ speedtest
 reboot
 ;;
 11)
+running
+;;
+12)
 exit
 ;;
 *)
