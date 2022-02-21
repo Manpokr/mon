@@ -140,3 +140,91 @@ echo -e " Nginx             : Nginx Service is "$green"running"$NC""
 else                                                                                    
 echo -e " Nginx             : Nginx Service is "$red"not running (Error)"$NC""      
 fi
+status="$(systemctl show xr-vm-tls.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " xr-vm-tls         : xr-vm-tls Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " xr-vm-tls         : xr-vm-tls Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show xr-vm-ntls.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " xr-vm-ntls        : xr-vm-ntls Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " xr-vm-ntls        : xr-vm-ntls Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show xr-vm-mk.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " xr-vm-mk          : xr-vm-mk Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " xr-vm-mk          : xr-vm-mk Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show xr-vl-tls.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " xr-vl-tls         : xr-vl-tls Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " xr-vl-tls         : xr-vl-tls Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show xr-vl-ntls.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " xr-vl-ntls        : xr-vl-ntls Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " xr-vl-ntls        : xr-vl-ntls Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show xtls.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " xtls              : xtls Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " xtls              : xtls Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show x-tr.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " x-tr              : x-tr Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " x-tr              : x-tr Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show dropbear.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " DropBear          : DropBear Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " DropBear          : DropBear Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show dropbear.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " DropBear          : DropBear Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " DropBear          : DropBear Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show dropbear.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " DropBear          : DropBear Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " DropBear          : DropBear Service is "$red"not running (Error)"$NC""        
+fi
+status="$(systemctl show dropbear.service --no-page)"                                   
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                     
+if [ "${status_text}" == "active" ]                                                     
+then                                                                                    
+echo -e " DropBear          : DropBear Service is "$green"running"$NC""                  
+else                                                                                    
+echo -e " DropBear          : DropBear Service is "$red"not running (Error)"$NC""        
+fi
