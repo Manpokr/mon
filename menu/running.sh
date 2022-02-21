@@ -92,13 +92,13 @@ echo -e " Wireguard         : Wireguard Service is "$green"running"$NC""
 else
 echo -e " Wireguard         : Wireguard Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show accel-ppp.service --no-page)"
+status="$(systemctl show websocket.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " SSTP              : SSTP Service is "$green"running"$NC""
+echo -e " websocket         : websocket Service is "$green"running"$NC""
 else
-echo -e " SSTP              : SSTP Service is "$red"not running (Error)"$NC""
+echo -e " websocket         : websocket Service is "$red"not running (Error)"$NC""
 fi
 status="$(systemctl show ssrmu --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
@@ -116,21 +116,21 @@ echo -e " Shadowsocks       : Shadowsocks Service is "$green"running"$NC""
 else
 echo -e " Shadowsocks       : Sadhowsocks Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show xl2tpd.service --no-page)"
+status="$(systemctl show ws-ovpn.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " L2tp              : L2tp Service is "$green"running"$NC""
+echo -e " ws-ovpn           : ws-ovpn Service is "$green"running"$NC""
 else
-echo -e " L2tp              : L2tp Service is "$red"not running (Error)"$NC""
+echo -e " ws-ovpn           : ws-ovpn Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show pptpd.service --no-page)"
+status="$(systemctl show ws-stunnel.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " PPTP              : PPTP Service is "$green"running"$NC""
+echo -e " ws-stunnel        : ws-stunnel Service is "$green"running"$NC""
 else
-echo -e " PPTP              : PPTP Service is "$red"not running (Error)"$NC""
+echo -e " ws-stunnel        : ws-stunnel Service is "$red"not running (Error)"$NC""
 fi
 status="$(systemctl show nginx.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
