@@ -66,11 +66,11 @@ WantedBy=multi-user.target
 END
 
 # Installing Service ws-stunnel
-wget -q -O /usr/local/bin/ws-stunnel https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-stunnel
-chmod +x /usr/local/bin/ws-stunnel
+wget -q -O /usr/local/bin/ws-tls https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-tls
+chmod +x /usr/local/bin/ws-tls
 
 # Create system Service ws-stunnel
-cat > /etc/systemd/system/ws-stunnel.service <<END
+cat > /etc/systemd/system/ws-tls.service <<END
 [Unit]
 Description=SSHSSl
 Documentation=https://github.com/Manpokr/mon
