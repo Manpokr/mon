@@ -224,26 +224,38 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-# install stunnel
-apt install stunnel4 -y
-cat > /etc/stunnel/stunnel.conf <<-END
-pid = /var/run/stunnel.pid
-cert = /etc/stunnel/stunnel.pem
+# install stunnel 5 
+cd /root/
+wget -q -O stunnel5.zip "https://raw.githubusercontent.com/Manpokr/mon/main/addon/stunnel5.zip"
+unzip -o stunnel5.zip
+cd /root/stunnel
+chmod +x configure
+./configure
+make
+make install
+cd /root
+rm -r -f stunnel
+rm -f stunnel5.zip
+mkdir -p /etc/stunnel5
+chmod 644 /etc/stunnel5
+
+
+#  stunnel5
+cat > /etc/stunnel5/stunnel5.conf <<-END
+cert = /etc/xray/xray.crt
+key = /etc/xray/xray.key
 client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 [dropbear]
-accept = 789
+accept = 445
 connect = 127.0.0.1:109
-[dropbear]
+[openssh]
 accept = 777
-connect = 127.0.0.1:22
-[ws-ssl]
-accept = 444
-connect = 700
+connect = 127.0.0.1:443
 [openvpn]
-accept = 442
+accept = 990
 connect = 127.0.0.1:1194
 END
 
