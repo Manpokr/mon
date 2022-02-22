@@ -148,7 +148,8 @@ wget -O /usr/bin/ssr https://raw.githubusercontent.com/Manpokr/mon/main/setup/ss
 wget -O /usr/bin/addssr https://raw.githubusercontent.com/Manpokr/mon/main/add/addssr.sh && chmod +x /usr/bin/addssr
 wget -O /usr/bin/delssr https://raw.githubusercontent.com/Manpokr/mon/main/delssr/delssr.sh && chmod +x /usr/bin/delssr
 wget -O /usr/bin/renewssr https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewssr.sh && chmod +x /usr/bin/renewssr
-wget -O /usr/bin/trialssr https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialssr.sh && chmod +x /usr/bin/trialssr
+wget -O /usr/bin/trialssr wget -O /usr/bin/trialssr https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialssr.sh && chmod +x /usr/bin/trialssr
+ && chmod +x /usr/bin/trialssr
 
 touch /usr/local/shadowsocksr/akun.conf
 rm -f /root/ssr.sh
