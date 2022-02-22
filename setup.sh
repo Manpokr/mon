@@ -19,24 +19,11 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/ip/main/Ipc | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
-clear
-
 # Getting
+
 #Folder
 mkdir /var/lib/Manpokr;
-echo "IP=" >> /var/lib/Manpokr/ipvps.conf
+echo "MYIP=" >> /var/lib/Manpokr/ipvps.conf
 clear
 apt install msmtp-mta ca-certificates bsd-mailx -y
 cat > /etc/msmtprc << EOF
