@@ -22,40 +22,29 @@ LIGHT='\033[0;37m'
 
 # Getting
 
-#KEIZINAN SETUP
-IZIN=$( curl https://raw.githubusercontent.com/Manpokr/m/main/ip | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-echo -e "${green}Permission Accepted...${NC}"
-else
-echo -e "${red}Permission Denied!${NC}";
-echo -e "${red}Daftar IP dalam terlebih dahulu. #${NC}"
-rm -f setup.sh
-exit 0
-fi
-
-#KEIZINAN SCRIPT
-MYIP=$(curl -sS ipv4.icanhazip.com)
-#########################
+MYIP=$(wget -qO- ipinfo.io/ip);
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/Manpokr/m/main/ip | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/Manpokr/m/main/vvv/ip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
     echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
     else
     echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
-    echo -e "\e[31mRenew IP terlebih dahulu #\e[0m"
+    echo -e "\e[31mRenew IP letak tempoh banyak kit okay? hehe syg ktk #\e[0m"
     exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/m/main/ip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/m/main/vvv/ip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
 CEKEXPIRED
 else
 echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mDaftar IP terlebih dahulu.#\e[0m"
+echo -e "\e[31mDaftar IP dalam github lok sayang okay? mun dah daftar tapi masih juak permission denied refresh dolok website ya hehe. Love you #\e[0m"
+rm -f setup.sh
 exit 0
 fi
+clear
 
 #Folder
 mkdir /var/lib/Manpokr;
