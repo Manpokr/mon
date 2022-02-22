@@ -25,7 +25,7 @@ fi
 trgo=$(cat /etc/trojan-go/config.json | grep local_port | sed 's/"//g' | sed 's/local_port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g' | sed 's/     //g')
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		read -rp "Password : " -e user
-		user_EXISTS=$(grep -w $user /etc/trojan-go/config.json | wc -l)
+		user_EXISTS=$(grep -w $user /etc/trojan-go/akun.conf | wc -l)
 
 		if [[ ${user_EXISTS} == '1' ]]; then
 			echo ""
