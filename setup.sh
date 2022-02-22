@@ -23,7 +23,7 @@ LIGHT='\033[0;37m'
 
 #Folder
 mkdir /var/lib/Manpokr;
-echo "MYIP=" >> /var/lib/Manpokr/ipvps.conf
+echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 clear
 apt install msmtp-mta ca-certificates bsd-mailx -y
 cat > /etc/msmtprc << EOF
@@ -39,7 +39,7 @@ account        manternetProject
 host           manternet.xyz
 port           587
 from           Manternet - VPS Services
-user           manpokr@gmail.com
+user           man××××@gmail.com
 password       123456
 account default : manternet
 EOF
