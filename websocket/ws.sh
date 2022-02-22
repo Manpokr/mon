@@ -95,5 +95,5 @@ systemctl daemon-reload
 systemctl enable ws-ovpn
 systemctl restart ws-ovpn
 systemctl daemon-reload
-systemctl enable ws-stunnel
-systemctl restart ws-stunnel
+systemctl enable ws-tls
+systemctl restart ws-tls
