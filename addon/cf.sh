@@ -5,17 +5,18 @@ NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
+clear
 mkdir -p /etc/v2ray
 mkdir -p /etc/xray
 touch /root/domain
 touch /etc/v2ray/domain
 touch /etc/xray/Domain
 apt install jq curl -y
-DOMAIN=manternet.xyz
+DOMAIN=kdev.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.manternet.xyz
-CF_ID=manpokr7@gmail.com
-CF_KEY=7f6afc11c48c8ec0c88fd93427373bd1b1d40
+SUB_DOMAIN=${sub}.kdev.my.id
+CF_ID=fitrixxxshop@gmail.com
+CF_KEY=2e515cdc7e4fd5b796904e3702aec6b1f3a91
 set -euo pipefail
 IP=$(wget -qO- ipinfo.io/ip);
 echo "Updating DNS for ${SUB_DOMAIN}..."
