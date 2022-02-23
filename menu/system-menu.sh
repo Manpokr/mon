@@ -25,7 +25,7 @@ addhost
 changeport
 ;;
 3)
-certv2ray
+cert
 ;;
 4)
 autobackup
