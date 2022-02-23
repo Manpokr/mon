@@ -18,42 +18,43 @@ domain=$(cat /etc/xray/domain)
 # Uuid Service
 uuid=$(cat /proc/sys/kernel/random/uuid)
 
-# Trojan Go Akun 
-mkdir -p /etc/trojan-go/
+# Install Trojan Go
+latest_version="$(curl -s "https://api.github.com/repos/p4gefau1t/trojan-go/releases" | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+trojango_link="https://github.com/p4gefau1t/trojan-go/releases/download/v${latest_version}/trojan-go-linux-amd64.zip"
+mkdir -p "/usr/bin/trojan-go"
+mkdir -p "/etc/trojan-go"
+cd `mktemp -d`
+curl -sL "${trojango_link}" -o trojan-go.zip
+unzip -q trojan-go.zip && rm -rf trojan-go.zip
+mv trojan-go /usr/local/bin/trojan-go
+chmod +x /usr/local/bin/trojan-go
+mkdir /var/log/trojan-go/
 touch /etc/trojan-go/akun.conf
-touch /etc/trojan-go/uuid.txt
-
-# Installing Trojan Go
-mkdir -p /etc/trojan-go/
-chmod 777 /etc/trojan-go/
 touch /etc/trojan-go/trojan-go.pid
-wget -O /etc/trojan-go/trojan-go https://github.com/Manpokr/mon/raw/main/trojan-go
-wget -O /etc/trojan-go/geoip.dat https://raw.githubusercontent.com/Manpokr/mon/main/addon/geoip.dat
-wget -O /etc/trojan-go/geosite.dat https://raw.githubusercontent.com/Manpokr/mon/main/addon/geosite.dat
-chmod +x /etc/trojan-go/trojan-go
-cat <<EOF > /etc/trojan-go/config.json
+touch /var/log/trojan-go/trojan-go.log
 {
-    "run_type": "server",
-    "local_addr": "0.0.0.0",
-    "local_port": 2096,
-    "remote_addr": "127.0.0.1",
-    "remote_port": 81,
-    "log_level": 1,
-    "log_file": "/var/log/trojan-go.log",
-    "password": [
-        "$uuid"
-    ],
-  "disable_http_check": false,
+  "run_type": "server",
+  "local_addr": "0.0.0.0",
+  "local_port": 2053,
+  "remote_addr": "127.0.0.1",
+  "remote_port": 88,
+  "log_level": 1,
+  "log_file": "/var/log/trojan-go/trojan-go.log",
+ "password": [
+      "$uuid"
+  ],
+  },
+  "disable_http_check": true,
   "udp_timeout": 60,
   "ssl": {
-    "verify": true,
-    "verify_hostname": true,
+    "verify": false,
+    "verify_hostname": false,
     "cert": "/etc/xray/xray.crt",
     "key": "/etc/xray/xray.key",
     "key_password": "",
-    "cipher": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+    "cipher": "",
     "curves": "",
-    "prefer_server_cipher": true,
+    "prefer_server_cipher": false,
     "sni": "$domain",
     "alpn": [
       "http/1.1"
@@ -62,64 +63,25 @@ cat <<EOF > /etc/trojan-go/config.json
     "reuse_session": true,
     "plain_http_response": "",
     "fallback_addr": "127.0.0.1",
-    "fallback_port": 2096,
-    "fingerprint": ""
+    "fallback_port": 0,
+    "fingerprint": "firefox"
   },
   "tcp": {
     "no_delay": true,
     "keep_alive": true,
-    "prefer_ipv4": false
+    "prefer_ipv4": true
   },
   "mux": {
-    "enabled": true,
-    "concurrency": 64,
+    "enabled": false,
+    "concurrency": 8,
     "idle_timeout": 60
-  },
-  "router": {
-    "enabled": true,
-    "bypass": [],
-    "proxy": [],
-    "block": [],
-    "default_policy": "proxy",
-    "domain_strategy": "as_is",
-    "geoip": "/etc/trojan-go/geoip.dat",
-    "geosite": "/etc/trojan-go/geosite.dat"
   },
   "websocket": {
     "enabled": true,
-    "path": "/brody",
+    "path": "/gandring",
     "host": "$domain"
   },
-  "shadowsocks": {
-    "enabled": false,
-    "method": "AES-128-GCM",
-    "password": ""
-  },
-  "transport_plugin": {
-    "enabled": false,
-    "type": "",
-    "command": "",
-    "plugin_option": "",
-    "arg": [],
-    "env": []
-  },
-  "forward_proxy": {
-    "enabled": false,
-    "proxy_addr": "",
-    "proxy_port": 0,
-    "username": "",
-    "password": ""
-  },
-  "mysql": {
-    "enabled": false,
-    "server_addr": "localhost",
-    "server_port": 3306,
-    "database": "",
-    "username": "",
-    "password": "",
-    "check_rate": 60
-  },
-  "api": {
+    "api": {
     "enabled": false,
     "api_addr": "",
     "api_port": 0,
@@ -132,38 +94,47 @@ cat <<EOF > /etc/trojan-go/config.json
     }
   }
 }
+END
+  
 EOF
 cat <<EOF > /etc/systemd/system/trojan-go.service
 [Unit]
-Description=Trojan-Go 
-Documentation=https://p4gefau1t.github.io/trojan-go/
+Description=Trojan-Go Service By Manternet
+Documentation=https://github.com/Manpokr/mon/main/
+Documentation=https://github.com/Manpokr/mon/main/
 After=network.target nss-lookup.target
 [Service]
-User=root
+Type=simple
+StandardError=journal
+PIDFile=/etc/trojan-go/trojan-go.pid
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/etc/trojan-go/trojan-go -config /etc/trojan-go/config.json
+ExecStart=/usr/local/bin/trojan-go -config /etc/trojan-go/config.json
+LimitNOFILE=65535
 Restart=on-failure
-RestartSec=10s
-LimitNOFILE=infinity
+RestartSec=1s
 [Install]
 WantedBy=multi-user.target
+END
 
-EOF
-
-cat <<EOF > /etc/trojan-go/uuid.txt
+# Trojan Go Uuid
+cat > /etc/trojan-go/uuid.txt << END
 $uuid
-EOF
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
-iptables-save >/etc/iptables.rules.v4
+END
+
+# restart
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2053 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2053 -j ACCEPT
+iptables-save > /etc/iptables.up.rules
+iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 systemctl daemon-reload
-
-# Starting
-systemctl daemon-reload
-systemctl enable trojan-go.service
+systemctl stop trojan-go
 systemctl start trojan-go
+systemctl enable trojan-go
+systemctl restart trojan-go
 
 # Download
 cd /usr/bin
