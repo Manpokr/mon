@@ -148,12 +148,12 @@ RestartSec=10s
 LimitNOFILE=infinity
 [Install]
 WantedBy=multi-user.target
-END
+EOF
 
 # Trojan uuid
 cat <<EOF > /etc/trojan-go/uuid.txt
 $uuid
-END
+EOF
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
 iptables-save >/etc/iptables.rules.v4
