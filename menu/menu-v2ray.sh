@@ -15,7 +15,11 @@ echo "║ 9.Renews Account VMess                                          ║"
 echo "║ 10.Renews Account VLess                                         ║"
 echo "║ 11.Renews Account Trojan                                        ║"
 echo "║ 12.Renews Account Trojan-go                                     ║"
-echo "║ 13.Exit Menu                                                    ║"
+echo "║ 13.Check User Login Vmess                                       ║"
+echo "║ 14 Check User Login Vless                                       ║"
+echo "║ 15.Check User Login Trojan                                      ║"
+echo "║ 16.Check User Login Trojan-Go                                   ║"
+echo "║ 17.Exit Menu                                                    ║"                                   ║"
 echo "╚═════════════════════════════════════════════════════════════════╝" 
 read -p "     Select From Options [1-10 ] :  " menu
 case $menu in 
@@ -55,7 +59,19 @@ renewtrojan
 12)
 renewtrgo
 ;;
-10)
+13)
+cekvmess
+;;
+14)
+cekvless
+;;
+15)
+cektrojan
+;;
+16)
+cektrgo
+;;
+17)
 exit
 ;;
 *)
