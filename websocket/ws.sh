@@ -66,11 +66,11 @@ WantedBy=multi-user.target
 END
 
 # Installing Service ws-stunnel
-wget -q -O /usr/local/bin/ws-tls https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-tls
-chmod +x /usr/local/bin/ws-tls
+wget -q -O /usr/local/bin/ws-tls https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws-stunnel
+chmod +x /usr/local/bin/ws-stunnel
 
 # Create system Service ws-stunnel
-cat > /etc/systemd/system/ws-tls.service <<END
+cat > /etc/systemd/system/ws-stunnel.service <<END
 [Unit]
 Description=SSHSSl
 Documentation=https://github.com/Manpokr/mon
@@ -82,7 +82,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-tls 443
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-stunnel 443
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
@@ -95,5 +95,5 @@ systemctl daemon-reload
 systemctl enable ws-ovpn
 systemctl restart ws-ovpn
 systemctl daemon-reload
-systemctl enable ws-tls
-systemctl restart ws-tls
+systemctl enable ws-stunnel
+systemctl restart ws-stunnel
