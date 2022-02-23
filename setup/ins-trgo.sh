@@ -32,6 +32,9 @@ mkdir /var/log/trojan-go/
 touch /etc/trojan-go/akun.conf
 touch /etc/trojan-go/trojan-go.pid
 touch /var/log/trojan-go/trojan-go.log
+
+# Buat Config Trojan Go
+cat > /etc/trojan-go/config.json << END
 {
   "run_type": "server",
   "local_addr": "0.0.0.0",
@@ -96,8 +99,9 @@ touch /var/log/trojan-go/trojan-go.log
 }
 END
   
-EOF
-cat <<EOF > /etc/systemd/system/trojan-go.service
+# Installing Trojan Go Service
+cat > /etc/systemd/system/trojan-go.service << END
+
 [Unit]
 Description=Trojan-Go Service By Manternet
 Documentation=https://github.com/Manpokr/mon/main/
