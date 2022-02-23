@@ -124,13 +124,13 @@ echo -e " ws-ovpn           : ws-ovpn Service is "$green"running"$NC""
 else
 echo -e " ws-ovpn           : ws-ovpn Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show ws-stunnel.service --no-page)"
+status="$(systemctl show ws-tls.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " ws-stunnel        : ws-stunnel Service is "$green"running"$NC""
+echo -e " ws-tls            : ws-tls Service is "$green"running"$NC""
 else
-echo -e " ws-stunnel        : ws-stunnel Service is "$red"not running (Error)"$NC""
+echo -e " ws-tls            : ws-tls Service is "$red"not running (Error)"$NC""
 fi
 status="$(systemctl show nginx.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
