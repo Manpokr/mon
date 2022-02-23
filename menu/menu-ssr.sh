@@ -8,8 +8,11 @@ echo "║ 2.Create Shadowsocks Accounts                                   ║"
 echo "║ 3.Delete ShadowsocksR Accounts                                  ║"
 echo "║ 4.Delete Shadowsocks Accounts                                   ║"
 echo "║ 5.Renew ShadowsocksR Accounts                                   ║"
-echo "║ 6.Renew Shadowsocks Accounts                                    ║"
-echo "║ 7.Exit                                                          ║"
+echo "║ 6.Renew Shadowsocks Accounts                                    ║"                                     ║"
+echo "║ 7.Trial ShadowsocksR Accounts                                   ║"
+echo "║ 8.Trial Shadowsocks Accounts                                    ║"
+echo "║ 9.Check User Login SS/SSR                                       ║"   
+echo "║ 10.Exit Menu                                                    ║"
 echo "╚═════════════════════════════════════════════════════════════════╝" 
 read -p "Select From Options [1-7] :  " menu
 case $menu in 
@@ -32,7 +35,16 @@ renewssr
 renewss
 ;;
 7)
-exit
+trialssr
+;;
+8)
+trialss
+;;
+9)
+cekss
+;;
+10)
+menu
 ;;
 *)
 echo "Input The Correct Number !"
