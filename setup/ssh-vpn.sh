@@ -339,7 +339,7 @@ wget -O changeport "https://raw.githubusercontent.com/Manpokr/mon/main/addon/cha
 wget -O wbmn "https://raw.githubusercontent.com/Manpokr/mon/main/setup/webmin.sh"
 wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
-wget -O cert "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
 chmod +x addhost
 chmod +x menu
 chmod +x addssh
@@ -362,7 +362,7 @@ chmod +x changeport
 chmod +x wbmn
 chmod +x xp
 chmod +x swapkvm
-chmod +x cert
+chmod +x certv2ray
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
