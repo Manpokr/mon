@@ -92,13 +92,13 @@ echo -e " Wireguard         : Wireguard Service is "$green"running"$NC""
 else
 echo -e " Wireguard         : Wireguard Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show websocket.service --no-page)"
+status="$(systemctl show shadowsocks-libev.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " websocket         : websocket Service is "$green"running"$NC""
+echo -e " Shadowsocks       : Shadowsocks Service is "$green"running"$NC""
 else
-echo -e " websocket         : websocket Service is "$red"not running (Error)"$NC""
+echo -e " Shadowsocks       : Shadowsocks Service is "$red"not running (Error)"$NC""
 fi
 status="$(systemctl show ssrmu --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
@@ -108,13 +108,13 @@ echo -e " SSR               : SSR Service is "$green"running"$NC""
 else
 echo -e " SSR               : SSR Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show shadowsocks-libev.service --no-page)"
+status="$(systemctl show websocket.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Shadowsocks       : Shadowsocks Service is "$green"running"$NC""
+echo -e " websocket         : websocket Service is "$green"running"$NC""
 else
-echo -e " Shadowsocks       : Sadhowsocks Service is "$red"not running (Error)"$NC""
+echo -e " websocket         : websocket Service is "$red"not running (Error)"$NC""
 fi
 status="$(systemctl show ws-ovpn.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
@@ -124,13 +124,13 @@ echo -e " ws-ovpn           : ws-ovpn Service is "$green"running"$NC""
 else
 echo -e " ws-ovpn           : ws-ovpn Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show ws-tls.service --no-page)"
+status="$(systemctl show ws-stunnel.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " ws-tls            : ws-tls Service is "$green"running"$NC""
+echo -e " ws-stunnel        : ws-stunnel Service is "$green"running"$NC""
 else
-echo -e " ws-tls            : ws-tls Service is "$red"not running (Error)"$NC""
+echo -e " ws-stunnel        : ws-stunnel Service is "$red"not running (Error)"$NC""
 fi
 status="$(systemctl show nginx.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
