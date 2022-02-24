@@ -6,20 +6,6 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/castleUI/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
-if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
-else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f setup.sh
-exit 0
-fi
-rm -f setup.sh
-clear
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
 clear
 # Domain 
@@ -47,7 +33,7 @@ cat <<EOF > /etc/trojan-go/config.json
     "local_addr": "0.0.0.0",
     "local_port": 2096,
     "remote_addr": "127.0.0.1",
-    "remote_port": 81,
+    "remote_port": 89,
     "log_level": 1,
     "log_file": "/var/log/trojan-go.log",
     "password": [
@@ -180,6 +166,7 @@ LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
+EOF
 
 cat <<EOF > /etc/trojan-go/uuid.txt
 $uuid
