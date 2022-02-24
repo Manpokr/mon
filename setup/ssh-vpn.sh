@@ -293,9 +293,6 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
-# Install BBR
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh && chmod +x bbr.sh && ./bbr.sh
-
 # Ganti Banner
 wget -O /etc/issue.net "https://raw.githubusercontent.com/Manpokr/mon/main/addon/issue.net"
 
@@ -340,7 +337,7 @@ wget -O wbmn "https://raw.githubusercontent.com/Manpokr/mon/main/setup/webmin.sh
 wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
-wget -O bbr wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh
+wget -O bbr https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh
 chmod +x addhost
 chmod +x menu
 chmod +x addssh
