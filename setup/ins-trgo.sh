@@ -187,10 +187,10 @@ systemctl start trojan-go
 
 #trojango
 cd /usr/bin
-wget -O https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrgo.sh
-wget -O https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgo.sh
-wget -O https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgo.sh
-wget -O https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgo.sh
+wget -O addtrgo https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrgo.sh
+wget -O cektrgo https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgo.sh
+wget -O deltrgo https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgo.sh
+wget -O renewtrgo https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgo.sh
 
 chmod +x addtrgo
 chmod +x cektrgo
