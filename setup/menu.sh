@@ -1,8 +1,8 @@
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e        " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
-echo -e        " ║            AutoScript VPN By Manternet       ║ "|lolcat
-echo -e        " ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "|lolcat
+        echo -e ".   <><><><>><><>><><><>><><>><><><>><<>><><><>><><><><>><><<>><><>><>><> "|lolcat
+        echo -e        " ║               AutoScript VPN By Manternet            ║ "|lolcat
+        echo -e ".   <><><><>><><><>><>><><><>><><><><><>><><><>><><><>><><><><>><><><><>> "|lolcat
         echo -e "   \e[032;1mUPTIME:\e[0m $(neofetch | grep Uptime | cut -d " " -f 2-100)" | lolcat
 	echo -e "   \e[032;1mDOMAIN:\e[0m $(cat /etc/xray/domain)" | lolcat
 	echo -e "   \e[033;1mIPVPS :\e[0m $MYIP" | lolcat
@@ -69,7 +69,7 @@ menu-xray
 addhost
 ;;
 8)
-certv2ray
+cert
 ;;
 9)
 change-port
