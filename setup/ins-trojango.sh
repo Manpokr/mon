@@ -7,7 +7,7 @@ NC='\e[0m'
 MYIP=$(wget -qO- ifconfig.me/ip);
 clear
 # Domain 
-domain=$(cat /etc/v2ray/domain)
+domain=$(cat /etc/xray/domain)
 
 # Uuid Service
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -42,8 +42,8 @@ cat <<EOF > /etc/trojan-go/config.json
   "ssl": {
     "verify": true,
     "verify_hostname": true,
-    "cert": "/etc/v2ray/v2ray.crt",
-    "key": "/etc/v2ray/v2ray.key",
+    "cert": "/etc/xray/xray.crt",
+    "key": "/etc/xray/xray.key",
     "key_password": "",
     "cipher": "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256:TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
     "curves": "",
