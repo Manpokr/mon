@@ -183,7 +183,7 @@ systemctl daemon-reload
 systemctl enable trojan-go.service
 systemctl start trojan-go
 systemctl enable trojan-go@.service
-systemctl start trojan-go
+systemctl start trojan-go@
 
 #trojango
 cd /usr/bin
