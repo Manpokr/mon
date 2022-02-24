@@ -72,7 +72,7 @@ addhost
 cert
 ;;
 9)
-change-port
+changeport
 ;;
 10)
 backup
@@ -102,7 +102,7 @@ ram
 reboot
 ;;
 19)
-speedtest
+bbr
 ;;
 20)
 info
