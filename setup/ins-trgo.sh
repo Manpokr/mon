@@ -133,7 +133,6 @@ cat <<EOF > /etc/systemd/system/trojan-go.service
 Description=Trojan-Go 
 Documentation=https://p4gefau1t.github.io/trojan-go/
 After=network.target nss-lookup.target
-
 [Service]
 User=root
 NoNewPrivileges=true
@@ -141,30 +140,9 @@ ExecStart=/etc/trojan-go/trojan-go -config /etc/trojan-go/config.json
 Restart=on-failure
 RestartSec=10s
 LimitNOFILE=infinity
-
 [Install]
 WantedBy=multi-user.target
-
 EOF
-
-cat <<EOF > /etc/systemd/system/trojan-go@.service 
-[Unit]
-Description=Trojan-Go
-Documentation=https://p4gefau1t.github.io/trojan-go/
-After=network.target nss-lookup.target
-
-[Service]
-User=root
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/etc/trojan-go/trojan-go -config /etc/trojan-go/%i.json
-Restart=on-failure
-RestartSec=10s
-LimitNOFILE=infinity
-
-[Install]
-WantedBy=multi-user.target
 
 cat <<EOF > /etc/trojan-go/uuid.txt
 $uuid
