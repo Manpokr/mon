@@ -2,8 +2,6 @@
 
 clear
 neofetch --ascii_distro virus echo && echo "AutoScript By Manternet" &&  echo "t.me/Manternet" 
-echo ""
-echo "Installation has been completed!!"
 echo " "
 echo "♤♤♤♤Script Install Vpn By Manternet♤♤♤♤" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
