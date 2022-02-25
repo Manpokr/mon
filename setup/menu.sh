@@ -69,7 +69,7 @@ menu-xray
 addhost
 ;;
 8)
-cert
+certv2ray
 ;;
 9)
 changeport
