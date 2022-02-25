@@ -83,7 +83,7 @@ cat <<EOF > /etc/trojan-go/config.json
   },
   "websocket": {
     "enabled": true,
-    "path": "/brody",
+    "path": "/TrGo",
     "host": "$domain"
   },
   "shadowsocks": {
