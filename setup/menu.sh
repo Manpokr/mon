@@ -1,4 +1,9 @@
+yl='\e[031;1m'
+bl='\e[36;1m'
+gl='\e[32;1m'
 
+clear 
+cat /usr/bin/bannerku | lolcat
 MYIP=$(curl -sS ipv4.icanhazip.com)
         echo -e "    <><><><>><><>><><><>><><>><><><>><<>><><><>><><><><>><><<>><><>><>><> "|lolcat
         echo -e "                      AutoScript VPN By Manternet                         "|lolcat
