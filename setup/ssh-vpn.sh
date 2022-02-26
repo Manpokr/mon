@@ -196,7 +196,7 @@ RUN=yes
 # systemd users: don't forget to modify /lib/systemd/system/sslh.service
 DAEMON=/usr/sbin/sslh
 
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:445 --ssl 127.0.0.1:777 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:2093 --ssl 127.0.0.1:777 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
 
 END
 
@@ -239,7 +239,7 @@ rm -f stunnel5.zip
 mkdir -p /etc/stunnel5
 chmod 644 /etc/stunnel5
 # install wstunnel wireguard
-wget -q -O wstunnel-64-linux "https://raw.githubusercontent.com/Gandring15/vps/main/wstunnel-x64-linux"
+wget -q -O wstunnel-64-linux "https://raw.githubusercontent.com/Manpokr/mon/main/addon/wstunnel-x64-linux"
 cd
 mkdir -p wstunnel /etc/ /usr/local/bin/wstunnel
 sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/wstunnel
@@ -299,10 +299,10 @@ cat > /etc/systemd/system/stunnel5.service << END
 [Unit]
 Description=Stunnel5 Service
 Documentation=https://stunnel.org
-Documentation=https://github.com/Gandring15/vps/main/
+Documentation=https://github.com/Manpokr/mon/main/
 After=syslog.target network-online.target
 [Service]
-ExecStart=/usr/local/gandring/stunnel5 /etc/stunnel5/stunnel5.conf
+ExecStart=/usr/local/Manpokr/stunnel5 /etc/stunnel5/stunnel5.conf
 Type=forking
 [Install]
 WantedBy=multi-user.target
@@ -317,7 +317,7 @@ wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/Manpokr/mon/m
 # Ubah Izin Akses
 chmod 600 /etc/stunnel5/stunnel5.pem
 chmod +x /etc/init.d/stunnel5
-cp /usr/local/bin/stunnel /usr/local/gandring/stunnel5
+cp /usr/local/bin/stunnel /usr/local/Manpokr/stunnel5
 
 # Remove File
 #rm -r -f /usr/local/share/doc/stunnel/
@@ -463,7 +463,7 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/dropbear restart
 /etc/init.d/fail2ban restart
 /etc/init.d/sslh restart
-/etc/init.d/stunnel4 restart
+/etc/init.d/stunnel5 restart
 /etc/init.d/vnstat restart
 /etc/init.d/fail2ban restart
 /etc/init.d/squid restart
