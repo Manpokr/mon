@@ -25,34 +25,21 @@ LIGHT='\033[0;37m'
 mkdir /var/lib/Manpokr;
 echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 clear
-apt install msmtp-mta ca-certificates bsd-mailx -y
-cat > /etc/msmtprc << EOF
-defaults
-port 587
-tls on
-tls_trust_file /etc/ssl/certs/ca-certificates.crt
-auth on
-logfile        ~/.msmtp.log
-
-# akun smpt
-account        manternetProject
-host           manternet.xyz
-port           587
-from           Manternet - VPS Services
-user           man××××@gmail.com
-password       123456
-account default : manternet
-EOF
-
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(cat /etc/ip | grep $MYIP | awk '{print $2}')
-echo "
-━━━━━━━━━━━━━━━━━━━━━
-Client Installation Data
-━━━━━━━━━━━━━━━━━━━━━
-Username : $Name
-IP       : $MYIP
-━━━━━━━━━━━━━━━━━━━━━" | mail -s "Client Installation Data" manpokr7@gmail.com 
+clear
+echo '============================================='
+
+echo "Sila Masukkan DOMAIN, Jika TIADA KLIK Enter"
+
+echo '============================================='
+
+read -p "Hostname / Domain: " domain
+
+echo "IP=$domain" >> /var/lib/Manpokr/ipvps.conf
+
+echo $domain > /etc/xray/domain
+cp /etc/xray/domain /root/domain
+cp /etc/xray/domain /etc/v2ray/domain
 
 #Warna
 apt install lolcat -y
