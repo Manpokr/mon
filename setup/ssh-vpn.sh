@@ -224,10 +224,52 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-#  stunnel4
-apt install stunnel4 -y
-cat > /etc/stunnel/stunnel.conf <<-END
-cert = /etc/stunnel/stunnel.pem
+# Stunnel5
+cd /root/
+wget -q -O stunnel5.zip "https://raw.githubusercontent.com/Manpokr/mon/main/addon/stunnel5.zip"
+unzip -o stunnel5.zip
+cd /root/stunnel
+chmod +x configure
+./configure
+make
+make install
+cd /root
+rm -r -f stunnel
+rm -f stunnel5.zip
+mkdir -p /etc/stunnel5
+chmod 644 /etc/stunnel5
+# install wstunnel wireguard
+wget -q -O wstunnel-64-linux "https://raw.githubusercontent.com/Gandring15/vps/main/wstunnel-x64-linux"
+cd
+mkdir -p wstunnel /etc/ /usr/local/bin/wstunnel
+sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/wstunnel
+cat > /etc/systemd/system/wstunnel.service
+[Unit]
+Description=Tunnel WG UDP over websocket
+After=network.target
+
+[Service]
+Type=simple 
+User=nobody 
+ExecStart=/usr/local/bin/wstunnel -v --server wss://0.0.0.0:443 --restrictTo=127.0.0.1:636
+Restart=no 
+
+[Install] 
+WantedBy=multi-user.target
+END
+sudo systemctl enable wstunnel
+sudo systemctl start wstunnel
+
+sudo systemctl enable wsstunnel
+sudo systemctl start wsstunnel
+apt update && apt install -y curl jq
+sed -i $IP2 /etc/local/bin/wstunnel
+cp wstunnel /usr/local/bin/wstunnel
+mkdir -p wstunnel > /etc/wireguard/wstunnel.conf
+cat > /etc/wireguard/wstunnel.conf
+# Download Config Stunnel5
+cat > /etc/stunnel5/stunnel5.conf <<-END
+cert = /etc/stunnel5/stunnel5.pem
 client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
@@ -235,12 +277,12 @@ socket = r:TCP_NODELAY=1
 [dropbear]
 accept = 789
 connect = 127.0.0.1:109
-[dropbear]
-accept = 777
-connect = 127.0.0.1:22
-[ws-stunnel]
-accept = 700
-connect = 443
+[openssh]
+accept = 447
+connect = 127.0.0.1:222
+[stunnel5]
+accept = 445
+connect = 127.0.0.22
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
@@ -252,9 +294,47 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
-# konfigurasi stunnel
-sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-/etc/init.d/stunnel4 restart
+# Service Stunnel5 systemctl restart stunnel5
+cat > /etc/systemd/system/stunnel5.service << END
+[Unit]
+Description=Stunnel5 Service
+Documentation=https://stunnel.org
+Documentation=https://github.com/Gandring15/vps/main/
+After=syslog.target network-online.target
+[Service]
+ExecStart=/usr/local/gandring/stunnel5 /etc/stunnel5/stunnel5.conf
+Type=forking
+[Install]
+WantedBy=multi-user.target
+END
+
+# Service Stunnel5 /etc/init.d/stunnel5
+wget -q -p https://github.com/actions/python-versions/releases/download/3.11.0-alpha.4-1754961913/python-3.11.0-alpha.4-linux-20.04-x64.tar.gz"
+chmod +x python-3.11.0-alpha.4-linux-20.04-x64.tar.gz
+chmod +x /etc/python3.11/site_customize.py
+wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/Manpokr/mon/main/addon/stunnel5.init && chmod +x stunnel5.init && ./stunnel5.init
+
+# Ubah Izin Akses
+chmod 600 /etc/stunnel5/stunnel5.pem
+chmod +x /etc/init.d/stunnel5
+cp /usr/local/bin/stunnel /usr/local/gandring/stunnel5
+
+# Remove File
+#rm -r -f /usr/local/share/doc/stunnel/
+rm -r -f /usr/local/etc/stunnel/
+rm -f /usr/local/bin/stunnel
+rm -f /usr/local/bin/stunnel3
+rm -f /usr/local/bin/stunnel4
+#rm -f /usr/local/bin/stunnel5
+
+# Restart Stunnel 5
+systemctl stop stunnel5
+systemctl enable stunnel5
+systemctl start stunnel5
+systemctl restart stunnel5
+/etc/init.d/stunnel5 restart
+/etc/init.d/stunnel5 status
+/etc/init.d/stunnel5 restart
 
 #OpenVPN
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
