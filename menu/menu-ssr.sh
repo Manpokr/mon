@@ -1,21 +1,31 @@
 #!/bin/bash
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+bd='\e[1m'
+bl='\e[36;1m'
+color1='\e[031;1m'
+color2='\e[34;1m'
+color3='\e[0m'
+IP=$(wget -qO- ipinfo.io/ip);
 clear
-echo "╔═════════════════════════════════════════════════════════════════╗"
-echo "║                       ┃ SSR / SS  Menu ┃                        ║" 
-echo "╚═════════════════════════════════════════════════════════════════╝" 
-echo "║ 1.Create ShadowsocksR Accounts                                  ║"
-echo "║ 2.Create Shadowsocks Accounts                                   ║"
-echo "║ 3.Delete ShadowsocksR Accounts                                  ║"
-echo "║ 4.Delete Shadowsocks Accounts                                   ║"
-echo "║ 5.Renew ShadowsocksR Accounts                                   ║"
-echo "║ 6.Renew Shadowsocks Accounts                                    ║"                                     ║"
-echo "║ 7.Trial ShadowsocksR Accounts                                   ║"
-echo "║ 8.Trial Shadowsocks Accounts                                    ║"
-echo "║ 9.Check User Login SS/SSR                                       ║"   
-echo "║ 10.Exit Menu                                                    ║"
-echo "╚═════════════════════════════════════════════════════════════════╝" 
-read -p "Select From Options [1-7] :  " menu
-case $menu in 
+echo "╔═════════════════════════════════════════════════════════════════╗" | lolcat
+echo "║                       ┃ SSR / SS  Menu ┃                        ║"  | lolcat
+echo "╚═════════════════════════════════════════════════════════════════╝"  | lolcat
+echo -e""
+echo -e "${color1}1${color3}.$bd  Create Account ShadowsocksR(${color2}addssr${color3})"
+echo -e "${color1}2${color3}.$bd  Create Account Shadowsocks  (${color2}addss${color3})"
+echo -e "${color1}3${color3}.$bd  Delete Account ShadowsocksR (${color2}delssr${color3})"
+echo -e "${color1}4${color3}.$bd  Delete Account Shadowsocks (${color2}delss${color3})"
+echo -e "${color1}5${color3}.$bd  Renew Account ShadowsocksR  (${color2}renewssr${color3})"
+echo -e "${color1}6${color3}.$bd  Renew Account Shadowsocks (${color2}renewss${color3})"
+echo -e "${color1}7${color3}.$bd  Check User Login Ss & Ssr (${color2}cekss${color3})"
+echo -e""
+echo -e "${color1}x${color3}.$bd Menu"
+echo -e""
+read -p " Please Enter The Number  [1-8 or x] :  "  menu
+echo -e ""
+case $menu in
 1)
 addssr
 ;;
@@ -35,18 +45,13 @@ renewssr
 renewss
 ;;
 7)
-trialssr
-;;
-8)
-trialss
-;;
-9)
 cekss
 ;;
-10)
+x)
 menu
 ;;
 *)
-echo "Input The Correct Number !"
+echo "Masukkan Nomor Yang Ada"
+sleep 1
 ;;
 esac
