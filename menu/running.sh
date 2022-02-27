@@ -3,7 +3,8 @@ red="\e[1;31m"
 green="\e[0;32m"
 NC="\e[0m"
 clear
-
+echo "                     ┃ Running MENU ┃        " | lolcat
+echo ""
 status="$(systemctl show ssh.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
@@ -12,13 +13,13 @@ echo -e " SSH               : SSH Service is "$green"running"$NC""
 else
 echo -e " SSh               : SSH Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show stunnel4.service --no-page)"
+status="$(systemctl show stunnel5.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
 then
-echo -e " Stunnel           : Stunnel Service is "$green"running"$NC""
+echo -e " Stunnel5          : Stunnel5 Service is "$green"running"$NC""
 else
-echo -e " Stunnel           : Stunnel Service is "$red"not running (Error)"$NC""
+echo -e " Stunnel5          : Stunnel5 Service is "$red"not running (Error)"$NC""
 fi
 status="$(systemctl show dropbear.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
