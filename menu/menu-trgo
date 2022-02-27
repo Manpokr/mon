@@ -33,9 +33,11 @@ renewtrgo
 cektrgo
 ;;
 x)
-menu
+exit
 ;;
 *)
 echo "Please enter an correct number"
+sleep 1
+menu-trgo
 ;;
 esac
