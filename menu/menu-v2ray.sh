@@ -1,28 +1,33 @@
 #!/bin/bash
-clear
-echo "╔═════════════════════════════════════════════════════════════════╗"
-echo "║                      ┃ V2Ray Core MENU ┃                        ║" 
-echo "╚═════════════════════════════════════════════════════════════════╝" 
-echo "║ 1.Create Account VMess                                          ║"
-echo "║ 2.Create Account VLess                                          ║"
-echo "║ 3.Create Account Trojan                                         ║"
-echo "║ 4.Create Account Trojan-go                                      ║"
-echo "║ 5.Delete Account VMess                                          ║"
-echo "║ 6.Delete Account VLess                                          ║"
-echo "║ 7.Delete Account Trojan                                         ║"
-echo "║ 8.Delete Account Trojan-go                                      ║"
-echo "║ 9.Renews Account VMess                                          ║"
-echo "║ 10.Renews Account VLess                                         ║"
-echo "║ 11.Renews Account Trojan                                        ║"
-echo "║ 12.Renews Account Trojan-go                                     ║"
-echo "║ 13.Check User Login Vmess                                       ║"
-echo "║ 14 Check User Login Vless                                       ║"
-echo "║ 15.Check User Login Trojan                                      ║"
-echo "║ 16.Check User Login Trojan-Go                                   ║"
-echo "║ 17.Exit Menu                                                    ║"                                   ║"
-echo "╚═════════════════════════════════════════════════════════════════╝" 
-read -p "     Select From Options [1-10 ] :  " menu
-case $menu in 
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+bl='\e[36;1m'
+bd='\e[1m'
+color1='\e[031;1m'
+color2='\e[34;1m'
+color3='\e[0m'
+IP=$(wget -qO- ipinfo.io/ip);
+echo "                     ┃ V2Ray Core MENU ┃        " | lolcat
+echo -e""
+echo -e "${color1}1${color3}.$bd Create Account Vmess Websocket (${color2}addv2ray${color3})"
+echo -e "${color1}2${color3}.$bd Create Account Vless Websocket (${color2}addv2ray${color3})"
+echo -e "${color1}3${color3}.$bd Create Account Trojan (${color2}addv2ray${color3})"
+echo -e "${color1}4${color3}.$bd Delete Account Vmess Websocket (${color2}addv2ray${color3})"
+echo -e "${color1}5${color3}.$bd Delete Account Vless Websocket (${color2}addv2ray${color3})"
+echo -e "${color1}6${color3}.$bd Delete Account Trojan (${color2}addv2ray${color3})"
+echo -e "${color1}7${color3}.$bd Renew Account Vmess Websocket (${color2}addv2ray${color3})"
+echo -e "${color1}8${color3}.$bd Renew Account Vless Websocket (${color2}addv2ray${color3})"
+echo -e "${color1}9${color3}.$bd Renew Account Trojan (${color2}addv2ray${color3})"
+echo -e "${color1}10${color3}.$bd Check Account Vmess Websocket (${color2}addv2ray${color3})"
+echo -e "${color1}11${color3}.$bd Check Account Vless Websocket (${color2}addv2ray${color3})"
+echo -e "${color1}12${color3}.$bd Check Account Trojan (${color2}addv2ray${color3})"
+echo -e""
+echo -e "${color1}x${color3}.$bd Menu"
+echo -e""
+read -p " silahkan masukkan nomor [1-8 or x] :  "  menu
+echo -e ""
+case $menu in
 1)
 addvmess
 ;;
@@ -33,48 +38,38 @@ addvless
 addtrojan
 ;;
 4)
-addtrgo
-;;
-5)
 delvmess
 ;;
-7)
+5)
 delvless
 ;;
-7)
+6)
 deltrojan
 ;;
-8)
-deltrgo
-;;
-9)
+7)
 renewvmess
 ;;
-10)
+8)
 renewvless
 ;;
-11)
+9)
 renewtrojan
 ;;
-12)
-renewtrgo
-;;
-13)
+10)
 cekvmess
 ;;
-14)
+11)
 cekvless
 ;;
-15)
+12)
 cektrojan
 ;;
-16)
-cektrgo
-;;
-17)
-exit
+x)
+menu
 ;;
 *)
-echo "Input The Correct Number !"
+echo "Masukkan Nomor Yang Ada"
+sleep 1
+menu-v2raay
 ;;
 esac
