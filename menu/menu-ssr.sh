@@ -9,9 +9,7 @@ color2='\e[34;1m'
 color3='\e[0m'
 IP=$(wget -qO- ipinfo.io/ip);
 clear
-echo "                        ╔═════════════╗" | lolcat
 echo "                        ┃ SSR / SS  Menu ┃ "  | lolcat
-echo "                        ╚═════════════╝"  | lolcat
 echo -e""
 echo -e "${color1}1${color3}.$bd  Create Account ShadowsocksR(${color2}addssr${color3})"
 echo -e "${color1}2${color3}.$bd  Create Account Shadowsocks  (${color2}addss${color3})"
@@ -48,10 +46,11 @@ renewss
 cekss
 ;;
 x)
-menu
+exit
 ;;
 *)
 echo "Masukkan Nomor Yang Ada"
 sleep 1
+menu-ssr
 ;;
 esac
