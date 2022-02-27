@@ -60,7 +60,7 @@ ceklim
 restart
 ;;
 x)
-menu
+exit
 ;;
 *)
 echo "Masukkan Nomor Yang Ada"
