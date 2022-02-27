@@ -21,7 +21,7 @@ echo -e "${color1}3${color3}.$bd Renew Account SSH & OpenVPN (${color2}renewssh$
 echo -e "${color1}4${color3}.$bd Padam Account SSH & OpenVPN (${color2}delssh${color3})"
 echo -e "${color1}5${color3}.$bd Check User Login SSH & OpenVPN (${color2}cekssh${color3})"
 echo -e "${color1}6${color3}.$bd Daftar Member SSH & OpenVPN (${color2}member${color3})"
-echo -e "${color1}7${color3}.$bd Padam User SSH & OpenVPN Kadaluarsa (${color2}delexp${color3})"
+echo -e "${color1}7${color3}.$bd Padam User SSH & OpenVPN Exp (${color2}delexp${color3})"
 echo -e "${color1}8${color3}.$bd Set up Autokill SSH (${color2}autokill${color3})"
 echo -e "${color1}9${color3}.$bd Check User Multi Login SSH (${color2}ceklim${color3})"
 echo -e "${color1}10${color3}.$bd Restart All Service (${color2}restart${color3})"
