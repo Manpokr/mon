@@ -418,6 +418,11 @@ wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
 wget -O bbr "https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh"
+wget -O privoxy https://raw.githubusercontent.com/Manpokr/mon/main/addon/privoxy.py"
+wget -O privoxy https://raw.githubusercontent.com/Manpokr/mon/main/addon/privoxy.sh"
+wget -O wstunnel https://raw.githubusercontent.com/Manpokr/mon/main/addon/ws.stunnel.sh"
+wget -O wsstunnel https://raw.githubusercontent.com/Manpokr/mon/main/addon/wss.stunnel.sh"
+
 chmod +x addhost
 chmod +x menu
 chmod +x addssh
@@ -442,6 +447,10 @@ chmod +x xp
 chmod +x swapkvm
 chmod +x certv2ray
 chmod +x bbr.sh
+chmod +x privoxy
+chmod +x wstunnel
+chmod +x wsstunnel
+chmod +x privoxy
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
