@@ -7,6 +7,7 @@ bd='\e[1m'
 color1='\e[031;1m'
 color2='\e[34;1m'
 color3='\e[0m'
+clear
 IP=$(wget -qO- ipinfo.io/ip);
 echo "                     ┃ V2Ray Core MENU ┃        " | lolcat
 echo -e""
@@ -70,6 +71,6 @@ menu
 *)
 echo "Masukkan Nomor Yang Ada"
 sleep 1
-menu-v2raay
+menu-v2ray
 ;;
 esac
