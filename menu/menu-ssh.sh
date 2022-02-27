@@ -11,9 +11,7 @@ color3='\e[0m'
 IP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
-echo "╔══════════════════════════════════════════════════════════════════╗" | lolcat
-echo "║                          ┃ SSH MENU ┃                            ║"  | lolcat
-echo "╚══════════════════════════════════════════════════════════════════╝"  | lolcat
+echo "                         ┃ SSH MENU ┃                         "  | lolcat
 echo -e""
 echo -e "${color1}1${color3}.$bd Buat Account SSH & OpenVPN (${color2}addssh${color3})"
 echo -e "${color1}2${color3}.$bd Trial Account SSH & OpenVPN (${color2}trialssh${color3})"
@@ -67,5 +65,6 @@ menu
 *)
 echo "Masukkan Nomor Yang Ada"
 sleep 1
+menu-ssh
 ;;
 esac
