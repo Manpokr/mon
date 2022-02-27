@@ -66,7 +66,7 @@ cekvless
 cektrojan
 ;;
 x)
-menu
+exit
 ;;
 *)
 echo "Masukkan Nomor Yang Ada"
