@@ -196,7 +196,7 @@ RUN=yes
 # systemd users: don't forget to modify /lib/systemd/system/sslh.service
 DAEMON=/usr/sbin/sslh
 
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:2093 --ssl 127.0.0.1:777 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:441 --ssl 127.0.0.1:777 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
 
 END
 
@@ -224,52 +224,10 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-# Stunnel5
-cd /root/
-wget -q -O stunnel5.zip "https://raw.githubusercontent.com/Manpokr/mon/main/addon/stunnel5.zip"
-unzip -o stunnel5.zip
-cd /root/stunnel
-chmod +x configure
-./configure
-make
-make install
-cd /root
-rm -r -f stunnel
-rm -f stunnel5.zip
-mkdir -p /etc/stunnel5
-chmod 644 /etc/stunnel5
-# install wstunnel wireguard
-wget -q -O wstunnel-64-linux "https://raw.githubusercontent.com/Manpokr/mon/main/addon/wstunnel-x64-linux"
-cd
-mkdir -p wstunnel /etc/ /usr/local/bin/wstunnel
-sudo setcap CAP_NET_BIND_SERVICE=+eip /usr/local/bin/wstunnel
-cat > /etc/systemd/system/wstunnel.service
-[Unit]
-Description=Tunnel WG UDP over websocket
-After=network.target
-
-[Service]
-Type=simple 
-User=nobody 
-ExecStart=/usr/local/bin/wstunnel -v --server wss://0.0.0.0:443 --restrictTo=127.0.0.1:636
-Restart=no 
-
-[Install] 
-WantedBy=multi-user.target
-END
-sudo systemctl enable wstunnel
-sudo systemctl start wstunnel
-
-sudo systemctl enable wsstunnel
-sudo systemctl start wsstunnel
-apt update && apt install -y curl jq
-sed -i $IP2 /etc/local/bin/wstunnel
-cp wstunnel /usr/local/bin/wstunnel
-mkdir -p wstunnel > /etc/wireguard/wstunnel.conf
-cat > /etc/wireguard/wstunnel.conf
-# Download Config Stunnel5
-cat > /etc/stunnel5/stunnel5.conf <<-END
-cert = /etc/stunnel5/stunnel5.pem
+# install stunnel
+apt install stunnel4 -y
+cat > /etc/stunnel/stunnel.conf <<-END
+cert = /etc/stunnel/stunnel.pem
 client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
@@ -277,12 +235,9 @@ socket = r:TCP_NODELAY=1
 [dropbear]
 accept = 789
 connect = 127.0.0.1:109
-[openssh]
-accept = 447
-connect = 127.0.0.1:222
-[stunnel5]
-accept = 445
-connect = 127.0.0.22
+[dropbear]
+accept = 777
+connect = 127.0.0.1:22
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
@@ -294,47 +249,9 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
-# Service Stunnel5 systemctl restart stunnel5
-cat > /etc/systemd/system/stunnel5.service << END
-[Unit]
-Description=Stunnel5 Service
-Documentation=https://stunnel.org
-Documentation=https://github.com/Manpokr/mon/main/
-After=syslog.target network-online.target
-[Service]
-ExecStart=/usr/local/Manpokr/stunnel5 /etc/stunnel5/stunnel5.conf
-Type=forking
-[Install]
-WantedBy=multi-user.target
-END
-
-# Service Stunnel5 /etc/init.d/stunnel5
-wget -q -p https://github.com/actions/python-versions/releases/download/3.11.0-alpha.4-1754961913/python-3.11.0-alpha.4-linux-20.04-x64.tar.gz"
-chmod +x python-3.11.0-alpha.4-linux-20.04-x64.tar.gz
-chmod +x /etc/python3.11/site_customize.py
-wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/Manpokr/mon/main/addon/stunnel5.init && chmod +x stunnel5.init && ./stunnel5.init
-
-# Ubah Izin Akses
-chmod 600 /etc/stunnel5/stunnel5.pem
-chmod +x /etc/init.d/stunnel5
-cp /usr/local/bin/stunnel /usr/local/Manpokr/stunnel5
-
-# Remove File
-#rm -r -f /usr/local/share/doc/stunnel/
-rm -r -f /usr/local/etc/stunnel/
-rm -f /usr/local/bin/stunnel
-rm -f /usr/local/bin/stunnel3
-rm -f /usr/local/bin/stunnel4
-#rm -f /usr/local/bin/stunnel5
-
-# Restart Stunnel 5
-systemctl stop stunnel5
-systemctl enable stunnel5
-systemctl start stunnel5
-systemctl restart stunnel5
-/etc/init.d/stunnel5 restart
-/etc/init.d/stunnel5 status
-/etc/init.d/stunnel5 restart
+# konfigurasi stunnel
+sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
+/etc/init.d/stunnel4 restart
 
 #OpenVPN
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
@@ -373,6 +290,9 @@ echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
+# Install BBR
+wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+
 # Ganti Banner
 wget -O /etc/issue.net "https://raw.githubusercontent.com/Manpokr/mon/main/addon/issue.net"
 
@@ -396,7 +316,7 @@ netfilter-persistent reload
 # download script
 cd /usr/bin
 wget -O addhost "https://raw.githubusercontent.com/Manpokr/mon/main/add/addhost.sh"
-wget -O about "https://raw.githubusercontent.com/Manpokr/mon/main/add/about.sh"
+wget -O about "https://raw.githubusercontent.com/Manpokr/mon/main/add/onabout.sh"
 wget -O menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/menu.sh"
 wget -O addssh "https://raw.githubusercontent.com/Manpokr/mon/main/add/addssh.sh"
 wget -O trialssh "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialssh.sh"
@@ -413,16 +333,32 @@ wget -O autokill "https://raw.githubusercontent.com/Manpokr/mon/main/addon/autok
 wget -O ceklim "https://raw.githubusercontent.com/Manpokr/mon/main/cek/ceklim.sh"
 wget -O clearlog "https://raw.githubusercontent.com/Manpokr/mon/main/addon/clearlog.sh"
 wget -O changeport "https://raw.githubusercontent.com/Manpokr/mon/main/addon/changeport.sh"
+wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
+wget -O portwg "https://raw.githubusercontent.com/Manpokr/mon/main/port/portwg.sh"
+wget -O porttrojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/porttrojan.sh"
+wget -O portsstp "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsstp.sh"
+wget -O portsquid "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsquid.sh"
+wget -O portvlm "https://raw.githubusercontent.com/Manpokr/mon/main/port/portvlm.sh"
 wget -O wbmn "https://raw.githubusercontent.com/Manpokr/mon/main/setup/webmin.sh"
 wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
-wget -O bbr "https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh"
-wget -O privoxy https://raw.githubusercontent.com/Manpokr/mon/main/addon/privoxy.py"
-wget -O privoxy https://raw.githubusercontent.com/Manpokr/mon/main/addon/privoxy.sh"
-wget -O wstunnel https://raw.githubusercontent.com/Manpokr/mon/main/addon/ws.stunnel.sh"
-wget -O wsstunnel https://raw.githubusercontent.com/Manpokr/mon/main/addon/wss.stunnel.sh"
-
+wget -O addxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxv2ray.sh"
+wget -O addxvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvless.sh"
+wget -O addxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtrojan.sh"
+wget -O delxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxv2ray.sh"
+wget -O delxvless "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxvless.sh"
+wget -O delxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxrojan.sh"
+wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
+wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
+wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxrojan.sh"
+wget -O renewxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxv2ray.sh"
+wget -O renewxvless "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxvless.sh"
+wget -O renewxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtrojan.sh"
+wget -O cert "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
+wget -O addtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrgo.sh"
+wget -O deltrgo "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgo.sh"
+wget -O renewtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgo.sh"
+wget -O cektrgo "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgo.sh"
 chmod +x addhost
 chmod +x menu
 chmod +x addssh
@@ -442,15 +378,32 @@ chmod +x ram
 chmod +x renewssh
 chmod +x clearlog
 chmod +x changeport
+chmod +x portovpn
+chmod +x portwg
+chmod +x porttrojan
+chmod +x portsstp
+chmod +x portsquid
+chmod +x portvlm
 chmod +x wbmn
 chmod +x xp
 chmod +x swapkvm
-chmod +x certv2ray
-chmod +x bbr.sh
-chmod +x privoxy
-chmod +x wstunnel
-chmod +x wsstunnel
-chmod +x privoxy
+chmod +x addxvmess
+chmod +x addxvless
+chmod +x addxtrojan
+chmod +x delxvless
+chmod +x delxvmess
+chmod +x delxtrojan
+chmod +x cekxvmess
+chmod +x cekxvless
+chmod +x cekxtrojan
+chmod +x renewxvmess
+chmod +x renewxvless
+chmod +x renewxtrojan
+chmod +x cert
+chmod +x addtrgo
+chmod +x deltrgo
+chmod +x renewtrgo
+chmod +x cektrgo
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
