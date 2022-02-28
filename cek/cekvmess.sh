@@ -51,5 +51,5 @@ echo "$oth";
 echo "-------------------------------"
 rm -rf /tmp/other.txt
 read -p "Press Enter For Back To V2Ray/VMess Menu / CTRL+C To Cancel : "
-vmess-menu
+menu-v2ray
 
