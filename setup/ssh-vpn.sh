@@ -241,6 +241,9 @@ connect = 127.0.0.1:22
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
+[Stunnel]
+accept = 443
+connect = 700
 END
 
 # make a certificate
@@ -250,6 +253,9 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
 # konfigurasi stunnel
+cat > /etc/default/stunnel4
+ENABLED
+END
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
@@ -342,23 +348,7 @@ wget -O portvlm "https://raw.githubusercontent.com/Manpokr/mon/main/port/portvlm
 wget -O wbmn "https://raw.githubusercontent.com/Manpokr/mon/main/setup/webmin.sh"
 wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
-wget -O addxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxv2ray.sh"
-wget -O addxvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvless.sh"
-wget -O addxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtrojan.sh"
-wget -O delxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxv2ray.sh"
-wget -O delxvless "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxvless.sh"
-wget -O delxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxrojan.sh"
-wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
-wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
-wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxrojan.sh"
-wget -O renewxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxv2ray.sh"
-wget -O renewxvless "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxvless.sh"
-wget -O renewxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtrojan.sh"
 wget -O cert "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
-wget -O addtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrgo.sh"
-wget -O deltrgo "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgo.sh"
-wget -O renewtrgo "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgo.sh"
-wget -O cektrgo "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgo.sh"
 chmod +x addhost
 chmod +x menu
 chmod +x addssh
@@ -387,23 +377,8 @@ chmod +x portvlm
 chmod +x wbmn
 chmod +x xp
 chmod +x swapkvm
-chmod +x addxvmess
-chmod +x addxvless
-chmod +x addxtrojan
-chmod +x delxvless
-chmod +x delxvmess
-chmod +x delxtrojan
-chmod +x cekxvmess
-chmod +x cekxvless
-chmod +x cekxtrojan
-chmod +x renewxvmess
-chmod +x renewxvless
-chmod +x renewxtrojan
 chmod +x cert
-chmod +x addtrgo
-chmod +x deltrgo
-chmod +x renewtrgo
-chmod +x cektrgo
+chmod +x 
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
