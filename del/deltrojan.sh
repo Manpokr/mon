@@ -46,4 +46,4 @@ echo " Client Name : $user"
 echo " Expired On  : $exp"
 echo " =========================="
 read -p "Press Enter For Back To TRojan Menu/ CTRL+C To Cancel : "
-trojan-menu
+menu-v2ray
