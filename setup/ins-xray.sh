@@ -853,6 +853,38 @@ cat > /etc/xray/vlessgrpc.json << END
 }
 END
 
+cat > /etc/xray/trojangrpc.json << END
+{
+    "inbounds": [
+        {
+            "port": 31304,
+            "listen": "127.0.0.1",
+            "protocol": "trojan",
+            "tag": "trojangRPCTCP",
+            "settings": {
+                "clients": [
+                    {
+                        "password": "dev",
+                        "email": "${domain}"
+                    }
+                ],
+                "fallbacks": [
+                    {
+                        "dest": "31300"
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "grpc",
+                "grpcSettings": {
+                    "serviceName": "/trgorpc"
+                }
+            }
+        }
+    ]
+}
+END
+
 cat > /etc/systemd/system/vmess-grpc.service << EOF
 [Unit]
 Description=XRay VMess GRPC Service
@@ -881,6 +913,24 @@ After=network.target nss-lookup.target
 User=root
 NoNewPrivileges=true
 ExecStart=/usr/local/xray/xray -config /etc/xray/vlessgrpc.json
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+cat > /etc/systemd/system/trojan-grpc.service << EOF
+[Unit]
+Description=XRay Trojan GRPC Service
+Documentation=https://speedtest.net https://github.com/XTLS/Xray-core
+After=network.target nss-lookup.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/usr/local/xray/xray -config /etc/xray/trojangrpc.json
 RestartPreventExitStatus=23
 LimitNPROC=10000
 LimitNOFILE=1000000
