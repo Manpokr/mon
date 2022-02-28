@@ -982,6 +982,8 @@ systemctl enable vmess-grpc
 systemctl restart vmess-grpc
 systemctl enable vless-grpc
 systemctl restart vless-grpc
+systemctl enable trojan-grpc
+systemctl restart trojan-grpc
 
 
 cd /usr/bin
