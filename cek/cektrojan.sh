@@ -35,4 +35,4 @@ echo "$jum2";
 echo "-------------------------------"
 done
 read -p "Press Enter For Back To TRojan Menu/ CTRL+C To Cancel : "
-trojan-menu
+menu-v2ray
