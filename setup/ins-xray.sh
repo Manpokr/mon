@@ -1000,7 +1000,7 @@ wget -O delxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtls.
 wget -O delgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/delgrpc.sh"
 wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
 wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
-wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxrojan.sh"
+wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxtrojan.sh"
 wget -O cekxtls "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxray.sh"
 wget -O cekgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekgrpc.sh"
 wget -O renewxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxv2ray.sh"
