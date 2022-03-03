@@ -91,13 +91,6 @@ wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ohp.sh
 chmod +x ohp.sh
 ./ohp.sh
 
-#Cert
-apt install socat -y
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh
-chmod +x certv2ray.sh
-./certv2ray.sh
-
-
 #Addon
 cd /usr/bin
 wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
