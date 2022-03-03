@@ -338,6 +338,7 @@ wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
 wget -O bbr "https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh"
+wget -O bannerku "https://raw.githubusercontent.com/Manpokr/mon/main/setup/bannerku"
 chmod +x bbr
 chmod +x addhost
 chmod +x menu
@@ -362,6 +363,7 @@ chmod +x wbmn
 chmod +x xp
 chmod +x swapkvm
 chmod +x certv2ray
+chmod +x bannerku
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
