@@ -23,6 +23,7 @@ domain=$(cat /etc/xray/domain)
 systemctl stop v2ray
 systemctl stop v2ray@none
 systemctl stop xray
+~/.acme.sh/acme.sh --register-account -m Manpokr7@gmail.com
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 systemctl start xray.service
