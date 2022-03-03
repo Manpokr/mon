@@ -1,53 +1,76 @@
-IyEvYmluL2Jhc2gKcmVkPSdcZVsxOzMxbScKZ3JlZW49J1xlWzA7MzJtJwpOQz0nXGVbMG0nCk1Z
-SVA9JCh3Z2V0IC1xTy0gaXBpbmZvLmlvL2lwKTsKZWNobyAiQ2hlY2tpbmcgVlBTIgpjbGVhcgpt
-a2RpciAtcCAvZXRjL3YycmF5Cm1rZGlyIC1wIC9ldGMveHJheQp0b3VjaCAvcm9vdC9kb21haW4K
-dG91Y2ggL2V0Yy92MnJheS9kb21haW4KdG91Y2ggL2V0Yy94cmF5L0RvbWFpbgphcHQgaW5zdGFs
-bCBqcSBjdXJsIC15CkRPTUFJTj1rZXRpbmcuY2YKc3ViPSQoPC9kZXYvdXJhbmRvbSB0ciAtZGMg
-YS16MC05IHwgaGVhZCAtYzQpClNVQl9ET01BSU49JHtzdWJ9LmtldGluZy5jZgpDRl9JRD1tYW5w
-b2tyN0BnbWFpbC5jb20KQ0ZfS0VZPWY2YjEwZWIwMTU1NzZlZWE5YTRjNWM2MWZiOWJiNjYxMzc3
-M2YKc2V0IC1ldW8gcGlwZWZhaWwKSVA9JCh3Z2V0IC1xTy0gaXBpbmZvLmlvL2lwKTsKZWNobyAi
-VXBkYXRpbmcgRE5TIGZvciAke1NVQl9ET01BSU59Li4uIgpaT05FPSQoY3VybCAtc0xYIEdFVCAi
-aHR0cHM6Ly9hcGkuY2xvdWRmbGFyZS5jb20vY2xpZW50L3Y0L3pvbmVzP25hbWU9JHtET01BSU59
-JnN0YXR1cz1hY3RpdmUiIFwKICAgICAtSCAiWC1BdXRoLUVtYWlsOiAke0NGX0lEfSIgXAogICAg
-IC1IICJYLUF1dGgtS2V5OiAke0NGX0tFWX0iIFwKICAgICAtSCAiQ29udGVudC1UeXBlOiBhcHBs
-aWNhdGlvbi9qc29uIiB8IGpxIC1yIC5yZXN1bHRbMF0uaWQpCgpSRUNPUkQ9JChjdXJsIC1zTFgg
-R0VUICJodHRwczovL2FwaS5jbG91ZGZsYXJlLmNvbS9jbGllbnQvdjQvem9uZXMvJHtaT05FfS9k
-bnNfcmVjb3Jkcz9uYW1lPSR7U1VCX0RPTUFJTn0iIFwKICAgICAtSCAiWC1BdXRoLUVtYWlsOiAk
-e0NGX0lEfSIgXAogICAgIC1IICJYLUF1dGgtS2V5OiAke0NGX0tFWX0iIFwKICAgICAtSCAiQ29u
-dGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uIiB8IGpxIC1yIC5yZXN1bHRbMF0uaWQpCgppZiBb
-WyAiJHsjUkVDT1JEfSIgLWxlIDEwIF1dOyB0aGVuCiAgICAgUkVDT1JEPSQoY3VybCAtc0xYIFBP
-U1QgImh0dHBzOi8vYXBpLmNsb3VkZmxhcmUuY29tL2NsaWVudC92NC96b25lcy8ke1pPTkV9L2Ru
-c19yZWNvcmRzIiBcCiAgICAgLUggIlgtQXV0aC1FbWFpbDogJHtDRl9JRH0iIFwKICAgICAtSCAi
-WC1BdXRoLUtleTogJHtDRl9LRVl9IiBcCiAgICAgLUggIkNvbnRlbnQtVHlwZTogYXBwbGljYXRp
-b24vanNvbiIgXAogICAgIC0tZGF0YSAneyJ0eXBlIjoiQSIsIm5hbWUiOiInJHtTVUJfRE9NQUlO
-fSciLCJjb250ZW50IjoiJyR7SVB9JyIsInR0bCI6MTIwLCJwcm94aWVkIjpmYWxzZX0nIHwganEg
-LXIgLnJlc3VsdC5pZCkKZmkKClJFU1VMVD0kKGN1cmwgLXNMWCBQVVQgImh0dHBzOi8vYXBpLmNs
-b3VkZmxhcmUuY29tL2NsaWVudC92NC96b25lcy8ke1pPTkV9L2Ruc19yZWNvcmRzLyR7UkVDT1JE
-fSIgXAogICAgIC1IICJYLUF1dGgtRW1haWw6ICR7Q0ZfSUR9IiBcCiAgICAgLUggIlgtQXV0aC1L
-ZXk6ICR7Q0ZfS0VZfSIgXAogICAgIC1IICJDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24i
-IFwKICAgICAtLWRhdGEgJ3sidHlwZSI6IkEiLCJuYW1lIjoiJyR7U1VCX0RPTUFJTn0nIiwiY29u
-dGVudCI6Iicke0lQfSciLCJ0dGwiOjEyMCwicHJveGllZCI6ZmFsc2V9JykKCldJTERfRE9NQUlO
-PSIqLiRzdWIiCnNldCAtZXVvIHBpcGVmYWlsCmVjaG8gIiIKZWNobyAiVXBkYXRpbmcgRE5TIGZv
-ciAke1dJTERfRE9NQUlOfS4uLiIKWk9ORT0kKGN1cmwgLXNMWCBHRVQgImh0dHBzOi8vYXBpLmNs
-b3VkZmxhcmUuY29tL2NsaWVudC92NC96b25lcz9uYW1lPSR7RE9NQUlOfSZzdGF0dXM9YWN0aXZl
-IiBcCiAgICAgLUggIlgtQXV0aC1FbWFpbDogJHtDRl9JRH0iIFwKICAgICAtSCAiWC1BdXRoLUtl
-eTogJHtDRl9LRVl9IiBcCiAgICAgLUggIkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbiIg
-fCBqcSAtciAucmVzdWx0WzBdLmlkKQoKUkVDT1JEPSQoY3VybCAtc0xYIEdFVCAiaHR0cHM6Ly9h
-cGkuY2xvdWRmbGFyZS5jb20vY2xpZW50L3Y0L3pvbmVzLyR7Wk9ORX0vZG5zX3JlY29yZHM/bmFt
-ZT0ke1dJTERfRE9NQUlOfSIgXAogICAgIC1IICJYLUF1dGgtRW1haWw6ICR7Q0ZfSUR9IiBcCiAg
-ICAgLUggIlgtQXV0aC1LZXk6ICR7Q0ZfS0VZfSIgXAogICAgIC1IICJDb250ZW50LVR5cGU6IGFw
-cGxpY2F0aW9uL2pzb24iIHwganEgLXIgLnJlc3VsdFswXS5pZCkKCmlmIFtbICIkeyNSRUNPUkR9
-IiAtbGUgMTAgXV07IHRoZW4KICAgICBSRUNPUkQ9JChjdXJsIC1zTFggUE9TVCAiaHR0cHM6Ly9h
-cGkuY2xvdWRmbGFyZS5jb20vY2xpZW50L3Y0L3pvbmVzLyR7Wk9ORX0vZG5zX3JlY29yZHMiIFwK
-ICAgICAtSCAiWC1BdXRoLUVtYWlsOiAke0NGX0lEfSIgXAogICAgIC1IICJYLUF1dGgtS2V5OiAk
-e0NGX0tFWX0iIFwKICAgICAtSCAiQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uIiBcCiAg
-ICAgLS1kYXRhICd7InR5cGUiOiJBIiwibmFtZSI6Iicke1dJTERfRE9NQUlOfSciLCJjb250ZW50
-IjoiJyR7SVB9JyIsInR0bCI6MTIwLCJwcm94aWVkIjpmYWxzZX0nIHwganEgLXIgLnJlc3VsdC5p
-ZCkKZmkKClJFU1VMVD0kKGN1cmwgLXNMWCBQVVQgImh0dHBzOi8vYXBpLmNsb3VkZmxhcmUuY29t
-L2NsaWVudC92NC96b25lcy8ke1pPTkV9L2Ruc19yZWNvcmRzLyR7UkVDT1JEfSIgXAogICAgIC1I
-ICJYLUF1dGgtRW1haWw6ICR7Q0ZfSUR9IiBcCiAgICAgLUggIlgtQXV0aC1LZXk6ICR7Q0ZfS0VZ
-fSIgXAogICAgIC1IICJDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24iIFwKICAgICAtLWRh
-dGEgJ3sidHlwZSI6IkEiLCJuYW1lIjoiJyR7V0lMRF9ET01BSU59JyIsImNvbnRlbnQiOiInJHtJ
-UH0nIiwidHRsIjoxMjAsInByb3hpZWQiOmZhbHNlfScpCmVjaG8gIkhvc3QgOiAkU1VCX0RPTUFJ
-TiIKZWNobyAkU1VCX0RPTUFJTiA+IC9yb290L2RvbWFpbgplY2hvICRTVUJfRE9NQUlOID4gL2V0
-Yy94cmF5L2RvbWFpbgplY2hvICRTVUJfRE9NQUlOID4gL2V0Yy92MnJheS9kb21haW4K
+#!/bin/bash
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+clear
+mkdir -p /etc/v2ray
+mkdir -p /etc/xray
+touch /root/domain
+touch /etc/v2ray/domain
+touch /etc/xray/Domain
+apt install jq curl -y
+DOMAIN=keting.cf
+sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
+SUB_DOMAIN=${sub}.keting.cf
+CF_ID=manpokr7@gmail.com
+CF_KEY=f6b10eb015576eea9a4c5c61fb9bb6613773f
+set -euo pipefail
+IP=$(wget -qO- ipinfo.io/ip);
+echo "Updating DNS for ${SUB_DOMAIN}..."
+ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" | jq -r .result[0].id)
+
+RECORD=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records?name=${SUB_DOMAIN}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" | jq -r .result[0].id)
+
+if [[ "${#RECORD}" -le 10 ]]; then
+     RECORD=$(curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}' | jq -r .result.id)
+fi
+
+RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records/${RECORD}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
+
+WILD_DOMAIN="*.$sub"
+set -euo pipefail
+echo ""
+echo "Updating DNS for ${WILD_DOMAIN}..."
+ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" | jq -r .result[0].id)
+
+RECORD=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records?name=${WILD_DOMAIN}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" | jq -r .result[0].id)
+
+if [[ "${#RECORD}" -le 10 ]]; then
+     RECORD=$(curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${WILD_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}' | jq -r .result.id)
+fi
+
+RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records/${RECORD}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${WILD_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
+echo "Host : $SUB_DOMAIN"
+echo $SUB_DOMAIN > /root/domain
+echo $SUB_DOMAIN > /etc/xray/domain
+echo $SUB_DOMAIN > /etc/v2ray/domain
