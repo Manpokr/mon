@@ -9,7 +9,8 @@ color2='\e[34;1m'
 color3='\e[0m'
 IP=$(wget -qO- ipinfo.io/ip);
 clear
-echo "                     ┃ Xray Core MENU ┃        " | lolcat
+echo -e "                      ═══[XRAY CORE MENU]═══         " | lolcat
+echo -e "         \e[32m═══════════════════════════════\e[m" | lolcat
 echo -e""
 echo -e "${color1}1${color3}.$bd Create Account Vmess TCP (${color2}addv2ray${color3})"
 echo -e "${color1}2${color3}.$bd Create Account Vless TCP (${color2}delv2ray${color3})"
