@@ -12,11 +12,12 @@ IP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
 echo "                         ┃ SSH MENU ┃                         "  | lolcat
+echo "                  **************************                  " | lolcat
 echo -e""
-echo -e "${color1}1${color3}.$bd Buat Account SSH & OpenVPN (${color2}addssh${color3})"
+echo -e "${color1}1${color3}.$bd Create Account SSH & OpenVPN (${color2}addssh${color3})"
 echo -e "${color1}2${color3}.$bd Trial Account SSH & OpenVPN (${color2}trialssh${color3})"
 echo -e "${color1}3${color3}.$bd Renew Account SSH & OpenVPN (${color2}renewssh${color3})"
-echo -e "${color1}4${color3}.$bd Padam Account SSH & OpenVPN (${color2}delssh${color3})"
+echo -e "${color1}4${color3}.$bd Delete Account SSH & OpenVPN (${color2}delssh${color3})"
 echo -e "${color1}5${color3}.$bd Check User Login SSH & OpenVPN (${color2}cekssh${color3})"
 echo -e "${color1}6${color3}.$bd Daftar Member SSH & OpenVPN (${color2}member${color3})"
 echo -e "${color1}7${color3}.$bd Padam User SSH & OpenVPN Exp (${color2}delexp${color3})"
@@ -39,13 +40,13 @@ trialssh
 renewssh
 ;;
 4)
-cekssh
+delssh
 ;;
 5)
-member
+cekssh
 ;;
 6)
-delssh
+member
 ;;
 7)
 delexp
