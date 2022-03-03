@@ -31,4 +31,4 @@ systemctl start v2ray
 systemctl start v2ray@none
 echo Done
 sleep 0.5 
-neofetch --ascii_distro virus echo && echo "AutoScript By Manternet" &&  echo "t.me/Manternet" 
+neofetch
