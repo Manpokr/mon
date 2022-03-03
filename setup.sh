@@ -27,16 +27,7 @@ echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
-echo '============================================='
-
-echo "Sila Masukkan DOMAIN, Jika TIADA KLIK Enter"
-
-echo '============================================='
-
-read -p "Hostname / Domain: " domain
-
 echo "IP=$domain" >> /var/lib/Manpokr/ipvps.conf
-
 echo $domain > /etc/xray/domain
 cp /etc/xray/domain /root/domain
 cp /etc/xray/domain /etc/v2ray/domain
