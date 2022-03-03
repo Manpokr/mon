@@ -91,7 +91,12 @@ wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ohp.sh
 chmod +x ohp.sh
 ./ohp.sh
 
-#Addon
+#Cert
+apt install socat -y
+wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cert.sh
+chmod +x cert.sh
+./cert.sh
+
 cd /usr/bin
 wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
 wget -O portsquid "https://raw.githubusercontent.com/Manpokr/mon/main/port/portsquid.sh"
@@ -150,6 +155,7 @@ rm -f /etc/ipsec.sh
 rm -f /root/set-br.sh
 rm -f /root/ohp.sh
 rm -f /root/ws.sh
+rm -f /root/ins-vt.sh
 rm -f /root/cf.sh
 rm -rf /root/ipvps
 rm -f /etc/ip
