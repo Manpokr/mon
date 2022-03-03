@@ -93,9 +93,9 @@ chmod +x ohp.sh
 
 #Cert
 apt install socat -y
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cert.sh
-chmod +x cert.sh
-./cert.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh
+chmod +x certv2ray.sh
+./certv2ray.sh
 
 
 #Addon
