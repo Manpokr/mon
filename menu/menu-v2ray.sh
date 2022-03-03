@@ -10,20 +10,20 @@ color3='\e[0m'
 clear
 IP=$(wget -qO- ipinfo.io/ip);
 echo -e "           ═══[V2RAY CORE MENU]═══        " | lolcat
-echo -e "           \e[32m═════════════════════════\e[m" | lolcat
+echo -e "           \e[32m═════════════════════════\e[m      " | lolcat
 echo -e""
 echo -e "${color1}1${color3}.$bd Create Account Vmess Websocket (${color2}addv2ray${color3})"
 echo -e "${color1}2${color3}.$bd Create Account Vless Websocket (${color2}addv2ray${color3})"
 echo -e "${color1}3${color3}.$bd Create Account Trojan (${color2}addv2ray${color3})"
-echo -e "${color1}4${color3}.$bd Delete Account Vmess Websocket (${color2}addv2ray${color3})"
-echo -e "${color1}5${color3}.$bd Delete Account Vless Websocket (${color2}addv2ray${color3})"
-echo -e "${color1}6${color3}.$bd Delete Account Trojan (${color2}addv2ray${color3})"
-echo -e "${color1}7${color3}.$bd Renew Account Vmess Websocket (${color2}addv2ray${color3})"
-echo -e "${color1}8${color3}.$bd Renew Account Vless Websocket (${color2}addv2ray${color3})"
-echo -e "${color1}9${color3}.$bd Renew Account Trojan (${color2}addv2ray${color3})"
-echo -e "${color1}10${color3}.$bd Check Account Vmess Websocket (${color2}addv2ray${color3})"
-echo -e "${color1}11${color3}.$bd Check Account Vless Websocket (${color2}addv2ray${color3})"
-echo -e "${color1}12${color3}.$bd Check Account Trojan (${color2}addv2ray${color3})"
+echo -e "${color1}4${color3}.$bd Delete Account Vmess Websocket (${color2}delv2ray${color3})"
+echo -e "${color1}5${color3}.$bd Delete Account Vless Websocket (${color2}delv2ray${color3})"
+echo -e "${color1}6${color3}.$bd Delete Account Trojan (${color2}delv2ray${color3})"
+echo -e "${color1}7${color3}.$bd Renew Account Vmess Websocket (${color2}renewv2ray${color3})"
+echo -e "${color1}8${color3}.$bd Renew Account Vless Websocket (${color2}renewv2ray${color3})"
+echo -e "${color1}9${color3}.$bd Renew Account Trojan (${color2}renewv2ray${color3})"
+echo -e "${color1}10${color3}.$bd Check Account Vmess Websocket (${color2}cekv2ray${color3})"
+echo -e "${color1}11${color3}.$bd Check Account Vless Websocket (${color2}cekv2ray${color3})"
+echo -e "${color1}12${color3}.$bd Check Account Trojan (${color2}cekv2ray${color3})"
 echo -e""
 echo -e "${color1}x${color3}.$bd Menu"
 echo -e""
