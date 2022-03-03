@@ -9,32 +9,32 @@ color2='\e[34;1m'
 color3='\e[0m'
 IP=$(wget -qO- ipinfo.io/ip);
 clear
-echo -e "                      ═══[XRAY CORE MENU]═══         " | lolcat
-echo -e "         \e[32m═══════════════════════════════\e[m" | lolcat
+echo -e "          ═══[XRAY CORE MENU]═══" | lolcat
+echo -e " \e[32m═══════════════════════════════\e[m" | lolcat
 echo -e""
-echo -e "${color1}1${color3}.$bd Create Account Vmess TCP (${color2}addv2ray${color3})"
-echo -e "${color1}2${color3}.$bd Create Account Vless TCP (${color2}delv2ray${color3})"
-echo -e "${color1}3${color3}.$bd Create Account Trojan (${color2}delv2ray${color3})"
-echo -e "${color1}4${color3}.$bd Create Account Xtls (${color2}delv2ray${color3})"
-echo -e "${color1}5${color3}.$bd Create Account GRPC (${color2}delv2ray${color3})"
+echo -e "${color1}1${color3}.$bd Create Account Vmess TCP (${color2}addxray${color3})"
+echo -e "${color1}2${color3}.$bd Create Account Vless TCP (${color2}addxray${color3})"
+echo -e "${color1}3${color3}.$bd Create Account Trojan (${color2}addxray${color3})"
+echo -e "${color1}4${color3}.$bd Create Account Xtls (${color2}addxray${color3})"
+echo -e "${color1}5${color3}.$bd Create Account GRPC (${color2}addxray${color3})"
 echo -e "-----------------------------------------------------------------------------------" | lolcat
-echo -e "${color1}6${color3}.$bd Delete Account Vmess TCP (${color2}renewv2ray${color3})"
-echo -e "${color1}7${color3}.$bd Delete Account Vless TCP (${color2}renewv2ray${color3})"
-echo -e "${color1}8${color3}.$bd Delete Account Trojan (${color2}renewv2ray${color3})"
-echo -e "${color1}9${color3}.$bd Delete Account Xtls (${color2}renewv2ray${color3})"
-echo -e "${color1}10${color3}.$bd Delete Account GRPC (${color2}renewv2ray${color3})"
+echo -e "${color1}6${color3}.$bd Delete Account Vmess TCP (${color2}delray${color3})"
+echo -e "${color1}7${color3}.$bd Delete Account Vless TCP (${color2}delxray${color3})"
+echo -e "${color1}8${color3}.$bd Delete Account Trojan (${color2}delxray${color3})"
+echo -e "${color1}9${color3}.$bd Delete Account Xtls (${color2}delxray${color3})"
+echo -e "${color1}10${color3}.$bd Delete Account GRPC (${color2}delxray${color3})"
 echo -e "-----------------------------------------------------------------------------------" | lolcat
-echo -e "${color1}11${color3}.$bd Renew Account Vmess TCP(${color2}renewv2ray${color3})"
-echo -e "${color1}12${color3}.$bd Renew Account Vless TCP(${color2}renewv2ray${color3})"
-echo -e "${color1}13${color3}.$bd Renew Account Trojan (${color2}renewv2ray${color3})"
-echo -e "${color1}14${color3}.$bd Renew Account Xtls (${color2}renewv2ray${color3})"
-echo -e "${color1}15${color3}.$bd Renew Account GRPC (${color2}renewv2ray${color3})"
+echo -e "${color1}11${color3}.$bd Renew Account Vmess TCP(${color2}renewxray${color3})"
+echo -e "${color1}12${color3}.$bd Renew Account Vless TCP(${color2}renewxray${color3})"
+echo -e "${color1}13${color3}.$bd Renew Account Trojan (${color2}renewxray${color3})"
+echo -e "${color1}14${color3}.$bd Renew Account Xtls (${color2}renewxray${color3})"
+echo -e "${color1}15${color3}.$bd Renew Account GRPC (${color2}renewxray${color3})"
 echo -e "-----------------------------------------------------------------------------------" | lolcat
-echo -e "${color1}16${color3}.$bd Check Account Vmess TCP (${color2}renewv2ray${color3})"
-echo -e "${color1}17${color3}.$bd Check Account Vless TCP (${color2}renewv2ray${color3})"
-echo -e "${color1}18${color3}.$bd Check Account Trojan (${color2}renewv2ray${color3})"
-echo -e "${color1}19${color3}.$bd Check Account Xtls (${color2}renewv2ray${color3})"
-echo -e "${color1}20${color3}.$bd Check Account GRPC (${color2}renewv2ray${color3})"
+echo -e "${color1}16${color3}.$bd Check Account Vmess TCP (${color2}cekxray${color3})"
+echo -e "${color1}17${color3}.$bd Check Account Vless TCP (${color2}cekxray${color3})"
+echo -e "${color1}18${color3}.$bd Check Account Trojan (${color2}cekxray${color3})"
+echo -e "${color1}19${color3}.$bd Check Account Xtls (${color2}cekxray${color3})"
+echo -e "${color1}20${color3}.$bd Check Account GRPC (${color2}cekxray${color3})"
 echo -e""
 echo -e "${color1}x${color3}.$bd Menu"
 echo -e""
