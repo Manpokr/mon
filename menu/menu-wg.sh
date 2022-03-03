@@ -10,7 +10,8 @@ color3='\e[0m'
 IP=$(wget -qO- ipinfo.io/ip);
 echo -e "checking vps"
 clear
-echo "                      ┃ Wireguard Menu ┃                    " 
+echo -e "                       ═══[WIREGUARD MENU]═══         " | lolcat
+echo -e "          \e[32m════════════════════════════════\e[m" | lolcat
 echo -e""
 echo -e "${color1}1${color3}.$bd Create Account Wireguard (${color2}addwg${color3})"
 echo -e "${color1}2${color3}.$bd Delete Account Wireguard (${color2}delwg${color3})"
