@@ -11,8 +11,8 @@ color3='\e[0m'
 IP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
-echo "                         ┃ SSH MENU ┃                         "  | lolcat
-echo "                  **************************                  " | lolcat
+echo -e "                     ═══[SSH MENU]═══              " | lolcat
+echo -e "          \e[32m═══════════════════════\e[m" | lolcat
 echo -e""
 echo -e "${color1}1${color3}.$bd Create Account SSH & OpenVPN (${color2}addssh${color3})"
 echo -e "${color1}2${color3}.$bd Trial Account SSH & OpenVPN (${color2}trialssh${color3})"
