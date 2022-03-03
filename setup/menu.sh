@@ -4,20 +4,21 @@ bl='\e[36;1m'
 gl='\e[32;1m'
 
 clear
+
 cat /usr/bin/bannerku | lolcat
 CITY=$(curl -s ipinfo.io/city )
 MYIP=$(curl -sS ipv4.icanhazip.com)
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
-clear
+sleep 1
         echo -e ""
-        echo -e "   \e[032;1mUPTIME:\e[0m $(neofetch | grep Uptime | cut -d " " -f 2-100)"
+        echo -e "   \e[032;1mUPTIME:\e[0m $(neofetch | grep Uptime | cut -d " " -f 2-100)" | lolcat
         echo -e "   \e[032;1mIsp Name:\e[0m $ISP" | lolcat
         echo -e "   \e[032;1mCity:\e[0m $CITY" | lolcat
         echo -e "   \e[032;1mDOMAIN:\e[0m $(cat /etc/xray/domain)" | lolcat
         echo -e "   \e[033;1mIPVPS :\e[0m $MYIP" | lolcat
 echo -e  ""
-echo -e  "   -------------------------MENU OPTIONS------------------------"
+echo -e  "   -------------------------MENU OPTIONS------------------------" | lolcat
 echo -e   "   1\e[1;33m)\e[m SSH & OpenVPN Menu" 
 echo -e   "   2\e[1;33m)\e[m Panel Wireguard " 
 echo -e   "   3\e[1;33m)\e[m Panel SSR & SS Account" 
@@ -79,7 +80,7 @@ menu-xray
 addhost
 ;;
 8)
-certv2ray
+cert
 ;;
 9)
 changeport
