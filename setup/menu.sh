@@ -1,11 +1,10 @@
+#!/bin/bash
 yl='\e[031;1m'
 bl='\e[36;1m'
 gl='\e[32;1m'
 
 clear
-
 cat /usr/bin/bannerku | lolcat
-
 CITY=$(curl -s ipinfo.io/city )
 MYIP=$(curl -sS ipv4.icanhazip.com)
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
