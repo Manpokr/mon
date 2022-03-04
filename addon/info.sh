@@ -1,7 +1,11 @@
 #!/bin/bash
+# Color
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
 
 clear
-neofetch --ascii_distro virus echo && echo "AutoScript By Manternet" &&  echo "t.me/Manternet" 
+neofetch
 echo " "
 echo "♤♤♤♤Script Install Vpn By Manternet♤♤♤♤" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
