@@ -13,4 +13,6 @@ sudo bash acme.sh --register-account -m Manpokr7@gmail.com
 sudo bash acme.sh --issue -d $domain --standalone -k ec-256 --force
 sudo bash acme.sh --installcert -d $domain --fullchainpath
 sudo bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
+restart
+clear
 rm -f /root/cert.sh
