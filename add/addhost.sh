@@ -26,4 +26,4 @@ systemctl start vmess-grpc.service
 echo Done
 sleep 1.5
 clear
-neofetch --ascii_distro virus echo && echo "AutoScript By Manpokr" &&  echo "t.me/Manpokr" 
+neofetch
