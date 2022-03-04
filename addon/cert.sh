@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 #cert
 domain=$(cat /root/domain)
 mkdir /root/.acme.sh
