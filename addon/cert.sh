@@ -5,6 +5,9 @@ domain=$(cat /root/domain)
 mkdir /root/.acme.sh
 curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
 chmod +x /root/.acme.sh/acme.sh
+cd /root/
+wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/maste$bash acme.sh
+rm acme.sh
 cd .acme.sh
 sudo bash acme.sh --register-account -m manpokr7@gmail.com
 sudo bash acme.sh --issue --standalone -d $domain  --force
