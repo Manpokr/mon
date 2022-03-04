@@ -34,6 +34,8 @@ bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypa
 systemctl start xray.service
 systemctl start v2ray
 systemctl start v2ray@none
+systemctl start vmess-grpc
+restart
 echo Done
 sleep 0.5 
 clear
