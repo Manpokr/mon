@@ -1,12 +1,18 @@
-IyEvYmluL2Jhc2gKc3VkbyBsc29mIC10IC1pIHRjcDo4MCAtcyB0Y3A6bGlzdGVuIHwgc3VkbyB4
-YXJncyBraWxsCiNjZXJ0CmRvbWFpbj0kKGNhdCAvcm9vdC9kb21haW4pCm1rZGlyIC9yb290Ly5h
-Y21lLnNoCmN1cmwgaHR0cHM6Ly9hY21lLWluc3RhbGwubmV0bGlmeS5hcHAvYWNtZS5zaCAtbyAv
-cm9vdC8uYWNtZS5zaC9hY21lLnNoCmNobW9kICt4IC9yb290Ly5hY21lLnNoL2FjbWUuc2gKY2Qg
-L3Jvb3QvCndnZXQgLU8gYWNtZS5zaCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20v
-YWNtZXNoLW9mZmljaWFsL2FjbWUuc2gvbWFzdGUkYmFzaCBhY21lLnNoCnJtIGFjbWUuc2gKY2Qg
-LmFjbWUuc2gKc3VkbyBiYXNoIGFjbWUuc2ggLS1yZWdpc3Rlci1hY2NvdW50IC1tIE1hbnBva3I3
-QGdtYWlsLmNvbQpzdWRvIGJhc2ggYWNtZS5zaCAtLWlzc3VlIC1kICRkb21haW4gLS1zdGFuZGFs
-b25lIC1rIGVjLTI1NiAtLWZvcmNlCnN1ZG8gYmFzaCBhY21lLnNoIC0taW5zdGFsbGNlcnQgLWQg
-JGRvbWFpbiAtLWZ1bGxjaGFpbnBhdGgKc3VkbyBiYXNoIGFjbWUuc2ggLS1pbnN0YWxsY2VydCAt
-ZCAkZG9tYWluIC0tZnVsbGNoYWlucGF0aCAvZXRjL3hyYXkveHJheS5jcnQgLS1rZXlwYXRoIC9l
-dGMveHJheS94cmF5LmtleSAtLWVjYwpyZXN0YXJ0CmNsZWFyCnJtIC1mIC9yb290L2NlcnQuc2g=
+#!/bin/bash
+sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
+#cert
+domain=$(cat /root/domain)
+mkdir /root/.acme.sh
+curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
+chmod +x /root/.acme.sh/acme.sh
+cd /root/
+wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/maste$bash acme.sh
+rm acme.sh
+cd .acme.sh
+sudo bash acme.sh --register-account -m Manpokr7@gmail.com
+sudo bash acme.sh --issue -d $domain --standalone -k ec-256 --force
+sudo bash acme.sh --installcert -d $domain --fullchainpath
+sudo bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
+restart
+clear
+rm -f /root/cert.sh
