@@ -36,12 +36,13 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 read -p "Expired (Days) : " masaaktif
 read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
+dom=$sub$domain
 sed -i '/"'""$uuid""'"$/a\,"'""$user""'"' /etc/trojan-go/config.json
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 echo -e "### $user $exp" >> /etc/trojan-go/akun.conf
 systemctl restart trojan-go.service
-link="trojan-go://${user}@${domain}:${trgo}/?sni=${domain}&type=ws&host=${domain}&path=/TrGo&encryption=none#$user"
+link="trojan-go://${user}@${dom}:${trgo}/?sni=${dom}&type=ws&host=${sni}&path=/TrGo&encryption=none#$user"
 clear
 
 echo -e "=======-TROJAN-GO-======="
