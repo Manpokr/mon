@@ -84,7 +84,7 @@ cat <<EOF > /etc/trojan-go/config.json
   "websocket": {
     "enabled": true,
     "path": "/TrGo",
-    "host": "$domain"
+    "host": "$sni"
   },
   "shadowsocks": {
     "enabled": false,
