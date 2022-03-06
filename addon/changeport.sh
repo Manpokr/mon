@@ -31,7 +31,8 @@ echo -e "[8]. Change Port XRay VLess"
 echo -e "[9]. Change Port XRay Trojan"
 echo -e "[10]. Change Port XRay XTLS"
 echo -e "[11]. Change Port Xray GRPC"
-echo -e "[12]. Exit"
+echo -e "[12]. Change Port Trojan-go"
+echo -e "[13]. Exit"
 echo -e "======================================"
 
 read -p "Select From Options [ 1-12 ] : " port
@@ -71,9 +72,13 @@ port-xtls
 port-grpc
 ;;
 12)
+port-trojan-go
+;;
+13)
 exit
 ;;
 *)
 echo "Please enter an correct number"
+changeport
 ;;
 esac
