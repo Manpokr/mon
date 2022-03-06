@@ -112,6 +112,7 @@ wget -O port-vmess "https://raw.githubusercontent.com/Manpokr/mon/main/port/port
 wget -O port-vless "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-vless.sh"
 wget -O port-trojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojan.sh"
 wget -O port-grpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-grpc.sh"
+wget -O port-trojan-go "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojan-go"
 wget -O menu-ssh "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssh.sh"
 wget -O menu-wg "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-wg.sh"
 wget -O menu-ssr "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssr.sh"
@@ -136,6 +137,7 @@ chmod +x port-vmess
 chmod +x port-vless
 chmod +x port-trojan
 chmod +x port-grpc
+chmod +x port-trojan-go
 chmod +x trial-menu
 chmod +x menu-ssh
 chmod +x menu-wg
@@ -146,6 +148,7 @@ chmod +x menu-bbt
 chmod +x system-menu
 chmod +x running
 chmod +x menu-trgo
+
 cd
 rm -f /root/sodosok.sh
 rm -f /root/ssh-vpn.sh
