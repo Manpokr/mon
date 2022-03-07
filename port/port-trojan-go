@@ -1,25 +1,38 @@
 #!/bin/bash
-
+# My Telegram : https://t.me/Manternet
+# ==========================================
 # Color
-RED="\e[1;31m"
-GREEN="\e[0;32m"
-NC="\e[0m"
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHT='\033[0;37m'
+# ==========================================
+# Getting
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#########################
 
-#change port
-tr=$(cat /etc/trojan-go/config.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
+MYIP=$(curl -sS ipv4.icanhazip.com)
+clear
+tr="$(cat /etc/trojan-go/config.json | grep local_port | sed 's/local_port//g' | sed 's/    "": //g' | sed 's/,//g')"
 echo -e "======================================"
 echo -e "         Trojan-Go Port Changer"
 echo -e ""
-echo -e "     [1]  Change Port Xray Trojan-Go ${RED}$tr${NC}"
+echo -e "     [1]  Change Port Trojan-Go ${RED}$tr${NC}"
 echo -e "     [x]  Exit"
 echo -e ""
 echo -e "======================================"
 echo -e ""
 read -p "     Select From Options [1 or x] :  " port
 echo -e ""
+echo -e "======================================"
 case $port in
 1)
-read -p "Type New Port For Xray Trojan : " tr2
+read -p "Type New Port For Trojan-Go : " tr2
 if [ -z $tr2 ]; then
 echo "Please Input Port"
 exit 0
@@ -35,9 +48,8 @@ iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
-systemctl restart trojan > /dev/null
-clear
-echo -e "${GREEN}Succesfully Changed Xray Trojan Port To $tr2${NC}"
+systemctl restart xray.service > /dev/null
+echo -e "${GREEN}Succesfully Changed Trojan-Go Port To $tr2${NC}"
 else
 echo -e "${RED}Error ! ${NC}Port $tr2 Is Already Used"
 fi
