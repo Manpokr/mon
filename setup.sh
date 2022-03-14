@@ -237,4 +237,5 @@ sleep 7
 rm -f setup.sh
 rm -f ins-trgo.sh
 rm -f ins-xray.sh
+chmod +x /var/run/screen
 reboot
