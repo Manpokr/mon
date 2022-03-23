@@ -1,5 +1,5 @@
 #!/bin/bash
-# Trojan
+# Trojanx
 # ==================
 
 # Color
