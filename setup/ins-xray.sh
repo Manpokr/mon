@@ -855,33 +855,69 @@ END
 
 cat > /etc/xray/trojangrpc.json << END
 {
-    "inbounds": [
-        {
-            "port": 31304,
-            "listen": "127.0.0.1",
-            "protocol": "trojan",
-            "tag": "trojangRPCTCP",
-            "settings": {
-                "clients": [
-                    {
-                        "password": "dev",
-                        "email": "${domain}"
-                    }
-                ],
-                "fallbacks": [
-                    {
-                        "dest": "31300"
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "grpc",
-                "grpcSettings": {
-                    "serviceName": "/trgorpc"
-                }
+  "log": {
+    "access": "/var/log/xray/access6.log",
+    "error": "/var/log/xray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 2096,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "tag": "trojan-grpc-in",
+      "settings": {
+        "clients": [
+          {
+            "password": "${uuid}",
+#xray-trojan-grpc
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "gandring"
             }
+          }
         }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "blocked"
+      }
+  ],
+  "dns": {
+    "servers": [
+      "8.8.8.8",
+      "8.8.4.4",
+      "1.1.1.1",
+      "1.0.0.1",
+      "localhost",
+      "https+local://dns.google/dns-query",
+      "https+local://1.1.1.1/dns-query"
     ]
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "trojan-grpc-in",
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  }
 }
 END
 
@@ -921,7 +957,7 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
-cat > /etc/systemd/system/trojan-grpc.service << EOF
+cat > /etc/systemd/system/trojangrpc.service << EOF
 [Unit]
 Description=XRay Trojan GRPC Service
 Documentation=https://speedtest.net https://github.com/XTLS/Xray-core
@@ -959,8 +995,8 @@ iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 880 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 880 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2099 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2099 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
