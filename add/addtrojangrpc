@@ -20,6 +20,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
+uuid=$(cat /etc/trojan/uuid.txt)
 tr="$(cat /etc/xray/trojangrpc.json| grep -w "TROJAN GRPC" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		read -rp "Password : " -e user
@@ -31,14 +32,14 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-
+uuid=$(cat /etc/trojan/uuid.txt)
 read -p "Expired (Days) : " masaaktif
 read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#trojan-grpc$/a\#&# '"$user $exp"'\
+sed -i '/#xray-trojan-grpc$/a\#&# '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/trojangrpc.json
 
 #trojanlink="trojan://${uuid}@${domain}:${tr}#${user}"
