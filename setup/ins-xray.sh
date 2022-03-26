@@ -863,22 +863,21 @@ cat > /etc/xray/trojangrpc.json << END
   "inbounds": [
     {
       "port": 2096,
-      "listen": "127.0.0.1",
       "protocol": "trojan",
-      "tag": "trojan-grpc-in",
       "settings": {
         "clients": [
           {
-            "password": "${uuid}",
+            "password": "${uuid}"
 #xray-trojan-grpc
-          }
-        ],
+            }
+          ]
+        },
         "decryption": "none"
       },
       "streamSettings": {
         "network": "grpc",
         "grpcSettings": {
-          "serviceName": "gandring"
+          "serviceName": "trojangrpc"
             }
           }
         }
@@ -1050,6 +1049,7 @@ wget -O trialxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/tr
 wget -O trialxvless "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvless.sh"
 wget -O trialxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxtrojan.sh"
 wget -O trialgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialgrpc.sh"
+wget -O addtrojangrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrojangrpc"
 chmod +x addxvmess
 chmod +x addxvless
 chmod +x addxtrojan
@@ -1073,6 +1073,7 @@ chmod +x renewgrpc
 chmod +x trialxvmess
 chmod +x trialxvmess
 chmod +x trialgrpc
+chmod +x addtrojangrpc
 
 
 
