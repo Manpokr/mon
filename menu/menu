@@ -29,11 +29,11 @@ echo -e "   IPVPS   : $MYIP" | lolcat
 
 echo -e "\033[1;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-echo -e   "   \033[0;31m[1]\033[0;34m• >> \033[0;33mSSH & OpenVPN Menu"
+echo -e   "   \033[0;31m[1]\033[0;34m• >> \033[0;31mSSH & OpenVPN Menu"
 echo -e   "   \033[0;31m[2]\033[0;34m• >> \033[0;34mPanel Wireguard "
 echo -e   "   \033[0;31m[3]\033[0;34m• >> \033[0;36mPanel SSR & SS Account\033[0;33m"
 echo -e   "   \033[0;31m[4]\033[0;34m• >> \033[0;35mPanel TrojanGo"
-echo -e   "   \033[0;31m[5]\033[0;34m• >> \033[0;33mV2ray Core Menu"
+echo -e   "   \033[0;31m[5]\033[0;34m• >> \033[0;34mV2ray Core Menu"
 echo -e   "   \033[0;31m[6]\033[0;34m• >> \033[0;36mXray Core Menu\033[0;34m"
 echo -e   "   \033[0;31m[7]\033[0;34m• >> \033[0;34m System  Menu"
 echo -e ""
