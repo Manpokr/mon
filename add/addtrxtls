@@ -1,1 +1,53 @@
+#!/bin/bash
 
+# Color
+RED="\e[1;31m"
+GREEN="\e[0;32m"
+NC="\e[0m"
+
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+clear
+domain=$(cat /root/domain)
+uuid=$(cat /proc/sys/kernel/random/uuid)
+
+# // Input
+read -p "Username   : " username
+read -p "Expired    : " expired
+read -p "SNI (BUG)  : " sni
+read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
+dom=$sub$domain
+uuid=$(cat /proc/sys/kernel/random/uuid)
+exp=`date -d "$expired days" +"%Y-%m-%d"`
+hariini=`date -d "0 days" +"%Y-%m-%d"`
+tr="$(cat /etc/xray/trojanxtls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/ //g')"
+
+# // Input Data User Ke XRay Trojan TCP XTLS
+sed -i '/#trojan-xtls$/a\#DEPAN '"Username : $username | Expired : $exp"'\
+            },{"password": "'""$uuid""'","flow": "'xtls-rprx-direct'"\
+#BELAKANG '"Username : $username | Expired : $exp"'' /etc/xray/trojanxtls.json
+IP=$( curl -s ipinfo.io/ip )
+trojanlink0="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#$username"
+trojanlink1="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=$sni#$username"
+trojanlink2="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#$username"
+trojanlink3="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=$sni#$username"
+systemctl restart trojanxtls
+clear
+echo -e "================================="
+echo -e "            XRAY TR-XTLS          "
+echo -e "================================="
+echo -e "Remarks        : ${username}"
+echo -e "Domain         : ${domain}"
+echo -e "Subdomain      : ${dom}"
+echo -e "port TCP       : $port"
+echo -e "id             : ${uuid}"
+echo -e "================================="
+echo -e "Direct         : ${trojanlink0}"
+echo -e "================================="
+echo -e "Direct UDP     : ${trojanlink1}"
+echo -e "================================="
+echo -e "Splice         : ${trojanlink2}"
+echo -e "================================="
+echo -e "Splice         : ${trojanlink3}"
+echo -e "================================="
+echo -e "Expired On     : $exp"
