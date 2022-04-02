@@ -8,6 +8,8 @@ NC="\e[0m"
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
+domain=$(cat /root/domain)
+uuid=$(cat /proc/sys/kernel/random/uuid)
 
 # // Input
 read -p "Username   : " username
