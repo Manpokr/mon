@@ -597,6 +597,11 @@ cat > /etc/xray/vlessnone.json <<END
 END
 cat > /etc/xray/xrayxtls.json << END
 {
+  "log": {
+    "access": "/var/log/xray/access1.log",
+    "error": "/var/log/xray/error.log",
+    "loglevel": "info"
+  },
   "inbounds": [
     {
       "port": 756,
@@ -856,13 +861,13 @@ END
 cat > /etc/xray/trojangrpc.json << END
 {
   "log": {
-    "access": "/var/log/xray/access6.log",
+    "access": "/var/log/xray/access8.log",
     "error": "/var/log/xray/error.log",
     "loglevel": "warning"
   },
   "inbounds": [
     {
-      "port": 2096,
+      "port": 2099,
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -871,55 +876,32 @@ cat > /etc/xray/trojangrpc.json << END
 #xray-trojan-grpc
             }
           ]
-        },
-        "decryption": "none"
       },
       "streamSettings": {
         "network": "grpc",
         "grpcSettings": {
-          "serviceName": "trojangrpc"
-            }
-          }
-        }
-      }
-    }
-  ],
-  "outbounds": [
-    {
-      "protocol": "freedom",
-      "tag": "direct"
-    },
-    {
-      "protocol": "blackhole",
-      "tag": "blocked"
-      }
-  ],
-  "dns": {
-    "servers": [
-      "8.8.8.8",
-      "8.8.4.4",
-      "1.1.1.1",
-      "1.0.0.1",
-      "localhost",
-      "https+local://dns.google/dns-query",
-      "https+local://1.1.1.1/dns-query"
-    ]
-  },
-  "routing": {
-    "domainStrategy": "AsIs",
-    "rules": [
-      {
-        "type": "field",
-        "inboundTag": [
-          "trojan-grpc-in",
-        ],
-        "outboundTag": "direct"
-      }
-    ]
-  }
-}
+          "serverName": "${domain}"
+            
 END
 
+cat > /etc/xray/trojanxtls.json << END
+{
+  "log": {
+    "access": "/var/log/xray/access3.log",
+    "error": "/var/log/xray/error.log",
+    "loglevel": "info"
+    },
+    "inbounds": [
+        {
+            "port": 2088,
+            "protocol": "trojan",
+            "settings": {
+                "clients": [
+                    {
+                "password":"${uuid}",
+                "flow": "xtls-rprx-direct",
+                "level": 0
+END
 cat > /etc/systemd/system/vmess-grpc.service << EOF
 [Unit]
 Description=XRay VMess GRPC Service
@@ -974,6 +956,24 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
+cat > /etc/systemd/system/trojanxtls.service << EOF
+[Unit]
+Description=XRay Trojan XTLS Service
+Documentation=https://speedtest.net https://github.com/XTLS/Xray-core
+After=network.target nss-lookup.target
+
+[Service]
+User=root
+NoNewPrivileges=true
+ExecStart=/usr/local/xray/xray -config /etc/xray/trojanxtls.json
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6565-j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6565-j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6161 -j ACCEPT
@@ -994,8 +994,10 @@ iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 880 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 880 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2099 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2099 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2088 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2088 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
@@ -1019,9 +1021,10 @@ systemctl enable vmess-grpc
 systemctl restart vmess-grpc
 systemctl enable vless-grpc
 systemctl restart vless-grpc
-systemctl enable trojan-grpc
-systemctl restart trojan-grpc
-
+systemctl enable trojangrpc
+systemctl restart trojangrpc
+systemctl enable trojanxtls
+systemctl restart trojanxtls
 
 cd /usr/bin
 
@@ -1030,50 +1033,69 @@ wget -O addxvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvl
 wget -O addxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtrojan.sh"
 wget -O addxtls "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtls.sh"
 wget -O addgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvgrpc.sh"
+wget -O addtrxtls "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrxtls.sh"
+wget -O addtrgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrojangrpc.sh"
 wget -O delxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxv2ray.sh"
 wget -O delxvless "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxvless.sh"
 wget -O delxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtrojan.sh"
 wget -O delxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtls.sh"
 wget -O delgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/delgrpc.sh"
+wget -O deltrxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrxtls.sh"
+wget -O deltrgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgrpc.sh"
 wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
 wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
 wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxtrojan.sh"
 wget -O cekxtls "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxray.sh"
 wget -O cekgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekgrpc.sh"
+wget -O cektrxtls "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrxtls.sh"
+wget -O cektrgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cektrgrpc.sh"
 wget -O renewxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxv2ray.sh"
 wget -O renewxvless "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxvless.sh"
 wget -O renewxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtrojan.sh"
 wget -O renewxtls "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewxtls.sh"
 wget -O renewgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewgrpc.sh"
+wget -O renewtrxtls "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrxtls.sh"
+wget -O renewtrgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/renew/renewtrgrpc.sh"
 wget -O trialxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvmess.sh"
 wget -O trialxvless "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxvless.sh"
 wget -O trialxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxtrojan.sh"
 wget -O trialgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialgrpc.sh"
-wget -O addtrojangrpc "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrojangrpc"
+wget -O trialtrxtls "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialtrxtls.sh"
+wget -O trialtrgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialtrgrpc.sh"
+
 chmod +x addxvmess
 chmod +x addxvless
 chmod +x addxtrojan
 chmod +x addxtls
 chmod +x addgrpc
+chmod +x addtrxtls
+chmod +x addtrgrpc
 chmod +x delxvless
 chmod +x delxvmess
 chmod +x delxtrojan
 chmod +x delxtls
 chmod +x delgrpc
+chmod +x deltrxtls
+chmod +x deltrgrpc
 chmod +x cekxvmess
 chmod +x cekxvless
 chmod +x cekxtrojan
 chmod +x cekxtls
 chmod +x cekgrpc
+chmod +x cektrxtls
+chmod +x cektrgrpc
 chmod +x renewxvmess
 chmod +x renewxvless
 chmod +x renewxtrojan
 chmod +x renewxtls
 chmod +x renewgrpc
+chmod +x renewtrxtls
+chmod +x renewtrgrpc
 chmod +x trialxvmess
 chmod +x trialxvmess
 chmod +x trialgrpc
-chmod +x addtrojangrpc
+chmod +x trialtrxtls
+chmod +x trialtrgrpc
 
 
 
