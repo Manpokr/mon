@@ -111,6 +111,8 @@ wget -O port-vless "https://raw.githubusercontent.com/Manpokr/mon/main/port/port
 wget -O port-trojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojan.sh"
 wget -O port-grpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-grpc.sh"
 wget -O port-trojan-go "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojan-go"
+wget -O port-trxtls "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trxtls.sh"
+wget -O port-trgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trgrpc.sh"
 wget -O menu-ssh "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssh.sh"
 wget -O menu-wg "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-wg.sh"
 wget -O menu-ssr "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssr.sh"
@@ -136,6 +138,8 @@ chmod +x port-vless
 chmod +x port-trojan
 chmod +x port-grpc
 chmod +x port-trojan-go
+chmod +x port-trxtls
+chmod +x port-trgrpc
 chmod +x trial-menu
 chmod +x menu-ssh
 chmod +x menu-wg
