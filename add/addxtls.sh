@@ -1,43 +1,54 @@
 #!/bin/bash
-
-# Color
-RED="\e[1;31m"
-GREEN="\e[0;32m"
-NC="\e[0m"
-
-MYIP=$(wget -qO- ipinfo.io/ip);
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+MYIP=$(wget -qO- ifconfig.me/ip);
 echo "Checking VPS"
+
+# CREATED XTLS
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#########################
+
 clear
-domain=$(cat /root/domain)
+source /var/lib/Manpokr/ipvps.conf
+domain=$(cat /etc/v2ray/domain)
 uuid=$(cat /proc/sys/kernel/random/uuid)
 
-# // Input
-read -p "Username   : " username
-read -p "Expired    : " expired
-read -p "SNI (BUG)  : " sni
+port=$(cat /etc/xray/xrayxtls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
+until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
+		read -rp "User: " -e user
+		CLIENT_EXISTS=$(grep -w $user /etc/xray/xrayxtls.json | wc -l)
+
+		if [[ ${CLIENT_EXISTS} == '1' ]]; then
+			echo ""
+			echo "A client with the specified name was already created, please choose another name."
+			exit 1
+		fi
+	done
+uuid=$(cat /proc/sys/kernel/random/uuid)
+read -p "Expired (days): " masaaktif
+read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
-domain=$(cat /root/domain)
-uuid=$(cat /proc/sys/kernel/random/uuid)
-exp=`date -d "$expired days" +"%Y-%m-%d"`
+exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
-port=$(cat /etc/xray/xrayxtls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
+sed -i '/#XRay$/a\### '"User : $user | Expired : $exp"'\
+            },{"id": "'""$uuid""'","flow": "'xtls-rprx-direct'","email": "'""$user""'"' /etc/xray/xrayxtls.json
 
-# // Input Data User Ke XRay Vless TCP XTLS
-sed -i '/#XRay$/a\#DEPAN '"Username : $username | Expired : $exp"'\
-            },{"id": "'""$uuid""'","flow": "'xtls-rprx-direct'"\
-#BELAKANG '"Username : $username | Expired : $exp"'' /etc/xray/xrayxtls.json
+systemctl restart xtls
 IP=$( curl -s ipinfo.io/ip )
-vd="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#$username"
-vu="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=$sni#$username"
+vd="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#$user"
+vu="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=$sni#$user"
 vs="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#$username"
-vsu="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=$sni#$username"
+vsu="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=$sni#$user"
 systemctl restart xtls
 clear
 echo -e "================================="
-echo -e "            XRAY VLESS          "
+echo -e "        XRAY VLESS XTLS         "
 echo -e "================================="
-echo -e "Remarks        : ${username}"
+echo -e "Remarks        : ${user}"
+echo -e "IP.            : ${IP}"
 echo -e "Domain         : ${domain}"
 echo -e "Subdomain      : ${dom}"
 echo -e "port TCP       : $port"
@@ -51,4 +62,5 @@ echo -e "Splice         : ${vs}"
 echo -e "================================="
 echo -e "Splice         : ${vsu}"
 echo -e "================================="
+echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
