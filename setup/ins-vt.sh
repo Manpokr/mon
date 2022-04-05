@@ -53,7 +53,7 @@ cat> /etc/v2ray/config.json << END
         "tlsSettings": {
           "certificates": [
             {
-              "certificateFile": "etc/xray/xray.crt",
+              "certificateFile": "/etc/xray/xray.crt",
               "keyFile": "/etc/xray/xray.key"
             }
           ]
@@ -238,7 +238,7 @@ cat> /etc/v2ray/vless.json << END
         "tlsSettings": {
           "certificates": [
             {
-              "certificateFile": "etc/xray/xray.crt",
+              "certificateFile": "/etc/xray/xray.crt",
               "keyFile": "/etc/xray/xray.key"
             }
           ]
