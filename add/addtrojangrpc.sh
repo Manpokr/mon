@@ -20,7 +20,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-uuid=$(cat /etc/trojan/uuid.txt)
+uuid=$(cat /proc/sys/kernel/random/uuid)
 tr="$(cat /etc/xray/trojangrpc.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		read -rp "Password : " -e user
@@ -32,7 +32,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-uuid=$(cat /etc/trojan/uuid.txt)
+uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (Days) : " masaaktif
 read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
