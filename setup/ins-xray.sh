@@ -861,9 +861,9 @@ END
 cat > /etc/xray/trojangrpc.json << END
 {
   "log": {
-    "access": "/var/log/xray/access8.log",
+    "access": "/var/log/xray/access3.log",
     "error": "/var/log/xray/error.log",
-    "loglevel": "warning"
+    "loglevel": "info"
   },
   "inbounds": [
     {
