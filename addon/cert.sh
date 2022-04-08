@@ -1,18 +1,3 @@
-#!/bin/bash
-sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
-#cert
-domain=$(cat /root/domain)
-mkdir /root/.acme.sh
-curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
-chmod +x /root/.acme.sh/acme.sh
-cd /root/
-wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
-bash acme.sh --install
-rm acme.sh
-cd .acme.sh
-sudo bash acme.sh --register-account -m Manpokr7@gmail.com
-sudo bash acme.sh --issue -d $domain --standalone -k ec-256 --force
-sudo bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
-restart
-clear
-rm -f /root/cert.sh
+z="
+";rBz='256 ';LBz='l/ac';pz='.sh';CBz='gith';Fz='80 -';nz='acme';LCz='/etc';Dz=' -i ';sz='cd /';Qz='(cat';PCz='-ecc';WCz='cert';RBz='nsta';CCz='inpa';qBz=' ec-';ICz='t --';Nz='ll';vBz='allc';DCz='th /';yz='http';QCz='rest';EBz='erco';Iz='sten';vz='wget';VBz='cd .';ECz='etc/';Mz='s ki';bz=' htt';RCz='art';cBz=' -m ';PBz=' acm';Oz='doma';KBz='icia';rz='d +x';dz='/acm';UCz='rm -';kBz=' $do';Vz='mkdi';ZBz='regi';Uz='n)';Gz='s tc';Xz='oot/';hBz='com';BCz='lcha';uz='/';GBz='t.co';gBz='ail.';cz='ps:/';gz='l.ne';xz='.sh ';Wz='r /r';TBz='cme.';nBz='tand';OBz='bash';Zz='e.sh';SCz='clea';TCz='r';ACz='-ful';KCz='ath ';FBz='nten';JBz='-off';NCz='ay.k';Rz=' /ro';fBz='4@gm';tz='root';mz='ot/.';Cz='f -t';eBz='ng61';FCz='xray';Yz='.acm';XBz='h ac';kz='me.s';sBz='--fo';HCz='y.cr';az='curl';oz='.sh/';Kz='udo ';wz=' -O ';GCz='/xra';Pz='in=$';uBz='inst';ABz='s://';tBz='rce';jz='p/ac';iz='y.ap';Bz=' lso';jBz='e -d';Sz='ot/d';OCz='ey -';WBz=' bas';NBz='ster';MCz='y/xr';iBz='issu';Az='sudo';wBz='ert ';SBz='rm a';aBz='-acc';lBz='main';HBz='m/ac';hz='tlif';MBz='h/ma';Ez='tcp:';JCz='keyp';BBz='raw.';VCz='f /r';bBz='ount';dBz='anja';xBz='-d $';fz='stal';QBz=' --i';IBz='mesh';UBz='sh';lz='h -o';yBz='in -';Tz='omai';ez='e-in';Lz='xarg';pBz='e -k';Jz=' | s';oBz='alon';DBz='ubus';mBz=' --s';qz='chmo';Hz='p:li';YBz='h --';
+eval "$Az$Bz$Cz$Dz$Ez$Fz$Gz$Hz$Iz$Jz$Kz$Lz$Mz$Nz$z$Oz$Pz$Qz$Rz$Sz$Tz$Uz$z$Vz$Wz$Xz$Yz$Zz$z$az$bz$cz$dz$ez$fz$gz$hz$iz$jz$kz$lz$Rz$mz$nz$oz$nz$pz$z$qz$rz$Rz$mz$nz$oz$nz$pz$z$sz$tz$uz$z$vz$wz$nz$xz$yz$ABz$BBz$CBz$DBz$EBz$FBz$GBz$HBz$IBz$JBz$KBz$LBz$kz$MBz$NBz$dz$Zz$z$OBz$PBz$Zz$QBz$RBz$Nz$z$SBz$TBz$UBz$z$VBz$nz$pz$z$Az$WBz$XBz$kz$YBz$ZBz$NBz$aBz$bBz$cBz$dBz$eBz$fBz$gBz$hBz$z$Az$WBz$XBz$kz$YBz$iBz$jBz$kBz$lBz$mBz$nBz$oBz$pBz$qBz$rBz$sBz$tBz$z$Az$WBz$XBz$kz$YBz$uBz$vBz$wBz$xBz$Oz$yBz$ACz$BCz$CCz$DCz$ECz$FCz$GCz$HCz$ICz$JCz$KCz$LCz$GCz$MCz$NCz$OCz$PCz$z$QCz$RCz$z$SCz$TCz$z$UCz$VCz$Xz$WCz$pz"
