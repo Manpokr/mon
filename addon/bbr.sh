@@ -21,7 +21,7 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 
 MYIP=$(wget -qO- icanhazip.com);
 echo "Checking Auth For Permission"
-IZIN=$( curl -s https://raw.githubusercontent.com/wakleman/ip/main/access | grep $MYIP )
+IZIN=$( curl -s https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP )
 if [[ $MYIP == "" ]]; then
     echo "No Database Founded !"
     exit 1
