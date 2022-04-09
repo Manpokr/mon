@@ -17,6 +17,21 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
+# Validate Your IP Address
+
+MYIP=$(wget -qO- icanhazip.com);
+echo "Checking Auth For Permission"
+IZIN=$( curl -s https://raw.githubusercontent.com/wakleman/ip/main/access | grep $MYIP )
+if [[ $MYIP == "" ]]; then
+    echo "No Database Founded !"
+    exit 1
+elif [[ $MYIP = $IZIN ]]; then
+    echo -e "${GREEN}Granted !${NC} Your IP Adress Is Registered"
+else
+    echo -e "${RED}Denied !${NC} Your IP Adress Is Not Registered";
+    echo "Please Contact Admin For Buying Scripts"
+    exit 0
+fi
 #Optimasi Speed By Manternet
 Add_To_New_Line(){
 	if [ "$(tail -n1 $1 | wc -l)" == "0"  ];then
