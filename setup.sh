@@ -22,7 +22,7 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$( curl -s https://raw.githubusercontent.com/manternet/ipvps/main/hapus | grep $MYIP>
+IZIN=$( curl -s https://raw.githubusercontent.com/manternet/ipvps/main/hapus | grep $MYIP )
 if [ $MYIP = $IZIN ]; then
 echo -e "${green}Permission Accepted...${NC}"
 else
