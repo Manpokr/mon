@@ -873,13 +873,14 @@ cat > /etc/xray/trojangrpc.json << END
         "clients": [
           {
             "password": "${uuid}"
+            "email": ""
 #xray-trojan-grpc
             }
           ]
       },
       "streamSettings": {
-        "network": "grpc",
-        "grpcSettings": {
+        "network": "gun",
+        "tlsSettings": {
           "serverName": "${domain}"
             
 END
@@ -901,6 +902,8 @@ cat > /etc/xray/trojanxtls.json << END
                 "password":"${uuid}",
                 "flow": "xtls-rprx-direct",
                 "level": 0
+#trojan-xtls
+
 END
 cat > /etc/systemd/system/vmess-grpc.service << EOF
 [Unit]
