@@ -1,26 +1,21 @@
 #!/bin/bash
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-CEKEXPIRED () {
-    today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | grep $MYIP | awk '{print $3}')
-    if [[ $today < $Exp1 ]]; then
-    echo -e "\e[32mSTATUS SCRIPT AKTIF...\e[0m"
-    else
-    echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m";
-    echo -e "\e[31mRenew IP letak tempoh banyak kit okay? hehe syg ktk #\e[0m"
-    exit 0
-fi
-}
-IZIN=$(curl -sS https://raw.githubusercontent.com/Iansoftware/userip/main/bossip | awk '{print $4}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo -e "\e[32mPermission Accepted...\e[0m"
-CEKEXPIRED
-else
-echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mDaftar IP dalam github lok sayang okay? mun dah daftar tapi masih juak permission denied refresh dolok website ya hehe. Love you #\e[0m"
-exit 0
-fi
+# Color Validation
+DF='\e[39m'
+Bold='\e[1m'
+Blink='\e[5m'
+yell='\e[33m'
+red='\e[31m'
+green='\e[32m'
+blue='\e[34m'
+PURPLE='\e[35m'
+cyan='\e[36m'
+Lred='\e[91m'
+Lgreen='\e[92m'
+Lyellow='\e[93m'
+NC='\e[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+LIGHT='\033[0;37m'
 clear 
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[0;100;33m          • SYSTEM MENU •          \E[0m"
@@ -54,18 +49,18 @@ echo -e ""
 read -p " Select menu : " opt
 echo -e ""
 case $opt in
-1) clear ; m-domain ; exit ;;
-2) clear ; port-change ; exit ;;
-3) clear ; autobackup-setup ; exit ;; #set.br
+1) clear ; addhost ; exit ;;
+2) clear ; changeport ; exit ;;
+3) clear ; backup ; exit ;; #set.br
 4) clear ; backup ; exit ;; #set.br
 5) clear ; backup-info ; exit ;; #set.br
 6) clear ; restore ; exit ;; #set.br
-7) clear ; m-webmin ; exit ;;
-8) clear ; limit-speed ; exit ;; #set.br
+7) clear ; wbmn ; exit ;;
+8) clear ; limitspeed ; exit ;; #set.br
 9) clear ; ram ; exit ;;
 10) clear ; speedtest ; exit ;;
 11) clear ; about ; exit ;;
-12) clear ; auto-reboot ; exit ;;
+12) clear ; reboot ; exit ;;
 13) clear ; clear-log ; exit ;;
 14) clear ; restart ; exit ;;
 15) clear ; nano /etc/issue.net ; exit ;; #ssh-vpn banner.conf
