@@ -875,13 +875,38 @@ cat > /etc/xray/trojangrpc.json << END
             "password": "${uuid}"
             "email": ""
 #xray-trojan-grpc
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "gun",
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "${domain}",
+                    "alpn": [
+                        "h2",
+                        "http/1.1"
+                    ],
+                    "certificates": [
+                        {
+                            "certificateFile": "/etc/xray/xray.crt",
+                            "keyFile": "/etc/xray/xray.key"
+                        }
+                    ]
+                },
+                "grpcSettings": {
+                    "serviceName": "GunService"
+                }
             }
-          ]
-      },
-      "streamSettings": {
-        "network": "gun",
-        "tlsSettings": {
-          "serverName": "${domain}"
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        }
+    ]
+}
             
 END
 
@@ -903,6 +928,37 @@ cat > /etc/xray/trojanxtls.json << END
                 "flow": "xtls-rprx-direct",
                 "level": 0
 #trojan-xtls
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "xtls",
+        "xtlsSettings": {
+          "minVersion": "1.2",
+          "certificates": [
+            {
+              "certificateFile": "/etc/xray/xray.crt",
+              "keyFile": "/etc/xray/xray.key"
+            }
+          ]
+        }
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": [
+          "http",
+          "tls"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}
 
 END
 cat > /etc/systemd/system/vmess-grpc.service << EOF
