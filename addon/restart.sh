@@ -35,6 +35,8 @@ systemctl restart xr-vl-tls
 systemctl restart xr-vl-ntls
 systemctl restart vmess-grpc 
 systemctl restart vless-grpc
+systemctl restart trojangrpc
+systemctl restart trojanxtls
 systemctl restart shadowsocks-libev
 systemctl restart ws-ovpn
 systemctl restart wg-quick@wg0
