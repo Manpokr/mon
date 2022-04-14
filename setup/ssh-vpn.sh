@@ -338,6 +338,14 @@ wget -O xp "https://raw.githubusercontent.com/Manpokr/mon/main/del/xp.sh"
 wget -O swapkvm "https://raw.githubusercontent.com/Manpokr/mon/main/addon/swapkvm.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/Manpokr/mon/main/addon/certv2ray.sh"
 wget -O bbr "https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh"
+wget -O auto-reboot "https://raw.githubusercontent.com/Manpokr/mon/main/setup/auto-reboot.sh"
+wget -O clearcache "https://raw.githubusercontent.com/Manpokr/mon/main/setup/clearcache.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/Manpokr/mon/main/setup/kernel-updt.sh"
+wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/system-menu.sh"
+chmod +x clearcache
+chmod +x auto-reboot
+chmod +x kernel-updt
+chmod +x system-menu
 chmod +x bbr
 chmod +x addhost
 chmod +x menu
