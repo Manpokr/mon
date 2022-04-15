@@ -341,7 +341,6 @@ wget -O bbr "https://raw.githubusercontent.com/Manpokr/mon/main/addon/bbr.sh"
 wget -O auto-reboot "https://raw.githubusercontent.com/Manpokr/mon/main/setup/auto-reboot.sh"
 wget -O clearcache "https://raw.githubusercontent.com/Manpokr/mon/main/setup/clearcache.sh"
 wget -O kernel-updt "https://raw.githubusercontent.com/Manpokr/mon/main/setup/kernel-updt.sh"
-wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/system-menu.sh"
 
 chmod +x addhost
 chmod +x about
@@ -371,7 +370,6 @@ chmod +x bbr
 chmod +x auto-reboot
 chmod +x clearcache
 chmod +x kernel-updt
-chmod +x system-menu
 
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
