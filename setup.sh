@@ -180,7 +180,7 @@ wget -O menu-wg "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-wg
 wget -O menu-ssr "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssr.sh"
 wget -O menu-xray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-xray.sh"
 wget -O menu-v2ray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-v2ray.sh"
-wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/system-menu.sh"
+wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/system-menu.sh"
 wget -O trial-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/trial-menu.sh"
 wget -O menu-bbt "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bbt.sh"
 wget -O running "https://raw.githubusercontent.com/Manpokr/mon/main/menu/running.sh"
