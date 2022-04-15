@@ -39,6 +39,7 @@ echo -e " [\e[36m15\e[0m] Certv2ray"
 echo -e " [\e[36m16\e[0m] Cek Bandwith"
 echo -e " [\e[36m17\e[0m] Reset Server"
 echo -e " [\e[36m18\e[0m] Kernel Update"
+echo -e " [\e[36m19\e[0m] Set Auto Reboot"
 echo -e ""
 echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
 echo -e   ""
@@ -67,6 +68,7 @@ case $opt in
 16) clear ; bw ; exit ;;
 17) clear ; resett ; exit ;;
 18) clear ; kernel-updt ; exit ;;
+19) clear ; auto-reboot ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo -e "" ; echo "Boh salah tekan, Sayang kedak Babi" ; sleep 1 ; m-system ;;
