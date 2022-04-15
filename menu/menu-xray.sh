@@ -17,24 +17,32 @@ echo -e "${color1}2${color3}.$bd Create Account Vless TCP (${color2}addxray${col
 echo -e "${color1}3${color3}.$bd Create Account Trojan (${color2}addxray${color3})"
 echo -e "${color1}4${color3}.$bd Create Account Xtls (${color2}addxray${color3})"
 echo -e "${color1}5${color3}.$bd Create Account GRPC (${color2}addxray${color3})"
+echo -e "${color1}6${color3}.$bd Create Account TR-XTLS (${color2}addxray${color3})"
+echo -e "${color1}7${color3}.$bd Create Account TR-GRPC (${color2}addxray${color3})"
 echo -e "-----------------------------------------------------------------------------------" | lolcat
-echo -e "${color1}6${color3}.$bd Delete Account Vmess TCP (${color2}delray${color3})"
-echo -e "${color1}7${color3}.$bd Delete Account Vless TCP (${color2}delxray${color3})"
-echo -e "${color1}8${color3}.$bd Delete Account Trojan (${color2}delxray${color3})"
-echo -e "${color1}9${color3}.$bd Delete Account Xtls (${color2}delxray${color3})"
-echo -e "${color1}10${color3}.$bd Delete Account GRPC (${color2}delxray${color3})"
+echo -e "${color1}8${color3}.$bd Delete Account Vmess TCP (${color2}delray${color3})"
+echo -e "${color1}9${color3}.$bd Delete Account Vless TCP (${color2}delxray${color3})"
+echo -e "${color1}10${color3}.$bd Delete Account Trojan (${color2}delxray${color3})"
+echo -e "${color1}11${color3}.$bd Delete Account Xtls (${color2}delxray${color3})"
+echo -e "${color1}12${color3}.$bd Delete Account GRPC (${color2}delxray${color3})"
+echo -e "${color1}13${color3}.$bd Delete Account TR-XTLS (${color2}delxray${color3})"
+echo -e "${color1}14${color3}.$bd Delete Account TR-GRPC (${color2}delxray${color3})"
 echo -e "-----------------------------------------------------------------------------------" | lolcat
-echo -e "${color1}11${color3}.$bd Renew Account Vmess TCP(${color2}renewxray${color3})"
-echo -e "${color1}12${color3}.$bd Renew Account Vless TCP(${color2}renewxray${color3})"
-echo -e "${color1}13${color3}.$bd Renew Account Trojan (${color2}renewxray${color3})"
-echo -e "${color1}14${color3}.$bd Renew Account Xtls (${color2}renewxray${color3})"
-echo -e "${color1}15${color3}.$bd Renew Account GRPC (${color2}renewxray${color3})"
+echo -e "${color1}15${color3}.$bd Renew Account Vmess TCP(${color2}renewxray${color3})"
+echo -e "${color1}16${color3}.$bd Renew Account Vless TCP(${color2}renewxray${color3})"
+echo -e "${color1}17${color3}.$bd Renew Account Trojan (${color2}renewxray${color3})"
+echo -e "${color1}18${color3}.$bd Renew Account Xtls (${color2}renewxray${color3})"
+echo -e "${color1}19${color3}.$bd Renew Account GRPC (${color2}renewxray${color3})"
+echo -e "${color1}20${color3}.$bd Renew Account TR-XTLS (${color2}renewxray${color3})"
+echo -e "${color1}21${color3}.$bd Renew Account TR-GRPC (${color2}renewxray${color3})"
 echo -e "-----------------------------------------------------------------------------------" | lolcat
-echo -e "${color1}16${color3}.$bd Check Account Vmess TCP (${color2}cekxray${color3})"
-echo -e "${color1}17${color3}.$bd Check Account Vless TCP (${color2}cekxray${color3})"
-echo -e "${color1}18${color3}.$bd Check Account Trojan (${color2}cekxray${color3})"
-echo -e "${color1}19${color3}.$bd Check Account Xtls (${color2}cekxray${color3})"
-echo -e "${color1}20${color3}.$bd Check Account GRPC (${color2}cekxray${color3})"
+echo -e "${color1}22${color3}.$bd Check Account Vmess TCP (${color2}cekxray${color3})"
+echo -e "${color1}23${color3}.$bd Check Account Vless TCP (${color2}cekxray${color3})"
+echo -e "${color1}24${color3}.$bd Check Account Trojan (${color2}cekxray${color3})"
+echo -e "${color1}25${color3}.$bd Check Account Xtls (${color2}cekxray${color3})"
+echo -e "${color1}26${color3}.$bd Check Account GRPC (${color2}cekxray${color3})"
+echo -e "${color1}27${color3}.$bd Check Account TR-XTLS (${color2}cekxray${color3})"
+echo -e "${color1}28${color3}.$bd Check Account TR-GRPC (${color2}cekxray${color3})"
 echo -e""
 echo -e "${color1}x${color3}.$bd Menu"
 echo -e""
@@ -57,49 +65,73 @@ addxtls
 addgrpc
 ;;
 6)
-delxvmess
+addtrxtls
 ;;
 7)
-delxvless
+addtrojangrpc
 ;;
 8)
-delxtrojan
+delxvmess
 ;;
 9)
-delxtls
+delxvless
 ;;
 10)
-delgrpc
+delxtrojan
 ;;
 11)
-renewxvmess
+delxtls
 ;;
 12)
-renewxvless
+delgrpc
 ;;
 13)
-renewxtrojan
+deltrxtls
 ;;
 14)
-renewxtls
+deltrgrpc
 ;;
 15)
-renewgrpc
+renewxvmess
 ;;
 16)
-cekxvmess
+renewxvless
 ;;
 17)
-cekxvless
+renewxtrojan
 ;;
 18)
-cekxtrojan
+renewxtls
 ;;
 19)
-cekxtls
+renewgrpc
 ;;
 20)
+renewtrxtls
+;;
+21)
+renewtrgrpc
+;;
+22)
+cekxvmess
+;;
+23)
+cekxvless
+;;
+24)
+cekxtrojan
+;;
+25)
+cekxtls
+;;
+26)
 cekgrpc
+;;
+27)
+cektrxtls
+;;
+28)
+cektrgrpc
 ;;
 x)
 exit
