@@ -1,16 +1,10 @@
 #!/bin/bash
 #Menu
-RED='\033[0;31m'                                                                                                    
-red='\e[1;31m'                                                                                                      
-green='\e[0;32m'                                                                                                    
+RED='\033[0;31m'                                                                                                                                                                                                        
 NC='\e[0m'                                                                                                          
-BLUE='\033[0;34m'                                                                                                   
-bl='\e[36;1m'                                                                                                       
+BLUE='\033[0;34m'                                                                                                                                                                                   
 bd='\e[1m'                                                                                                          
 CYAN='\033[0;36m'                                                                                                   
-color1='\e[031;1m'                                                                                                  
-color2='\e[34;1m'                                                                                                   
-color3='\e[0m'  
 #getting                                                                                                    
 IP=$(wget -qO- ipinfo.io/ip);                                                                                       
 echo "Checking VPS"                                                                                                 
