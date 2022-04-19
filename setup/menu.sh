@@ -121,6 +121,8 @@ echo -e " [${CYAN}•3${NC}] SSR & SS Menu       [${CYAN}•9${NC}] VPS Informat
 echo -e " [${CYAN}•4${NC}] XRAY Menu           [${CYAN}10${NC}] Script Info"                                                                                                                                                                                         
 echo -e " [${CYAN}•5${NC}] V2RAY Menu          [${CYAN}11${NC}] Clear RAM Cache"                                                                                                                                                                                     
 echo -e " [${CYAN}•6${NC}] Trojan GO Menu      [\e[31m12\e[0m] \e[31mREBOOT\033[0m"                                                                                                                                                                                  
+echo -e   ""                                                                                  
+echo -e " [${CYAN}99${NC}] BOTT MENU"
 echo -e   ""                                                                                                                                                                                                                                                         
 echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"                                                                                                                                                                                                                  
 echo -e   ""                                                                                                                                                                                                                                                         
@@ -143,6 +145,7 @@ case $menu in
 9) clear ; vpsinfo ;;                                                                                                                                                                                                                                                
 10) clear ; info-menu ;;                                                                                                                                                                                                                                             
 11) clear ; clearcache ;;                                                                                                                                                                                                                                            
-12) clear ; reboot ;;                                                                                                                                                                                                                                                
+12) clear ; reboot ;; 
+99) clear ; menu-bbt ;;                                                                                                                                                                                                                                       
 x) exit ;;                                                                                                                                                                                                                                                           
 esac
