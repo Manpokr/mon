@@ -26,7 +26,7 @@ CYAN='\033[0;36m'
 NC='\033[0;37m'
 clear 
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${BLUE}          • SYSTEM MENU •          ${NC}"
+echo -e "${PURPLE}          • SYSTEM MENU •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}
 echo -e ""
 echo -e " [\e[36m•1\e[0m] Add Domain"
