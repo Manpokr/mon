@@ -27,7 +27,8 @@ sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 clear
 cd .acme.sh
 echo "starting....," 
-echo "Port 80 Akan di Hentikan Saat Proses install Cert"          
+echo "Port 80 Akan di Hentikan Saat Proses install Cert"    
+bash acme.sh --set-default-ca --server letsencrypt
 bash acme.sh --issue -d $domain --standalone -k ec-256 --force
 bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 systemctl start xray.service
