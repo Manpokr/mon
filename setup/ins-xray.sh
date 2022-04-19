@@ -872,7 +872,7 @@ cat > /etc/xray/trojangrpc.json << END
       "settings": {
         "clients": [
           {
-            "password": "${uuid}"
+            "password": "${uuid}",
             "email": ""
 #xray-trojan-grpc
                     }
