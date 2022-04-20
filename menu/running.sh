@@ -3,8 +3,9 @@ red="\e[1;31m"
 green="\e[0;32m"
 NC="\e[0m"
 clear
-echo "          ┃ RUNNING MENU ┃        " | lolcat
-echo " ************************** " | lolcat
+echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                          
+echo -e "                 •${PURPLE} RUNNING MENU${NC} •                 "                                            
+echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 status="$(systemctl show ssh.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
@@ -221,4 +222,20 @@ then
 echo -e " trojan-go         : trojan-go Service is "$green"running"$NC""
 else
 echo -e " trojan-go         : trojan-go Service is "$red"not running (Error)"$NC""
+fi
+status="$(systemctl show trojangrpc.service --no-page)"
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+if [ "${status_text}" == "active" ]
+then
+echo -e " trojangrpc        : trojangrpc Service is "$green"running"$NC""
+else
+echo -e " trojangrpc        : trojangrpc Service is "$red"not running (Error)"$NC""
+fi
+status="$(systemctl show trojanxtls.service --no-page)"
+status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
+if [ "${status_text}" == "active" ]
+then
+echo -e " trojanxtls        : trojanxtls Service is "$green"running"$NC""
+else
+echo -e " trojanxtls        : trojanxtls Service is "$red"not running (Error)"$NC""
 fi
