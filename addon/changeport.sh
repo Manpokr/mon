@@ -16,24 +16,37 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ########################
 MYIP=$(curl -sS ipv4.icanhazip.com)
+echo "Checking VPS"                                                                                                               
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )                       
+if [[ $MYIP = $IZIN ]]; then                                                                                                      
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"                                                                                
+else                                                                                                                              
+echo -e "${NC}${RED}Permission Denied!${NC}";                                                                                     
+echo -e "${NC}${LIGHT}Please Contact Admin!!"                                                                                     
+rm -f changeport.sh                                                                                                                    
+exit 0                                                                                                                            
+fi                                                                                                                                                                                                                                                  
 clear
-
-echo -e "======================================"
-echo -e "Port Changer Menu"
-echo -e "[1]. Change Port OpenVPN"
-echo -e "[2]. Change Port Wireguard"
-echo -e "[3]. Change Port Vmess"
-echo -e "[4]. Change Port VLess"
-echo -e "[5]. Change Port Trojan"
-echo -e "[6]. Change Port Squid"
-echo -e "[7]. Change Port XRay VMess"
-echo -e "[8]. Change Port XRay VLess"
-echo -e "[9]. Change Port XRay Trojan"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                 
+echo -e "${PURPLE}          • PORT CHANGER •          ${NC}"               
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
+echo -e "[•1]. Change Port OpenVPN"
+echo -e "[•2]. Change Port Wireguard"
+echo -e "[•3]. Change Port Vmess"
+echo -e "[•4]. Change Port VLess"
+echo -e "[•5]. Change Port Trojan"
+echo -e "[•6]. Change Port Squid"
+echo -e "[•7]. Change Port XRay VMess"
+echo -e "[•8]. Change Port XRay VLess"
+echo -e "[•9]. Change Port XRay Trojan"
 echo -e "[10]. Change Port XRay XTLS"
 echo -e "[11]. Change Port Xray GRPC"
 echo -e "[12]. Change Port Trojan-go"
-echo -e "[13]. Exit"
-echo -e "======================================"
+echo -e "[12]. Change Port Trojan GRPC"
+echo -e "[12]. Change Port Trojan XTLS"
+echo -e "[${RED}13${NC}]. Exit"
+${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 read -p "Select From Options [ 1-12 ] : " port
 
@@ -75,6 +88,12 @@ port-grpc
 port-trojan-go
 ;;
 13)
+port-trgrpc
+;;
+14)
+port-trxtls
+;;
+15)
 exit
 ;;
 *)
