@@ -1,4 +1,5 @@
 #!/bin/bash
+RED='\033[0;31m'
 red="\e[1;31m"
 green="\e[0;32m"
 NC="\e[0m"
@@ -240,3 +241,5 @@ echo -e " trojanxtls        : trojanxtls Service is "$green"running"$NC""
 else
 echo -e " trojanxtls        : trojanxtls Service is "$red"not running (Error)"$NC""
 fi
+echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
