@@ -2,6 +2,7 @@
 red="\e[1;31m"
 green="\e[0;32m"
 NC="\e[0m"
+PURPLE='\033[0;35m'
 clear
 echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                          
 echo -e "                 •${PURPLE} RUNNING MENU${NC} •                 "                                            
