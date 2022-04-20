@@ -5,7 +5,7 @@ NC="\e[0m"
 PURPLE='\033[0;35m'
 clear
 echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                          
-echo -e "                 •${PURPLE} RUNNING MENU${NC} •                 "                                            
+echo -e "                 •${RED} RUNNING MENU${NC} •                 "                                            
 echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 status="$(systemctl show ssh.service --no-page)"
