@@ -8,9 +8,10 @@ echo "Checking VPS"
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/vmessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
-echo "-------------------------------";
-echo "   XRAY GRPC VMess User Login";
-echo "-------------------------------";
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}       • XRAY VMESS GRPC USER LOGIN •      ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e""
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -36,17 +37,17 @@ else
 jum2=$(cat /tmp/ipvmess.txt | nl)
 echo "user : $akun";
 echo "$jum2";
-echo "-------------------------------"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 fi
 rm -rf /tmp/ipvmess.txt
 done
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "$oth";
-echo "-------------------------------"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 dt=( `cat /etc/xray/vlessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
-echo "-------------------------------";
-echo "   XRAY GRPC VLess User Login";
-echo "-------------------------------";
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}       • XRAY VLESS GRPC USER LOGIN •      ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 for akun in "${dt[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -72,11 +73,11 @@ else
 jum2=$(cat /tmp/ipvmess.txt | nl)
 echo "user : $acc";
 echo "$jum3";
-echo "-------------------------------"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 fi
 rm -rf /tmp/ipvmess.txt
 done
 ot=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "$ot";
-echo "-------------------------------"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 rm -rf /tmp/other.txt
