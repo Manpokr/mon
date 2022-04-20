@@ -7,7 +7,17 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
+if [[ $MYIP = $IZIN ]]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+rm -f ins-xray.sh
+exit 0
+fi  
 clear
+
 domain=$(cat /etc/xray/domain)
 
 # // Make Main Directory
@@ -872,7 +882,7 @@ cat > /etc/xray/trojangrpc.json << END
       "settings": {
         "clients": [
           {
-            "password": "${uuid}"
+            "password": "${uuid}",
             "email": ""
 #xray-trojan-grpc
                     }
@@ -1155,6 +1165,8 @@ chmod +x trialxvmess
 chmod +x trialgrpc
 chmod +x trialtrxtls
 chmod +x trialtrgrpc
+
+rm -f ins-xray.sh
 
 
 
