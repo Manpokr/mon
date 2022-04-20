@@ -17,7 +17,7 @@ bd='\e[1m'
 IP=$(wget -qO- ipinfo.io/ip);
 clear
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${PURPLE}          • MENU V2RAY •          ${NC}"
+echo -e "${RED}          • MENU V2RAY •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e""
 echo -e "[${CYAN}•1${NC}] $bd Create Account Vmess Websocket ${NC}"
@@ -33,7 +33,7 @@ echo -e "[${CYAN}10${NC}] $bd Check Account Vmess Websocket ${NC}"
 echo -e "[${CYAN}11${NC}] $bd Check Account Vless Websocket ${NC}"
 echo -e "[${CYAN}12${NC}] $bd Check Account Trojan ${NC}"
 echo -e""
-echo -e "[${RED}x${NC}].${RED} Menu${NC}"
+echo -e "[${RED}•x${NC}].${RED} Menu${NC}"
 echo -e""
 read -p " silahkan masukkan nomor [1-8 or x] :  "  menu
 echo -e ""
