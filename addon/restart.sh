@@ -18,8 +18,9 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
-
-echo -e "Starting Restart All Service"
+echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"            
+echo -e "                 •${CYAN} RESTART SERVICE ${NC} •                 "                      
+echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 sleep 2
 systemctl restart ssrmu
 systemctl restart v2ray@vnone
