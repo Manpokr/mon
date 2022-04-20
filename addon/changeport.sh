@@ -28,7 +28,7 @@ exit 0
 fi                                                                                                                                                                                                                                                  
 clear
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                 
-echo -e "${PURPLE}          • PORT CHANGER •          ${NC}"               
+echo -e "${RED}          • PORT CHANGER •          ${NC}"               
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 echo -e "[•1]. Change Port OpenVPN"
