@@ -27,7 +27,7 @@ NC='\033[0;37m'
 clear 
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${PURPLE}          • SYSTEM MENU •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 echo -e " [\e[36m•1\e[0m] Add Domain"
 echo -e " [\e[36m•2\e[0m] Change Port All Account"
