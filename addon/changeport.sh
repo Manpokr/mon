@@ -45,7 +45,7 @@ echo -e "[11]. Change Port Xray GRPC"
 echo -e "[12]. Change Port Trojan-go"
 echo -e "[12]. Change Port Trojan GRPC"
 echo -e "[12]. Change Port Trojan XTLS"
-echo -e "[${RED}13${NC}]. Exit"
+echo -e "[${RED}•x${NC}]. ${RED}Exit${NC}"
 ${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 
 read -p "Select From Options [ 1-12 ] : " port
@@ -93,7 +93,7 @@ port-trgrpc
 14)
 port-trxtls
 ;;
-15)
+x)
 exit
 ;;
 *)
