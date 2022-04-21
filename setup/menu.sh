@@ -19,22 +19,19 @@ done < /root/expired.txt
 rm /root/expired.txt
 Name=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $2}')
 # Color Validation
-DF='\e[39m'
-Bold='\e[1m'
-Blink='\e[5m'
+RED='\033[0;31m'                                                                                          
+GREEN='\033[0;32m'                                                                                        
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'                                                                                         
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'                                                                                         
+NC='\033[0;37m'
+LIGHT='\033[0;37m'
 yell='\e[33m'
 red='\e[31m'
-green='\e[32m'
-blue='\e[34m'
-PURPLE='\e[35m'
 cyan='\e[36m'
-Lred='\e[91m'
-Lgreen='\e[92m'
-Lyellow='\e[93m'
-NC='\e[0m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-LIGHT='\033[0;37m'
+
+
 # VPS Information
 #Domain
 domain=$(cat /etc/xray/domain)
@@ -91,7 +88,7 @@ echo -e "\e[33m CPU Usage            \e[0m:  $cpu_usage"
 echo -e "\e[33m Operating System     \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`                                                                                                                                                              
 echo -e "\e[33m Kernel               \e[0m:  `uname -r`"                                                                                                                                                                                                             
 echo -e "\e[33m Total Amount Of RAM  \e[0m:  $tram MB"                                                                                                                                                                                                               
-echo -e "\e[33m Used RAM             \e[0m: $red $uram\e[0m MB"                                                                                                                                                                                                      
+echo -e "\e[33m Used RAM             \e[0m:  ${RED}$uram${NC} MB"                                                                                                                                                                                                      
 echo -e "\e[33m Free RAM             \e[0m:  $fram MB"                                                                                                                                                                                                               
 echo -e "\e[33m System Uptime        \e[0m:  $uptime "                                                                                                                                                                                                               
 echo -e "\e[33m Isp Name             \e[0m:  $ISP"                                                                                                                                                                                                                   
@@ -127,8 +124,8 @@ echo -e   ""
 echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"                                                                                                                                                                                                                  
 echo -e   ""                                                                                                                                                                                                                                                         
 echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                                                                                                                                                            
-echo -e " Client Name    : ${CYAN}$Name${NC}"                                                                                                                                                                                                                        
-echo -e " Script Expired : ${CYAN}$Exp2${NC}"                                                                                                                                                                                                                        
+echo -e " Client Name    : $Name"                                                                                                                                                                                                                        
+echo -e " Script Expired : $Exp2"                                                                                                                                                                                                                        
 echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                                                                                                                                                            
 echo -e   ""                                                                                                                                                                                                                                                         
 read -p " Select menu :  "  menu                                                                                                                                                                                                                                     
