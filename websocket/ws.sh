@@ -48,7 +48,7 @@ chmod +x /usr/local/bin/ws-ovpn
 # Installing Service
 cat > /etc/systemd/system/ws-ovpn.service << END
 [Unit]
-Description=SSHWS
+Description=Python Proxy Mod By manpokr
 Documentation=https://github.com/Manpokr/mon
 After=network.target nss-lookup.target
 
@@ -72,7 +72,7 @@ chmod +x /usr/local/bin/ws-stunnel
 # Create system Service ws-stunnel
 cat > /etc/systemd/system/ws-stunnel.service <<END
 [Unit]
-Description=SSHSSl
+Description=Python Proxy Mod By manpokr
 Documentation=https://github.com/Manpokr/mon
 After=network.target nss-lookup.target
 
@@ -82,7 +82,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/bin/python -O /usr/local/bin/ws-stunnel
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-stunnel 447
 Restart=on-failure
 [Install]
 WantedBy=multi-user.target
@@ -91,9 +91,7 @@ END
 systemctl daemon-reload
 systemctl enable websocket
 systemctl restart websocket
-systemctl daemon-reload
 systemctl enable ws-ovpn
 systemctl restart ws-ovpn
-systemctl daemon-reload
 systemctl enable ws-stunnel
 systemctl restart ws-stunnel
