@@ -10,15 +10,16 @@ color3='\e[0m'
 IP=$(wget -qO- ipinfo.io/ip);
 echo -e "checking vps"
 clear
-echo -e "                       ═══[WIREGUARD MENU]═══         " | lolcat
-echo -e "          \e[32m════════════════════════════════\e[m" | lolcat
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}          • MENU WIREGUARD •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e""
-echo -e "${color1}1${color3}.$bd Create Account Wireguard (${color2}addwg${color3})"
-echo -e "${color1}2${color3}.$bd Delete Account Wireguard (${color2}delwg${color3})"
-echo -e "${color1}3${color3}.$bd Check User Login Wireguard (${color2}cekwg${color3})"
-echo -e "${color1}4${color3}.$bd Renew Account Wireguard (${color2}renewwg${color3})"
+echo -e "[${CYAN}•1${NC}] $bd Create Account Wireguard ${NC}"
+echo -e "[${CYAN}•2${NC}] $bd Delete Account Wireguard ${NC}"
+echo -e "[${CYAN}•3${NC}] $bd Check User Login Wireguard ${NC}"
+echo -e "[${CYAN}•4${NC}] $bd Renew Account Wireguard ${NC}"
 echo -e""
-echo -e "${color1}x${color3}.$bd Menu"
+echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e""
 read -p "  Please Enter The Number  [1-4 or x] :  "  menu
 echo -e ""
