@@ -9,18 +9,19 @@ color2='\e[34;1m'
 color3='\e[0m'
 IP=$(wget -qO- ipinfo.io/ip);
 clear
-echo -e "           ═══[SSR / SS MENU]═══" | lolcat
-echo -e "\e[32m══════════════════════════════\e[m" | lolcat
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                           
+echo -e "${RED}          • MENU SSR / SS •          ${NC}"                                                               
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                           
+echo -e""                                                                                                           
+echo -e "[${CYAN}•1${NC}] $bd  Create Account ShadowsocksR ${NC})"
+echo -e "[${CYAN}•2${NC}] $bd  Create Account Shadowsocks  ${NC}"
+echo -e "[${CYAN}•3${NC}] $bd  Delete Account ShadowsocksR ${NC}"
+echo -e "[${CYAN}•4${NC}] $bd  Delete Account Shadowsocks ${NC}"
+echo -e "[${CYAN}•5${NC}] $bd  Renew Account ShadowsocksR ${NC}"
+echo -e "[${CYAN}•6${NC}] $bd  Renew Account Shadowsocks ${NC}"
+echo -e "[${CYAN}•7${NC}] $bd  Check User Login SSR & SS ${NC}"
 echo -e""
-echo -e "${color1}1${color3}.$bd  Create Account ShadowsocksR(${color2}addssr${color3})"
-echo -e "${color1}2${color3}.$bd  Create Account Shadowsocks  (${color2}addss${color3})"
-echo -e "${color1}3${color3}.$bd  Delete Account ShadowsocksR (${color2}delssr${color3})"
-echo -e "${color1}4${color3}.$bd  Delete Account Shadowsocks (${color2}delss${color3})"
-echo -e "${color1}5${color3}.$bd  Renew Account ShadowsocksR  (${color2}renewssr${color3})"
-echo -e "${color1}6${color3}.$bd  Renew Account Shadowsocks (${color2}renewss${color3})"
-echo -e "${color1}7${color3}.$bd  Check User Login Ss & Ssr (${color2}cekss${color3})"
-echo -e""
-echo -e "${color1}x${color3}.$bd Menu"
+echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e""
 read -p " Please Enter The Number  [1-8 or x] :  "  menu
 echo -e ""
