@@ -1,23 +1,27 @@
 #!/bin/bash
 clear
-echo -e "                   ═══[TRIAL MENU]═══            " | lolcat
-echo -e "     \e[32m══════════════════════════════\e[m" | lolcat
-echo " 1)= >> Create TRial XRay VMess Accounts                         
-echo " 2)= >> Create TRial XRay VLess Accounts                      
-echo " 3)= >> Create TRial XRay Trojan Accounts                      
-echo " 4)= >> Create TRial XRay XTLS Accounts                              ║"
-echo "║ 5.Create TRial XRay GRPC Accounts                              ║"
-echo "║ 6.Create TRial V2Ray Vmess Websocket                           ║"
-echo "║ 7.Create TRial V2Ray Vless Websocket                           ║"
-echo "║ 8.Create Trial V2Ray Trojan                                    ║"
-echo "║ 9.Create TRial ShadowsocksR                                    ║"
-echo "║ 10.Create TRial Shadowsocks                                    ║"
-echo "║ 11.Create TRial SSTP Accounts                                  ║"
-echo "║ 12.Create TRial PPTP Accounts                                  ║"
-echo "║ 13.Create TRial L2TP Accounts                                  ║"
-echo "║  x.Exit                                                        ║"                                                  
-echo "╚════════════════════════════════════════════════════════════════╝" 
-read -p "     Select From Options [1-20] :  " menu
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}          • MENU TRIAL •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e""
+
+echo -e "[${CYAN}•1${NC}] $bd Create TRial XRay VMess Accounts ${NC}"                     
+echo -e "[${CYAN}•2${NC}] $bd Create TRial XRay VLess Accounts ${NC}"                    
+echo -e "[${CYAN}•3${NC}] $bd Create TRial XRay Trojan Accounts ${NC}"                    
+echo -e "[${CYAN}•4${NC}] $bd Create TRial XRay XTLS Accounts ${NC}"                          
+echo -e "[${CYAN}•5${NC}] $bd Create TRial XRay GRPC Accounts ${NC}"                          
+echo -e "[${CYAN}•6${NC}] $bd Create TRial V2Ray Vmess Websocket ${NC}"                         
+echo -e "[${CYAN}•7${NC}] $bd Create TRial V2Ray Vless Websocket ${NC}"                        
+echo -e "[${CYAN}•8${NC}] $bd Create Trial V2Ray Trojan ${NC}"                               
+echo -e "[${CYAN}•9${NC}] $bd Create TRial ShadowsocksR ${NC}"                             
+echo -e "[${CYAN}10${NC}] $bd Create TRial Shadowsocks ${NC}"                           
+echo -e "[${CYAN}11${NC}] $bd Create TRial SSTP Accounts ${NC}"                          
+echo -e "[${CYAN}12${NC}] $bd Create TRial PPTP Accounts ${NC}"                            
+echo -e "[${CYAN}13${NC}] $bd Create TRial L2TP Accounts ${NC}"                               
+echo -e""
+echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e""
+read -p " silahkan masukkan nomor [1-13 or x] :  "  menu
 case $menu in 
 1)
 trialxvmess
