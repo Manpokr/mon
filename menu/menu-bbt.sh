@@ -1,13 +1,23 @@
 #!/bin/bash
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+bd='\e[1m'
+
 clear
-echo "╔═════════════════════════════════════════════════════════════════╗"
-echo "║                       ┃ Bot Panel Menu ┃                        ║" 
-echo "╚═════════════════════════════════════════════════════════════════╝" 
-echo "║ 1.Create Bot Configuration                                      ║"
-echo "║ 2.Delete Bot Configuration                                      ║"
-echo "║ 3.Restart Bot Services                                          ║"
-echo "║ 4.Exit                                                          ║" 
-echo "╚═════════════════════════════════════════════════════════════════╝" 
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                 
+echo -e "${RED}           • BOT MENU •          ${NC}"               
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "[${CYAN}•1${NC}] $bd Create Bot Configuration ${NC}"                                      
+echo -e "[${CYAN}•2${NC}] $bd Delete Bot Configuration ${NC}"                                 
+echo -e "[${CYAN}•3${NC}] $bd Restart Bot Services ${NC}"                                        
+echo -e "[${RED}•x${NC}] ${RED}Exit${NC}                                                          
+echo -e
 read -p "     Select From Options [1-4] :  " menu
 case $menu in 
 1)
@@ -20,7 +30,7 @@ delbbt
 systemctl restart bbt 
 menu
 ;;
-4)
+x)
 exit
 ;;
 *)
