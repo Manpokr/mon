@@ -132,10 +132,6 @@ chmod +x ins-vt.sh
 screen -S vt ./ins-vt.sh
 
 #trojango
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-trgo.sh
-chmod +x ins-trgo.sh
-./ins-trgo.sh
-
 #Backup
 wget https://raw.githubusercontent.com/Manpokr/mon/main/backup/set-br.sh
 chmod +x set-br.sh 
@@ -172,7 +168,6 @@ wget -O port-vmess "https://raw.githubusercontent.com/Manpokr/mon/main/port/port
 wget -O port-vless "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-vless.sh"
 wget -O port-trojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojan.sh"
 wget -O port-grpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-grpc.sh"
-wget -O port-trojan-go "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojan-go"
 wget -O port-trxtls "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trxtls.sh"
 wget -O port-trgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trgrpc.sh"
 wget -O menu-ssh "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-ssh.sh"
@@ -184,13 +179,11 @@ wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/sy
 wget -O trial-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/trial-menu.sh"
 wget -O menu-bbt "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bbt.sh"
 wget -O running "https://raw.githubusercontent.com/Manpokr/mon/main/menu/running.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-trgo"
 chmod +x portovpn
 chmod +x portsquid
 chmod +x portwg
 chmod +x portvlm
 chmod +x porttrojan
-chmod +x port-trojango
 chmod +x port-xws
 chmod +x port-xvl
 chmod +x port-xtr
@@ -199,7 +192,6 @@ chmod +x port-vmess
 chmod +x port-vless
 chmod +x port-trojan
 chmod +x port-grpc
-chmod +x port-trojan-go
 chmod +x port-trxtls
 chmod +x port-trgrpc
 chmod +x trial-menu
@@ -211,7 +203,6 @@ chmod +x menu-v2ray
 chmod +x menu-bbt
 chmod +x system-menu
 chmod +x running
-chmod +x menu-trgo
 
 cd
 rm -f /root/sodosok.sh
@@ -231,7 +222,6 @@ clear
 echo " Reboot 7 Sec"
 sleep 7
 rm -f setup.sh
-rm -f ins-trgo.sh
 rm -f ins-xray.sh
 chmod +x /var/run/screen
 reboot
