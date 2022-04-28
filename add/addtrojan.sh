@@ -11,13 +11,12 @@ NC="\e[0m"
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
-
-clear
-IP=$( curl -s ipinfo.io/ip );
 uuid=$(cat /etc/trojan/uuid.txt)
 source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
+else                                                                      
+domain=$IP                                                                
 fi
 tr=$(cat /etc/trojan/config.json | grep local_port | sed 's/local_//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/"//g' | sed 's/   //g' | sed 's/  //g')
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
@@ -30,12 +29,14 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
+MYIP=$(wget -qO- ipinfo.io/ip);
 domain=$(cat /etc/v2ray/domain)
 read -p "Expired (days): " masaaktif
 read -p "SNI (BUG)     : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
 sed -i '/"'""$uuid""'"$/a\,"'""$user""'"' /etc/trojan/config.json
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e "### $user $exp" >> /etc/trojan/akun.conf
 systemctl restart trojan
