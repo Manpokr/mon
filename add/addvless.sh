@@ -39,6 +39,7 @@ read -p "Expired (days): " masaaktif
 read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/v2ray/vless.json
@@ -55,15 +56,17 @@ echo -e "================================="
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${dom}"
 echo -e "Bug            : ${sni}"
-echo -e "port TCP       : $tls"
-echo -e "port none TCP  : $none"
+echo -e "port TLS       : $tls"
+echo -e "port none TLS  : $none"
 echo -e "id             : ${uuid}"
 echo -e "Encryption     : none"
-echo -e "network        : tcp"
-echo -e "path           : /xray"
+echo -e "network        : tls"
+echo -e "path           : /v2ray"
 echo -e "================================="
-echo -e "link TLS       : ${vlesslink2}"
+echo -e "link TLS       : ${vlesslink1}"
 echo -e "================================="
-echo -e "link TCP       : ${vlesslink1}"
+echo -e "link NONE-TLS  : ${vlesslink2}"
 echo -e "================================="
+echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
+echo -e "================================="
