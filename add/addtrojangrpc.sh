@@ -42,7 +42,6 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#xray-trojan-grpc$/a\#&# '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/trojangrpc.json
 
-#trojanlink="trojan://${uuid}@$dom:${tr}#${user}"
 trojanlink1="trojan://$uuid@$dom:${tr}?mode=gun&security=tls&type=grpc&serviceName=GunService&sni=${sni}#${user}"
 systemctl restart trojangrpc.service
 service cron restart
