@@ -25,6 +25,7 @@ read -p "Expired (days): " masaaktif
 read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/vmessgrpc.json
@@ -73,5 +74,7 @@ echo -e "================================="
 echo -e "Link VLess GRPC  : "
 echo -e "${vlesslink1}"
 echo -e "================================="
-echo -e "Expired On     : $exp"
+echo -e "Created          : $hariini"
+echo -e "Expired On       : $exp"
 echo -e "=================================" 
+echo -e "Script By Manternet"
