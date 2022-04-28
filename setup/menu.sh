@@ -78,7 +78,11 @@ tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )                                                                                                                                                                                                                           
 fram=$( free -m | awk 'NR==2 {print $4}' )                                                                                                                                                                                                                           
 verxray="$(/usr/bin/xray/xray -version | awk 'NR==1 {print $2}')"                                                                                                                                                                                                    
-verv2ray="$(/usr/bin/v2ray/v2ray -version | awk 'NR==1 {print $2}')"                                                                                                                                                                                                 
+verv2ray="$(/usr/bin/v2ray/v2ray -version | awk 'NR==1 {print $2}')"   
+#Bash
+shellversion+=" ${BASH_VERSION/-*}" 
+versibash=$shellversion
+                                                                                                                                                                             
 clear                                                                                                                                                                                                                                                                
 echo -e "                                                                                         "                                                                                                                                                                  
 echo -e "\e[33m CPU Model            \e[0m: $cname"                                                                                                                                                                                                                  
@@ -100,6 +104,7 @@ echo -e "\e[33m Day                  \e[0m:  $DAY"
 echo -e "\e[33m Date                 \e[0m:  $DATE"                                                                                                                                                                                                                  
 echo -e "\e[33m Telegram             \e[0m:  https://t.me/Mantera99"                                                                                                                                                                                                 
 echo -e "\e[33m Script Version       \e[0m:  Latest Versions"                                                                                                                                                                                                        
+echo -e "\e[33m Bash Version         \e[0m:  ${PURPLE}$versibash${NC}"                                                                                                                                                                                                 
 echo -e "\e[33m Xray Version         \e[0m:  ${PURPLE}$verxray${NC}"                                                                                                                                                                                                 
 echo -e "\e[33m V2ray Version        \e[0m:  ${PURPLE}$verv2ray${NC}"                                                                                                                                                                                                
 echo -e "\e[33m Certificate status   \e[0m:  \e[33mExpired in ${tlsStatus} days\e[0m"                                                                                                                                                                                
