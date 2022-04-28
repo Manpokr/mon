@@ -95,17 +95,18 @@ echo Generate PublicKey
 sleep 0.5
 echo Generate PresharedKey
 clear
-
-echo -e "======-WIREGUARD-======"
+echo -e "================================="
+echo -e "            WIREGUARD           "
+echo -e "================================="
 echo -e "Remarks  : $CLIENT_NAME"
 echo -e "IP/Host  : $MYIP"
 echo -e "Domain   : $domain"
 echo -e "Port     : $portwg"
-echo -e "======================="
+echo -e "================================="
 echo -e "Link WG  : http://$MYIP:89/$CLIENT_NAME.conf"
-echo -e "======================="
+echo -e "================================="
 echo -e "Created  : $hariini"
 echo -e "Expired  : $exp"
-echo -e "======================="
+echo -e "================================="
 echo -e "Script By Manternet"
 rm -f /root/wg0-client-$CLIENT_NAME.conf
