@@ -52,6 +52,7 @@ read -p "Expired (days): " masaaktif
 read -p "SNI (BUG)     : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/v2ray/config.json
@@ -102,18 +103,20 @@ echo -e "================================="
 echo -e "Remarks        : ${user}"
 echo -e "Domain         : ${domain}"
 echo -e "Subdomain      : ${dom}"
-echo -e "port TCP       : ${tls}"
-echo -e "port none TCP  : ${none}"
-echo -e "port KCP       : ${mkcp}"
+echo -e "port TLS       : ${tls}"
+echo -e "port none TLS  : ${none}"
 echo -e "id             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
-echo -e "network        : TCP"
-echo -e "path           : /xray"
+echo -e "network        : TLS"
+echo -e "path           : /v2ray"
 echo -e "================================="
 echo -e "Link TLS       : ${vmesslink1}"
 echo -e "================================="
 echo -e "Link None TLS  : ${vmesslink2}"
 echo -e "================================="
+echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
+echo -e "================================="
+
 
