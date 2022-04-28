@@ -1111,7 +1111,7 @@ wget -O delxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/delxtls.
 wget -O delgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/delgrpc.sh"
 wget -O deltrxtls "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrxtls.sh"
 wget -O deltrgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/del/deltrgrpc.sh"
-wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxv2ray.sh"
+wget -O cekxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvmess.sh"
 wget -O cekxvless "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxvless.sh"
 wget -O cekxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxtrojan.sh"
 wget -O cekxtls "https://raw.githubusercontent.com/Manpokr/mon/main/cek/cekxray.sh"
