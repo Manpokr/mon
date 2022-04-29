@@ -20,7 +20,7 @@ clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/trojangrpc.json | grep '^#&#' | cut -d ' ' -f 2`);
 echo "-----------------------------------------";
-echo "---------=[ Trojan User Login ]=---------";
+echo "------=[ Trojan GRPC User Login ]=------";
 echo "-----------------------------------------";
 for akun in "${data[@]}"
 do
