@@ -18,13 +18,14 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
-source /var/lib/manpokr/ipvps.conf
+MYIP=$(wget -qO- ipinfo.io/ip);
+source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-tr="$(cat /etc/xray/trojan.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')"
+tr="$(cat /etc/xray/trojangrpc.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')"
 user=dev-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 exp=1
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -33,23 +34,25 @@ read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " 
 dom=$sub$domain
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#xray-trojan$/a\#&# '"$user na$exp"'\
-},{"password": "'""$userna""'","email": "'""$userna""'"' /etc/xray/trojan.json
-systemctl restart x-tr.service
-trojanlink="trojan://${user}@${dom}:${tr}?sni=$sni#$user"
+sed -i '/#xray-trojan-grpc$/a\#&# '"$user $exp"'\
+},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/trojangrpc.json
+systemctl restart trojangrpc.service
+trojanlink1="trojan://$uuid@$dom:${tr}?mode=gun&security=tls&type=grpc&serviceName=GunService&sni=${sni}#${user}"
 service cron restart
 clear
 
-echo -e "======-Xray/TROJAN-======"
+echo -e "======-Xray/TROJAN-GRPC-======"
 echo -e "Remarks   : ${user}"
 echo -e "IP/Host   : ${MYIP}"
 echo -e "Domain    : ${domain}"
 echo -e "Subdomain : $dom"
 echo -e "Port      : ${tr}"
 echo -e "Key       : ${user}"
+echo -e "Password  : ${uuid}"
+echo -e "=========================="
+echo -e "Link TR  : ${trojanlink1}"
+echo -e "=========================="
 echo -e "Created   : $hariini"
 echo -e "Expired   : $exp"
-echo -e "=========================="
-echo -e "Link TR  : ${trojanlink}"
 echo -e "=========================="
 echo -e "Script By Manternet"
