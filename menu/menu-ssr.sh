@@ -15,7 +15,7 @@ echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "${RED}          • MENU SSR / SS •          ${NC}"                                                               
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                           
 echo -e""                                                                                                           
-echo -e "[${CYAN}•1${NC}] $bd  Create Account ShadowsocksR ${NC})"
+echo -e "[${CYAN}•1${NC}] $bd  Create Account ShadowsocksR ${NC}"
 echo -e "[${CYAN}•2${NC}] $bd  Create Account Shadowsocks  ${NC}"
 echo -e "[${CYAN}•3${NC}] $bd  Delete Account ShadowsocksR ${NC}"
 echo -e "[${CYAN}•4${NC}] $bd  Delete Account Shadowsocks ${NC}"
