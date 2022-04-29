@@ -22,6 +22,7 @@ echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━
 echo -e "                 •${RED} RESTART SERVICE ${NC} •                 "                      
 echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 sleep 2
+systemctl daemon-reload
 systemctl restart ssrmu
 systemctl restart v2ray@vnone
 systemctl restart v2ray@none
