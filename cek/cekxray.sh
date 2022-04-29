@@ -8,8 +8,9 @@ echo "Checking VPS"
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/xrayxtls.json | grep '^###' | cut -d ' ' -f 2`);                                                              echo "-------------------------------";
-echo "Name : XRAY Vless User Login";
-echo "-------------------------------";                                                                                             for akun in "${data[@]}"
+echo "-----------------------------------------";
+echo "-------=[ XRAY Xtls User Login ]=-------";
+echo "-----------------------------------------";                                                                                            for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then                                                                                                           akun="tidakada"
 fi
