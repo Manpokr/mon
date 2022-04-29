@@ -48,6 +48,7 @@ echo -e " [${CYAN}16${NC}] Cek Bandwith${NC} "
 echo -e " [${CYAN}17${NC}] Reset Server${NC} "
 echo -e " [${CYAN}18${NC}] Kernel Update${NC} "
 echo -e " [${CYAN}19${NC}] Set Auto Reboot${NC} "
+echo -e " [${CYAN}20${NC}] Bbr${NC} "
 echo -e ""
 echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
 echo -e   ""
@@ -77,6 +78,7 @@ case $opt in
 17) clear ; resett ; exit ;;
 18) clear ; kernel-updt ; exit ;;
 19) clear ; auto-reboot ; exit ;;
+20) clear ; bbr ; exit ;;
 0) clear ; menu ; exit ;;
 x) exit ;;
 *) echo -e "" ; echo "Boh salah tekan, Sayang kedak Babi" ; sleep 1 ; m-system ;;
