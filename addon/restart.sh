@@ -44,7 +44,6 @@ systemctl restart wg-quick@wg0
 systemctl restart ssh-ohp
 systemctl restart dropbear-ohp
 systemctl restart openvpn-ohp
-systemctl restart trojan-go
 systemctl restart v2ray.service
 systemctl restart ws-stunnel
 /etc/init.d/ssrmu restart
