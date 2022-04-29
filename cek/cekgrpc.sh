@@ -82,3 +82,5 @@ echo "other";
 echo "$ot";
 echo "-------------------------------"
 rm -rf /tmp/other.txt
+read -p "Press Enter For Back To XRay Menu / CTRL+C To Cancel : "
+menu-xray
