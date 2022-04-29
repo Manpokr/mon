@@ -9,7 +9,7 @@ clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/vlesstls.json | grep '^###' | cut -d ' ' -f 2`);
 echo "-------------------------------";
-echo "Name : XRAY Vless User Login";
+echo "     XRAY Vless User Login";
 echo "-------------------------------";
 for akun in "${data[@]}"
 do
