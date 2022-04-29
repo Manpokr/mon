@@ -217,14 +217,6 @@ echo -e " vless-grpc        : vless-grpc Service is "$green"running"$NC""
 else
 echo -e " vless-grpc        : vless-grpc Service is "$red"not running (Error)"$NC""
 fi
-status="$(systemctl show trojan-go.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " trojan-go         : trojan-go Service is "$green"running"$NC""
-else
-echo -e " trojan-go         : trojan-go Service is "$red"not running (Error)"$NC""
-fi
 status="$(systemctl show trojangrpc.service --no-page)"
 status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
 if [ "${status_text}" == "active" ]
