@@ -9,7 +9,7 @@ clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/vmessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
 echo "-----------------------------------------";
-echo "--=[ XRAY Vmess/Vles GRPC User Login ]=--";
+echo "-----=[ XRAY Vmess GRPC User Login ]=----";
 echo "-----------------------------------------";
 for akun in "${data[@]}"
 do
@@ -41,12 +41,13 @@ fi
 rm -rf /tmp/ipvmess.txt
 done
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
+echo "other";
 echo "$oth";
 echo "-------------------------------"
 dt=( `cat /etc/xray/vlessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED} • XRAY VLESS GRPC USER LOGIN •      ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "-----------------------------------------";
+echo "-----=[ XRAY Vless GRPC User Login ]=----";
+echo "-----------------------------------------";
 for akun in "${dt[@]}"
 do
 if [[ -z "$akun" ]]; then
