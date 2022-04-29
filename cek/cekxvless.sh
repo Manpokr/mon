@@ -8,9 +8,9 @@ echo "Checking VPS"
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/vlesstls.json | grep '^###' | cut -d ' ' -f 2`);
-echo "-------------------------------";
-echo "     XRAY Vless User Login";
-echo "-------------------------------";
+echo "-----------------------------------------";
+echo "-------=[ XRAY Vless User Login ]=-------";
+echo "-----------------------------------------";
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
