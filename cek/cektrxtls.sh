@@ -19,9 +19,9 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/trojanxtls.json | grep '^#&#' | cut -d ' ' -f 2`);
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}       • XRAY TROJAN XTLS USER LOGIN •      ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "-----------------------------------------";
+echo "------=[ Trojan Xtls User Login ]=-------";
+echo "-----------------------------------------";
 for akun in "${data[@]}"
 do
 if [[ -z "$akun" ]]; then
@@ -47,13 +47,13 @@ else
 jum2=$(cat /tmp/iptrojan.txt | nl)
 echo "user : $akun";
 echo "$jum2";
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "-------------------------------"
 fi
 rm -rf /tmp/iptrojan.txt
 done
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "-------------------------------"
 echo "Script By Manternet"
 rm -rf /tmp/other.txt
