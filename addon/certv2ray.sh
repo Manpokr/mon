@@ -25,9 +25,8 @@ echo -e "${NC}${RED}Permission Denied!${NC}";
 echo -e "${NC}${LIGHT}Please Contact Admin!!"
 rm -f certv2ray.sh
 exit 0
-fi                                                                                                                                                     clear
+fi
 clear
-
 echo start
 sleep 0.5
 domain=$(cat /etc/xray/domain)
