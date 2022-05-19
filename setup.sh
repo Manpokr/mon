@@ -179,6 +179,7 @@ wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/sy
 wget -O trial-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/trial-menu.sh"
 wget -O menu-bbt "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bbt.sh"
 wget -O running "https://raw.githubusercontent.com/Manpokr/mon/main/menu/running.sh"
+wget -O menu-bw "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bw"
 chmod +x portovpn
 chmod +x portsquid
 chmod +x portwg
@@ -203,6 +204,7 @@ chmod +x menu-v2ray
 chmod +x menu-bbt
 chmod +x system-menu
 chmod +x running
+chmod +x menu-bw
 
 cd
 rm -f /root/sodosok.sh
