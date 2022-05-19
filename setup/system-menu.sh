@@ -74,7 +74,7 @@ case $opt in
 13) clear ; clear-log ; exit ;;
 14) clear ; restart ; exit ;;
 15) clear ; certv2ray ; exit ;; #certv2ray
-16) clear ; bw ; exit ;;
+16) clear ; menu-bw ; exit ;;
 17) clear ; resett ; exit ;;
 18) clear ; kernel-updt ; exit ;;
 19) clear ; auto-reboot ; exit ;;
