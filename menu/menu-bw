@@ -10,22 +10,21 @@ NC='\033[0;37m'
 bd='\e[1m'
 
 clear
-figlet VNSTAT | lolcat -d 5
 echo -e ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${RED}          • BANDWITH MONITOR •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo -e "     [${CYAN}•1${NC}] $bd Lihat Total Bandwith Tersisa"
-echo -e "     [${CYAN}•2${NC}] $bd Tabel Penggunaan Setiap 5 Menit"
-echo -e "     [${CYAN}•3${NC}] $bd Tabel Penggunaan Setiap Jam"
-echo -e "     [${CYAN}•4${NC}] $bd Tabel Penggunaan Setiap Hari"
-echo -e "     [${CYAN}•5${NC}] $bd Tabel Penggunaan Setiap Bulan"
-echo -e "     [${CYAN}•6${NC}] $bd Tabel Penggunaan Setiap Tahun"
-echo -e "     [${CYAN}•7${NC}] $bd Tabel Penggunaan Tertinggi"
-echo -e "     [${CYAN}•8${NC}] $bd Statistik Penggunaan Setiap Jam"
-echo -e "     [${CYAN}•9${NC}] $bd Lihat Penggunaan Aktif Saat Ini"
-echo -e "     [${CYAN}10${NC}] $bd Lihat Trafik Penggunaan Aktif Saat Ini [5s]"
+echo -e "     [${CYAN}•1${NC}] $bd Lihat Total Bandwith Tersisa${NC}"
+echo -e "     [${CYAN}•2${NC}] $bd Tabel Penggunaan Setiap 5 Menit${NC}"
+echo -e "     [${CYAN}•3${NC}] $bd Tabel Penggunaan Setiap Jam${NC}"
+echo -e "     [${CYAN}•4${NC}] $bd Tabel Penggunaan Setiap Hari${NC}"
+echo -e "     [${CYAN}•5${NC}] $bd Tabel Penggunaan Setiap Bulan${NC}"
+echo -e "     [${CYAN}•6${NC}] $bd Tabel Penggunaan Setiap Tahun${NC}"
+echo -e "     [${CYAN}•7${NC}] $bd Tabel Penggunaan Tertinggi${NC}"
+echo -e "     [${CYAN}•8${NC}] $bd Statistik Penggunaan Setiap Jam${NC}"
+echo -e "     [${CYAN}•9${NC}] $bd Lihat Penggunaan Aktif Saat Ini${NC}"
+echo -e "     [${CYAN}10${NC}] $bd Lihat Trafik Penggunaan Aktif Saat Ini [5s]${NC}"
 echo -e ""
 echo -e "     [${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e ""
@@ -36,9 +35,8 @@ echo -e ""
 clear
 case $menu in
 1)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}        • TOTAL BANDWITH SERVER LEFT •          ${NC}"
+echo -e "${RED}      • TOTAL BANDWITH SERVER LEFT •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 
@@ -50,9 +48,8 @@ echo -e ""
 ;;
 
 2)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}       • USE BANDWITH EVERY 5 MINUTES •          ${NC}"
+echo -e "${RED}      • USE BANDWITH EVERY 5 MINUTES •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 
@@ -64,7 +61,6 @@ echo -e ""
 ;;
 
 3)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${RED}       • USE BANDWITH EVERY HOUR •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -78,9 +74,8 @@ echo -e ""
 ;;
 
 4)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}       • USE BANDWITH EVERY DAY •          ${NC}"
+echo -e "${RED}        • USE BANDWITH EVERY DAY •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 
@@ -92,7 +87,6 @@ echo -e ""
 ;;
 
 5)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${RED}       • USE BANDWITH EVERY MONTH •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -106,9 +100,8 @@ echo -e ""
 ;;
 
 6)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}       • USE BANDWITH EVERY YEARS •          ${NC}"
+echo -e "${RED}        • USE BANDWITH EVERY YEARS •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 
@@ -120,7 +113,6 @@ echo -e ""
 ;;
 
 7)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${RED}          • HIGHEST BANDWITH USE •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -134,7 +126,6 @@ echo -e ""
 ;;
 
 8)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${RED}   • BANDWITH GRAPHICS USED EVERY HOUR •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -148,9 +139,8 @@ echo -e ""
 ;;
 
 9)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}      • LIVE USE OF BANDWITH CURRENTLY •          ${NC}"
+echo -e "${RED}     • LIVE USE OF BANDWITH CURRENTLY •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 echo -e " ${white}CTRL+C Untuk Keluar!${off}"
@@ -164,9 +154,8 @@ echo -e ""
 ;;
 
 10)
-figlet VNSTAT | lolcat -d 5
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}      • LIVE TRAFFIC USE BANDWITH •          ${NC}"
+echo -e "${RED}       • LIVE TRAFFIC USE BANDWITH •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
 
@@ -184,7 +173,7 @@ menu
 
 *)
 sleep 1
-echo "Masukkan Nomor Yang Ada
+echo "Masukkan Nomor Yang Ada"
 bw
 ;;
 esac
