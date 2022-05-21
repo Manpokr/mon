@@ -101,7 +101,7 @@ clear
 echo -e "================================="
 echo -e "            SHADOWSOCKS         "
 echo -e "================================="
-echo -e "IP/Host     : $MYIP"
+echo -e "IP/Host     : $IP"
 echo -e "Domain      : $domain"
 echo -e "Port TLS    : $tls"
 echo -e "Port No TLS : $http"
