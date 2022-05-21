@@ -97,6 +97,7 @@ systemctl restart v2ray
 systemctl restart v2ray@none
 service cron restart
 clear
+MYIP=$(wget -qO- ipinfo.io/ip);
 echo -e "================================="
 echo -e "            V2RAY VMESS          " 
 echo -e "================================="
