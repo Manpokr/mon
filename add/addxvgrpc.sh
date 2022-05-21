@@ -53,10 +53,12 @@ systemctl restart vmess-grpc.service
 systemctl restart vless-grpc.service
 service cron restart
 clear
+IP=$(wget -qO- ipinfo.io/ip);
 echo -e "================================="
 echo -e "            XRAY GRPC            " 
 echo -e "================================="
 echo -e "Remarks           : ${user}"
+echo -e "IP/host           : ${IP}"
 echo -e "Domain            : ${domain}"
 echo -e "SNI               : $sni"
 echo -e "Port VMess        : ${tls}"
