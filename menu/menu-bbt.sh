@@ -13,9 +13,11 @@ clear
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                 
 echo -e "${RED}           • BOT MENU •          ${NC}"               
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e ""
 echo -e "[${CYAN}•1${NC}] $bd Create Bot Configuration ${NC}"                                      
 echo -e "[${CYAN}•2${NC}] $bd Delete Bot Configuration ${NC}"                                 
 echo -e "[${CYAN}•3${NC}] $bd Restart Bot Services ${NC}"                                        
+echo -e ""
 echo -e "[${RED}•x${NC}] ${RED}Exit${NC}"                                                          
 echo -e""
 read -p "     Select From Options [1-4] :  " menu
