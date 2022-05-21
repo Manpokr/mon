@@ -1,20 +1,5 @@
 #!/bin/bash
 # Color Validation
-DF='\e[39m'
-Bold='\e[1m'
-Blink='\e[5m'
-yell='\e[33m'
-red='\e[31m'
-green='\e[32m'
-blue='\e[34m'
-PURPLE='\e[35m'
-cyan='\e[36m'
-Lred='\e[91m'
-Lgreen='\e[92m'
-Lyellow='\e[93m'
-NC='\e[0m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
 LIGHT='\033[0;37m'
 RED='\033[0;31m'
 NC='\033[0m'
@@ -50,7 +35,7 @@ echo -e " [${CYAN}18${NC}] Kernel Update${NC} "
 echo -e " [${CYAN}19${NC}] Set Auto Reboot${NC} "
 echo -e " [${CYAN}20${NC}] Bbr${NC} "
 echo -e ""
-echo -e " [\e[31m•0\e[0m] \e[31mBACK TO MENU\033[0m"
+echo -e ""[${RED}12${NC}] ${RED}BACK TO MENU${NC}"
 echo -e   ""
 echo -e   "Press x or [ Ctrl+C ] • To-Exit"
 echo -e   ""
