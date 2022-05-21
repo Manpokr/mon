@@ -45,11 +45,11 @@ echo -e "[11] Change Port Xray GRPC"
 echo -e "[12] Change Port Trojan-go"
 echo -e "[13] Change Port Trojan GRPC"
 echo -e "[14] Change Port Trojan XTLS"
+echo -e ""
 echo -e "[${RED}•x${NC}] ${RED}Exit${NC}"
+echo -e ""
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-
 read -p "Select From Options [ 1-12 ] : " port
-
 case $port in
 1)
 portovpn
