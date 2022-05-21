@@ -50,10 +50,12 @@ vlesslink2="vless://${uuid}@${dom}:$none?path=/v2ray&encryption=none&type=ws&sni
 systemctl restart v2ray@vless
 systemctl restart v2ray@vnone
 clear
+MYIP=$(wget -qO- ipinfo.io/ip);
 echo -e "================================="
 echo -e "            V2RAY VLESS          "
 echo -e "================================="
 echo -e "Remarks        : ${user}"
+echo -e "IP/host        : ${MYIP}"
 echo -e "Domain         : ${dom}"
 echo -e "Bug            : ${sni}"
 echo -e "port TLS       : $tls"
