@@ -24,7 +24,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 # Getting
 BURIQ () {
-    curl -sS  https://raw.githubusercontent.com/Manpokr/mon/main/ip > /root/tmp
+    curl -sS  https://raw.githubusercontent.com/ > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
