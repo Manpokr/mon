@@ -97,7 +97,7 @@ port_tls $tls
 port_http $http">>"/etc/shadowsocks-libev/akun.conf"
 service cron restart
 clear
-
+IP=$(wget -qO- ipinfo.io/ip);
 echo -e "================================="
 echo -e "            SHADOWSOCKS         "
 echo -e "================================="
