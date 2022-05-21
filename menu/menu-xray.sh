@@ -75,7 +75,7 @@ addgrpc
 addtrxtls
 ;;
 7)
-addtrojangrpc
+addtrgrpc
 ;;
 8)
 delxvmess
