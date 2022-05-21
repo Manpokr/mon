@@ -40,10 +40,12 @@ vnone="vless://${uuid}@${dom}:$none?path=/xray&encryption=none&type=tcp&sni=$sni
 systemctl restart xr-vl-ntls
 systemctl restart xr-vl-tls
 clear
+IP=$(wget -qO- ipinfo.io/ip);
 echo -e "================================="
 echo -e "            XRAY VLESS          "
 echo -e "================================="
 echo -e "Remarks        : ${user}"
+echo -e "IP/host        : ${IP}"
 echo -e "Domain         : ${domain}"
 echo -e "Subdomain      : ${dom}"
 echo -e "port TCP-TLS   : $tls"
