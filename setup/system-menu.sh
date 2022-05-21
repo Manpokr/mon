@@ -71,7 +71,7 @@ case $opt in
 10) clear ; speedtest ; exit ;;
 11) clear ; about ; exit ;;
 12) clear ; reboot ; exit ;;
-13) clear ; clear-log ; exit ;;
+13) clear ; clearlog ; exit ;;
 14) clear ; restart ; exit ;;
 15) clear ; certv2ray ; exit ;; #certv2ray
 16) clear ; menu-bw ; exit ;;
