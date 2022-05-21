@@ -14,7 +14,6 @@ echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "${RED}          • MENU TRIAL •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e""
-
 echo -e "[${CYAN}•1${NC}] $bd Create TRial XRay VMess Accounts ${NC}"                     
 echo -e "[${CYAN}•2${NC}] $bd Create TRial XRay VLess Accounts ${NC}"                    
 echo -e "[${CYAN}•3${NC}] $bd Create TRial XRay Trojan Accounts ${NC}"                    
@@ -73,6 +72,7 @@ exit
 ;;
 *)
 echo "Input The Correct Number !"
+trial-menu
 ;;
 esac
 
