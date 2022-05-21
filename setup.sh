@@ -21,7 +21,7 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 BURIQ () {
-    curl -sS  https://raw.githubusercontent.com/castleUI/ipvps/main/ipvps > /root/tmp
+    curl -sS  https://raw.githubusercontent.com/manternet/ipvps/main/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
