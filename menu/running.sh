@@ -252,23 +252,32 @@ clear
 
 
 # CHEK STATUS                                                                                                                                                                 
-openvpn_service="$(systemctl show openvpn.service --no-page)"                                                                                                                 
-oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                        
-#status_openvp=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                               
-#status_ss_tls="$(systemctl show shadowsocks-libev-server@tls.service --no-page)"                                                                                             
-#ss_tls=$(echo "${status_ss_tls}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                        
-#sst_status=$(systemctl status shadowsocks-libev-server@tls | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1)                                               
+#openvpn_service="$(systemctl show openvpn.service --no-page)"                                                                                                                 
+#oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                        
+status_openvpn=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                               
+status_ss="$(systemctl show shadowsocks-libev.service --no-page)"                                                                                             
+ss_tls=$(echo "${status_ss}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                        
+ssr_status=$(/etc/init.d/ssrmu status | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1)                                               
+
 #ssh_status=$(systemctl status shadowsocks-libev-server@http | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1)                                              
 #status_ss_http="$(systemctl show shadowsocks-libev-server@http.service --no-page)"                                                                                           
 #ss_http=$(echo "${status_ss_http}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                      
 #sssohtt=$(systemctl status shadowsocks-libev-server@*-http | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                               
 #status="$(systemctl show shadowsocks-libev.service --no-page)"                                                                                                               
 #status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                          
-tls_v2ray_status=$(systemctl status xr-vm-tls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                             
-nontls_v2ray_status=$(systemctl status xr-vm-ntls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                         
-vless_tls_v2ray_status=$(systemctl status xr-vl-tls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                       
-vless_nontls_v2ray_status=$(systemctl status xr-vl-ntls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
+
+tls_v2ray_status=$(systemctl status v2ray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                             
+nontls_v2ray_status=$(systemctl status v2ray@none | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                         
+vless_tls_v2ray_status=$(systemctl status v2ray@vless | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                       
+vless_nontls_v2ray_status=$(systemctl status v2ray@vnone | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
+trojan_v2ray_status=$(systemctl status trojan | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
+
 vless_xtls_status=$(systemctl status xtls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                 
+vless_tcp_xray_status=$(systemctl status xr-vl-tls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
+vless_ntcp_xray_status=$(systemctl status xr-vl-ntls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
+vmess_tcp_xray_status=$(systemctl status xr-vm-tls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
+vmess_ntcp_xray_status=$(systemctl status xr-vm-ntls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
+vmess_mkcp_xray_status=$(systemctl status xr-vm-mk | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
 trojan1_server=$(systemctl status x-tr | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                    
 trojan2_server=$(systemctl status trojanxtls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                              
 trojan3_server=$(systemctl status trojangrpc | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                              
@@ -276,8 +285,10 @@ grpc="$(systemctl show vmess-grpc.service --no-page)"
 vmessgrpc=$(echo "${grpc}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                               
 grpcc="$(systemctl show vless-grpc.service --no-page)"                                                                                                                        
 vlessgrpc=$(echo "${grpcc}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                              
-#ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                      
+
+ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                      
 trojan_server=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
+
 dropbear_status=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                             
 stunnel_service=$(/etc/init.d/stunnel4 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                             
 #sstp_service=$(systemctl status accel-ppp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                
@@ -286,8 +297,9 @@ ssh_service=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "
 vnstat_service=$(/etc/init.d/vnstat status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                
 cron_service=$(/etc/init.d/cron status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                    
 fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                            
-#wg="$(systemctl show wg-quick@wg0.service --no-page)"                                                                                                                        
-#swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                                      
+
+wg="$(systemctl show wg-quick@wg0.service --no-page)"                                                                                                                        
+swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                                      
 #trgo="$(systemctl show trojan-go.service --no-page)"                                                                                                                         
 strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                                   
 #sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
@@ -296,6 +308,7 @@ wsdrop=$(systemctl status websocket | grep Active | awk '{print $3}' | cut -d "(
 wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                         
 #wsopen=$(systemctl status ws-openssh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
 osslh=$(systemctl status sslh | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                             
+
 ohp=$(systemctl status dropbear-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                       
 ohq=$(systemctl status openvpn-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                        
 ohr=$(systemctl status ssh-ohp | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                            
@@ -312,17 +325,17 @@ LIGHT='\033[0;37m'
 clear
 
 # STATUS SERVICE Shadowsocks HTTPS
-if [[ $sst_status == "running" ]]; then
-  status_sst=" ${GREEN}Running ${NC}( No Error )"
+if [[ $ssr_status == "running" ]]; then
+  status_ssr=" ${GREEN}Running ${NC}( No Error )"
 else
-  status_sst="${RED}  Not Running ${NC}  ( Error )"
+  status_ssr="${RED}  Not Running ${NC}  ( Error )"
 fi
 
-# STATUS SERVICE VMess Grpc
-if [[ $vmessgrpc == "running" ]]; then 
-   status_grpc=" ${GREEN}Running ${NC}( No Error )"
+# STATUS SERVICE Shadowsocks HTTP
+if [[ $status_ss == "running" ]]; then
+  ss_status=" ${GREEN}Running ${NC}( No Error )"
 else
-   status_grpc="${RED}Not Running ${NC}( Error )"
+  ss_status="${RED}  Not Running ${NC}  ( Error )"
 fi
 
 # STATUS SERVICE OPENVPN
@@ -381,39 +394,102 @@ else
    status_nontls_v2ray="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
-# STATUS SERVICE VLESS HTTPS
+# STATUS SERVICE VLESS TLS
 if [[ $vless_tls_v2ray_status == "running" ]]; then
   status_tls_vless=" ${GREEN}Running${NC} ( No Error )"
 else
   status_tls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
-# STATUS SERVICE VLESS HTTP
+# STATUS SERVICE VLESS NON TLS V2RAY
 if [[ $vless_nontls_v2ray_status == "running" ]]; then
   status_nontls_vless=" ${GREEN}Running${NC} ( No Error )"
 else
   status_nontls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+# STATUS SERVICE TROJAN V2RAY
+if [[ $trojan_v2ray_status == "running" ]]; then
+  status_v2ray_trojan=" ${GREEN}Running${NC} ( No Error )"
+else
+  status_v2ray_trojan="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+# VmessGrpc status
+if [[ $vmessgrpc == "running" ]] ; then
+  status_grpc=" ${GREEN}Running${NC} ( No Error )${NC}"
+else
+  status_grpc="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
 # VlessGrpc status
 if [[ $vlessgrpc == "running" ]] ; then
   status_grpcc=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
-  status_grpcv="${RED}  Not Running ${NC}  ( Error )${NC}"
+  status_grpcc="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE TROJAN
-if [[ $trojan_server == "running" ]]; then 
-   status_virus_trojan=" ${GREEN}Running ${NC}( No Error )${NC}"
+if [[ $trojan1_server == "running" ]]; then 
+   status_virus_trojan1=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_virus_trojan="${RED}  Not Running ${NC}  ( Error )${NC}"
+   status_virus_trojan1="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
-# Status Service Trojan GO
-if [[ $strgo == "active" ]]; then
-  status_trgo=" ${GREEN}Running ${NC}( No Error )${NC}"
-else
-  status_trgo="${RED}  Not Running ${NC}  ( Error )${NC}"
+# STATUS SERVICE TROJAN GRPC                                                                                         
+if [[ $trojan2_server == "running" ]]; then                                                                         
+   status_virus_trojan2=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan2="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE TROJAN XTLS                                                                                       
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESS XTLS                                                                                         
+if [[ $vless_xtls_status == "running" ]]; then                                                                         
+   status_xtls_vless=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_xtls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESS TCP                                                                                         
+if [[ $vmess_tcp_xray_status == "running" ]]; then                                                                         
+   status_tcp_vmess=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_tcp_vmess="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESS NTCP                                                                                          
+if [[ $vmess_ntcp_xray_status == "running" ]]; then                                                                         
+   status_ntcp_vmess=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_ntcp_vmess="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESS MKCP                                                                                         
+if [[ $vmess_mkcp_xray_status == "running" ]]; then                                                                         
+   status_mkcp_vmess=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_mkcp_vmess="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESS TCP                                                                                         
+if [[ $vless_tcp_xray_status == "running" ]]; then                                                                         
+   status_tcp_vless=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_tcp_vless="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESS NTCP                                                                                         
+if [[ $vless_ntcp_xray_status == "running" ]]; then                                                                         
+   status_ntcp_vless=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_ntcp_vless="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
 fi
 
 # STATUS SERVICE DROPBEAR
@@ -486,112 +562,6 @@ else
    swsopen="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
-# TAMBAH
-
-# STATUS SERVICE TROJANGRPC                                                                                         
-if [[ $trojan2_server == "running" ]]; then                                                                         
-   status_virus_trojan2=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan2="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE TROJANXTLS                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VLESSXTLS                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_xtls_vless=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_xtls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VMESSXTLS                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_xtls_vmess=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_xtls_vmess="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VMESS TCP                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VMESS NTCP                                                                                          
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VLESS TCP                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VLESS NTCP                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VMESS KCP                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VMESS WS TLS                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VMESS WS NTLS                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VLESS WS TLS                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VLESS WS NTLS                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VTROJAN                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
-
-# STATUS SERVICE VLESS WS TLS                                                                                         
-if [[ $trojan3_server == "running" ]]; then                                                                         
-   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
-else                                                                                                                
-   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
-fi
 clear
 
 domain=$(cat /etc/xray/domain)
@@ -605,30 +575,33 @@ echo -e " $CYAN║$NC Domain      :$LIGHT $domain"
 echo -e  " ${CYAN}╠════════════════════════════════════════════════════════════╣${NC}"                  
 echo -e  " $CYAN║                 $RED    ┃ SERVICE-INFORMATION ┃   $NC             $CYAN║$NC"          
 echo -e  " ${CYAN}╠════════════════════════════════════════════════════════════╝${NC}"                  
-echo -e " $CYAN║$NC SSH / TUN               :$status_ssh"                                               
-echo -e " $CYAN║$NC OpenVPN                 :$status_openvpn"                                           
+echo -e " $CYAN║$NC SSH / TUN               :$status_ssh"          ✓                                     
+echo -e " $CYAN║$NC OpenVPN                 :$status_openvpn"    ✓                                       
 echo -e " $CYAN║$NC Dropbear                :$status_beruangjatuh"                                      
 echo -e " $CYAN║$NC Stunnel4                :$status_stunnel"                                           
-echo -e " $CYAN║$NC Squid                   :$status_squid"                                             
-echo -e " $CYAN║$NC Fail2Ban                :$status_fail2ban"                                          
-echo -e " $CYAN║$NC Crons                   :$status_cron"                                              
-echo -e " $CYAN║$NC Vnstat                  :$status_vnstat"                                            
+echo -e " $CYAN║$NC Squid                   :$status_squid"         ✓                                    
+echo -e " $CYAN║$NC Fail2Ban                :$status_fail2ban"   ✓                                       
+echo -e " $CYAN║$NC Crons                   :$status_cron"             ✓                                 
+echo -e " $CYAN║$NC Vnstat                  :$status_vnstat"           ✓                                 
 echo -e " $CYAN║$NC XRAYS Vmess TCP         :$status_tcp_v2ray"                                         
 echo -e " $CYAN║$NC XRAYS Vmess None TCP    :$status_ntcp_v2ray"                                      
 echo -e " $CYAN║$NC XRAYS Vmess KCP         :$status_kcp_vmess"                                        
-echo -e " $CYAN║$NC XRAYS Vmess GRPC        :$status_grpc_vmess"                                        
+echo -e " $CYAN║$NC XRAYS Vmess GRPC        :$status_grpc"             ✓                           
 echo -e " $CYAN║$NC XRAYS Vless TCP TLS     :$status_tcp_vless"                                         
 echo -e " $CYAN║$NC XRAYS Vless None TCP    :$status_ntcp_vless"                                      
 echo -e " $CYAN║$NC XRAYS Vless XTLS        :$status_xtls_vless"                                        
-echo -e " $CYAN║$NC XRAYS Vless GRPC        :$status_grpcc_vless"                                       
+echo -e " $CYAN║$NC XRAYS Vless GRPC        :$status_grpcc"               ✓                        
 echo -e " $CYAN║$NC XRAYS Trojan            :$status_virus_trojan"                                      
 echo -e " $CYAN║$NC XRAYS Trojan GRPC       :$status_virus_trojan2"                                     
 echo -e " $CYAN║$NC XRAYS Trojan XTLS       :$status_virus_trojan3"                                     
 echo -e " $CYAN║$NC V2RAYS Trojan           :$status_virus_trojan3"                                     
-echo -e " $CYAN║$NC V2RAYS Vmess WS TLS     :$status_virus_trojan3"                                     
-echo -e " $CYAN║$NC V2RAYS Vmess WS NTLS    :$status_virus_trojan3"                                     
-echo -e " $CYAN║$NC V2RAYS Vless WS TLS     :$status_virus_trojan3"                                     
-echo -e " $CYAN║$NC V2RAYS Vless WS NTLS    :$status_virus_trojan3"                                     
+echo -e " $CYAN║$NC V2RAYS Vmess WS TLS     :$status_tls_v2ray"                                     
+echo -e " $CYAN║$NC V2RAYS Vmess WS NTLS    :$status_nontls_v2ray"                                     
+echo -e " $CYAN║$NC V2RAYS Vless WS TLS     :$status_tls_vless"                                     
+echo -e " $CYAN║$NC V2RAYS Vless WS NTLS    :$status_nontls_vless"                                     
+echo -e " $CYAN║$NC SHADOWSOCKSR            :$status_ssr"                   ✓                                
+echo -e " $CYAN║$NC SHADOWSOCKS-LIBEV       :$ss_status"                  ✓                                 
+
 echo -e " $CYAN║$NC Websocket TLS           :$swstls"                                                   
 echo -e " $CYAN║$NC Websocket None TLS      :$swsdrop"                                                  
 echo -e " $CYAN║$NC Websocket Ovpn          :$swsovpn"                                                  
