@@ -486,6 +486,7 @@ else
    swsopen="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+# TAMBAH
 
 # STATUS SERVICE TROJANGRPC                                                                                         
 if [[ $trojan2_server == "running" ]]; then                                                                         
@@ -495,6 +496,97 @@ else
 fi
 
 # STATUS SERVICE TROJANXTLS                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESSXTLS                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_xtls_vless=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_xtls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESSXTLS                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_xtls_vmess=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_xtls_vmess="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESS TCP                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESS NTCP                                                                                          
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESS TCP                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESS NTCP                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESS KCP                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESS WS TLS                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VMESS WS NTLS                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESS WS TLS                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESS WS NTLS                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VTROJAN                                                                                         
+if [[ $trojan3_server == "running" ]]; then                                                                         
+   status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
+else                                                                                                                
+   status_virus_trojan3="${RED}  Not Running ${NC}  ( Error )${NC}"                                                 
+fi
+
+# STATUS SERVICE VLESS WS TLS                                                                                         
 if [[ $trojan3_server == "running" ]]; then                                                                         
    status_virus_trojan3=" ${GREEN}Running ${NC}( No Error )${NC}"                                                   
 else                                                                                                                
@@ -521,16 +613,22 @@ echo -e " $CYAN║$NC Squid                   :$status_squid"
 echo -e " $CYAN║$NC Fail2Ban                :$status_fail2ban"                                          
 echo -e " $CYAN║$NC Crons                   :$status_cron"                                              
 echo -e " $CYAN║$NC Vnstat                  :$status_vnstat"                                            
-echo -e " $CYAN║$NC XRAYS Vmess TLS         :$status_tls_v2ray"                                         
-echo -e " $CYAN║$NC XRAYS Vmess None TLS    :$status_nontls_v2ray"                                      
-echo -e " $CYAN║$NC XRAYS Vmess GRPC        :$status_grpc-vmess"                                        
-echo -e " $CYAN║$NC XRAYS Vless TLS         :$status_tls_vless"                                         
-echo -e " $CYAN║$NC XRAYS Vless None TLS    :$status_nontls_vless"                                      
+echo -e " $CYAN║$NC XRAYS Vmess TCP         :$status_tcp_v2ray"                                         
+echo -e " $CYAN║$NC XRAYS Vmess None TCP    :$status_ntcp_v2ray"                                      
+echo -e " $CYAN║$NC XRAYS Vmess KCP         :$status_kcp_vmess"                                        
+echo -e " $CYAN║$NC XRAYS Vmess GRPC        :$status_grpc_vmess"                                        
+echo -e " $CYAN║$NC XRAYS Vless TCP TLS     :$status_tcp_vless"                                         
+echo -e " $CYAN║$NC XRAYS Vless None TCP    :$status_ntcp_vless"                                      
 echo -e " $CYAN║$NC XRAYS Vless XTLS        :$status_xtls_vless"                                        
 echo -e " $CYAN║$NC XRAYS Vless GRPC        :$status_grpcc_vless"                                       
 echo -e " $CYAN║$NC XRAYS Trojan            :$status_virus_trojan"                                      
 echo -e " $CYAN║$NC XRAYS Trojan GRPC       :$status_virus_trojan2"                                     
 echo -e " $CYAN║$NC XRAYS Trojan XTLS       :$status_virus_trojan3"                                     
+echo -e " $CYAN║$NC V2RAYS Trojan           :$status_virus_trojan3"                                     
+echo -e " $CYAN║$NC V2RAYS Vmess WS TLS     :$status_virus_trojan3"                                     
+echo -e " $CYAN║$NC V2RAYS Vmess WS NTLS    :$status_virus_trojan3"                                     
+echo -e " $CYAN║$NC V2RAYS Vless WS TLS     :$status_virus_trojan3"                                     
+echo -e " $CYAN║$NC V2RAYS Vless WS NTLS    :$status_virus_trojan3"                                     
 echo -e " $CYAN║$NC Websocket TLS           :$swstls"                                                   
 echo -e " $CYAN║$NC Websocket None TLS      :$swsdrop"                                                  
 echo -e " $CYAN║$NC Websocket Ovpn          :$swsovpn"                                                  
