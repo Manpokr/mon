@@ -20,9 +20,9 @@ PERMISSION
 clear
 
 # CHEK STATUS                                                                                                                                                                 
-#openvpn_service="$(systemctl show openvpn.service --no-page)"                                                                                                                 
-#oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                        
-status_openvpn=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                               
+openvpn_service="$(systemctl show openvpn.service --no-page)"                                                                                                                 
+oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                        
+#status_openvpn=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                               
 status_ss="$(systemctl show shadowsocks-libev.service --no-page)"                                                                                             
 ss_tls=$(echo "${status_ss}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                        
 ssr_status=$(/etc/init.d/ssrmu status | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1)                                               
@@ -49,10 +49,14 @@ vmess_mkcp_xray_status=$(systemctl status xr-vm-mk | grep Active | awk '{print $
 trojan1_server=$(systemctl status x-tr | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                    
 trojan3_server=$(systemctl status trojanxtls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                              
 trojan2_server=$(systemctl status trojangrpc | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                              
-grpc="$(systemctl show vmess-grpc.service --no-page)"                                                                                                                         
-vmessgrpc=$(echo "${grpc}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                               
-grpcc="$(systemctl show vless-grpc.service --no-page)"                                                                                                                        
-vlessgrpc=$(echo "${grpcc}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                              
+
+#grpc="$(systemctl show vmess-grpc.service --no-page)"                                                                                                                         
+#vmessgrpc=$(echo "${grpc}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                               
+#grpcc="$(systemctl show vless-grpc.service --no-page)"                                                                                                                        
+#vlessgrpc=$(echo "${grpcc}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                              
+
+vmessgrpc=$(systemctl status vmess-grpc | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
+vlessgrpc=$(systemctl status vless-grpc | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
 
 ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                      
 trojan_server=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
@@ -100,7 +104,7 @@ else
 fi
 
 # STATUS SERVICE Shadowsocks HTTP
-if [[ $status_ss == "running" ]]; then
+if [[ $ss_tls == "running" ]]; then
   ss_status=" ${GREEN}Running ${NC}( No Error )"
 else
   ss_status="${RED}  Not Running ${NC}  ( Error )"
