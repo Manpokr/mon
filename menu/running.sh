@@ -4,243 +4,13 @@ red="\e[1;31m"
 green="\e[0;32m"
 NC="\e[0m"
 PURPLE='\033[0;35m'
-clear
-echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                          
-echo -e "                 •${RED} RUNNING MENU${NC} •                 "                                            
-echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo ""
-status="$(systemctl show ssh.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " SSH               : SSH Service is "$green"running"$NC""
-else
-echo -e " SSh               : SSH Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show stunnel4.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Stunnel4          : Stunnel4 Service is "$green"running"$NC""
-else
-echo -e " Stunnel4          : Stunnel4 Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show dropbear.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " DropBear          : DropBear Service is "$green"running"$NC""
-else
-echo -e " DropBear          : DropBear Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show v2ray@none.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " V2ray Non TLS     : V2ray Non TLS Service is "$green"running"$NC""
-else
-echo -e " V2ray Non TLS     : V2ray Non TLS Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show v2ray.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " V2ray TLS         : V2ray TLS Service is "$green"running"$NC""
-else
-echo -e " V2ray TLS         : V2ray TLS Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show v2ray@vless.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Vless TLS         : Vless TLS Service is "$green"running"$NC""
-else
-echo -e " Vless TLS         : Vless TLS Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show v2ray@vnone.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Vless Non TLS     : Vless Non TLS Service is "$green"running"$NC""
-else
-echo -e " Vless Non TLS     : Vless Non TLS Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show trojan --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Trojan            : Trojan Service is "$green"running"$NC""
-else
-echo -e " Trojan            : Trojan Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show squid.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Squid             : Squid Service is "$green"running"$NC""
-else
-echo -e " Squid             : Squid Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show openvpn.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Openvpn           : Openvpn Service is "$green"running"$NC""
-else
-echo -e " Openvpn           : Openvpn Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show wg-quick@wg0 --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Wireguard         : Wireguard Service is "$green"running"$NC""
-else
-echo -e " Wireguard         : Wireguard Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show shadowsocks-libev.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Shadowsocks       : Shadowsocks Service is "$green"running"$NC""
-else
-echo -e " Shadowsocks       : Shadowsocks Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show ssrmu --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " SSR               : SSR Service is "$green"running"$NC""
-else
-echo -e " SSR               : SSR Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show websocket.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " websocket         : websocket Service is "$green"running"$NC""
-else
-echo -e " websocket         : websocket Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show ws-ovpn.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " ws-ovpn           : ws-ovpn Service is "$green"running"$NC""
-else
-echo -e " ws-ovpn           : ws-ovpn Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show ws-stunnel.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " ws-stunnel        : ws-stunnel Service is "$green"running"$NC""
-else
-echo -e " ws-stunnel        : ws-stunnel Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show nginx.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " Nginx             : Nginx Service is "$green"running"$NC""
-else
-echo -e " Nginx             : Nginx Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show xr-vm-tls.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " xr-vm-tls         : xr-vm-tls Service is "$green"running"$NC""
-else
-echo -e " xr-vm-tls         : xr-vm-tls Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show xr-vm-ntls.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " xr-vm-ntls        : xr-vm-ntls Service is "$green"running"$NC""
-else
-echo -e " xr-vm-ntls        : xr-vm-ntls Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show xr-vm-mk.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " xr-vm-mk          : xr-vm-mk Service is "$green"running"$NC""
-else
-echo -e " xr-vm-mk          : xr-vm-mk Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show xr-vl-tls.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " xr-vl-tls         : xr-vl-tls Service is "$green"running"$NC""
-else
-echo -e " xr-vl-tls         : xr-vl-tls Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show xr-vl-ntls.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " xr-vl-ntls        : xr-vl-ntls Service is "$green"running"$NC""
-else
-echo -e " xr-vl-ntls        : xr-vl-ntls Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show xtls.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " xtls              : xtls Service is "$green"running"$NC""
-else
-echo -e " xtls              : xtls Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show x-tr.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " x-tr              : x-tr Service is "$green"running"$NC""
-else
-echo -e " x-tr              : x-tr Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show vmess-grpc.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " vmess-grpc        : vmess-grpc Service is "$green"running"$NC""
-else
-echo -e " vmess-grpc        : vmess-grpc Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show dropbear.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " vless-grpc        : vless-grpc Service is "$green"running"$NC""
-else
-echo -e " vless-grpc        : vless-grpc Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show trojangrpc.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " trojangrpc        : trojangrpc Service is "$green"running"$NC""
-else
-echo -e " trojangrpc        : trojangrpc Service is "$red"not running (Error)"$NC""
-fi
-status="$(systemctl show trojanxtls.service --no-page)"
-status_text=$(echo "${status}" | grep 'ActiveState=' | cut -f2 -d=)
-if [ "${status_text}" == "active" ]
-then
-echo -e " trojanxtls        : trojanxtls Service is "$green"running"$NC""
-else
-echo -e " trojanxtls        : trojanxtls Service is "$red"not running (Error)"$NC""
-fi
-echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-
 GREEN='\033[0;32m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 MYIP=$(curl -sS ipinfo.io/ip)
 
+#GETTING
 red='\e[1;31m'
 green='\e[1;32m'
 NC='\e[0m'
@@ -248,8 +18,6 @@ green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 PERMISSION
 clear
-
-
 
 # CHEK STATUS                                                                                                                                                                 
 #openvpn_service="$(systemctl show openvpn.service --no-page)"                                                                                                                 
@@ -279,8 +47,8 @@ vmess_tcp_xray_status=$(systemctl status xr-vm-tls | grep Active | awk '{print $
 vmess_ntcp_xray_status=$(systemctl status xr-vm-ntls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
 vmess_mkcp_xray_status=$(systemctl status xr-vm-mk | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
 trojan1_server=$(systemctl status x-tr | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                    
-trojan2_server=$(systemctl status trojanxtls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                              
-trojan3_server=$(systemctl status trojangrpc | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                              
+trojan3_server=$(systemctl status trojanxtls | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                              
+trojan2_server=$(systemctl status trojangrpc | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                              
 grpc="$(systemctl show vmess-grpc.service --no-page)"                                                                                                                         
 vmessgrpc=$(echo "${grpc}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                               
 grpcc="$(systemctl show vless-grpc.service --no-page)"                                                                                                                        
@@ -575,40 +343,39 @@ echo -e " $CYAN║$NC Domain      :$LIGHT $domain"
 echo -e  " ${CYAN}╠════════════════════════════════════════════════════════════╣${NC}"                  
 echo -e  " $CYAN║                 $RED    ┃ SERVICE-INFORMATION ┃   $NC             $CYAN║$NC"          
 echo -e  " ${CYAN}╠════════════════════════════════════════════════════════════╝${NC}"                  
-echo -e " $CYAN║$NC SSH / TUN               :$status_ssh"          ✓                                     
-echo -e " $CYAN║$NC OpenVPN                 :$status_openvpn"    ✓                                       
+echo -e " $CYAN║$NC SSH / TUN               :$status_ssh"                                              
+echo -e " $CYAN║$NC OpenVPN                 :$status_openvpn"                                          
 echo -e " $CYAN║$NC Dropbear                :$status_beruangjatuh"                                      
 echo -e " $CYAN║$NC Stunnel4                :$status_stunnel"                                           
-echo -e " $CYAN║$NC Squid                   :$status_squid"         ✓                                    
-echo -e " $CYAN║$NC Fail2Ban                :$status_fail2ban"   ✓                                       
-echo -e " $CYAN║$NC Crons                   :$status_cron"             ✓                                 
-echo -e " $CYAN║$NC Vnstat                  :$status_vnstat"           ✓                                 
-echo -e " $CYAN║$NC XRAYS Vmess TCP         :$status_tcp_v2ray"                                         
-echo -e " $CYAN║$NC XRAYS Vmess None TCP    :$status_ntcp_v2ray"                                      
-echo -e " $CYAN║$NC XRAYS Vmess KCP         :$status_kcp_vmess"                                        
-echo -e " $CYAN║$NC XRAYS Vmess GRPC        :$status_grpc"             ✓                           
+echo -e " $CYAN║$NC Squid                   :$status_squid"                                             
+echo -e " $CYAN║$NC Fail2Ban                :$status_fail2ban"                                          
+echo -e " $CYAN║$NC Crons                   :$status_cron"                                              
+echo -e " $CYAN║$NC Vnstat                  :$status_vnstat"                                           
+echo -e " $CYAN║$NC XRAYS Vmess TCP         :$status_tcp_vmess"                                        
+echo -e " $CYAN║$NC XRAYS Vmess None TCP    :$status_ntcp_vmess"                                      
+echo -e " $CYAN║$NC XRAYS Vmess KCP         :$status_mkcp_vmess"                                        
+echo -e " $CYAN║$NC XRAYS Vmess GRPC        :$status_grpc"                                        
 echo -e " $CYAN║$NC XRAYS Vless TCP TLS     :$status_tcp_vless"                                         
 echo -e " $CYAN║$NC XRAYS Vless None TCP    :$status_ntcp_vless"                                      
 echo -e " $CYAN║$NC XRAYS Vless XTLS        :$status_xtls_vless"                                        
-echo -e " $CYAN║$NC XRAYS Vless GRPC        :$status_grpcc"               ✓                        
-echo -e " $CYAN║$NC XRAYS Trojan            :$status_virus_trojan"                                      
+echo -e " $CYAN║$NC XRAYS Vless GRPC        :$status_grpcc"                                      
+echo -e " $CYAN║$NC XRAYS Trojan            :$status_virus_trojan1"                                      
 echo -e " $CYAN║$NC XRAYS Trojan GRPC       :$status_virus_trojan2"                                     
 echo -e " $CYAN║$NC XRAYS Trojan XTLS       :$status_virus_trojan3"                                     
-echo -e " $CYAN║$NC V2RAYS Trojan           :$status_virus_trojan3"                                     
-echo -e " $CYAN║$NC V2RAYS Vmess WS TLS     :$status_tls_v2ray"                                     
-echo -e " $CYAN║$NC V2RAYS Vmess WS NTLS    :$status_nontls_v2ray"                                     
-echo -e " $CYAN║$NC V2RAYS Vless WS TLS     :$status_tls_vless"                                     
-echo -e " $CYAN║$NC V2RAYS Vless WS NTLS    :$status_nontls_vless"                                     
-echo -e " $CYAN║$NC SHADOWSOCKSR            :$status_ssr"                   ✓                                
-echo -e " $CYAN║$NC SHADOWSOCKS-LIBEV       :$ss_status"                  ✓                                 
-
-echo -e " $CYAN║$NC Websocket TLS           :$swstls"                                                   
+echo -e " $CYAN║$NC V2RAYS Trojan           :$status_v2ray_trojan"                                   
+echo -e " $CYAN║$NC V2RAYS Vmess WS TLS     :$status_tls_v2ray"                                    
+echo -e " $CYAN║$NC V2RAYS Vmess WS NTLS    :$status_nontls_v2ray"                                    
+echo -e " $CYAN║$NC V2RAYS Vless WS TLS     :$status_tls_vless"                                    
+echo -e " $CYAN║$NC V2RAYS Vless WS NTLS    :$status_nontls_vless"                                    
+echo -e " $CYAN║$NC SHADOWSOCKSR            :$status_ssr"                                                  
+echo -e " $CYAN║$NC SHADOWSOCKS-LIBEV       :$ss_status"                                                   
+echo -e " $CYAN║$NC Websocket TLS           :$swstls"                                                  
 echo -e " $CYAN║$NC Websocket None TLS      :$swsdrop"                                                  
-echo -e " $CYAN║$NC Websocket Ovpn          :$swsovpn"                                                  
-echo -e " $CYAN║$NC OHP Dropbear            :$sohp"                                                     
-echo -e " $CYAN║$NC OHP OpenVPN             :$sohq"                                                     
-echo -e " $CYAN║$NC OHP SSH                 :$sohr"                                                     
-echo -e " $CYAN║$NC SSL / SSH Multiplexer   :$sosslh"                                                   
+echo -e " $CYAN║$NC Websocket Ovpn          :$swsovpn"                                                
+echo -e " $CYAN║$NC OHP Dropbear            :$sohp"                                                    
+echo -e " $CYAN║$NC OHP OpenVPN             :$sohq"                                                   
+echo -e " $CYAN║$NC OHP SSH                 :$sohr"                                                  
+echo -e " $CYAN║$NC SSL / SSH Multiplexer   :$sosslh"                                                  
 echo -e  " ${CYAN}╠════════════════════════════════════════════════════════════╣${NC}"                  
 echo -e  " $CYAN║                    $RED ┃ MANTERNET VPN ┃ $NC                $CYAN     ║$NC"          
 echo -e  " ${CYAN}╠════════════════════════════════════════════════════════════╝${NC}"                  
