@@ -12,9 +12,25 @@ bd='\e[1m'
 IP=$(wget -qO- ipinfo.io/ip);
 echo -e "checking vps"
 clear
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}          • MENU WIREGUARD •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+ssr_folder="/usr/local/xray"
+check_pid(){
+        PID=`ps -ef |grep -v grep | grep /etc/xray/config.json |awk '{print $2}'`
+}
+
+if [[ -e ${ssr_folder} ]]; then
+                check_pid
+if [[ ! -z "${PID}" ]]; then
+echo -e "Current status: ${GREEN} INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+else
+echo -e "Current status: ${GREEN} INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+fi
+cd "${ssr_folder}"
+else
+echo -e "Current status: ${RED}NOT INSTALL ${NC}"
+fi
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${RED}                 • MENU WIREGUARD •          ${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
 echo -e""
 echo -e "[${CYAN}•1${NC}] $bd Create Account Wireguard ${NC}"
 echo -e "[${CYAN}•2${NC}] $bd Delete Account Wireguard ${NC}"
