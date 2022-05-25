@@ -27,6 +27,7 @@ cd "${ssr_folder}"
 else
 echo -e "Current status: ${RED}SSR NOT INSTALL ${NC}"
 fi
+
 ssr_folder="/usr/local/shadowsocksr"
 check_pid(){
         PID=`ps -ef |grep -v grep | grep server.py |awk '{print $2}'`
@@ -43,7 +44,8 @@ cd "${ssr_folder}"
 else
 echo -e "Current status: ${RED}SS NOT INSTALL ${NC}"
 fi
-
+# SS
+ssr_folder="/usr/local/shadowsocksr"
 check_pid(){
         PID=`ps -ef |grep -v grep | grep server.py |awk '{print $2}'`
 }
