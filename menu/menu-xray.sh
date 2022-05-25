@@ -20,16 +20,16 @@ check_pid(){
 if [[ -e ${ssr_folder} ]]; then
                 check_pid
 if [[ ! -z "${PID}" ]]; then
-echo -e "Current status: ${GREEN} INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+echo -e "Current status: ${GREEN}XRAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 else
-echo -e "Current status: ${GREEN} INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+echo -e "Current status: ${GREEN}XRAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
 fi
 cd "${ssr_folder}"
 else
-echo -e "Current status: ${RED}NOT INSTALL ${NC}"
+echo -e "Current status: ${RED}XRAY NOT INSTALL ${NC}"
 fi
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}                     • MENU XRAY •          ${NC}"
+echo -e "${RED}                  • MENU XRAY •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
 echo -e""
 echo -e "[${CYAN}•1${NC}] $bd Create Account Vmess TCP ${NC}"
