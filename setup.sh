@@ -226,4 +226,5 @@ sleep 7
 rm -f setup.sh
 rm -f ins-xray.sh
 chmod +x /var/run/screen
+echo -e " jumpa lagi sayang "
 reboot
