@@ -10,7 +10,7 @@ bd='\e[1m'
 
 IP=$(wget -qO- ipinfo.io/ip);
 clear
-ssr_folder="/usr/local/v2ray"
+ssr_folder="/usr/bin/v2ray"
 check_pid(){
         PID=`ps -ef |grep -v grep | grep /etc/v2ray/config.json |awk '{print $2}'`
 }
