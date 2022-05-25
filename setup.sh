@@ -22,6 +22,7 @@ LIGHT='\033[0;37m'
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
+IP=$( curl -s ipinfo.io/ip)
 # Getting
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip > /root/tmp
@@ -87,13 +88,9 @@ fi
 clear
 
 #Folder
-MYIP=$(curl -sS ipv4.icanhazip.com)
+IP=$( curl -s ipinfo.io/ip)
 mkdir /var/lib/Manpokr;
-echo "IP=" >> /var/lib/Manpokr/ipvps.conf
-clear
-MYIP=$(curl -sS ipv4.icanhazip.com)
-clear
-echo "IP=$domain" >> /var/lib/Manpokr/ipvps.conf
+echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
 
 #Warna
 apt install lolcat -y
