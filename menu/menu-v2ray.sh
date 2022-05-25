@@ -18,13 +18,13 @@ check_pid(){
 if [[ -e ${ssr_folder} ]]; then
                 check_pid
 if [[ ! -z "${PID}" ]]; then
-echo -e "Current status: ${GREEN} INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+echo -e "Current status: ${GREEN}V2RAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 else
-echo -e "Current status: ${GREEN} INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+echo -e "Current status: ${GREEN}V2RAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
 fi
 cd "${ssr_folder}"
 else
-echo -e "Current status: ${RED}NOT INSTALL ${NC}"
+echo -e "Current status: ${RED}V2RAY NOT INSTALL ${NC}"
 fi
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${RED}                     • MENU V2RAY •          ${NC}"
