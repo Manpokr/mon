@@ -61,6 +61,7 @@ vlessgrpc=$(systemctl status vless-grpc | grep Active | awk '{print $3}' | cut -
 
 ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                      
 trojan_server=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
+nginx_service=$(/etc/init.d/nginx status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 dropbear_status=$(/etc/init.d/dropbear status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                             
 stunnel_service=$(/etc/init.d/stunnel4 status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                             
@@ -335,6 +336,12 @@ else
    swsopen="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+if [[ $nginx_service == "running" ]]; then 
+   status_nginx="${GREEN}Running ${NC}( No Error )"
+else
+   status_nginx="${RED}  Not Running ${NC}( Error )"
+fi 
+
 clear
 
 domain=$(cat /etc/xray/domain)
@@ -356,6 +363,7 @@ echo -e " $CYAN║$NC Squid                   :$status_squid"
 echo -e " $CYAN║$NC Fail2Ban                :$status_fail2ban"                                          
 echo -e " $CYAN║$NC Crons                   :$status_cron"                                              
 echo -e " $CYAN║$NC Vnstat                  :$status_vnstat"                                           
+echo -e " $CYAN║$NC Nginx                   :$status_nginx"                                              
 echo -e " $CYAN║$NC XRAYS Vmess TCP         :$status_tcp_vmess"                                        
 echo -e " $CYAN║$NC XRAYS Vmess None TCP    :$status_ntcp_vmess"                                      
 echo -e " $CYAN║$NC XRAYS Vmess KCP         :$status_mkcp_vmess"                                        
