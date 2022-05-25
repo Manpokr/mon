@@ -28,39 +28,6 @@ else
 echo -e "Current status: ${RED}SSR NOT INSTALL ${NC}"
 fi
 
-ssr_folder="/usr/local/shadowsocksr"
-check_pid(){
-        PID=`ps -ef |grep -v grep | grep server.py |awk '{print $2}'`
-}
-
-if [[ -e ${ssr_folder} ]]; then
-                check_pid
-if [[ ! -z "${PID}" ]]; then
-echo -e "Current status: ${GREEN}SS INSTALLED${NC} & ${GREEN}RUNNING${NC}"
-else
-echo -e "Current status: ${GREEN}SS INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
-fi
-cd "${ssr_folder}"
-else
-echo -e "Current status: ${RED}SS NOT INSTALL ${NC}"
-fi
-# SS
-ssr_folder="/usr/local/shadowsocksr"
-check_pid(){
-        PID=`ps -ef |grep -v grep | grep server.py |awk '{print $2}'`
-}
-
-if [[ -e ${ssr_folder} ]]; then
-                check_pid
-if [[ ! -z "${PID}" ]]; then
-echo -e "Current status: ${GREEN} INSTALLED${NC} & ${GREEN}RUNNING${NC}"
-else
-echo -e "Current status: ${GREEN} INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
-fi
-cd "${ssr_folder}"
-else
-echo -e "Current status: ${RED}NOT INSTALL ${NC}"
-fi
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                       >
 echo -e "${RED}              • MENU SSR / SS •          ${NC}"                                           >
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
