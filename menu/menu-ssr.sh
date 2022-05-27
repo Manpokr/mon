@@ -28,8 +28,8 @@ else
 echo -e "Current status: ${RED}SSR NOT INSTALL ${NC}"
 fi
 
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                       >
-echo -e "${RED}              • MENU SSR / SS •          ${NC}"                                           >
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                       
+echo -e "${RED}              • MENU SSR / SS •          ${NC}"                                           
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e""                                                                                                           
 echo -e "[${CYAN}•1${NC}] $bd  Create Account ShadowsocksR ${NC}"
