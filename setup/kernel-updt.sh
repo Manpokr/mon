@@ -1,8 +1,11 @@
 #!/bin/bash
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
 
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip >
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
 if [[ $MYIP = $IZIN ]]; then
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
@@ -11,7 +14,8 @@ echo -e "${NC}${LIGHT}Please Contact Admin!!"
 rm -f kernel-updt.sh
 exit 0
 fi
-clear 
+clear
+
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "\E[0;100;33m         • KERNEL UPDATE •         \E[0m"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
