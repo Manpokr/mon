@@ -43,7 +43,7 @@ echo -e "[${CYAN}10${NC}] $bd Check Account Vmess Websocket ${NC}"
 echo -e "[${CYAN}11${NC}] $bd Check Account Vless Websocket ${NC}"
 echo -e "[${CYAN}12${NC}] $bd Check Account Trojan ${NC}"
 echo -e""
-echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e "[${RED}•x${NC}] ${RED} Exit${NC}"
 echo -e""
 read -p " silahkan masukkan nomor [1-8 or x] :  "  menu
 echo -e ""
