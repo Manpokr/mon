@@ -86,15 +86,15 @@ sleep 10
 exit 0
 fi
 clear
+if [ -f "/etc/xray/domain" ]; then
+echo "Script Already Installed"
+exit 0
+fi
 
 #Folder
 IP=$( curl -s ipinfo.io/ip)
 mkdir /var/lib/Manpokr;
 echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
-
-#Warna
-apt install lolcat -y
-apt install toilet - y
 
 #Domain
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh
@@ -152,6 +152,10 @@ apt install socat -y
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cert.sh
 chmod +x cert.sh
 ./cert.sh
+
+#Warna
+apt install lolcat -y
+apt install toilet - y
 
 cd /usr/bin
 wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
