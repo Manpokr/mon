@@ -25,7 +25,7 @@ oovpn=$(echo "${openvpn_service}" | grep 'ActiveState=' | cut -f2 -d=)
 #status_openvpn=$(/etc/init.d/openvpn status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                               
 #status_ss="$(systemctl show shadowsocks-libev.service --no-page)"                                                                                             
 #ss_tls=$(echo "${status_ss}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                        
-ssr_status=$(/etc/init.d/ssrmu status | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1)                                               
+#ssr_status=$(/etc/init.d/ssrmu status | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1)                                               
 ss_tls=$(systemctl status shadowsocks-libev.service  | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1)                                               
 
 #ssh_status=$(systemctl status shadowsocks-libev-server@http | grep Active | awk '{print $0}' | cut -d "(" -f2 | cut -d ")" -f1)                                              
@@ -337,9 +337,9 @@ else
 fi
 
 if [[ $nginx_service == "running" ]]; then 
-   status_nginx="${GREEN}Running ${NC}( No Error )"
+   status_nginx=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_nginx="${RED}  Not Running ${NC}( Error )"
+   status_nginx="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi 
 
 clear
