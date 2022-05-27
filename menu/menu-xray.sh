@@ -157,7 +157,8 @@ cektrxtls
 cektrgrpc
 ;;
 x)
-exit
+sleep 1
+menu
 ;;
 *)
 echo "Masukkan Nomor Yang Ada"
