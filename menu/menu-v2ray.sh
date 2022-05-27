@@ -85,6 +85,7 @@ cekvless
 cektrojan
 ;;
 x)
+sleep 1
 menu
 ;;
 *)
