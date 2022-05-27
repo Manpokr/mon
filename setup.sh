@@ -95,6 +95,7 @@ fi
 IP=$( curl -s ipinfo.io/ip)
 mkdir /var/lib/Manpokr;
 echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
+clear
 
 #Domain
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh
@@ -230,5 +231,6 @@ sleep 7
 rm -f setup.sh
 rm -f ins-xray.sh
 chmod +x /var/run/screen
-echo -e " jumpa lagi sayang "
+clear
+echo "<<<<<<<< BYE BYE SAYANG >>>>>>>>"
 reboot
