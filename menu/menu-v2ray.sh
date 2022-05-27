@@ -89,7 +89,7 @@ sleep 1
 menu
 ;;
 *)
-echo "Masukkan Nomor Yang Ada"
+echo "Input The Correct Number"
 sleep 1
 menu-v2ray
 ;;
