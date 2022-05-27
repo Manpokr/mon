@@ -55,7 +55,8 @@ cekwg
 renewwg
 ;;
 x)
-exit
+sleep 1
+menu
 ;;
 *)
 echo "pilih nomor yang tersedia"
