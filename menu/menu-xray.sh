@@ -29,7 +29,7 @@ else
 echo -e "Current status: ${RED}XRAY NOT INSTALL ${NC}"
 fi
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}                  • MENU XRAY •          ${NC}"
+echo -e "${RED}              • MENU XRAY •          ${NC}"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
 echo -e""
 echo -e "[${CYAN}•1${NC}] $bd Create Account Vmess TCP ${NC}"
