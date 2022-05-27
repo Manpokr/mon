@@ -59,7 +59,7 @@ sleep 1
 menu
 ;;
 *)
-echo "pilih nomor yang tersedia"
+echo "Input The Correct Number"
 sleep 1
 menu-wg
 ;;
