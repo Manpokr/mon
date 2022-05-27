@@ -110,7 +110,8 @@ apt install libssl-dev -y
 apt install libssl1.0-dev -y
 apt install dos2unix -y
 
-# set time GMT +7
+# set time GMT +8
+rm -f /etc/localtime
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
 # set locale
@@ -378,7 +379,6 @@ cd
 apt autoclean -y
 apt -y remove --purge unscd
 apt-get -y --purge remove samba*;
-apt-get -y --purge remove apache2*;
 apt-get -y --purge remove bind9*;
 apt-get -y remove sendmail*
 apt autoremove -y
