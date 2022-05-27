@@ -68,7 +68,8 @@ trialssr
 trialss
 ;;
 x)
-exit
+sleep 1
+menu
 ;;
 *)
 echo "Input The Correct Number !"
