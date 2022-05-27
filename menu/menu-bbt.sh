@@ -33,11 +33,12 @@ systemctl restart bbt
 menu
 ;;
 x)
-sleep1
+sleep 1
 menu
 ;;
 *)
 echo "Input The Correct Number !"
+sleep 1
 menu-bbt
 ;;
 esac
