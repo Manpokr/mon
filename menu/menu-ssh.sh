@@ -14,7 +14,7 @@ IP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"                                                                                                 
 clear                                                                                                               
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                           
-echo -e "${RED}          • MENU SSH •          ${NC}"                                                               
+echo -e "${RED}           • MENU SSH •          ${NC}"                                                               
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                           
 echo -e""                                                                                                           
 echo -e "[${CYAN}•1${NC}] $bd Create Account SSH & OpenVPN ${NC}"                                                   
