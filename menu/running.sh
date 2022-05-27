@@ -100,65 +100,65 @@ clear
 
 # STATUS SERVICE Shadowsocks HTTPS
 if [[ $ssr_status == "running" ]]; then
-  status_ssr=" ${GREEN}Running ${NC}( No Error )"
+  status_ssr=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-  status_ssr="${RED}  Not Running ${NC}  ( Error )"
+  status_ssr="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE Shadowsocks HTTP
 if [[ $ss_tls == "running" ]]; then
-  ss_status=" ${GREEN}Running ${NC}( No Error )"
+  ss_status=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-  ss_status="${RED}  Not Running ${NC}  ( Error )"
+  ss_status="${RED}  Not Running ${NC}  ( Error )${NC}
 fi
 
 # STATUS SERVICE OPENVPN
 if [[ $oovpn == "active" ]]; then
-  status_openvpn=" ${GREEN}Running ${NC}( No Error )"
+  status_openvpn=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-  status_openvpn="${RED}  Not Running ${NC}  ( Error )"
+  status_openvpn="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE  SSH 
 if [[ $ssh_service == "running" ]]; then 
-   status_ssh=" ${GREEN}Running ${NC}( No Error )"
+   status_ssh=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_ssh="${RED}  Not Running ${NC}  ( Error )"
+   status_ssh="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE  SQUID 
 if [[ $squid_service == "running" ]]; then 
-   status_squid=" ${GREEN}Running ${NC}( No Error )"
+   status_squid=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_squid="${RED}  Not Running ${NC}  ( Error )"
+   status_squid="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE  VNSTAT 
 if [[ $vnstat_service == "running" ]]; then 
-   status_vnstat=" ${GREEN}Running ${NC}( No Error )"
+   status_vnstat=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_vnstat="${RED}  Not Running ${NC}  ( Error )"
+   status_vnstat="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE  CRONS 
 if [[ $cron_service == "running" ]]; then 
-   status_cron=" ${GREEN}Running ${NC}( No Error )"
+   status_cron=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_cron="${RED}  Not Running ${NC}  ( Error )"
+   status_cron="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE  FAIL2BAN 
 if [[ $fail2ban_service == "running" ]]; then 
-   status_fail2ban=" ${GREEN}Running ${NC}( No Error )"
+   status_fail2ban=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_fail2ban="${RED}  Not Running ${NC}  ( Error )"
+   status_fail2ban="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE  TLS 
 if [[ $tls_v2ray_status == "running" ]]; then 
-   status_tls_v2ray=" ${GREEN}Running${NC} ( No Error )"
+   status_tls_v2ray=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
-   status_tls_v2ray="${RED}  Not Running${NC}   ( Error )"
+   status_tls_v2ray="${RED}  Not Running${NC}   ( Error )${NC}"
 fi
 
 # STATUS SERVICE NON TLS V2RAY
@@ -170,21 +170,21 @@ fi
 
 # STATUS SERVICE VLESS TLS
 if [[ $vless_tls_v2ray_status == "running" ]]; then
-  status_tls_vless=" ${GREEN}Running${NC} ( No Error )"
+  status_tls_vless=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
   status_tls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE VLESS NON TLS V2RAY
 if [[ $vless_nontls_v2ray_status == "running" ]]; then
-  status_nontls_vless=" ${GREEN}Running${NC} ( No Error )"
+  status_nontls_vless=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
   status_nontls_vless="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE TROJAN V2RAY
 if [[ $trojan_v2ray_status == "running" ]]; then
-  status_v2ray_trojan=" ${GREEN}Running${NC} ( No Error )"
+  status_v2ray_trojan=" ${GREEN}Running${NC} ( No Error )${NC}"
 else
   status_v2ray_trojan="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
@@ -275,9 +275,9 @@ fi
 
 # STATUS SERVICE STUNNEL
 if [[ $stunnel_service == "running" ]]; then 
-   status_stunnel=" ${GREEN}Running ${NC}( No Error )"
+   status_stunnel=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-   status_stunnel="${RED}  Not Running ${NC}  ( Error )}"
+   status_stunnel="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE WEBSOCKET TLS
