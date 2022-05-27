@@ -173,7 +173,7 @@ menu
 
 *)
 sleep 1
-echo "Masukkan Nomor Yang Ada"
+echo "Input The Correct Number"
 bw
 ;;
 esac
