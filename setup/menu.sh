@@ -98,7 +98,9 @@ verv2ray="$(/usr/bin/v2ray/v2ray -version | awk 'NR==1 {print $2}')"
 #Bash
 shellversion+=" ${BASH_VERSION/-*}" 
 versibash=$shellversion
-                                                                                                                                                                             
+name=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $2}')
+exp=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $3}')
+                                                                                                                                                                       
 clear                                                                                                                                                                                                                                                                
 echo -e "                                                                                         "                                                                                                                                                                  
 echo -e "\e[36;1m CPU Model            :\e[0m $cname"                                                                                                                                                                                                                  
@@ -145,8 +147,8 @@ echo -e   ""
 echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"                                                                                                                                                                                                                  
 echo -e   ""                                                                                                                                                                                                                                                         
 echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                                                                                                                                                            
-echo -e " Client Name    : $Name"                                                                                                                                                                                                                        
-echo -e " Script Expired : $Exp2"                                                                                                                                                                                                                        
+echo -e " Client Name    : $name"                                                                                                                                                                                                                        
+echo -e " Script Expired : $exp"                                                                                                                                                                                                                        
 echo -e "${BLUE} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                                                                                                                                                            
 echo -e   ""                                                                                                                                                                                                                                                         
 read -p " Select menu :  "  menu                                                                                                                                                                                                                                     
