@@ -8,29 +8,28 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
 bd='\e[1m'
+clear
 
 #getting
 IP=$(wget -qO- ipinfo.io/ip);
 clear
 ssr_folder="/usr/local/xray"
-check_pid(){
-        PID=`ps -ef |grep -v grep | grep /etc/xray/config.json |awk '{print $2}'`
-}
+status=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 if [[ -e ${ssr_folder} ]]; then
-                check_pid
-if [[ ! -z "${PID}" ]]; then
-echo -e "Current status: ${GREEN}XRAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+if [[ $status == "running" ]]; then
+        Current_status=" ${GREEN}XRAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 else
-echo -e "Current status: ${GREEN}XRAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+        Current_status=" ${GREEN}XRAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
 fi
 cd "${ssr_folder}"
 else
-echo -e "Current status: ${RED}XRAY NOT INSTALL ${NC}"
+        Current_status=" ${RED}XRAY NOT INSTALL ${NC}"
 fi
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}              • MENU XRAY •          ${NC}"
+echo -e "\E[0;100;31m               • MENU XRAY •                \E[0m"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
+echo -e "Current status:$Current_status "
 echo -e""
 echo -e "[${CYAN}•1${NC}] $bd Create Account Vmess TCP ${NC}"
 echo -e "[${CYAN}•2${NC}] $bd Create Account Vless TCP ${NC}"
@@ -40,7 +39,8 @@ echo -e "[${CYAN}•5${NC}] $bd Create Account GRPC ${NC}"
 echo -e "[${CYAN}•6${NC}] $bd Create Account TR-XTLS ${NC}"
 echo -e "[${CYAN}•7${NC}] $bd Create Account TR-GRPC ${NC}"
 echo -e""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
+echo -e""
 echo -e "[${CYAN}•8${NC}] $bd Delete Account Vmess TCP ${NC}"
 echo -e "[${CYAN}•9${NC}] $bd Delete Account Vless TCP ${NC}"
 echo -e "[${CYAN}10${NC}] $bd Delete Account Trojan ${NC}"
@@ -49,7 +49,8 @@ echo -e "[${CYAN}12${NC}] $bd Delete Account GRPC ${NC}"
 echo -e "[${CYAN}13${NC}] $bd Delete Account TR-XTLS ${NC}"
 echo -e "[${CYAN}14${NC}] $bd Delete Account TR-GRPC ${NC}"
 echo -e""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
+echo -e""
 echo -e "[${CYAN}15${NC}] $bd Renew Account Vmess TCP ${NC}"
 echo -e "[${CYAN}16${NC}] $bd Renew Account Vless TCP ${NC}"
 echo -e "[${CYAN}17${NC}] $bd Renew Account Trojan ${NC}"
@@ -58,7 +59,8 @@ echo -e "[${CYAN}19${NC}] $bd Renew Account GRPC ${NC}"
 echo -e "[${CYAN}20${NC}] $bd Renew Account TR-XTLS ${NC}"
 echo -e "[${CYAN}21${NC}] $bd Renew Account TR-GRPC ${NC}"
 echo -e""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
+echo -e""
 echo -e "[${CYAN}22${NC}] $bd Check Account Vmess TCP ${NC}"
 echo -e "[${CYAN}23${NC}] $bd Check Account Vless TCP ${NC}"
 echo -e "[${CYAN}24${NC}] $bd Check Account Trojan ${NC}"
@@ -68,6 +70,8 @@ echo -e "[${CYAN}27${NC}] $bd Check Account TR-XTLS ${NC}"
 echo -e "[${CYAN}28${NC}] $bd Check Account TR-GRPC ${NC}"
 echo -e""
 echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
 echo -e""
 read -p " silahkan masukkan nomor [1-8 or x] :  "  menu
 echo -e ""
