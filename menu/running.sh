@@ -76,7 +76,7 @@ wg="$(systemctl show wg-quick@wg0.service --no-page)"
 swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                                      
 #trgo="$(systemctl show trojan-go.service --no-page)"                                                                                                                         
 strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                                   
-#sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
+#wg-status=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
 wstls=$(systemctl status ws-stunnel | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                       
 wsdrop=$(systemctl status websocket | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                       
 wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                         
@@ -336,12 +336,19 @@ else
    swsopen="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+# STATUS SERVICE WEBSOCKET NGINX
 if [[ $nginx_service == "running" ]]; then 
    status_nginx=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
    status_nginx="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi 
 
+# STATUS SERVICE WEBSOCKET WIREGUARD
+if [[ $wg-status == "running" ]]; then 
+   status_WG=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+   status_WG="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi 
 clear
 
 domain=$(cat /etc/xray/domain)
@@ -382,6 +389,7 @@ echo -e " $CYAN║$NC V2RAYS Vless WS TLS     :$status_tls_vless"
 echo -e " $CYAN║$NC V2RAYS Vless WS NTLS    :$status_nontls_vless"                                    
 echo -e " $CYAN║$NC SHADOWSOCKSR            :$status_ssr"                                                  
 echo -e " $CYAN║$NC SHADOWSOCKS-LIBEV       :$ss_status"                                                   
+echo -e " $CYAN║$NC WIREGUARD               :$status_WG"                                          
 echo -e " $CYAN║$NC Websocket TLS           :$swstls"                                                  
 echo -e " $CYAN║$NC Websocket None TLS      :$swsdrop"                                                  
 echo -e " $CYAN║$NC Websocket Ovpn          :$swsovpn"                                                
