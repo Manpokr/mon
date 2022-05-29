@@ -46,7 +46,7 @@ else
         status_ssh=" ${RED}XRAY NOT INSTALL ${NC}"
 fi                
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "\E[0;100;31m               • MENU SSH •                \E[0m"
+echo -e "\E[0;100;31m                • MENU SSH •                \E[0m"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
 echo -e "Current status:$status_ssh " 
 echo -e "Current status:$status_sshws "                                                                    
