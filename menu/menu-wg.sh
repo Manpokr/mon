@@ -17,20 +17,27 @@ check_pid(){
         PID=`ps -ef |grep -v grep | grep /etc/xray/config.json |awk '{print $2}'`
 }
 
+
+IP=$(wget -qO- ipinfo.io/ip);
+echo -e "checking vps"
+clear
+ssr_folder="/usr/bin/wg-quick@wg0"
+sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
+
 if [[ -e ${ssr_folder} ]]; then
-                check_pid
-if [[ ! -z "${PID}" ]]; then
-echo -e "Current status: ${GREEN}WG INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+if [[  $sswg == "running" ]]; then
+      status_wg=" ${GREEN}WG INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 else
-echo -e "Current status: ${GREEN}WG INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+      status_wg=" ${GREEN}WG INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
 fi
 cd "${ssr_folder}"
 else
-echo -e "Current status: ${RED}WG NOT INSTALL ${NC}"
+      status_wg=" ${RED}WG NOT INSTALL ${NC}"
 fi
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}              • MENU WIREGUARD •          ${NC}"
+echo -e "\E[0;100;31m         • MENU WIREGUARD •                \E[0m"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
+echo -e "Current status:$status_wg "
 echo -e""
 echo -e "[${CYAN}•1${NC}] $bd Create Account Wireguard ${NC}"
 echo -e "[${CYAN}•2${NC}] $bd Delete Account Wireguard ${NC}"
@@ -38,6 +45,8 @@ echo -e "[${CYAN}•3${NC}] $bd Check User Login Wireguard ${NC}"
 echo -e "[${CYAN}•4${NC}] $bd Renew Account Wireguard ${NC}"
 echo -e""
 echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
 echo -e""
 read -p "  Please Enter The Number  [1-4 or x] :  "  menu
 echo -e ""
