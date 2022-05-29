@@ -72,11 +72,11 @@ vnstat_service=$(/etc/init.d/vnstat status | grep Active | awk '{print $3}' | cu
 cron_service=$(/etc/init.d/cron status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                    
 fail2ban_service=$(/etc/init.d/fail2ban status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                            
 
-wg="$(systemctl show wg-quick@wg0.service --no-page)"                                                                                                                        
-swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                                      
+#wg="$(systemctl show wg-quick@wg0.service --no-page)"                                                                                                                        
+#swg=$(echo "${wg}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                                      
 #trgo="$(systemctl show trojan-go.service --no-page)"                                                                                                                         
 strgo=$(echo "${trgo}" | grep 'ActiveState=' | cut -f2 -d=)                                                                                                                   
-#wg-status=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
+wg-status=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
 wstls=$(systemctl status ws-stunnel | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                       
 wsdrop=$(systemctl status websocket | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                       
 wsovpn=$(systemctl status ws-ovpn | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                         
