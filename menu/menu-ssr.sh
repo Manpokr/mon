@@ -8,6 +8,7 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
 bd='\e[1m'
+NC='\e[0m'
 
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
