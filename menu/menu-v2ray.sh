@@ -9,26 +9,24 @@ NC='\033[0;37m'
 bd='\e[1m'
 
 IP=$(wget -qO- ipinfo.io/ip);
-clear
 ssr_folder="/usr/bin/v2ray"
-check_pid(){
-        PID=`ps -ef |grep -v grep | grep /etc/v2ray/config.json |awk '{print $2}'`
-}
+status=$(systemctl status v2ray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 if [[ -e ${ssr_folder} ]]; then
-                check_pid
-if [[ ! -z "${PID}" ]]; then
-echo -e "Current status: ${GREEN}V2RAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+if [[ $status == "running" ]]; then
+        Current_status=" ${GREEN}V2RAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 else
-echo -e "Current status: ${GREEN}V2RAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+        Current_status=" ${GREEN}V2RAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
 fi
 cd "${ssr_folder}"
 else
-echo -e "Current status: ${RED}V2RAY NOT INSTALL ${NC}"
+        Current_status=" ${RED}V2RAY NOT INSTALL ${NC}"
 fi
+clear   
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}               • MENU V2RAY •          ${NC}"
+echo -e "\E[0;100;31m               • MENU V2RAY •                \E[0m"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
+echo -e "Current status:$Current_status "
 echo -e""
 echo -e "[${CYAN}•1${NC}] $bd Create Account Vmess Websocket ${NC}"
 echo -e "[${CYAN}•2${NC}] $bd Create Account Vless Websocket ${NC}"
@@ -44,6 +42,8 @@ echo -e "[${CYAN}11${NC}] $bd Check Account Vless Websocket ${NC}"
 echo -e "[${CYAN}12${NC}] $bd Check Account Trojan ${NC}"
 echo -e""
 echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e""
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e""
 read -p " silahkan masukkan nomor [1-8 or x] :  "  menu
 echo -e ""
