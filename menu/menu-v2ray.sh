@@ -8,7 +8,21 @@ CYAN='\033[0;36m'
 NC='\033[0;37m'
 bd='\e[1m'
 
-IP=$(wget -qO- ipinfo.io/ip);
+# Getting
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
+if [[ $MYIP = $IZIN ]]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+rm -f menu_v2ray
+exit 0
+fi    
+clear
+
+#RUN
 ssr_folder="/usr/bin/v2ray"
 status=$(systemctl status v2ray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
