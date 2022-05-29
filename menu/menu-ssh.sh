@@ -12,10 +12,44 @@ bd='\e[1m'
 #getting                                                                                                    
 IP=$(wget -qO- ipinfo.io/ip);                                                                                       
 echo "Checking VPS"                                                                                                 
-clear                                                                                                               
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                           
-echo -e "${RED}           • MENU SSH •          ${NC}"                                                               
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"                                                           
+clear 
+
+# RUN
+ssr_folder="/usr/bin/python"
+wsdrop=$(systemctl status websocket | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                       
+
+if [[ -e ${ssr_folder} ]]; then
+if [[ $wsdrop == "running" ]]; then
+        status_sshws=" ${GREEN}XRAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+else
+        status_sshws=" ${GREEN}XRAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+fi
+cd "${ssr_folder}"
+else
+        status_sshws=" ${RED}XRAY NOT INSTALL ${NC}"
+fi     
+
+# RUN
+
+ssr_folder="/usr/sbin/sshd"
+ssh=$(/etc/init.d/ssh status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                      
+
+
+if [[ -e ${ssr_folder} ]]; then
+if [[ $ssh == "running" ]]; then
+        status_ssh=" ${GREEN}XRAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+else
+        status_ssh=" ${GREEN}XRAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+fi
+cd "${ssr_folder}"
+else
+        status_ssh=" ${RED}XRAY NOT INSTALL ${NC}"
+fi                
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "\E[0;100;31m               • MENU SSH •                \E[0m"
+echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
+echo -e "Current status:$status_ssh " 
+echo -e "Current status:$status_sshws "                                                                    
 echo -e""                                                                                                           
 echo -e "[${CYAN}•1${NC}] $bd Create Account SSH & OpenVPN ${NC}"                                                   
 echo -e "[${CYAN}•2${NC}] $bd Trial Account SSH & OpenVPN ${NC}"                                                    
