@@ -19,17 +19,19 @@ echo -e "${NC}${GREEN}Permission Accepted...${NC}"
 else
 echo -e "${NC}${RED}Permission Denied!${NC}";
 echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f menu_v2ray
+rm -f menu-wg
 exit 0
 fi    
 clear
 
 # RUN
-ssr_folder="/usr/bin/wg-quick@wg0"
-sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
-
-if [[ -e ${ssr_folder} ]]; then
-if [[  $sswg == "running" ]]; then
+ssr_folder="/etc/wireguard/"
+check_pid(){
+        PID=`ps -ef |grep -v grep | grep wg0 |awk '{print $2}'`
+}
+        if [[ -e ${ssr_folder} ]]; then
+                check_pid
+                if [[ ! -z "${PID}" ]]; then
       status_wg=" ${GREEN}WG INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 else
       status_wg=" ${GREEN}WG INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
@@ -38,6 +40,7 @@ cd "${ssr_folder}"
 else
       status_wg=" ${RED}WG NOT INSTALL ${NC}"
 fi
+
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "\E[0;100;31m         • MENU WIREGUARD •                \E[0m"
 echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${NC}"
