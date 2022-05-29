@@ -8,19 +8,23 @@ PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
 bd='\e[1m'
+NC='\e[0m'
 
-IP=$(wget -qO- ipinfo.io/ip);
-echo -e "checking vps"
+# Getting
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
+if [[ $MYIP = $IZIN ]]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+rm -f menu_v2ray
+exit 0
+fi    
 clear
-ssr_folder="/usr/local/xray"
-check_pid(){
-        PID=`ps -ef |grep -v grep | grep /etc/xray/config.json |awk '{print $2}'`
-}
 
-
-IP=$(wget -qO- ipinfo.io/ip);
-echo -e "checking vps"
-clear
+# RUN
 ssr_folder="/usr/bin/wg-quick@wg0"
 sswg=$(systemctl status wg-quick@wg0 | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
