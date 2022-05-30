@@ -109,7 +109,7 @@ fi
 if [[ $ss_tls == "running" ]]; then
   ss_status=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-  ss_status="${RED}  Not Running ${NC}  ( Error )${NC}
+  ss_status="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
 # STATUS SERVICE OPENVPN
