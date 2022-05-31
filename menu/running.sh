@@ -349,19 +349,16 @@ if [[ $wg-status == "running" ]]; then
 else
    status_WG="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi 
-
-
+#STATUS WG 
 check_pid(){
         PID=`ps -ef |grep -v grep | grep wg0 |awk '{print $2}'`
 }
+                 check_pid
                 if [[ ! -z "${PID}" ]]; then
       status_wg=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
       status_wg="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
-
-
-
 clear
 
 domain=$(cat /etc/xray/domain)
