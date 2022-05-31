@@ -349,6 +349,19 @@ if [[ $wg-status == "running" ]]; then
 else
    status_WG="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi 
+
+
+check_pid(){
+        PID=`ps -ef |grep -v grep | grep wg0 |awk '{print $2}'`
+}
+                if [[ ! -z "${PID}" ]]; then
+      status_wg=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+      status_wg="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
+
+
+
 clear
 
 domain=$(cat /etc/xray/domain)
@@ -389,7 +402,7 @@ echo -e " $CYAN║$NC V2RAYS Vless WS TLS     :$status_tls_vless"
 echo -e " $CYAN║$NC V2RAYS Vless WS NTLS    :$status_nontls_vless"                                    
 echo -e " $CYAN║$NC SHADOWSOCKSR            :$status_ssr"                                                  
 echo -e " $CYAN║$NC SHADOWSOCKS-LIBEV       :$ss_status"                                                   
-echo -e " $CYAN║$NC WIREGUARD               :$status_WG"                                          
+echo -e " $CYAN║$NC WIREGUARD               :$status_wg"                                          
 echo -e " $CYAN║$NC Websocket TLS           :$swstls"                                                  
 echo -e " $CYAN║$NC Websocket None TLS      :$swsdrop"                                                  
 echo -e " $CYAN║$NC Websocket Ovpn          :$swsovpn"                                                
