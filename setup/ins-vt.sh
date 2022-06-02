@@ -20,10 +20,16 @@ domain=$(cat /etc/v2ray/domain)
 apt-get install netfilter-persistent -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
+sleep 1
+echo -e "[ ${green}INFO$NC ] Setting ntpdate"
 ntpdate pool.ntp.org
 apt -y install chrony
 timedatectl set-ntp true
+sleep 1
+echo -e "[ ${green}INFO$NC ] Enable chronyd"
 systemctl enable chronyd && systemctl restart chronyd
+sleep 1
+echo -e "[ ${green}INFO$NC ] Enable chrony"
 systemctl enable chrony && systemctl restart chrony
 timedatectl set-timezone Asia/Kuala_Lumpur
 chronyc sourcestats -v
@@ -31,10 +37,15 @@ chronyc tracking -v
 date
 root
 # install v2ray
+sleep 1
+echo -e "[ ${green}INFO$NC ] Downloading & Installing v2ray core"
+
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 mkdir -p /etc/trojan
 bash -c "$(wget -q -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
+sleep 1
+echo -e "[ ${green}INFO$NC ] Setting config v2ray/vmess"
 service squid start
 uuid=$(cat /proc/sys/kernel/random/uuid)
 cat> /etc/v2ray/config.json << END
@@ -486,6 +497,8 @@ iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
+sleep 1
+echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
 systemctl enable v2ray@none.service
 systemctl start v2ray@none.service
@@ -531,3 +544,8 @@ chmod +x trialtrojan
 cd
 rm -f ins-vt.sh
 
+sleep 1
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+yellow "V2Ray/Vmess"
+yellow "V2Ray/Vless"
+yellow "V2Ray/Trojan"
