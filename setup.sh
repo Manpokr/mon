@@ -91,13 +91,28 @@ echo "Script Already Installed"
 exit 0
 fi
 
-#Folder
-IP=$( curl -s ipinfo.io/ip)
+echo -e "[ ${green}INFO${NC} ] Preparing the install file"
+sleep 2
+echo -ne "[ ${green}INFO${NC} ] Check permission : "
+
+
+
+sleep 3
 mkdir /var/lib/Manpokr;
+echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
 clear
 
+x="ok"
+while true $x != "ok"
+do
+#Folder
+IP=$( curl -s ipinfo.io/ip)
+
+
 #Domain
+echo ""
+echo -e "[ ${green}INFO${NC} ] Current domain : $domainbefore"
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh
 chmod +x cf.sh
 ./cf.sh
@@ -155,6 +170,9 @@ chmod +x cert.sh
 ./cert.sh
 
 #Warna
+sleep 1
+echo -e "[ ${green}INFO${NC} ] Downloading extension !!"
+sleep 1
 apt install lolcat -y
 apt install toilet - y
 
@@ -232,5 +250,14 @@ rm -f setup.sh
 rm -f ins-xray.sh
 chmod +x /var/run/screen
 clear
-echo "<<<<<<<< BYE BYE SAYANG >>>>>>>>"
+sleep 2
+echo -e "[ ${green}INFO${NC} ] Installing Successfully!!"
+sleep 1
+echo -e "[ ${green}INFO${NC} ] Dont forget to reboot later"
+echo -ne "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
+read answer
+if [ "$answer" == "${answer#[Yy]}" ] ;then
+exit 0
+else
 reboot
+fi
