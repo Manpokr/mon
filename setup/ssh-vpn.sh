@@ -3,6 +3,10 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 
+echo "SSH & Ovpn"
+echo "Progress..."
+sleep 3
+
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
@@ -69,12 +73,23 @@ END
 
 # Ubah izin akses
 chmod +x /etc/rc.local
+echo -e "
+"
+date
+echo ""
 
 # enable rc local
+sleep 1
+echo -e "[ ${green}INFO${NC} ] Checking... "
+sleep 2
+sleep 1
+echo -e "[ ${green}INFO$NC ] Enable system rc local"
 systemctl enable rc-local
 systemctl start rc-local.service
 
 # disable ipv6
+sleep 1
+echo -e "[ ${green}INFO$NC ] Disable ipv6"
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
@@ -122,6 +137,8 @@ apt install libssl1.0-dev -y
 apt install dos2unix -y
 
 # set time GMT +8
+sleep 1
+echo -e "[ ${green}INFO$NC ] Set zona local time to Asia/Jakarta GMT+7"
 rm -f /etc/localtime
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
@@ -134,6 +151,8 @@ echo "clear" >> .profile
 echo "neofetch" >> .profile
 
 # install webserver
+sleep 1
+echo -e "[ ${green}INFO$NC ] Install nginx" 
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
@@ -152,8 +171,11 @@ cd
 
 # install badvpn
 cd
+echo -e "[ ${green}INFO$NC ] Installing badvpn for game support..."
 wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Manpokr/mon/main/addon/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
+sleep 1
+echo -e "[ ${green}INFO$NC ] Screen badvpn detected"
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500' /etc/rc.local
@@ -166,11 +188,14 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
-
+echo -e "[ ${red}CLOSE$NC ] Closing screen "
+     
 # setting port ssh
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 
 # install dropbear
+sleep 1
+echo -e "[ ${green}INFO$NC ] Settings Dropbear"
 apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
@@ -269,6 +294,8 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
+sleep 1
+echo -e "[ ${green}INFO$NC ] Install Openvpn"
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
@@ -282,6 +309,11 @@ else
 	mkdir /usr/local/ddos
 fi
 clear
+#clear
+sleep 1
+echo -e "[ ${green}INFO$NC ] Install DOS-Deflate"
+sleep 1
+echo -e "[ ${green}INFO$NC ] Downloading source files..."
 echo; echo 'Installing DOS-Deflate 0.6'; echo
 echo; echo -n 'Downloading source files...'
 wget -q -O /usr/local/ddos/ddos.conf http://www.inetbase.com/scripts/ddos/ddos.conf
@@ -302,6 +334,8 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
+sleep 1
+echo -e "[ ${green}INFO$NC ] Settings banner"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
@@ -309,6 +343,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dr
 wget -O /etc/issue.net "https://raw.githubusercontent.com/Manpokr/mon/main/addon/issue.net"
 
 # blockir torrent
+echo -e "[ ${green}INFO$NC ] Set iptables"
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -387,6 +422,8 @@ echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
 cd
+sleep 1
+echo -e "[ ${green}INFO$NC ] Clearing trash"
 apt autoclean -y
 apt -y remove --purge unscd
 apt-get -y --purge remove samba*;
@@ -426,4 +463,10 @@ rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
 
 # finihsing
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+sleep 1
+yellow "SSH & OVPN install successfully"
+sleep 5
+clear
+
 clear
