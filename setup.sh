@@ -22,7 +22,7 @@ LIGHT='\033[0;37m'
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-domain=$ /etc/xray/domain
+domain=$(cat /etc/xray/domain)
 IP=$( curl -s ipinfo.io/ip)
 if [ -f "/etc/xray/domain" ]; then
 echo "Script Already Installed"
