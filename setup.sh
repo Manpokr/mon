@@ -93,8 +93,7 @@ fi
 
 echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 sleep 2
-echo -ne "[ ${green}INFO${NC} ] Check permission : "
-echo -e ${res}
+echo -e "[ ${green}INFO${NC} ] Check permission : ${res} "
 
 
 sleep 3
