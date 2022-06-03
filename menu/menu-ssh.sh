@@ -16,11 +16,6 @@ clear
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-
-clear
-IP=$(curl -sS ifconfig.me)
-x="ok"
-
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 chck_pid(){
 	PID=`ps -ef |grep -v grep | grep dropbear |awk '{print $2}'`
@@ -48,8 +43,6 @@ chck_sshwb(){
 			sts="\033[1;31m○ \033[0m"
     fi
 }
-while true $x != "ok"
-do
 
 echo -e " $CYAN╠═════════════════════════════════════════════════╣${NC}"
 echo -e " $CYAN║$NC\E[0;100;31m                   • MENU-SSH •                  \E[0m$CYAN║ $NC"
