@@ -23,6 +23,10 @@ dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Dat
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 IP=$( curl -s ipinfo.io/ip)
+if [ -f "/etc/xray/domain" ]; then
+echo "Script Already Installed"
+exit 0
+fi
 # Getting
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip > /root/tmp
@@ -86,14 +90,9 @@ sleep 10
 exit 0
 fi
 clear
-if [ -f "/etc/xray/domain" ]; then
-echo "Script Already Installed"
-exit 0
-fi
-
 echo -e "[ ${green}INFO${NC} ] Preparing the install file"
 sleep 2
-echo -e "[ ${green}INFO${NC} ] Check permission : ${res} "
+echo -e "[ ${green}INFO${NC} ] Check permission : $res "
 
 
 sleep 3
