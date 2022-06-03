@@ -22,6 +22,7 @@ LIGHT='\033[0;37m'
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
+domain=$ /etc/xray/domain
 IP=$( curl -s ipinfo.io/ip)
 if [ -f "/etc/xray/domain" ]; then
 echo "Script Already Installed"
@@ -101,16 +102,9 @@ echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
 clear
 
-x="ok"
-while true $x != "ok"
-do
-#Folder
-IP=$( curl -s ipinfo.io/ip)
-
-
 #Domain
 echo ""
-echo -e "[ ${green}INFO${NC} ] Current domain : $domainbefore"
+echo -e "[ ${green}INFO${NC} ] Current domain : $domain"
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh
 chmod +x cf.sh
 ./cf.sh
