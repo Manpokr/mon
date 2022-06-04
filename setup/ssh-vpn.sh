@@ -73,15 +73,13 @@ END
 
 # Ubah izin akses
 chmod +x /etc/rc.local
-echo -e "
-"
+echo -e ""
 date
-echo ""
+echo -e ""
 
 # enable rc local
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Checking... "
-sleep 2
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable system rc local"
 systemctl enable rc-local
@@ -138,7 +136,7 @@ apt install dos2unix -y
 
 # set time GMT +8
 sleep 1
-echo -e "[ ${green}INFO$NC ] Set zona local time to Asia/Jakarta GMT+7"
+echo -e "[ ${green}INFO$NC ] Set zona local time to Asia/Kuala_Lumpur GMT+7"
 rm -f /etc/localtime
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
@@ -195,7 +193,7 @@ sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 
 # install dropbear
 sleep 1
-echo -e "[ ${green}INFO$NC ] Settings Dropbear"
+echo -e "[ ${green}INFO$NC ] Install Dropbear"
 apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
@@ -467,6 +465,4 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 sleep 1
 yellow "SSH & OVPN install successfully"
 sleep 5
-clear
-
 clear
