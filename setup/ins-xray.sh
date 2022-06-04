@@ -17,7 +17,8 @@ rm -f ins-xray.sh
 exit 0
 fi  
 clear
-
+echo "Xray Core"
+echo "Progress..."
 domain=$(cat /etc/xray/domain)
 
 # // Make Main Directory
@@ -27,11 +28,22 @@ mkdir -p /usr/local/xray/
 sleep 1
 echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
 wget -q -O /usr/local/xray/xray "https://raw.githubusercontent.com/Manpokr/mon/main/core/xray" 
+rm -f xray
+sleep 1
+
+echo -e "[ ${green}INFO$NC ] Downloading & Installing geosite"
 wget -q -O /usr/local/xray/geosite.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geosite.dat"
+rm -f geosite.dat
+sleep 1
+
+echo -e "[ ${green}INFO$NC ] Downloading & Installing geoip"
 wget -q -O /usr/local/xray/geoip.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geoip.dat"
 chmod +x /usr/local/xray/xray
+rm -f geoip.dat
+sleep 1
 
 # // Make XRay Mini Root Folder
+echo -e "[ ${green}INFO$NC ] Make Folder"
 mkdir -p /etc/xray/
 chmod 775 /etc/xray/
 
@@ -180,11 +192,12 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
+echo -e "[ ${green}INFO$NC ] Downloading & Installing Plugin Xray"
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/plugin-xray.sh && chmod +x plugin-xray.sh && ./plugin-xray.sh
 rm -f /root/plugin-xray.sh
 sleep 1
-echo -e "[ ${green}INFO$NC ] Setting config xray/vmess"
 
+echo -e "[ ${green}INFO$NC ] Setting config xray/vmess"
 service squid start
 uuid=$(cat /proc/sys/kernel/random/uuid)
 password="$(tr -dc 'a-z0-9A-Z' </dev/urandom | head -c 16)"
@@ -1076,8 +1089,8 @@ iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
-echo -e "$yell[SERVICE]$NC Restart All service"
 
+echo -e "$green[SERVICE]$NC Restart Xray Service"
 systemctl daemon-reload
 systemctl enable xr-vm-tls.service
 systemctl start xr-vm-tls.service
