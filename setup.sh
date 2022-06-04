@@ -91,6 +91,10 @@ sleep 10
 exit 0
 fi
 clear
+echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
+sleep 2
+echo -ne "[ ${green}INFO${NC} ] Check permission : "
+echo -e "${res}"
 
 mkdir /var/lib/Manpokr;
 echo "IP=" >> /var/lib/Manpokr/ipvps.conf
