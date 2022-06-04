@@ -147,6 +147,7 @@ echo "clear" >> .profile
 echo "neofetch" >> .profile
 
 # install webserver
+sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install nginx" 
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
