@@ -21,7 +21,7 @@ echo -e "${NC}${RED}Permission Denied!${NC}";
 echo -e "${NC}${LIGHT}Please Contact Admin!!"
 rm -f certv2ray.sh
 exit 0
-fi                                                                                                                                                     clear
+fi                                                                                                                                                   
 clear
 
 read -rp "Domain/Host : " -e domain
