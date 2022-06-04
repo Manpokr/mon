@@ -104,61 +104,38 @@ echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
 #Domain
 echo ""
 echo -e "[ ${green}INFO${NC} ] Current domain : $domain"
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh
-chmod +x cf.sh
-./cf.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh && chmod +x cf.sh && ./cf.sh
 
 #SSH & OPenVPN
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssh-vpn.sh
-chmod +x ssh-vpn.sh 
-screen -S ssh-vpn ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 
 #ShadowsocksR
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssr.sh
-chmod +x ssr.sh
-screen -S ssr ./ssr.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
 
 #Shadowsocks
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/sodosok.sh
-chmod +x sodosok.sh
-screen -S ss ./sodosok.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 
 #Wireguards
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/wg.sh
-chmod +x wg.sh 
-screen -S wg ./wg.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/wg.sh && chmod +x wg.sh  && screen -S wg ./wg.sh
 
 #XRay
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-xray.sh
-chmod +x ins-xray.sh
-screen -S xray ./ins-xray.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 
 #V2Ray
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-vt.sh
-chmod +x ins-vt.sh
-screen -S vt ./ins-vt.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-vt.sh && chmod +x ins-vt.sh && screen -S vt ./ins-vt.sh
 
-#trojango
 #Backup
-wget https://raw.githubusercontent.com/Manpokr/mon/main/backup/set-br.sh
-chmod +x set-br.sh 
-./set-br.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
 # Websocket
-wget https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws.sh
-chmod +x ws.sh
-./ws.sh 
+wget https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws.sh && chmod +x ws.sh && ./ws.sh 
 
 #OHP 
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ohp.sh
-chmod +x ohp.sh
-./ohp.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 
 #Cert
 apt install socat -y
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cert.sh
-chmod +x cert.sh
-./cert.sh
+wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cert.sh && chmod +x cert.sh && ./cert.sh
 
 #Warna
 sleep 1
