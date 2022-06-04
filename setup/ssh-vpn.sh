@@ -3,10 +3,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 
-echo "SSH & Ovpn"
-echo "Progress..."
-sleep 3
-
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
@@ -19,7 +15,9 @@ rm -f kernel-updt.sh
 exit 0
 fi
 clear
-
+echo "SSH & Ovpn"
+echo "Progress..."
+sleep 3
 # ==================================================
 # initializing var
 export DEBIAN_FRONTEND=noninteractive
