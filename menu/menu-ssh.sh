@@ -1,5 +1,6 @@
 #!/bin/bash
-#Menu
+#Menu ssh
+LIGHT='\033[0;37m'
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -8,7 +9,8 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
-bd='\e[1m'                                                                                                                                                                                        
+bd='\e[1m'  
+                                                                                                                                                                                      
 #getting                                                                                                    
 IP=$(wget -qO- ipinfo.io/ip);                                                                                       
 echo "Checking VPS"                                                                                                 
@@ -24,22 +26,22 @@ menu_sts(){
 	if dpkg -s dropbear > /dev/null 2>&1; then
 		chck_pid
 		if [[ ! -z "${PID}" ]]; then
-			echo -e "Current status dropbear: ${Green_font_prefix} Installed${Font_color_suffix} & ${Green_font_prefix}Running${Font_color_suffix}"
+			echo -e "\033[0;37mCurrent status dropbear:\033[m ${Green_font_prefix} Installed${Font_color_suffix} & ${Green_font_prefix}Running${Font_color_suffix}"
 		else
-			echo -e "Current status dropbear: ${Green_font_prefix} Installed${Font_color_suffix} but ${Red_font_prefix}Not Running${Font_color_suffix}"
+			echo -e "\033[0;37mCurrent status dropbear:\033[m ${Green_font_prefix} Installed${Font_color_suffix} but ${Red_font_prefix}Not Running${Font_color_suffix}"
 		fi
 	#	cd "${ssr_folder}"
 	else
-		echo -e "Current status dropbear: ${Red_font_prefix}Not Installed${Font_color_suffix}"
+		echo -e "\033[0;37mCurrent status dropbear:\033[m ${Red_font_prefix}Not Installed${Font_color_suffix}"
 	fi
 }
 chck_sshwb(){
 	PID=`ps -ef |grep -v grep | grep websocket |awk '{print $2}'`
 	if [[ ! -z "${PID}" ]]; then
-			echo -e "Current status ssh ws: ${Green_font_prefix} Installed${Font_color_suffix} & ${Green_font_prefix}Running${Font_color_suffix}"
+			echo -e "\033[0;37mCurrent status ssh ws:\033[m ${Green_font_prefix} Installed${Font_color_suffix} & ${Green_font_prefix}Running${Font_color_suffix}"
 			sts="\033[0;32m◉ \033[0m"
 		else
-			echo -e "Current status ssh ws: ${Green_font_prefix} Installed${Font_color_suffix} but ${Red_font_prefix}Not Running${Font_color_suffix}"
+			echo -e "\033[0;37mCurrent status ssh ws:\033[m ${Green_font_prefix} Installed${Font_color_suffix} but ${Red_font_prefix}Not Running${Font_color_suffix}"
 			sts="\033[1;31m○ \033[0m"
     fi
 }
