@@ -1,4 +1,5 @@
 #!/bin/bash
+# TRIAL MENU
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -7,75 +8,44 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 NC='\033[0;37m'
-bd='\e[1m'
 
 clear
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}          • MENU TRIAL •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "\033[30;5;47m                   ⇱ MENU TRIAL ⇲                 \033[m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e""
-echo -e "[${CYAN}•1${NC}] $bd Create TRial XRay VMess Accounts ${NC}"                     
-echo -e "[${CYAN}•2${NC}] $bd Create TRial XRay VLess Accounts ${NC}"                    
-echo -e "[${CYAN}•3${NC}] $bd Create TRial XRay Trojan Accounts ${NC}"                    
-echo -e "[${CYAN}•4${NC}] $bd Create TRial XRay XTLS Accounts ${NC}"                          
-echo -e "[${CYAN}•5${NC}] $bd Create TRial XRay GRPC Accounts ${NC}"    
-echo -e "[${CYAN}•6${NC}] $bd Create TRial XRAY TR-GRPC Accounts ${NC}"                          
-echo -e "[${CYAN}•7${NC}] $bd Create TRial XRAY TR-XTLS Accounts ${NC}"                            
-echo -e "[${CYAN}•8${NC}] $bd Create TRial V2Ray Vmess Websocket ${NC}"                         
-echo -e "[${CYAN}•9${NC}] $bd Create TRial V2Ray Vless Websocket ${NC}"                        
-echo -e "[${CYAN}10${NC}] $bd Create Trial V2Ray Trojan ${NC}"                               
-echo -e "[${CYAN}11${NC}] $bd Create TRial ShadowsocksR ${NC}"                             
-echo -e "[${CYAN}12${NC}] $bd Create TRial Shadowsocks ${NC}"                           
+echo -e "[${CYAN}•1${NC}] Create TRial XRay VMess Accounts "                     
+echo -e "[${CYAN}•2${NC}] Create TRial XRay VLess Accounts "                    
+echo -e "[${CYAN}•3${NC}] Create TRial XRay Trojan Accounts "                    
+echo -e "[${CYAN}•4${NC}] Create TRial XRay XTLS Accounts "                          
+echo -e "[${CYAN}•5${NC}] Create TRial XRay GRPC Accounts "    
+echo -e "[${CYAN}•6${NC}] Create TRial XRAY TR-GRPC Accounts "                          
+echo -e "[${CYAN}•7${NC}] Create TRial XRAY TR-XTLS Accounts "                            
+echo -e "[${CYAN}•8${NC}] Create TRial V2Ray Vmess Websocket "                         
+echo -e "[${CYAN}•9${NC}] Create TRial V2Ray Vless Websocket "                        
+echo -e "[${CYAN}10${NC}] Create Trial V2Ray Trojan "                               
+echo -e "[${CYAN}11${NC}] Create TRial ShadowsocksR "                             
+echo -e "[${CYAN}12${NC}] Create TRial Shadowsocks "                           
 echo -e""
 echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e""
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e""
 read -p " silahkan masukkan nomor [1-12 or x] :  "  menu
 case $menu in 
-1)
-trialxvmess
-;;
-2)
-trialxvless
-;;
-3)
-trialxtrojan
-;;
-4)
-trialxtls
-;;
-5)
-trialgrpc
-;;
-6)
-trialtrgrpc 
-;;
-7)
-trialtrxtls
-;;
-8)
-trialvmess
-;;
-9)
-trialvless
-;;
-10)
-trialtrojan
-;;
-11)
-trialssr
-;;
-12)
-trialss
-;;
-x)
-sleep 1
-menu
-;;
-*)
-echo "Input The Correct Number !"
-trial-menu
-;;
+1) clear ; trialxvmess ; exit ;;
+2) clear ; trialxvless ; exit ;;
+3) clear ; trialxtrojan ; exit ;; 
+4) clear ; trialxtls ; exit ;; 
+5) clear ; trialgrpc ; exit ;; 
+6) clear ; trialtrgrpc ; exit ;; 
+7) clear ; trialtrxtls ; exit ;;
+8) clear ; trialvmess ; exit ;; 
+9) clear ; trialvless ; exit ;;
+10) clear ; trialtrojan ; exit ;;
+11) clear ; trialssr ; exit ;;
+12) clear ; trialss ; exit ;;
+x) clear ; menu ;;
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; trial-menu ;;
 esac
-
-
 
