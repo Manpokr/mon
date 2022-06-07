@@ -36,9 +36,9 @@ echo -e " [${CYAN}18${NC}] Kernel Update "
 echo -e " [${CYAN}19${NC}] Set Auto Reboot "
 echo -e " [${CYAN}20${NC}] Bbr "
 echo -e ""
-echo -e " [${RED}•x${NC}] ${RED}BACK TO MENU${NC}"
+echo -e " [${RED}99${NC}] ${RED}BACK TO MENU${NC}"
 echo -e   ""
-echo -e   "Press [ Ctrl+C ] • To-Exit"
+echo -e   "Press x or [ Ctrl+C ] • To-Exit-Script"
 echo -e   ""
 echo -e "\033[2;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e ""
@@ -65,6 +65,7 @@ case $opt in
 18) clear ; kernel-updt ; exit ;;
 19) clear ; auto-reboot ; exit ;;
 20) clear ; bbr ; exit ;;
-x) clear ; menu ; exit ;;
-*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; m-system ;;
+99) clear ; menu ; exit ;;
+x) clear ; exit ;;
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; system-menu ;;
 esac
