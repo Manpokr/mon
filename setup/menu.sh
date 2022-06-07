@@ -167,5 +167,6 @@ case $menu in
 11) clear ; clearcache ;;                                                                                                                                                                                                                                            
 12) clear ; reboot ;; 
 99) clear ; menu-bbt ;;                                                                                                                                                                                                                                       
-x) exit ;;                                                                                                                                                                                                                                                           
-esac
+x) exit ;;  
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; menu ;;
+esac                                                                                                                                                                                                                                                     
