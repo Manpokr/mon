@@ -43,13 +43,10 @@ chck_sshwb(){
 			sts="\033[1;31m○ \033[0m"
     fi
 }
-
-echo -e " $CYAN╠═════════════════════════════════════════════════╣${NC}"
-echo -e " $CYAN║$NC\E[0;100;31m                   • MENU-SSH •                  \E[0m$CYAN║ $NC"
-echo -e " $CYAN╠═════════════════════════════════════════════════╣${NC}"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[44;1;39m                   ⇱ SSH MENU ⇲                   \E[0m"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+clear
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "\033[30;5;47m                   ⇱ MENU SSH ⇲                   \033[m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 menu_sts
 chck_sshwb
 echo -e""                                                                                                           
@@ -66,49 +63,21 @@ echo -e "[${CYAN}10${NC}] $bd Restart All Service${NC} "
 echo -e""                                                                                                           
 echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e""
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " $CYAN ═════════════════════════════════════════════════ ${NC}"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e""
-read -p "  Please Enter The Number  [1-9 or x] :  "  menu
+read -p "  Please Enter The Number  [1-10 or x] :  "  menu
 echo -e ""
 case $menu in
-1)
-addssh
-;;
-2)
-trialssh
-;;
-3)
-renewssh
-;;
-4)
-delssh
-;;
-5)
-cekssh
-;;
-6)
-member
-;;
-7)
-delexp
-;;
-8)
-autokill
-;;
-9)
-ceklim
-;;
-10)
-restart
-;;
-x)
-sleep 1
-menu
-;;
-*)
-echo "Input The Correct Number"
-sleep 1
-menu-ssh
-;;
+1) clear ; addssh ; exit ;;
+2) clear ; trialssh ; exit ;;
+3) clear ; renewssh ; exit ;; 
+4) clear ; delssh ; exit ;; 
+5) clear ; cekssh ; exit ;; 
+6) clear ; member ; exit ;; 
+7) clear ; delexp ; exit ;;
+8) clear ; autokill ; exit ;; 
+9) clear ; ceklim ; exit ;;
+10) clear ; restart ; exit ;;
+x) clear ; menu ;;
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; menu-ssh ;;
 esac
