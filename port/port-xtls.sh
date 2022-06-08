@@ -19,15 +19,23 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
 xtls="$(cat /etc/xray/xrayxtls.json | grep port | sed 's/port//g' | sed 's/    "": //g' | sed 's/,//g' | sed 's/ //g')"
 echo -e "======================================"
-
-echo -e "Change Port $xtls"
-
+echo -e "         XRay XTLS Port Changer"
+echo -e ""
+echo -e "     [1]  Change Port XRay XTLS ${RED}$xtls${NC}"
+echo -e "     [x]  Exit"
+echo -e ""
 echo -e "======================================"
-read -p "New Port xray : " xtls2
-if [ -z $xtls2 ]; then
-echo "Please Input Port"
-exit 0
-fi
+echo -e ""                                                                                                                                                                                                      
+read -p "     Select From Options [1 or x] :  " port                                                                                                                                                            
+echo -e ""                                                                                                                                                                                                      
+case $port in                                                                                                                                                                                                   
+1)                                                                                                                                                                                                              
+read -p "Type New Port For Xray Trojan : " xtls2
+if [ -z $xtls2 ]; then                                                                                                                                                                                            
+echo "Please Input Port"                                                                                                                                                                                        
+exit 0                                                                                                                                                                                                          
+fi                   
+
 cek=$(netstat -nutlp | grep -w $xtls2)
 if [[ -z $cek ]]; then
 sed -i "s/$xtls/$xtls2/g" /etc/xray/xrayxtls.json
