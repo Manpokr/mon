@@ -67,7 +67,7 @@ echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e""
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e""
-read -p "  Please Enter The Number  [1-10 or x] :  "  menu
+read -p "  silahkan masukkan nomor [1-10 or x] :  "  menu
 echo -e ""
 case $menu in
 1) clear ; addssh ; exit ;;
