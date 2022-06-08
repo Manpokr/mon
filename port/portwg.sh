@@ -21,10 +21,16 @@ NIC=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 clear
 wg="$(cat /etc/wireguard/params | grep SERVER_PORT | sed s'/SERVER_PORT=//g')"
 echo -e "======================================"
-
-echo -e "Change Port $wg"
-
+echo -e ""
+echo -e "      [1] Change Port $wg"
+echo -e "      [x] Exit"
+echo -e ""
 echo -e "======================================"
+echo -e ""                                                                                                                                                                                                      
+read -p "     Select From Options [1 or x] :  " port                                                                                                                                                            
+echo -e ""                                                                                                                                                                                                      
+case $port in                                                                                                                                                                                                   
+1)
 read -p "New Port Wireguard : " wg2
 if [ -z $wg2 ]; then
 echo "Please Input Port"
@@ -45,3 +51,12 @@ echo -e "\e[032;1mPort $wg2 modified successfully\e[0m"
 else
 echo "Port $wg2 is used"
 fi
+;;                                                                                                                                                                                                              
+x)                                                                                                                                                                                                              
+exit                                                                                                                                                                                                            
+menu                                                                                                                                                                                                            
+;;                                                                                                                                                                                                              
+*)                                                                                                                                                                                                              
+echo "Boh salah tekan "                                                                                                                                                                           
+;;                                                                                                                                                                                                              
+esac
