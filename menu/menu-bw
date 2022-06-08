@@ -11,9 +11,9 @@ bd='\e[1m'
 
 clear
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}         • BANDWITH MONITOR •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "\033[30;5;47m                ⇱ BANDWITH MONITOR ⇲              \033[m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e ""
 echo -e "[${CYAN}•1${NC}] $bd Lihat Total Bandwith Tersisa${NC}"
 echo -e "[${CYAN}•2${NC}] $bd Tabel Penggunaan Setiap 5 Menit${NC}"
@@ -28,120 +28,129 @@ echo -e "[${CYAN}10${NC}] $bd Lihat Trafik Penggunaan Aktif Saat Ini [5s]${NC}"
 echo -e ""
 echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e ""
 read -p "  Please Enter The Number  [1-10 or x] :  "  menu
 echo -e ""
 clear
 case $menu in
 1)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}      • TOTAL BANDWITH SERVER LEFT •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "------=[ TOTAL BANDWITH SERVER LEFT  ]=------";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 2)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}      • USE BANDWITH EVERY 5 MINUTES •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "-----=[ USE BANDWITH EVERY 5 MINUTES ]=------";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat -5
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 3)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}       • USE BANDWITH EVERY HOUR •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "--------=[ USE BANDWITH EVERY HOUR ]=--------";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat -h
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 4)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}        • USE BANDWITH EVERY DAY •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "--------=[ USE BANDWITH EVERY DAY ]=---------";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat -d
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 5)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}       • USE BANDWITH EVERY MONTH •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "-------=[ USE BANDWITH EVERY MONTH ]=--------";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat -m
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 6)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}        • USE BANDWITH EVERY YEARS •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "-------=[ USE BANDWITH EVERY YEARS ]=--------";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat -y
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 7)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}          • HIGHEST BANDWITH USE •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "---------=[ HIGHEST BANDWITH USE ]=----------";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat -t
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 8)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}   • BANDWITH GRAPHICS USED EVERY HOUR •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "---=[ BANDWITH GRAPHICS USED EVERY HOUR ]=---";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat -hg
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 9)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}     • LIVE USE OF BANDWITH CURRENTLY •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "----=[ LIVE USE OF BANDWITH CURRENTLY ]=-----";
+echo "---------------------------------------------";
 echo -e ""
 echo -e " ${white}CTRL+C Untuk Keluar!${off}"
 echo -e ""
@@ -149,31 +158,24 @@ echo -e ""
 vnstat -l
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
 10)
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${RED}       • LIVE TRAFFIC USE BANDWITH •          ${NC}"
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+clear
+echo "---------------------------------------------";
+echo "-------=[ LIVE TRAFFIC USE BANDWITH ]=-------";
+echo "---------------------------------------------";
 echo -e ""
 
 vnstat -tr
 
 echo -e ""
-echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo "---------------------------------------------";
 echo -e ""
 ;;
 
-x)
-sleep 1
-menu
-;;
-
-*)
-sleep 1
-echo "Input The Correct Number"
-bw
-;;
+x) clear ; menu ;;
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; menu-bw ;;
 esac
