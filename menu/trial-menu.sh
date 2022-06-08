@@ -31,7 +31,7 @@ echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e""
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e""
-read -p " silahkan masukkan nomor [1-12 or x] :  "  menu
+read -p "  silahkan masukkan nomor [1-12 or x] :  "  menu
 case $menu in 
 1) clear ; trialxvmess ; exit ;;
 2) clear ; trialxvless ; exit ;;
