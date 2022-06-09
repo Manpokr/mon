@@ -1,4 +1,5 @@
 #!/bin/bash
+#!/bin/bash
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
@@ -14,16 +15,16 @@ echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━�
 echo -e "\033[30;5;47m                ⇱ BANDWITH MONITOR ⇲              \033[m"
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e ""
-echo -e "[${CYAN}•1${NC}] $bd Lihat Total Bandwith Tersisa${NC}"
-echo -e "[${CYAN}•2${NC}] $bd Tabel Penggunaan Setiap 5 Menit${NC}"
-echo -e "[${CYAN}•3${NC}] $bd Tabel Penggunaan Setiap Jam${NC}"
-echo -e "[${CYAN}•4${NC}] $bd Tabel Penggunaan Setiap Hari${NC}"
-echo -e "[${CYAN}•5${NC}] $bd Tabel Penggunaan Setiap Bulan${NC}"
-echo -e "[${CYAN}•6${NC}] $bd Tabel Penggunaan Setiap Tahun${NC}"
-echo -e "[${CYAN}•7${NC}] $bd Tabel Penggunaan Tertinggi${NC}"
-echo -e "[${CYAN}•8${NC}] $bd Statistik Penggunaan Setiap Jam${NC}"
-echo -e "[${CYAN}•9${NC}] $bd Lihat Penggunaan Aktif Saat Ini${NC}"
-echo -e "[${CYAN}10${NC}] $bd Lihat Trafik Penggunaan Aktif Saat Ini [5s]${NC}"
+echo -e "[${CYAN}•1${NC}]  Lihat Total Bandwith Tersisa"
+echo -e "[${CYAN}•2${NC}]  Tabel Penggunaan Setiap 5 Menit"
+echo -e "[${CYAN}•3${NC}]  Tabel Penggunaan Setiap Jam"
+echo -e "[${CYAN}•4${NC}]  Tabel Penggunaan Setiap Hari"
+echo -e "[${CYAN}•5${NC}]  Tabel Penggunaan Setiap Bulan"
+echo -e "[${CYAN}•6${NC}]  Tabel Penggunaan Setiap Tahun"
+echo -e "[${CYAN}•7${NC}]  Tabel Penggunaan Tertinggi"
+echo -e "[${CYAN}•8${NC}]  Statistik Penggunaan Setiap Jam"
+echo -e "[${CYAN}•9${NC}]  Lihat Penggunaan Aktif Saat Ini"
+echo -e "[${CYAN}10${NC}]  Lihat Trafik Penggunaan Aktif Saat Ini [5s]"
 echo -e ""
 echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e ""
