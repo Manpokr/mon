@@ -361,6 +361,17 @@ check_pid(){
 else
       status_wg="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
+
+#STATUS ssrmu 
+check_pid(){
+        PID=`ps -ef |grep -v grep | grep ssrmu |awk '{print $2}'`
+}
+                 check_pid
+                if [[ ! -z "${PID}" ]]; then
+      status_wg=" ${GREEN}Running ${NC}( No Error )${NC}"
+else
+      status_wg="${RED}  Not Running ${NC}  ( Error )${NC}"
+fi
 clear
 
 domain=$(cat /etc/xray/domain)
@@ -369,9 +380,9 @@ echo -e ""
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e "\033[30;5;47m                 ⇱ SYSTEM-SERVICE ⇲               \033[m"
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"                                                                                                               
-echo -e " Hostname    :$LIGHT $HOSTNAME"                                                                                  
-echo -e " Public IP   :$LIGHT $MYIP"
-echo -e " Domain      :$LIGHT $domain"                                                                                    
+echo -e " Hostname    :${LIGHT} $HOSTNAME${NC}"                                                                                  
+echo -e " Public IP   :${LIGHT} $MYIP${NC}"
+echo -e " Domain      :${LIGHT} $domain${NC}"                                                                                    
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e "\033[30;5;47m              ⇱ SERVICE-INFORMATION ⇲             \033[m"
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
