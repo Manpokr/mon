@@ -1,3 +1,115 @@
-z="
-";az='7m'\''';bBz='"${N';UFz='elet';Pz='3m'\''';HEz='rint';Bz=''\''\03';cDz=' ${R';VGz='wss';tDz='k_pi';rEz='"\E[';bFz=' Sha';fCz='|gre';uDz='d(){';Jz='033[';vz='http';ez='MYIP';ADz='[ ! ';IDz='${GR';VDz='${RE';Kz='0;32';HDz='tus:';GBz='net/';lDz='bin/';NBz='int ';hDz='LL${';gGz='ect ';ABz='ubus';TFz='d  D';cEz='NING';bGz='*)';Zz=';36m';uEz='m   ';EBz='m/ma';CEz='ep |';Mz='ORAN';kz='io/i';dEz='C} B';wCz='r} ]';Hz='GREE';SFz='}•3$';VEz='INST';PDz='& ${';aEz='REEN';mCz='{pri';Qz='BLUE';WCz=''\''ser';kBz='}"';gFz=' ${N';qDz='='\''ss';kDz='usr/';MGz='2)';HGz=' $me';DGz='] : ';DCz='rm -';EGz=' "  ';BFz='   \';vDz='PIDD';GCz='sr';mBz='RED}';DDz='D}" ';VFz='}•4$';yBz='tact';rz='IZIN';QGz='4)';kFz='r Lo';pDz='kjjj';iEz='S NO';bDz='lder';SCz='hado';TBz='if [';CCz='"';Lz='m'\''';VCz='kjj=';HCz='exit';aFz='ount';RBz='$MYI';hGz='Numb';JEz=''\''`';eDz='SR N';hz='-qO-';jEz='T IN';hFz='}•7$';eBz='rmis';HFz='] $b';OGz='3)';Oz='[0;3';pz='ng V';MFz='t Sh';nz=' "Ch';oCz='2}'\''`';ZCz='chck';JGz='1)';FFz='}•1$';OCz='er="';gEz='}NOT';EDz='"Cur';LCz='r';BDz='-z "';QDz='N}RU';FGz='""';YFz='d  R';YGz='x)';GFz='{NC}';UCz='ksr"';Dz='31m'\''';Xz='5m'\''';oFz='•x${';mDz='ss-s';KEz='_sts';aCz='_pid';cz='\e[1';rCz='_ssr';nCz='nt $';PEz='d';Az='RED=';fz='=$(w';ODz='NC} ';uFz='" Pl';Yz='CYAN';Fz='\033';AFz='NU ⇲';iBz='d...';RCz='al/s';GGz='case';oBz='issi';tFz=' -p ';ACz=' Adm';ZGz='slee';Ez='NC='\''';YDz='cd "';NDz='ED${';qEz='3[0m';xCz=']; t';AGz='r  [';ZBz='then';eFz='R ${';eGz='The ';OBz='$4}'\''';tCz=' ${s';lBz='else';UEz=' SS ';ZEz=' ${G';AEz='ep -';pBz='on D';sFz='read';wz='s://';oEz='━━━━';IGz='nu i';REz=' ]];';DEz='p $k';gDz='NSTA';BBz='erco';NGz='s';rDz='-ser';tEz='0;31';Wz='LE='\''';JFz='reat';jGz='-ssr';qCz='menu';jFz=' Use';qFz='ED} ';QCz='/loc';CFz='E[0m';rFz='Menu';MDz='TALL';vFz=' Ent';lFz='gin ';jCz=' $kj';GEz=' '\''{p';cCz='PID=';uBz='LIGH';XEz='D${N';dGz='put ';JBz='in/i';TEz='n';SBz='P )';IFz='d  C';CDz='${PI';yCz='hen';iz=' ipi';dFz='ocks';QBz='rep ';LBz='awk ';wBz='ease';PCz='/usr';sBz='NC}"';wDz='=`ps';XDz='T RU';KCz='clea';xz='raw.';uCz='sr_f';gz='get ';XFz='}•5$';mEz='"\03';HBz='ipvp';JDz='EEN}';wEz='   ⇱';NCz='fold';xDz=' -ef';NFz='adow';WBz='= $I';cBz='C}${';dDz='ED}S';sDz='ver'\''';ZFz='enew';ZDz='${ss';gCz='p -v';wFz='er T';iDz='ss_f';oz='ecki';iGz='er"';cFz='dows';qz='PS"';yDz=' |gr';PGz='dels';LGz=';;';nBz='Perm';RDz='NNIN';Nz='GE='\''';dBz='N}Pe';Sz='33[0';xBz=' Con';pEz='━\03';TDz='C}"';lEz='L${N';bz='bd='\''';hEz=' RUN';uz='-sS ';MEz='} ]]';mFz='SSR ';Tz=';34m';pFz='NC}]';DFz=' -e"';BCz='in!!';sCz='[ -e';Iz='N='\''\';FEz='|awk';bCz='(){';TCz='wsoc';iFz='heck';xEz=' / S';UDz='BUT ';UGz='6)';RGz='5)';MCz='ssr_';fGz='Corr';BEz='v gr';aBz=' -e ';vEz='    ';LEz='s_fo';WDz='D}NO';KDz=' SSR';XBz='ZIN ';QEz='DD}"';nFz='& SS';PBz=' | g';SEz=' the';tz='url ';WGz='7)';FBz='nter';kCz='j |a';VBz='YIP ';OEz='en';ICz=' 0';mz='echo';CGz='or x';CBz='nten';KFz='e Ac';BGz='1-8 ';jBz='${NC';kGz='esac';DBz='t.co';XCz='ver.';YEz='C} &';OFz='sock';RFz='s  $';eEz='UT $';pCz='}';xFz='he N';Cz='3[0;';bEz='}RUN';nDz='erve';JCz='fi';lCz='wk '\''';cGz=' "In';sz='=$(c';yz='gith';tBz=';';fEz='{RED';vCz='olde';UBz='[ $M';rBz='d!${';yFz='umbe';hCz=' gre';jz='nfo.';kEz='STAL';TGz='wssr';aGz='p 1';WEz='ALLE';MBz=''\''{pr';fDz='OT I';YBz=']]; ';YCz='py'\''';FDz='rent';KBz='p | ';Gz='[0m'\''';hBz='epte';NEz='; th';IEz=' $2}';SDz='G${N';EEz='jjj ';EFz='"[${';dCz='`ps ';yEz='S ME';Uz=''\''';gBz=' Acc';dz='\e[0';XGz='ceks';qBz='enie';aDz='r_fo';vBz='T}Pl';WFz='s ${';lz='p);';jDz='r="/';LFz='coun';oDz='r"';Vz='PURP';FCz='nu-s';GDz=' Sta';nEz='34m━';sEz='0;10';fBz='sion';eCz='-ef ';iCz='grep';Rz='='\''\0';PFz='sR $';LDz=' INS';QFz='}•2$';IBz='s/ma';ECz='f me';KGz='adds';fFz='}•6$';SGz='rene';
-eval "$Az$Bz$Cz$Dz$z$Ez$Fz$Gz$z$Hz$Iz$Jz$Kz$Lz$z$Mz$Nz$Fz$Oz$Pz$z$Qz$Rz$Sz$Tz$Uz$z$Vz$Wz$Fz$Oz$Xz$z$Yz$Rz$Sz$Zz$Uz$z$Ez$Fz$Oz$az$z$bz$cz$Lz$z$Ez$dz$Lz$z$ez$fz$gz$hz$iz$jz$kz$lz$z$mz$nz$oz$pz$qz$z$rz$sz$tz$uz$vz$wz$xz$yz$ABz$BBz$CBz$DBz$EBz$FBz$GBz$HBz$IBz$JBz$KBz$LBz$MBz$NBz$OBz$PBz$QBz$RBz$SBz$z$TBz$UBz$VBz$WBz$XBz$YBz$ZBz$z$mz$aBz$bBz$cBz$Hz$dBz$eBz$fBz$gBz$hBz$iBz$jBz$kBz$z$lBz$z$mz$aBz$bBz$cBz$mBz$nBz$oBz$pBz$qBz$rBz$sBz$tBz$z$mz$aBz$bBz$cBz$uBz$vBz$wBz$xBz$yBz$ACz$BCz$CCz$z$DCz$ECz$FCz$GCz$z$HCz$ICz$z$JCz$z$KCz$LCz$z$MCz$NCz$OCz$PCz$QCz$RCz$SCz$TCz$UCz$z$VCz$WCz$XCz$YCz$z$ZCz$aCz$bCz$z$cCz$dCz$eCz$fCz$gCz$hCz$KBz$iCz$jCz$kCz$lCz$mCz$nCz$oCz$z$pCz$z$qCz$rCz$bCz$z$TBz$sCz$tCz$uCz$vCz$wCz$xCz$yCz$z$ZCz$aCz$z$TBz$ADz$BDz$CDz$DDz$YBz$ZBz$z$mz$aBz$EDz$FDz$GDz$HDz$IDz$JDz$KDz$LDz$MDz$NDz$ODz$PDz$Hz$QDz$RDz$SDz$TDz$z$lBz$z$mz$aBz$EDz$FDz$GDz$HDz$IDz$JDz$KDz$LDz$MDz$NDz$ODz$UDz$VDz$WDz$XDz$RDz$SDz$TDz$z$JCz$z$YDz$ZDz$aDz$bDz$kBz$z$lBz$z$mz$aBz$EDz$FDz$GDz$HDz$cDz$dDz$eDz$fDz$gDz$hDz$sBz$z$JCz$z$pCz$z$iDz$vCz$jDz$kDz$lDz$mDz$nDz$oDz$z$pDz$qDz$rDz$sDz$z$ZCz$tDz$uDz$z$vDz$wDz$xDz$yDz$AEz$BEz$CEz$hCz$DEz$EEz$FEz$GEz$HEz$IEz$JEz$z$pCz$z$qCz$KEz$bCz$z$TBz$sCz$tCz$LEz$bDz$MEz$NEz$OEz$z$ZCz$tDz$PEz$z$TBz$ADz$BDz$CDz$QEz$REz$SEz$TEz$z$mz$aBz$EDz$FDz$GDz$HDz$IDz$JDz$UEz$VEz$WEz$XEz$YEz$ZEz$aEz$bEz$cEz$jBz$kBz$z$lBz$z$mz$aBz$EDz$FDz$GDz$HDz$IDz$JDz$UEz$VEz$WEz$XEz$dEz$eEz$fEz$gEz$hEz$cEz$jBz$kBz$z$JCz$z$lBz$z$mz$aBz$EDz$FDz$GDz$HDz$cDz$dDz$iEz$jEz$kEz$lEz$TDz$z$JCz$z$pCz$z$KCz$LCz$z$mz$aBz$mEz$Cz$nEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$pEz$qEz$CCz$z$mz$aBz$rEz$sEz$tEz$uEz$vEz$vEz$vEz$wEz$KDz$xEz$yEz$AFz$vEz$vEz$vEz$BFz$CFz$CCz$z$mz$aBz$mEz$Cz$nEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$pEz$qEz$CCz$z$qCz$rCz$z$qCz$KEz$z$mz$DFz$CCz$z$mz$aBz$EFz$Yz$FFz$GFz$HFz$IFz$JFz$KFz$LFz$MFz$NFz$OFz$PFz$GFz$CCz$z$mz$aBz$EFz$Yz$QFz$GFz$HFz$IFz$JFz$KFz$LFz$MFz$NFz$OFz$RFz$GFz$CCz$z$mz$aBz$EFz$Yz$SFz$GFz$HFz$TFz$UFz$KFz$LFz$MFz$NFz$OFz$PFz$GFz$CCz$z$mz$aBz$EFz$Yz$VFz$GFz$HFz$TFz$UFz$KFz$LFz$MFz$NFz$OFz$WFz$sBz$z$mz$aBz$EFz$Yz$XFz$GFz$HFz$YFz$ZFz$gBz$aFz$bFz$cFz$dFz$eFz$sBz$z$mz$aBz$EFz$Yz$fFz$GFz$HFz$YFz$ZFz$gBz$aFz$bFz$cFz$dFz$gFz$TDz$z$mz$aBz$EFz$Yz$hFz$GFz$HFz$IFz$iFz$jFz$kFz$lFz$mFz$nFz$gFz$TDz$z$mz$DFz$CCz$z$mz$aBz$EFz$mBz$oFz$pFz$cDz$qFz$rFz$jBz$kBz$z$mz$DFz$CCz$z$mz$aBz$mEz$Cz$nEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$oEz$pEz$qEz$CCz$z$mz$DFz$CCz$z$sFz$tFz$uFz$wBz$vFz$wFz$xFz$yFz$AGz$BGz$CGz$DGz$EGz$qCz$z$mz$aBz$FGz$z$GGz$HGz$IGz$TEz$z$JGz$z$KGz$GCz$z$LGz$z$MGz$z$KGz$NGz$z$LGz$z$OGz$z$PGz$GCz$z$LGz$z$QGz$z$PGz$NGz$z$LGz$z$RGz$z$SGz$TGz$z$LGz$z$UGz$z$SGz$VGz$z$LGz$z$WGz$z$XGz$NGz$z$LGz$z$YGz$z$ZGz$aGz$z$qCz$z$LGz$z$bGz$z$mz$cGz$dGz$eGz$fGz$gGz$hGz$iGz$z$ZGz$aGz$z$qCz$jGz$z$LGz$z$kGz"
+#!/bin/bash
+#Menu ssh
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+LIGHT='\033[0;37m'
+                                                                                                                                                                                      
+#getting
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
+if [[ $MYIP = $IZIN ]]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+rm -f menu-ssr
+exit 0
+fi
+clear
+
+# Running
+ssr_folder="/usr/local/shadowsocksr"
+kjj='server.py'
+chck_pid(){
+PID=`ps -ef |grep -v grep | grep $kjj |awk '{print $2}'`
+}
+menu_ssr(){
+if [[ -e ${ssr_folder} ]]; then
+chck_pid
+if [[ ! -z "${PID}" ]]; then
+echo -e "Current Status:${GREEN} SSR INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+else
+echo -e "Current Status:${GREEN} SSR INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+fi
+cd "${ssr_folder}"
+else
+echo -e "Current Status: ${RED}SSR NOT INSTALL${NC}"
+fi
+}
+ss_folder="/usr/bin/ss-server"
+kjjj='ss-server'
+chckk_pid(){
+PIDD=`ps -ef |grep -v grep | grep $kjjj |awk '{print $2}'`
+}
+menu_sts(){
+if [[ -e ${ss_folder} ]]; then
+chckk_pid
+if [[ ! -z "${PIDD}" ]]; then
+echo -e "Current Status:${GREEN} SS INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+else
+echo -e "Current Status:${GREEN} SS INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+fi
+else
+echo -e "Current Status: ${RED}SS NOT INSTALL${NC}"
+fi
+}
+
+clear
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\E[0;100;31m                  ⇱ SSR / SS MENU ⇲               \E[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+menu_ssr
+menu_sts
+echo -e""
+echo -e "[${CYAN}•1${NC}] $bd  Create Account ShadowsocksR ${NC}"
+echo -e "[${CYAN}•2${NC}] $bd  Create Account Shadowsocks  ${NC}"
+echo -e "[${CYAN}•3${NC}] $bd  Delete Account ShadowsocksR ${NC}"
+echo -e "[${CYAN}•4${NC}] $bd  Delete Account Shadowsocks ${NC}"
+echo -e "[${CYAN}•5${NC}] $bd  Renew Account ShadowsocksR ${NC}"
+echo -e "[${CYAN}•6${NC}] $bd  Renew Account Shadowsocks ${NC}"
+echo -e "[${CYAN}•7${NC}] $bd  Check User Login SSR & SS ${NC}"
+echo -e""
+echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e""
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e""
+read -p " Please Enter The Number  [1-8 or x] :  "  menu
+echo -e ""
+case $menu in
+1)
+addssr
+;;
+2)
+addss
+;;
+3)
+delssr
+;;
+4)
+delss
+;;
+5)
+renewssr
+;;
+6)
+renewss
+;;
+7)
+cekss
+;;
+x)
+sleep 1
+menu
+;;
+*)
+echo "Input The Correct Number"
+sleep 1
+menu-ssr
+;;
+esac
