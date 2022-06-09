@@ -61,7 +61,7 @@ trojan2_server=$(systemctl status trojangrpc | grep Active | awk '{print $3}' | 
 vmessgrpc=$(systemctl status vmess-grpc | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
 vlessgrpc=$(systemctl status vless-grpc | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                   
 
-ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                      
+#ssr_status=$(systemctl status ssrmu | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                      
 trojan_server=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)                                                                     
 nginx_service=$(/etc/init.d/nginx status | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
@@ -101,11 +101,11 @@ L='\033[0;37m'
 clear
 
 # STATUS SERVICE Shadowsocks HTTPS
-if [[ $ssr_status == "running" ]]; then
-  status_ssr=" ${GREEN}Running ${NC}( No Error )${NC}"
-else
-  status_ssr="${RED}  Not Running ${NC}  ( Error )${NC}"
-fi
+#if [[ $ssr_status == "running" ]]; then
+#  status_ssr=" ${GREEN}Running ${NC}( No Error )${NC}"
+#else
+#  status_ssr="${RED}  Not Running ${NC}  ( Error )${NC}"
+#fi
 
 # STATUS SERVICE Shadowsocks HTTP
 if [[ $ss_tls == "running" ]]; then
@@ -364,14 +364,15 @@ fi
 
 #STATUS ssrmu 
 check_pid(){
-        PID=`ps -ef |grep -v grep | grep ssrmu |awk '{print $2}'`
+        PID=`ps -ef |grep -v grep | grep server.py |awk '{print $2}'`
 }
                  check_pid
                 if [[ ! -z "${PID}" ]]; then
-      status_wg=" ${GREEN}Running ${NC}( No Error )${NC}"
+      status_ssrmu=" ${GREEN}Running ${NC}( No Error )${NC}"
 else
-      status_wg="${RED}  Not Running ${NC}  ( Error )${NC}"
+      status_ssrmu="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
+
 clear
 
 domain=$(cat /etc/xray/domain)
@@ -411,7 +412,7 @@ echo -e " ${L}V2RAYS Vmess WS TLS     :${NC}$status_tls_v2ray"
 echo -e " ${L}V2RAYS Vmess WS NTLS    :${NC}$status_nontls_v2ray"
 echo -e " ${L}V2RAYS Vless WS TLS     :${NC}$status_tls_vless"                                                                     
 echo -e " ${L}V2RAYS Vless WS NTLS    :${NC}$status_nontls_vless"
-echo -e " ${L}SHADOWSOCKSR            :${NC}$status_ssr"
+echo -e " ${L}SHADOWSOCKSR            :${NC}$status_ssrmu"
 echo -e " ${L}SHADOWSOCKS-LIBEV       :${NC}$ss_status"
 echo -e " ${L}WIREGUARD               :${NC}$status_wg"
 echo -e " ${L}Websocket TLS           :${NC}$swstls"
