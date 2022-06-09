@@ -33,13 +33,13 @@ menu_ssr(){
 if [[ -e ${ssr_folder} ]]; then
 chck_pid
 if [[ ! -z "${PID}" ]]; then
-echo -e "Current Status:${GREEN} SSR INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} SSR INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 else
-echo -e "Current Status:${GREEN} SSR INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} SSR INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
 fi
 cd "${ssr_folder}"
 else
-echo -e "Current Status: ${RED}SSR NOT INSTALL${NC}"
+echo -e "\033[0;37mCurrent Status:\033[m ${RED}SSR NOT INSTALL${NC}"
 fi
 }
 ss_folder="/usr/bin/ss-server"
@@ -51,65 +51,44 @@ menu_sts(){
 if [[ -e ${ss_folder} ]]; then
 chckk_pid
 if [[ ! -z "${PIDD}" ]]; then
-echo -e "Current Status:${GREEN} SS INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} SS INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 else
-echo -e "Current Status:${GREEN} SS INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} SS INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
 fi
 else
-echo -e "Current Status: ${RED}SS NOT INSTALL${NC}"
+echo -e "\033[0;37mCurrent Status:\033[m ${RED}SS NOT INSTALL${NC}"
 fi
 }
 
 clear
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\E[0;100;31m                  ⇱ SSR / SS MENU ⇲               \E[0m"
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "\033[30;5;47m                  ⇱ SSR / SS MENU ⇲               \033[m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 menu_ssr
 menu_sts
 echo -e""
-echo -e "[${CYAN}•1${NC}] $bd  Create Account ShadowsocksR ${NC}"
-echo -e "[${CYAN}•2${NC}] $bd  Create Account Shadowsocks  ${NC}"
-echo -e "[${CYAN}•3${NC}] $bd  Delete Account ShadowsocksR ${NC}"
-echo -e "[${CYAN}•4${NC}] $bd  Delete Account Shadowsocks ${NC}"
-echo -e "[${CYAN}•5${NC}] $bd  Renew Account ShadowsocksR ${NC}"
-echo -e "[${CYAN}•6${NC}] $bd  Renew Account Shadowsocks ${NC}"
-echo -e "[${CYAN}•7${NC}] $bd  Check User Login SSR & SS ${NC}"
+echo -e "[${CYAN}•1${NC}] Create Account ShadowsocksR"
+echo -e "[${CYAN}•2${NC}] Create Account Shadowsocks"
+echo -e "[${CYAN}•3${NC}] Delete Account ShadowsocksR"
+echo -e "[${CYAN}•4${NC}] Delete Account Shadowsocks"
+echo -e "[${CYAN}•5${NC}] Renew Account ShadowsocksR"
+echo -e "[${CYAN}•6${NC}] Renew Account Shadowsocks"
+echo -e "[${CYAN}•7${NC}] Check User Login SSR & SS"
 echo -e""
 echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
 echo -e""
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e""
-read -p " Please Enter The Number  [1-8 or x] :  "  menu
+read -p "  silahkan masukkan nomor [1-7 or x] :  "  menu
 echo -e ""
 case $menu in
-1)
-addssr
-;;
-2)
-addss
-;;
-3)
-delssr
-;;
-4)
-delss
-;;
-5)
-renewssr
-;;
-6)
-renewss
-;;
-7)
-cekss
-;;
-x)
-sleep 1
-menu
-;;
-*)
-echo "Input The Correct Number"
-sleep 1
-menu-ssr
-;;
+1) clear ; addssr ; exit ;;
+2) clear ; addss ; exit ;;
+3) clear ; delssr ; exit ;;
+4) clear ; delss ; exit ;;
+5) clear ; renewssr ; exit ;;
+6) clear ; renewss ; exit ;;
+7) clear ; cekss ; exit ;;
+x) clear ; menu ;;
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; menu-ssr ;;
 esac
