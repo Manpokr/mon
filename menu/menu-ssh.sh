@@ -21,7 +21,7 @@ menu_sts(){
 	if dpkg -s dropbear > /dev/null 2>&1; then
 		chck_pid
 		if [[ ! -z "${PID}" ]]; then
-			echo -e "\033[0;37mCurrent Status :\033[m ${GREEM}SSH INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+			echo -e "\033[0;37mCurrent Status :\033[m ${GREEN}SSH INSTALLED${NC} & ${GREEN}RUNNING${NC}"
 		else
 			echo -e "\033[0;37mCurrent Status :\033[m ${GREEN}SSH INSTALLED${NC} but ${RED}NOT RUNNING${NC}"
 		fi
