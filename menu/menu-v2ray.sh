@@ -1,3 +1,85 @@
-z="
-";yDz='ay1';Fz='RED=';PFz=' ; a';TDz='} & ';oBz='issi';gCz='p -v';Zz='LE='\''';TFz='2) c';UFz='ddvl';tCz='){';VEz='}•5$';rDz=';5;4';tDz='    ';EEz='reat';hz='-qO-';fDz=' ${R';nDz='━━━━';dz='7m'\''';iDz=' NOT';qz='PS"';dBz='N}Pe';rBz='d!${';SEz='}•4$';QEz='ojan';DBz='t.co';bCz='(){';Pz='ORAN';uBz='T}Pl';bDz='${v2';nz=' "Ch';PDz=' V2R';lCz='wk '\''';Jz='NC='\''';NFz='1) c';AEz=' -e"';rz='IZIN';RGz='eep ';TCz=''\''/et';uz='-sS ';KEz='ocke';xFz='11) ';iCz='grep';KGz='" ; ';yFz='less';lBz='else';uCz='[ -e';ZCz='chck';KBz='p | ';cFz='elvm';UDz='RUNN';UGz='ay ;';Hz='3[0;';fBz='sion';ZFz=';;';tEz=' -p ';BEz='"[${';ICz='fi';ez='MYIP';sFz='t ;;';pz='ng V';OGz='teka';SBz='P )';gEz=' Vle';iz=' ipi';JFz='case';Yz='PURP';xz='raw.';HBz='ipvp';DCz='f me';iFz=' ; r';hBz='epte';IGz='cho ';wFz='mess';CBz='nten';DEz=']  C';Lz='[0m'\''';VDz='ING$';OBz='$4}'\''';qFz='an ;';PEz='t Tr';kz='io/i';eBz='rmis';Vz='33[0';eEz='cket';KFz=' $me';lFz=' ;;';bBz='"${N';gFz='eltr';JBz='in/i';xEz='masu';OCz='r="/';XCz='ig.j';PGz='n " ';mDz='34m━';YCz='son'\''';YDz='T ${';mz='echo';xBz='tact';YBz=']]; ';MGz='h sa';QDz='AY I';bEz=' Vme';HEz='t Vm';IEz='ess ';NDz='${GR';UEz='elet';PBz=' | g';rFz=' exi';JGz='-e "';WCz='conf';pDz='3[m"';vDz=' MEN';aBz=' -e ';NGz='lah ';bFz=' ; d';Wz=';34m';RDz='NSTA';WDz='{NC}';LFz='nu i';kDz='TALL';aDz='cd "';XFz=' ; e';ADz='; th';RCz='y"';TBz='if [';YEz=']  R';GEz='coun';Az='LIGH';sCz='ay1(';HFz='u';dFz='5) c';iBz='d...';ABz='ubus';cz=';36m';XDz='} BU';PCz='usr/';CGz='roja';LBz='awk ';Qz='GE='\''';Mz='GREE';GDz='"\03';CCz='rm -';fCz='|gre';AFz=' nom';IBz='s/ma';GGz='enu ';TGz='-v2r';hCz=' gre';yz='gith';xCz='lder';REz=' "';wEz='kan ';iEz=' Tro';ZBz='then';GBz='net/';rCz='_v2r';qCz='menu';bz='CYAN';QGz='; sl';MDz='33[m';dEz='ebso';MBz=''\''{pr';SFz='it ;';ODz='EEN}';AGz='12) ';LEz='t "';KDz='tatu';oz='ecki';DFz=' or ';oDz='━\03';eCz='-ef ';mBz='RED}';ACz='in!!';gBz=' Acc';lz='p);';UCz='c/v2';nEz='}12$';aEz='ount';LGz=' "Bo';yCz='} ]]';NEz='t Vl';hFz='7) c';dCz='`ps ';HGz='*) e';fFz='6) c';LCz='v2ra';hEz='}•9$';QFz='ddvm';EGz='x) c';pFz='troj';vBz='ease';EBz='m/ma';gDz='ED}V';sEz='read';aCz='_pid';uEz='"  s';MEz='}•2$';jDz=' INS';FFz='  " ';tz='url ';lDz='3[5;';HDz='37mC';kBz='}"';wCz='1_fo';oFz='9) c';HCz=' 0';mEz='}11$';IFz='""';wBz=' Con';FGz=' ; m';pEz='NC}]';qBz='enie';yEz='kkan';rEz='Menu';XBz='ZIN ';CFz='1-12';Nz='N='\''\';CDz='[ ! ';JDz='nt S';tBz=';';cCz='PID=';WBz='= $I';jBz='${NC';RBz='$MYI';FBz='nter';eFz='elvl';lEz='heck';Kz='\033';MFz='n';BBz='erco';UBz='[ $M';kCz='j |a';uDz=' ⇱ V';aFz='4) c';DGz='n ; ';qDz='3[30';RFz='; ex';vFz='cekv';jCz=' $kj';cDz='ray1';FCz='2ray';uFz='r ; ';Dz='0;37';az='5m'\''';cBz='C}${';dDz='_fol';JEz='Webs';QBz='rep ';sDz='7m  ';mCz='{pri';eDz='der}';vCz=' ${v';cEz='ss W';BDz='en';pCz='}';NBz='int ';nFz='vles';MCz='y1_f';xDz='[m"';Oz='0;32';Tz='BLUE';FDz='D}" ';vEz='ilah';NCz='olde';mFz='8) c';jz='nfo.';oCz='2}'\''`';fEz='}•8$';Sz='3m'\''';vz='http';ZEz='enew';GCz='exit';IDz='urre';fz='=$(w';kEz='}10$';JCz='clea';EDz='${PI';KCz='r';YFz='xit ';gz='get ';LDz='s:\0';qEz='ED} ';pBz='on D';QCz='bin/';OEz='}•3$';BCz='"';OFz='lear';Uz='='\''\0';VFz='3) c';nBz='Perm';WFz='ddtr';Iz='31m'\''';wDz='U ⇲ ';CEz='}•1$';ZDz='NOT ';kFz='s ; ';yBz=' Adm';DDz='-z "';Ez='m'\''';XEz='}•7$';EFz='x] :';hDz='2RAY';tFz='10) ';oEz='•x${';SCz='kjj=';Bz='T='\''\';TEz=']  D';Gz=''\''\03';Rz='[0;3';VBz='YIP ';ECz='nu_v';BFz='or [';sz='=$(c';jFz='vmes';GFz=' men';BGz='cekt';nCz='nt $';wz='s://';SDz='LLED';VCz='ray/';sBz='NC}"';WEz='}•6$';jEz='jan ';Xz=''\''';FEz='e Ac';VGz='esac';Cz='033[';SGz='1 ; ';
-eval "$Az$Bz$Cz$Dz$Ez$z$Fz$Gz$Hz$Iz$z$Jz$Kz$Lz$z$Mz$Nz$Cz$Oz$Ez$z$Pz$Qz$Kz$Rz$Sz$z$Tz$Uz$Vz$Wz$Xz$z$Yz$Zz$Kz$Rz$az$z$bz$Uz$Vz$cz$Xz$z$Jz$Kz$Rz$dz$z$ez$fz$gz$hz$iz$jz$kz$lz$z$mz$nz$oz$pz$qz$z$rz$sz$tz$uz$vz$wz$xz$yz$ABz$BBz$CBz$DBz$EBz$FBz$GBz$HBz$IBz$JBz$KBz$LBz$MBz$NBz$OBz$PBz$QBz$RBz$SBz$z$TBz$UBz$VBz$WBz$XBz$YBz$ZBz$z$mz$aBz$bBz$cBz$Mz$dBz$eBz$fBz$gBz$hBz$iBz$jBz$kBz$z$lBz$z$mz$aBz$bBz$cBz$mBz$nBz$oBz$pBz$qBz$rBz$sBz$tBz$z$mz$aBz$bBz$cBz$Az$uBz$vBz$wBz$xBz$yBz$ACz$BCz$z$CCz$DCz$ECz$FCz$z$GCz$HCz$z$ICz$z$JCz$KCz$z$LCz$MCz$NCz$OCz$PCz$QCz$LCz$RCz$z$SCz$TCz$UCz$VCz$WCz$XCz$YCz$z$ZCz$aCz$bCz$z$cCz$dCz$eCz$fCz$gCz$hCz$KBz$iCz$jCz$kCz$lCz$mCz$nCz$oCz$z$pCz$z$qCz$rCz$sCz$tCz$z$TBz$uCz$vCz$FCz$wCz$xCz$yCz$ADz$BDz$z$ZCz$aCz$z$TBz$CDz$DDz$EDz$FDz$YBz$ZBz$z$mz$aBz$GDz$Hz$HDz$IDz$JDz$KDz$LDz$MDz$NDz$ODz$PDz$QDz$RDz$SDz$jBz$TDz$NDz$ODz$UDz$VDz$WDz$BCz$z$lBz$z$mz$aBz$GDz$Hz$HDz$IDz$JDz$KDz$LDz$MDz$NDz$ODz$PDz$QDz$RDz$SDz$jBz$XDz$YDz$mBz$ZDz$UDz$VDz$WDz$BCz$z$ICz$z$aDz$bDz$cDz$dDz$eDz$BCz$z$lBz$z$mz$aBz$GDz$Hz$HDz$IDz$JDz$KDz$LDz$MDz$fDz$gDz$hDz$iDz$jDz$kDz$jBz$kBz$z$ICz$z$pCz$z$JCz$KCz$z$mz$aBz$GDz$lDz$mDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$oDz$pDz$z$mz$aBz$GDz$qDz$rDz$sDz$tDz$tDz$tDz$tDz$uDz$hDz$vDz$wDz$tDz$tDz$tDz$tDz$Kz$xDz$z$mz$aBz$GDz$lDz$mDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$oDz$pDz$z$qCz$rCz$yDz$z$mz$AEz$BCz$z$mz$aBz$BEz$bz$CEz$WDz$DEz$EEz$FEz$GEz$HEz$IEz$JEz$KEz$LEz$z$mz$aBz$BEz$bz$MEz$WDz$DEz$EEz$FEz$GEz$NEz$IEz$JEz$KEz$LEz$z$mz$aBz$BEz$bz$OEz$WDz$DEz$EEz$FEz$GEz$PEz$QEz$REz$z$mz$aBz$BEz$bz$SEz$WDz$TEz$UEz$FEz$GEz$HEz$IEz$JEz$KEz$LEz$z$mz$aBz$BEz$bz$VEz$WDz$TEz$UEz$FEz$GEz$NEz$IEz$JEz$KEz$LEz$z$mz$aBz$BEz$bz$WEz$WDz$TEz$UEz$FEz$GEz$PEz$QEz$REz$z$mz$aBz$BEz$bz$XEz$WDz$YEz$ZEz$gBz$aEz$bEz$cEz$dEz$eEz$REz$z$mz$aBz$BEz$bz$fEz$WDz$YEz$ZEz$gBz$aEz$gEz$cEz$dEz$eEz$REz$z$mz$aBz$BEz$bz$hEz$WDz$YEz$ZEz$gBz$aEz$iEz$jEz$BCz$z$mz$aBz$BEz$bz$kEz$WDz$DEz$lEz$gBz$aEz$bEz$cEz$dEz$eEz$REz$z$mz$aBz$BEz$bz$mEz$WDz$DEz$lEz$gBz$aEz$gEz$cEz$dEz$eEz$REz$z$mz$aBz$BEz$bz$nEz$WDz$DEz$lEz$gBz$aEz$iEz$jEz$BCz$z$mz$AEz$BCz$z$mz$aBz$BEz$mBz$oEz$pEz$fDz$qEz$rEz$jBz$kBz$z$mz$AEz$BCz$z$mz$aBz$GDz$lDz$mDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$nDz$oDz$pDz$z$mz$AEz$BCz$z$sEz$tEz$uEz$vEz$wEz$xEz$yEz$AFz$BFz$CFz$DFz$EFz$FFz$GFz$HFz$z$mz$aBz$IFz$z$JFz$KFz$LFz$MFz$z$NFz$OFz$PFz$QFz$IEz$RFz$SFz$tBz$z$TFz$OFz$PFz$UFz$IEz$RFz$SFz$tBz$z$VFz$OFz$PFz$WFz$QEz$XFz$YFz$ZFz$z$aFz$OFz$bFz$cFz$IEz$RFz$SFz$tBz$z$dFz$OFz$bFz$eFz$IEz$RFz$SFz$tBz$z$fFz$OFz$bFz$gFz$QEz$XFz$YFz$ZFz$z$hFz$OFz$iFz$ZEz$jFz$kFz$GCz$lFz$z$mFz$OFz$iFz$ZEz$nFz$kFz$GCz$lFz$z$oFz$OFz$iFz$ZEz$pFz$qFz$rFz$sFz$z$tFz$JCz$uFz$vFz$wFz$XFz$YFz$ZFz$z$xFz$JCz$uFz$vFz$yFz$XFz$YFz$ZFz$z$AGz$JCz$uFz$BGz$CGz$DGz$GCz$lFz$z$EGz$OFz$FGz$GGz$RFz$SFz$tBz$z$HGz$IGz$JGz$KGz$mz$LGz$MGz$NGz$OGz$PGz$QGz$RGz$SGz$qCz$TGz$UGz$tBz$z$VGz"
+#!/bin/bash
+#Menu v2ray
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+LIGHT='\033[0;37m'
+
+# GETTING
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
+if [[ $MYIP = $IZIN ]]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+rm -f menu_v2ray
+exit 0
+fi
+clear
+
+# Running
+v2ray1_folder="/usr/bin/v2ray"
+kjj='/etc/v2ray/config.json'
+chck_pid(){
+PID=`ps -ef |grep -v grep | grep $kjj |awk '{print $2}'`
+}
+menu_v2ray1(){
+if [[ -e ${v2ray1_folder} ]]; then
+chck_pid
+if [[ ! -z "${PID}" ]]; then
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} V2RAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+else
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} V2RAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+fi
+cd "${v2ray1_folder}"
+else
+echo -e "\033[0;37mCurrent Status:\033[m ${RED}V2RAY NOT INSTALL${NC}"
+fi
+}
+clear
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "\033[30;5;47m                   ⇱ V2RAY MENU ⇲                 \033[m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+menu_v2ray1
+echo -e""
+echo -e "[${CYAN}•1${NC}]  Create Account Vmess Websocket "
+echo -e "[${CYAN}•2${NC}]  Create Account Vless Websocket "
+echo -e "[${CYAN}•3${NC}]  Create Account Trojan "
+echo -e "[${CYAN}•4${NC}]  Delete Account Vmess Websocket "
+echo -e "[${CYAN}•5${NC}]  Delete Account Vless Websocket "
+echo -e "[${CYAN}•6${NC}]  Delete Account Trojan "
+echo -e "[${CYAN}•7${NC}]  Renew Account Vmess Websocket "
+echo -e "[${CYAN}•8${NC}]  Renew Account Vless Websocket "
+echo -e "[${CYAN}•9${NC}]  Renew Account Trojan "
+echo -e "[${CYAN}10${NC}]  Check Account Vmess Websocket "
+echo -e "[${CYAN}11${NC}]  Check Account Vless Websocket "
+echo -e "[${CYAN}12${NC}]  Check Account Trojan "
+echo -e""
+echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e""
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e""
+read -p "  silahkan masukkan nomor [1-12 or x] :  "  menu
+echo -e ""
+case $menu in
+1) clear ; addvmess ; exit ;;
+2) clear ; addvless ; exit ;;
+3) clear ; addtrojan ; exit ;;
+4) clear ; delvmess ; exit ;;
+5) clear ; delvless ; exit ;;
+6) clear ; deltrojan ; exit ;;
+7) clear ; renewvmess ; exit ;;
+8) clear ; renewvless ; exit ;;
+9) clear ; renewtrojan ; exit ;;
+10) clear ; cekvmess ; exit ;;
+11) clear ; cekvless ; exit ;;
+12) clear ; cektrojan ; exit ;;
+x) clear ; menu ; exit ;;
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; menu-v2ray ;;
+esac

@@ -1,3 +1,70 @@
-z="
-";IBz='in/i';RBz='P )';oz='ng V';LEz=']  D';mDz='3[30';bCz=' gre';iz='nfo.';JCz='r';DEz=']  C';rz='=$(c';hDz='3[5;';ZEz='egua';WBz='ZIN ';IEz='regu';BBz='nten';FCz='exit';VEz=']  R';Mz='ORAN';lCz='_wg(';qCz='lder';aEz='rd "';Kz='0;32';mBz='Perm';cFz='; sl';Tz=';34m';QFz='x) c';GCz=' 0';JDz='INST';EDz='s:\0';eBz='sion';GEz='coun';YEz=' Wir';yEz='lear';CDz='nt S';hz=' ipi';XDz='${wg';mEz=' nom';lBz='RED}';TEz='d "';EBz='nter';Sz='33[0';tDz='RD M';PBz='rep ';ADz='37mC';bFz='n " ';uz='http';mCz='){';NDz=' ${G';FDz='33[m';gFz='esac';QCz='d/"';nCz='[ -e';dDz='T IN';nBz='issi';ZFz='lah ';jDz='━━━━';REz='gin ';rBz='NC}"';Vz='PURP';MDz='C} &';hCz='nt $';ODz='REEN';pBz='enie';DFz='xit ';fDz='L${N';GBz='ipvp';iDz='34m━';ez='=$(w';MCz='r="/';ICz='clea';iCz='2}'\''`';XCz='`ps ';NCz='etc/';Ez='NC='\''';Pz='3m'\''';YCz='-ef ';NEz='}•3$';fCz='wk '\''';HEz='t Wi';yCz='"\03';gDz='C}"';qz='IZIN';KDz='ALLE';LFz='4) c';bEz='•x${';sCz='; th';vDz='⇲   ';Xz='5m'\''';Hz='GREE';RCz='kjj=';UEz='}•4$';RFz=' ; m';sDz='EGUA';ABz='erco';Nz='GE='\''';nz='ecki';wz='raw.';OCz='wire';Gz='[0m'\''';SEz='Wire';YDz='_fol';QDz='NING';OBz=' | g';oEz='1-4 ';LBz=''\''{pr';WEz='enew';eFz='1 ; ';sEz='""';XEz='ount';lEz='kkan';Lz='m'\''';aDz=' ${R';NBz='$4}'\''';SDz='UT $';Fz='\033';tBz='T}Pl';yBz='in!!';jCz='}';YFz='h sa';mz=' "Ch';Oz='[0;3';OFz=' exi';AFz=' ; a';tCz='en';gEz=' -p ';cz='0;37';bz='T='\''\';gCz='{pri';hBz='d...';xBz=' Adm';nDz=';5;4';QEz='r Lo';BDz='urre';GDz='${GR';pz='PS"';fFz='-wg ';Dz='31m'\''';pDz='    ';sBz=';';Iz='N='\''\';TFz='*) e';BCz='rm -';TBz='[ $M';wCz='${PI';dBz='rmis';Jz='033[';PEz=' Use';kCz='menu';nEz='or [';iEz='ilah';kEz='masu';vBz=' Con';WFz='" ; ';ZCz='|gre';fEz='read';wDz='[m"';az='LIGH';vCz='-z "';KEz='}•2$';Bz=''\''\03';fz='get ';cDz='G NO';CCz='f me';RDz='C} B';rEz=' "  ';eCz='j |a';jEz='kan ';qEz='] : ';UBz='YIP ';FEz='e Ac';VBz='= $I';CFz=' ; e';XBz=']]; ';tz='-sS ';VFz='-e "';xEz='1) c';aCz='p -v';kDz='━\03';cEz='NC}]';wEz='n';vEz='nu i';VDz=' RUN';XFz=' "Bo';BEz='}•1$';EEz='reat';bBz='C}${';bDz='ED}W';uDz='ENU ';Uz=''\''';rCz='} ]]';pCz='g_fo';ECz='g';uCz='[ ! ';PDz='}RUN';ZBz=' -e ';BFz='ddwg';kz='p);';HCz='fi';ACz='"';tEz='case';qBz='d!${';QBz='$MYI';PCz='guar';SFz='enu ';JBz='p | ';uBz='ease';YBz='then';FFz='2) c';Qz='BLUE';jBz='}"';yDz=' -e"';MEz='elet';IFz='3) c';NFz='wg ;';UFz='cho ';TDz='{RED';Zz=';36m';dCz=' $kj';yz='ubus';wBz='tact';UDz='}NOT';lDz='3[m"';MBz='int ';xz='gith';CEz='{NC}';WCz='PID=';LCz='olde';Cz='3[0;';cBz='N}Pe';dEz='ED} ';FBz='net/';HBz='s/ma';JEz='ard ';WDz='cd "';oDz='7m  ';aFz='teka';uEz=' $me';dFz='eep ';CBz='t.co';xCz='D}" ';oCz=' ${w';pEz='or x';JFz=' ; c';SCz=''\''wg0';qDz='   ⇱';dz='MYIP';eDz='STAL';Az='RED=';OEz='heck';gz='-qO-';fBz=' Acc';vz='s://';hEz='"  s';DCz='nu-w';EFz=';;';MFz=' ; r';SBz='if [';aBz='"${N';KFz='ekwg';gBz='epte';Rz='='\''\0';KCz='wg_f';cCz='grep';ZDz='der}';Wz='LE='\''';LDz='D${N';PFz='t ;;';Yz='CYAN';DBz='m/ma';xDz='_wg';rDz=' WIR';IDz=' WG ';TCz='chck';VCz='(){';HFz='elwg';kBz='else';sz='url ';oBz='on D';GFz=' ; d';jz='io/i';eEz='Menu';iBz='${NC';DDz='tatu';KBz='awk ';HDz='EEN}';UCz='_pid';lz='echo';AEz='"[${';
-eval "$Az$Bz$Cz$Dz$z$Ez$Fz$Gz$z$Hz$Iz$Jz$Kz$Lz$z$Mz$Nz$Fz$Oz$Pz$z$Qz$Rz$Sz$Tz$Uz$z$Vz$Wz$Fz$Oz$Xz$z$Yz$Rz$Sz$Zz$Uz$z$az$bz$Jz$cz$Lz$z$dz$ez$fz$gz$hz$iz$jz$kz$z$lz$mz$nz$oz$pz$z$qz$rz$sz$tz$uz$vz$wz$xz$yz$ABz$BBz$CBz$DBz$EBz$FBz$GBz$HBz$IBz$JBz$KBz$LBz$MBz$NBz$OBz$PBz$QBz$RBz$z$SBz$TBz$UBz$VBz$WBz$XBz$YBz$z$lz$ZBz$aBz$bBz$Hz$cBz$dBz$eBz$fBz$gBz$hBz$iBz$jBz$z$kBz$z$lz$ZBz$aBz$bBz$lBz$mBz$nBz$oBz$pBz$qBz$rBz$sBz$z$lz$ZBz$aBz$bBz$az$tBz$uBz$vBz$wBz$xBz$yBz$ACz$z$BCz$CCz$DCz$ECz$z$FCz$GCz$z$HCz$z$ICz$JCz$z$KCz$LCz$MCz$NCz$OCz$PCz$QCz$z$RCz$SCz$Uz$z$TCz$UCz$VCz$z$WCz$XCz$YCz$ZCz$aCz$bCz$JBz$cCz$dCz$eCz$fCz$gCz$hCz$iCz$z$jCz$z$kCz$lCz$mCz$z$SBz$nCz$oCz$pCz$qCz$rCz$sCz$tCz$z$TCz$UCz$z$SBz$uCz$vCz$wCz$xCz$XBz$YBz$z$lz$ZBz$yCz$Cz$ADz$BDz$CDz$DDz$EDz$FDz$GDz$HDz$IDz$JDz$KDz$LDz$MDz$NDz$ODz$PDz$QDz$iBz$jBz$z$kBz$z$lz$ZBz$yCz$Cz$ADz$BDz$CDz$DDz$EDz$FDz$GDz$HDz$IDz$JDz$KDz$LDz$RDz$SDz$TDz$UDz$VDz$QDz$iBz$jBz$z$HCz$z$WDz$XDz$YDz$ZDz$ACz$z$kBz$z$lz$ZBz$yCz$Cz$ADz$BDz$CDz$DDz$EDz$FDz$aDz$bDz$cDz$dDz$eDz$fDz$gDz$z$HCz$z$jCz$z$ICz$JCz$z$lz$ZBz$yCz$hDz$iDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$kDz$lDz$z$lz$ZBz$yCz$mDz$nDz$oDz$pDz$pDz$pDz$qDz$rDz$sDz$tDz$uDz$vDz$pDz$pDz$pDz$Fz$wDz$z$lz$ZBz$yCz$hDz$iDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$kDz$lDz$z$kCz$xDz$z$lz$yDz$ACz$z$lz$ZBz$AEz$Yz$BEz$CEz$DEz$EEz$FEz$GEz$HEz$IEz$JEz$ACz$z$lz$ZBz$AEz$Yz$KEz$CEz$LEz$MEz$FEz$GEz$HEz$IEz$JEz$ACz$z$lz$ZBz$AEz$Yz$NEz$CEz$DEz$OEz$PEz$QEz$REz$SEz$PCz$TEz$z$lz$ZBz$AEz$Yz$UEz$CEz$VEz$WEz$fBz$XEz$YEz$ZEz$aEz$z$lz$yDz$ACz$z$lz$ZBz$AEz$lBz$bEz$cEz$aDz$dEz$eEz$iBz$jBz$z$lz$yDz$ACz$z$lz$ZBz$yCz$hDz$iDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$jDz$kDz$lDz$z$lz$yDz$ACz$z$fEz$gEz$hEz$iEz$jEz$kEz$lEz$mEz$nEz$oEz$pEz$qEz$rEz$kCz$z$lz$ZBz$sEz$z$tEz$uEz$vEz$wEz$z$xEz$yEz$AFz$BFz$CFz$DFz$EFz$z$FFz$yEz$GFz$HFz$CFz$DFz$EFz$z$IFz$yEz$JFz$KFz$CFz$DFz$EFz$z$LFz$yEz$MFz$WEz$NFz$OFz$PFz$z$QFz$yEz$RFz$SFz$EFz$z$TFz$UFz$VFz$WFz$lz$XFz$YFz$ZFz$aFz$bFz$cFz$dFz$eFz$kCz$fFz$EFz$z$gFz"
+#!/bin/bash
+#Menu ssh
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+LIGHT='\033[0;37m'
+                                                                                                                                                                                      
+#getting           
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
+if [[ $MYIP = $IZIN ]]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+rm -f menu-wg
+exit 0
+fi
+clear
+
+# Running
+wg_folder="/etc/wireguard/"
+kjj='wg0'
+chck_pid(){
+PID=`ps -ef |grep -v grep | grep $kjj |awk '{print $2}'`
+}
+menu_wg(){
+if [[ -e ${wg_folder} ]]; then
+chck_pid
+if [[ ! -z "${PID}" ]]; then
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} WG INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+else
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} WG INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+fi
+cd "${wg_folder}"
+else
+echo -e "\033[0;37mCurrent Status:\033[m ${RED}WG NOT INSTALL${NC}"
+fi
+}
+
+clear
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "\033[30;5;47m                 ⇱ WIREGUARD MENU ⇲               \033[m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+menu_wg
+echo -e""
+echo -e "[${CYAN}•1${NC}]  Create Account Wireguard "
+echo -e "[${CYAN}•2${NC}]  Delete Account Wireguard "
+echo -e "[${CYAN}•3${NC}]  Check User Login Wireguard "
+echo -e "[${CYAN}•4${NC}]  Renew Account Wireguard "
+echo -e""
+echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e""
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e""
+read -p "  silahkan masukkan nomor [1-4 or x] :  "  menu
+echo -e ""
+case $menu in
+1) clear ; addwg ; exit ;;
+2) clear ; delwg ; exit ;;
+3) clear ; cekwg ; exit ;;
+4) clear ; renewwg ; exit ;;
+x) clear ; menu ;;
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; menu-wg ;;
+esac

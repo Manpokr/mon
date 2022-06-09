@@ -1,3 +1,123 @@
-z="
-";jGz='12) ';EFz='jan ';VDz=' & $';dGz='troj';lGz='rpc ';EBz='nter';GDz='D}" ';iz='nfo.';aCz='_pid';uEz='enew';SGz='ddtr';tEz=']  R';EHz='wgrp';iGz='it ;';MHz='23) ';qGz='14) ';YEz='PC "';PBz='rep ';aGz='10) ';qFz='""';tGz='15) ';Pz='3m'\''';iBz='${NC';HFz='s "';PGz='ddgr';tz='-sS ';IDz='37mC';DBz='m/ma';nDz='ALL$';yz='ubus';RBz='P )';OBz=' | g';bHz='" ; ';XEz='t GR';IBz='in/i';tBz='T}Pl';QEz='}•3$';uFz='1) c';yDz='XRAY';Qz='BLUE';xDz='  ⇱ ';PCz='ocal';rCz='_xra';bFz='read';KGz='4) c';UDz='{NC}';TDz='LED$';JEz='e Ac';sDz='3[m"';dHz='h sa';cz='0;37';dDz='OT R';tDz='3[30';eCz='-ef ';GCz=' 0';pGz='s ; ';bBz='C}${';EEz=' -e"';BBz='nten';wz='raw.';FFz='}18$';yGz='17) ';rz='=$(c';lCz='wk '\''';WHz=' ; m';RGz='6) c';nEz='}11$';dz='MYIP';mEz=' "';fDz='${xr';KBz='awk ';pFz='u';Uz=''\''';wCz='ray1';cEz='S "';yFz='mess';Iz='N='\''\';eBz='sion';IHz='wtrg';KCz='xray';cCz='PID=';KHz='cekx';HEz=']  C';sFz=' $me';Mz='ORAN';tFz='nu i';NDz='33[m';xCz='_fol';qz='IZIN';sCz='y1()';CFz='}17$';SEz='ojan';YCz='on'\''';jCz=' $kj';Az='RED=';TGz='xtls';iHz='eep ';hEz=']  D';jBz='}"';ABz='erco';qDz='━━━━';fCz='|gre';yBz='in!!';hz=' ipi';sBz=';';WBz='ZIN ';oDz='3[5;';RFz='}23$';jHz='1 ; ';aHz='-e "';CDz='n';yCz='der}';oEz='ls "';BEz='U ⇲ ';LFz=' TR-';az='LIGH';Bz=''\''\03';Oz='[0;3';WGz='8) c';eDz='cd "';ICz='clea';CBz='t.co';qEz='}13$';BGz='xit ';PDz='EEN}';OEz='}•2$';OHz='24) ';sGz='c ; ';CEz='[m"';NFz='}21$';wDz='    ';ez='=$(w';nBz='issi';HBz='s/ma';DGz='2) c';VEz='ls  ';QCz='/xra';sEz='}15$';JFz=' GRP';yEz='CP "';pCz='}';LGz='ls ;';gHz='n " ';mz=' "Ch';lBz='RED}';KDz='nt S';MFz='XTLS';Hz='GREE';QFz='heck';ODz='${GR';FHz='20) ';lEz='}10$';ZEz='}•6$';QBz='$MYI';hGz='; ex';cFz=' -p ';GHz='wtrx';IGz='n ; ';cHz=' "Bo';vBz=' Con';kEz='}•9$';NEz='TCP"';Ez='NC='\''';lHz='y ;;';LDz='tatu';qCz='menu';pBz='enie';VCz='ay/c';uBz='ease';WEz='}•5$';EDz='-z "';PEz='t Vl';hCz=' gre';AFz='}16$';mFz='x] :';rDz='━\03';gz='-qO-';pDz='34m━';RCz='y"';jDz='ED}X';OFz='GRPC';gFz='masu';YHz='*) e';QGz='pc ;';mGz='13) ';eGz='an ;';Xz='5m'\''';MEz='ess ';aBz='"${N';jEz='TCP ';mHz='esac';Vz='PURP';Sz='33[0';wEz=' Vme';FDz='${PI';uDz=';5;4';RDz='Y IN';UFz='}26$';hDz='fold';RHz='cekg';XDz='EN}R';lFz=' or ';vGz='wxvm';iEz='elet';CGz=';;';fEz='C "';Wz='LE='\''';ZHz='cho ';iCz='grep';LBz=''\''{pr';sz='url ';oGz='rxtl';mDz='INST';kCz='j |a';iDz='er}"';rEz='}14$';SDz='STAL';UHz='28) ';TCz=''\''/et';cDz='ED}N';DDz='[ ! ';OCz='sr/l';GBz='ipvp';AGz=' ; e';wFz=' ; a';NGz='t ;;';uGz='rene';hBz='d...';tCz='{';VGz='grpc';mBz='Perm';XCz='g.js';Lz='m'\''';TEz='}•4$';Fz='\033';vEz='ount';MDz='s:\0';THz='cekt';cGz='delx';AEz=' MEN';UCz='c/xr';BHz='18) ';Nz='GE='\''';fFz='kan ';Cz='3[0;';eHz='lah ';rBz='NC}"';FBz='net/';LCz='1_fo';Yz='CYAN';kGz='delg';GFz=' Xtl';CHz='wxtl';YBz='then';BFz=' Vle';FGz='3) c';XHz='enu ';Rz='='\''\0';fHz='teka';UEz='t Xt';HGz='roja';GGz='ddxt';gBz='epte';vFz='lear';JBz='p | ';MGz=' exi';YFz='NC}]';EGz='less';QHz='26) ';oCz='2}'\''`';AHz='wxtr';mCz='{pri';GEz='}•1$';SFz='}24$';pEz='}12$';kBz='else';nCz='nt $';xz='gith';iFz=' nom';gCz='p -v';QDz=' XRA';dBz='rmis';ZDz='NG${';xBz=' Adm';TFz='}25$';DFz=' Tro';PHz='25) ';DEz='y1';VHz='x) c';nFz='  " ';oz='ng V';oBz='on D';KEz='coun';wBz='tact';DCz='nu_x';IFz='}19$';WDz='{GRE';CCz='f me';bGz='r ; ';dCz='`ps ';JHz='22) ';MCz='lder';VFz='}27$';aFz='Menu';XBz=']]; ';YGz='elxv';dEz='}•7$';ZGz='9) c';gEz='}•8$';fBz=' Acc';NHz='vles';lDz='NOT ';UBz='YIP ';bDz=' ${R';ZCz='chck';pz='PS"';hHz='; sl';gDz='ay1_';ADz=' ]];';vDz='7m  ';VBz='= $I';aEz='t TR';wGz='16) ';JGz=' ;;';kFz='1-28';HHz='21) ';ACz='"';Tz=';34m';DHz='19) ';kz='p);';nz='ecki';eFz='ilah';WCz='onfi';Gz='[0m'\''';ZFz='ED} ';YDz='UNNI';HCz='fi';XGz=' ; d';Jz='033[';hFz='kkan';SBz='if [';JCz='r';vz='s://';FCz='exit';NBz='$4}'\''';aDz=' BUT';jz='io/i';LEz='t Vm';rFz='case';ECz='ray';xGz='wxvl';XFz='•x${';vCz=' ${x';fGz='11) ';bEz='-XTL';BCz='rm -';MBz='int ';bCz='(){';xEz='ss T';xFz='ddxv';SHz='27) ';UGz='7) c';Zz=';36m';fz='get ';jFz='or [';qBz='d!${';KFz='}20$';kDz='RAY ';WFz='}28$';HDz='"\03';SCz='kjj=';NCz='="/u';REz='t Tr';lz='echo';OGz='5) c';Dz='31m'\''';eEz='-GRP';rGz='rgrp';ZBz=' -e ';bz='T='\''\';nGz='delt';oFz=' men';kHz='-xra';gGz='tls ';uCz='[ -e';TBz='[ $M';Kz='0;32';cBz='N}Pe';uz='http';JDz='urre';dFz='"  s';LHz='vmes';BDz=' the';FEz='"[${';PFz='}22$';IEz='reat';
-eval "$Az$Bz$Cz$Dz$z$Ez$Fz$Gz$z$Hz$Iz$Jz$Kz$Lz$z$Mz$Nz$Fz$Oz$Pz$z$Qz$Rz$Sz$Tz$Uz$z$Vz$Wz$Fz$Oz$Xz$z$Yz$Rz$Sz$Zz$Uz$z$az$bz$Jz$cz$Lz$z$dz$ez$fz$gz$hz$iz$jz$kz$z$lz$mz$nz$oz$pz$z$qz$rz$sz$tz$uz$vz$wz$xz$yz$ABz$BBz$CBz$DBz$EBz$FBz$GBz$HBz$IBz$JBz$KBz$LBz$MBz$NBz$OBz$PBz$QBz$RBz$z$SBz$TBz$UBz$VBz$WBz$XBz$YBz$z$lz$ZBz$aBz$bBz$Hz$cBz$dBz$eBz$fBz$gBz$hBz$iBz$jBz$z$kBz$z$lz$ZBz$aBz$bBz$lBz$mBz$nBz$oBz$pBz$qBz$rBz$sBz$z$lz$ZBz$aBz$bBz$az$tBz$uBz$vBz$wBz$xBz$yBz$ACz$z$BCz$CCz$DCz$ECz$z$FCz$GCz$z$HCz$z$ICz$JCz$z$KCz$LCz$MCz$NCz$OCz$PCz$QCz$RCz$z$SCz$TCz$UCz$VCz$WCz$XCz$YCz$z$ZCz$aCz$bCz$z$cCz$dCz$eCz$fCz$gCz$hCz$JBz$iCz$jCz$kCz$lCz$mCz$nCz$oCz$z$pCz$z$qCz$rCz$sCz$tCz$z$SBz$uCz$vCz$wCz$xCz$yCz$ADz$BDz$CDz$z$ZCz$aCz$z$SBz$DDz$EDz$FDz$GDz$XBz$YBz$z$lz$ZBz$HDz$Cz$IDz$JDz$KDz$LDz$MDz$NDz$ODz$PDz$QDz$RDz$SDz$TDz$UDz$VDz$WDz$XDz$YDz$ZDz$rBz$z$kBz$z$lz$ZBz$HDz$Cz$IDz$JDz$KDz$LDz$MDz$NDz$ODz$PDz$QDz$RDz$SDz$TDz$UDz$aDz$bDz$cDz$dDz$YDz$ZDz$rBz$z$HCz$z$eDz$fDz$gDz$hDz$iDz$z$kBz$z$lz$ZBz$HDz$Cz$IDz$JDz$KDz$LDz$MDz$NDz$bDz$jDz$kDz$lDz$mDz$nDz$UDz$ACz$z$HCz$z$pCz$z$ICz$JCz$z$lz$ZBz$HDz$oDz$pDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$rDz$sDz$z$lz$ZBz$HDz$tDz$uDz$vDz$wDz$wDz$wDz$wDz$xDz$yDz$AEz$BEz$wDz$wDz$wDz$wDz$Fz$CEz$z$lz$ZBz$HDz$oDz$pDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$rDz$sDz$z$qCz$rCz$DEz$z$lz$EEz$ACz$z$lz$ZBz$FEz$Yz$GEz$UDz$HEz$IEz$JEz$KEz$LEz$MEz$NEz$z$lz$ZBz$FEz$Yz$OEz$UDz$HEz$IEz$JEz$KEz$PEz$MEz$NEz$z$lz$ZBz$FEz$Yz$QEz$UDz$HEz$IEz$JEz$KEz$REz$SEz$ACz$z$lz$ZBz$FEz$Yz$TEz$UDz$HEz$IEz$JEz$KEz$UEz$VEz$ACz$z$lz$ZBz$FEz$Yz$WEz$UDz$HEz$IEz$JEz$KEz$XEz$YEz$z$lz$ZBz$FEz$Yz$ZEz$UDz$HEz$IEz$JEz$KEz$aEz$bEz$cEz$z$lz$ZBz$FEz$Yz$dEz$UDz$HEz$IEz$JEz$KEz$aEz$eEz$fEz$z$lz$EEz$ACz$z$lz$ZBz$HDz$oDz$pDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$rDz$sDz$z$lz$EEz$ACz$z$lz$ZBz$FEz$Yz$gEz$UDz$hEz$iEz$JEz$KEz$LEz$MEz$jEz$ACz$z$lz$ZBz$FEz$Yz$kEz$UDz$hEz$iEz$JEz$KEz$PEz$MEz$jEz$ACz$z$lz$ZBz$FEz$Yz$lEz$UDz$hEz$iEz$JEz$KEz$REz$SEz$mEz$z$lz$ZBz$FEz$Yz$nEz$UDz$hEz$iEz$JEz$KEz$UEz$oEz$z$lz$ZBz$FEz$Yz$pEz$UDz$hEz$iEz$JEz$KEz$XEz$YEz$z$lz$ZBz$FEz$Yz$qEz$UDz$hEz$iEz$JEz$KEz$aEz$bEz$cEz$z$lz$ZBz$FEz$Yz$rEz$UDz$hEz$iEz$JEz$KEz$aEz$eEz$fEz$z$lz$EEz$ACz$z$lz$ZBz$HDz$oDz$pDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$rDz$sDz$z$lz$EEz$ACz$z$lz$ZBz$FEz$Yz$sEz$UDz$tEz$uEz$fBz$vEz$wEz$xEz$yEz$z$lz$ZBz$FEz$Yz$AFz$UDz$tEz$uEz$fBz$vEz$BFz$xEz$yEz$z$lz$ZBz$FEz$Yz$CFz$UDz$tEz$uEz$fBz$vEz$DFz$EFz$ACz$z$lz$ZBz$FEz$Yz$FFz$UDz$tEz$uEz$fBz$vEz$GFz$HFz$z$lz$ZBz$FEz$Yz$IFz$UDz$tEz$uEz$fBz$vEz$JFz$fEz$z$lz$ZBz$FEz$Yz$KFz$UDz$tEz$uEz$fBz$vEz$LFz$MFz$mEz$z$lz$ZBz$FEz$Yz$NFz$UDz$tEz$uEz$fBz$vEz$LFz$OFz$mEz$z$lz$EEz$ACz$z$lz$ZBz$HDz$oDz$pDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$rDz$sDz$z$lz$EEz$ACz$z$lz$ZBz$FEz$Yz$PFz$UDz$HEz$QFz$fBz$vEz$wEz$xEz$yEz$z$lz$ZBz$FEz$Yz$RFz$UDz$HEz$QFz$fBz$vEz$BFz$xEz$yEz$z$lz$ZBz$FEz$Yz$SFz$UDz$HEz$QFz$fBz$vEz$DFz$EFz$ACz$z$lz$ZBz$FEz$Yz$TFz$UDz$HEz$QFz$fBz$vEz$GFz$HFz$z$lz$ZBz$FEz$Yz$UFz$UDz$HEz$QFz$fBz$vEz$JFz$fEz$z$lz$ZBz$FEz$Yz$VFz$UDz$HEz$QFz$fBz$vEz$LFz$MFz$mEz$z$lz$ZBz$FEz$Yz$WFz$UDz$HEz$QFz$fBz$vEz$LFz$OFz$mEz$z$lz$EEz$ACz$z$lz$ZBz$FEz$lBz$XFz$YFz$bDz$ZFz$aFz$iBz$jBz$z$lz$EEz$ACz$z$lz$ZBz$HDz$oDz$pDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$qDz$rDz$sDz$z$lz$EEz$ACz$z$bFz$cFz$dFz$eFz$fFz$gFz$hFz$iFz$jFz$kFz$lFz$mFz$nFz$oFz$pFz$z$lz$ZBz$qFz$z$rFz$sFz$tFz$CDz$z$uFz$vFz$wFz$xFz$yFz$AGz$BGz$CGz$z$DGz$vFz$wFz$xFz$EGz$AGz$BGz$CGz$z$FGz$vFz$wFz$GGz$HGz$IGz$FCz$JGz$z$KGz$vFz$wFz$GGz$LGz$MGz$NGz$z$OGz$vFz$wFz$PGz$QGz$MGz$NGz$z$RGz$vFz$wFz$SGz$TGz$AGz$BGz$CGz$z$UGz$vFz$wFz$SGz$VGz$AGz$BGz$CGz$z$WGz$vFz$XGz$YGz$yFz$AGz$BGz$CGz$z$ZGz$vFz$XGz$YGz$EGz$AGz$BGz$CGz$z$aGz$ICz$bGz$cGz$dGz$eGz$MGz$NGz$z$fGz$ICz$bGz$cGz$gGz$hGz$iGz$sBz$z$jGz$ICz$bGz$kGz$lGz$hGz$iGz$sBz$z$mGz$ICz$bGz$nGz$oGz$pGz$FCz$JGz$z$qGz$ICz$bGz$nGz$rGz$sGz$FCz$JGz$z$tGz$ICz$bGz$uGz$vGz$MEz$hGz$iGz$sBz$z$wGz$ICz$bGz$uGz$xGz$MEz$hGz$iGz$sBz$z$yGz$ICz$bGz$uGz$AHz$SEz$AGz$BGz$CGz$z$BHz$ICz$bGz$uGz$CHz$pGz$FCz$JGz$z$DHz$ICz$bGz$uGz$EHz$sGz$FCz$JGz$z$FHz$ICz$bGz$uGz$GHz$gGz$hGz$iGz$sBz$z$HHz$ICz$bGz$uGz$IHz$lGz$hGz$iGz$sBz$z$JHz$ICz$bGz$KHz$LHz$pGz$FCz$JGz$z$MHz$ICz$bGz$KHz$NHz$pGz$FCz$JGz$z$OHz$ICz$bGz$KHz$dGz$eGz$MGz$NGz$z$PHz$ICz$bGz$KHz$gGz$hGz$iGz$sBz$z$QHz$ICz$bGz$RHz$lGz$hGz$iGz$sBz$z$SHz$ICz$bGz$THz$oGz$pGz$FCz$JGz$z$UHz$ICz$bGz$THz$rGz$sGz$FCz$JGz$z$VHz$vFz$WHz$XHz$CGz$z$YHz$ZHz$aHz$bHz$lz$cHz$dHz$eHz$fHz$gHz$hHz$iHz$jHz$qCz$kHz$lHz$z$mHz"
+#!/bin/bash
+#Menu xray
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+LIGHT='\033[0;37m'
+
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
+if [[ $MYIP = $IZIN ]]; then
+echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${NC}${RED}Permission Denied!${NC}";
+echo -e "${NC}${LIGHT}Please Contact Admin!!"
+rm -f menu_xray
+exit 0
+fi
+clear
+xray1_folder="/usr/local/xray"
+kjj='/etc/xray/config.json'
+chck_pid(){
+PID=`ps -ef |grep -v grep | grep $kjj |awk '{print $2}'`
+}
+menu_xray1(){
+if [[ -e ${xray1_folder} ]]; then
+chck_pid
+if [[ ! -z "${PID}" ]]; then
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} XRAY INSTALLED${NC} & ${GREEN}RUNNING${NC}"
+else
+echo -e "\033[0;37mCurrent Status:\033[m${GREEN} XRAY INSTALLED${NC} BUT ${RED}NOT RUNNING${NC}"
+fi
+cd "${xray1_folder}"
+else
+echo -e "\033[0;37mCurrent Status:\033[m ${RED}XRAY NOT INSTALL${NC}"
+fi
+}
+clear
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e "\033[30;5;47m                    ⇱ XRAY MENU ⇲                 \033[m"
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+menu_xray1
+echo -e""
+echo -e "[${CYAN}•1${NC}]  Create Account Vmess TCP"
+echo -e "[${CYAN}•2${NC}]  Create Account Vless TCP"
+echo -e "[${CYAN}•3${NC}]  Create Account Trojan"
+echo -e "[${CYAN}•4${NC}]  Create Account Xtls  "
+echo -e "[${CYAN}•5${NC}]  Create Account GRPC "
+echo -e "[${CYAN}•6${NC}]  Create Account TR-XTLS "
+echo -e "[${CYAN}•7${NC}]  Create Account TR-GRPC "
+echo -e""
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e""
+echo -e "[${CYAN}•8${NC}]  Delete Account Vmess TCP "
+echo -e "[${CYAN}•9${NC}]  Delete Account Vless TCP "
+echo -e "[${CYAN}10${NC}]  Delete Account Trojan "
+echo -e "[${CYAN}11${NC}]  Delete Account Xtls "
+echo -e "[${CYAN}12${NC}]  Delete Account GRPC "
+echo -e "[${CYAN}13${NC}]  Delete Account TR-XTLS "
+echo -e "[${CYAN}14${NC}]  Delete Account TR-GRPC "
+echo -e""
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e""
+echo -e "[${CYAN}15${NC}]  Renew Account Vmess TCP "
+echo -e "[${CYAN}16${NC}]  Renew Account Vless TCP "
+echo -e "[${CYAN}17${NC}]  Renew Account Trojan "
+echo -e "[${CYAN}18${NC}]  Renew Account Xtls "
+echo -e "[${CYAN}19${NC}]  Renew Account GRPC "
+echo -e "[${CYAN}20${NC}]  Renew Account TR-XTLS "
+echo -e "[${CYAN}21${NC}]  Renew Account TR-GRPC "
+echo -e""
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e""
+echo -e "[${CYAN}22${NC}]  Check Account Vmess TCP "
+echo -e "[${CYAN}23${NC}]  Check Account Vless TCP "
+echo -e "[${CYAN}24${NC}]  Check Account Trojan "
+echo -e "[${CYAN}25${NC}]  Check Account Xtls "
+echo -e "[${CYAN}26${NC}]  Check Account GRPC "
+echo -e "[${CYAN}27${NC}]  Check Account TR-XTLS "
+echo -e "[${CYAN}28${NC}]  Check Account TR-GRPC "
+echo -e""
+echo -e "[${RED}•x${NC}] ${RED} Menu${NC}"
+echo -e""
+echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
+echo -e""
+read -p "  silahkan masukkan nomor [1-28 or x] :  "  menu
+echo -e ""
+case $menu in
+1) clear ; addxvmess ; exit ;;
+2) clear ; addxvless ; exit ;;
+3) clear ; addxtrojan ; exit ;;
+4) clear ; addxtls ; exit ;;
+5) clear ; addgrpc ; exit ;;
+6) clear ; addtrxtls ; exit ;;
+7) clear ; addtrgrpc ; exit ;;
+8) clear ; delxvmess ; exit ;;
+9) clear ; delxvless ; exit ;;
+10) clear ; delxtrojan ; exit ;;
+11) clear ; delxtls ; exit ;;
+12) clear ; delgrpc ; exit ;;
+13) clear ; deltrxtls ; exit ;;
+14) clear ; deltrgrpc ; exit ;;
+15) clear ; renewxvmess ; exit ;;
+16) clear ; renewxvless ; exit ;;
+17) clear ; renewxtrojan ; exit ;;
+18) clear ; renewxtls ; exit ;;
+19) clear ; renewgrpc ; exit ;;
+20) clear ; renewtrxtls ; exit ;;
+21) clear ; renewtrgrpc ; exit ;;
+22) clear ; cekxvmess ; exit ;;
+23) clear ; cekxvless ; exit ;;
+24) clear ; cekxtrojan ; exit ;;
+25) clear ; cekxtls ; exit ;;
+26) clear ; cekgrpc ; exit ;;
+27) clear ; cektrxtls ; exit ;;
+28) clear ; cektrgrpc ; exit ;;
+x) clear ; menu ;;
+*) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; menu-xray ;;
+esac
