@@ -25,12 +25,12 @@ echo -e "======================================"
 echo -e ""
 echo -e "   [1] Change Port TCP $ovpn"
 echo -e "   [2] Change Port UDP $ovpn2"
-echo -e "   [3] Exit"
+echo -e "   [x] Exit"
 echo -e ""
 echo -e "======================================"
-
-read -p "Select From Options [ 1-3 ] : " prot
-
+echo -e ""
+read -p "  silahkan masukkan nomor [1-2 or x] :  "  prot
+echo -e ""
 case $prot in
 1)
 read -p "New Port OpenVPN : " vpn
