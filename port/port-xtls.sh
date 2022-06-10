@@ -25,8 +25,8 @@ echo -e "     [1]  Change Port XRay XTLS ${RED}$xtls${NC}"
 echo -e "     [x]  Exit"
 echo -e ""
 echo -e "======================================"
-echo -e ""                                                                                                                                                                                                      
-read -p "     Select From Options [1 or x] :  " port                                                                                                                                                            
+echo -e ""  
+read -p "  silahkan masukkan nomor [1 or x] :  "  port                                                                                                                                                                                                                                                                                                                                                                                          
 echo -e ""                                                                                                                                                                                                      
 case $port in                                                                                                                                                                                                   
 1)                                                                                                                                                                                                              
@@ -48,7 +48,17 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xray.service > /dev/null
-echo -e "\e[032;1mPort $xtls2 modified successfully\e[0m"
-else
-echo "Port $xtls2 is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port XTLS $xtls2 ${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $xtls2  Is Already Used"                                                                                                                                                          
 fi
+;;                                                                                                                                                                                                              
+x)                                                                                                                                                                                                              
+exit                                                                                                                                                                                                                                                                                                                                                                                                                      
+;;                                                                                                                                                                                                              
+*)                                                                                                                                                                                                              
+echo "Boh salah tekan "  
+port-xtls                                                                                                                                                                         
+;;                                                                                                                                                                                                              
+esac
