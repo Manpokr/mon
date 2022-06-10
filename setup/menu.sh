@@ -166,7 +166,7 @@ case $menu in
 10) clear ; about ;;                                                                                                                                                                                                                                             
 11) clear ; clearcache ;;                                                                                                                                                                                                                                            
 12) clear ; reboot ;; 
-99) clear ; menu-bbt ;;                                                                                                                                                                                                                                       
+99) clear ; echo "admin only" ; sleep 1 ; menu ;;  #menu-bbt                                                                                                                                                                                                                                      
 x) exit ;;  
 *) echo -e "" ; echo "Boh salah tekan " ; sleep 1 ; menu ;;
 esac                                                                                                                                                                                                                                                     
