@@ -22,7 +22,7 @@ echo -e "     [x]  Exit"
 echo -e ""
 echo -e "======================================"
 echo -e ""
-read -p "     Select From Options [1-2 or x] :  " port
+read -p "  silahkan masukkan nomor [1-2 or x] :  "  port                                                                                                                                                                                                 
 echo -e ""
 case $port in
 1)
@@ -76,9 +76,9 @@ fi
 ;;
 x)
 exit
-menu
 ;;
 *)
-echo "Please enter an correct number"
+echo "Boh salah tekan"
+port-vless
 ;;
 esac
