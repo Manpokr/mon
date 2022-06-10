@@ -60,6 +60,7 @@ Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.tcp_mem = 25600 51200 102400"
 Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.tcp_rmem = 4096 87380 67108864"
 Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.tcp_wmem = 4096 65536 67108864"
 Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.tcp_mtu_probing = 1"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.tcp_low_latency = 1"
 echo "Optimasi Parameters Selesai."
 echo "#############################################"
 }
