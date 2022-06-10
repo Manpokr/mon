@@ -19,11 +19,18 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
 tr="$(cat /etc/trojan/config.json | grep local_port | sed 's/local_port//g' | sed 's/    "": //g' | sed 's/,//g')"
-echo -e "======================================"
-
-echo -e "Change Port $tr"
-
-echo -e "======================================"
+echo -e "======================================"                                                                                                                                                                
+echo -e "         Xray Trojan Port Changer"                                                                                                                                                                     
+echo -e ""                                                                                                                                                                                                      
+echo -e "     [1]  Change Port Xray Trojan ${RED}$tr${NC}"                                                                                                                                                      
+echo -e "     [x]  Exit"                                                                                                                                                                                        
+echo -e ""                                                                                                                                                                                                      
+echo -e "======================================"                                                                                                                                                                
+echo -e ""  
+read -p "  silahkan masukkan nomor [1 or x] :  "  port                                                                                                                                                                                               
+echo -e ""   
+case $port in                                                                                                                                                                                                   
+1)                                                                                                                                                                                                   
 read -p "New Port Trojan : " tr2
 if [ -z $tr2 ]; then
 echo "Please Input Port"
@@ -41,7 +48,18 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xray.service > /dev/null
-echo -e "\e[032;1mPort $tr2 modified successfully\e[0m"
-else
-echo "Port $tr2 is used"
+clear
+echo -e "${GREEN}Succesfully Changed Xray Trojan Port  $tr2${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $tr2 Is Already Used"                                                                                                                                                          
 fi
+;;                                                                                                                                                                                                              
+x)                                                                                                                                                                                                              
+exit                                                                                                                                                                                                                                                                                                                                                                                                                       
+;;                                                                                                                                                                                                              
+*)                                                                                                                                                                                                              
+echo "Boh salah tekan "  
+porttrojan                                                                                                                                                                         
+;;                                                                                                                                                                                                              
+esac
+
