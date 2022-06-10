@@ -152,7 +152,7 @@ wget -O portsquid "https://raw.githubusercontent.com/Manpokr/mon/main/port/ports
 wget -O portwg "https://raw.githubusercontent.com/Manpokr/mon/main/port/portwg.sh"
 wget -O portvlm "https://raw.githubusercontent.com/Manpokr/mon/main/port/portvlm.sh"
 wget -O porttrojan "https://raw.githubusercontent.com/Manpokr/mon/main/port/porttrojan.sh"
-wget -O port-trojango "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojango.sh"
+#wget -O port-trojango "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-trojango.sh"
 wget -O port-xws "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xws.sh"
 wget -O port-xvl "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xvl.sh"
 wget -O port-xtr "https://raw.githubusercontent.com/Manpokr/mon/main/port/port-xtr.sh"
@@ -170,7 +170,7 @@ wget -O menu-xray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-
 wget -O menu-v2ray "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-v2ray.sh"
 wget -O system-menu "https://raw.githubusercontent.com/Manpokr/mon/main/setup/system-menu.sh"
 wget -O trial-menu "https://raw.githubusercontent.com/Manpokr/mon/main/menu/trial-menu.sh"
-wget -O menu-bbt "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bbt.sh"
+#wget -O menu-bbt "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bbt.sh"
 wget -O running "https://raw.githubusercontent.com/Manpokr/mon/main/menu/running.sh"
 wget -O menu-bw "https://raw.githubusercontent.com/Manpokr/mon/main/menu/menu-bw"
 chmod +x portovpn
@@ -194,7 +194,7 @@ chmod +x menu-wg
 chmod +x menu-ssr
 chmod +x menu-xray
 chmod +x menu-v2ray
-chmod +x menu-bbt
+#chmod +x menu-bbt
 chmod +x system-menu
 chmod +x running
 chmod +x menu-bw
