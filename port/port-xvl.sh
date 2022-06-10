@@ -11,12 +11,12 @@ none="$(cat /etc/xray/vlessnone.json | grep port | sed 's/"//g' | sed 's/port//g
 echo -e "======================================"
 echo -e "     Change Port XRAY Vless"
 echo -e ""
-echo -e "     [1]  Change Port XRAY VLESS TCP $tls"
-echo -e "     [2]  Change Port XRAY VLESS None TCP $none"
+echo -e "     [1]  Change Port XRAY VLESS TCP ${RED}$tls${NC}"
+echo -e "     [2]  Change Port XRAY VLESS None TCP ${RED}$none${NC}"
 echo -e "     [x]  Exit"
 echo -e "======================================"
 echo -e ""
-read -p "     Select From Options [1-2 or x] :  " prot
+read -p "  silahkan masukkan nomor [1-2 or x] :  "  prot                                                                                                                                                                                                 
 echo -e ""
 case $prot in
 1)
@@ -37,9 +37,10 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xray@vlesstls > /dev/null
-echo -e "\e[032;1mPort $tls1 modified successfully\e[0m"
-else
-echo "Port $tls1 is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port Xray Vless $tls1${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $tls1 Is Already Used"                                                                                                                                                          
 fi
 ;;
 2)
@@ -60,16 +61,17 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xray@vlessnone > /dev/null
-echo -e "\e[032;1mPort $none1 modified successfully\e[0m"
-else
-echo "Port $none1 is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port Xray Vless $none1${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $none1 Is Already Used"                                                                                                                                                          
 fi
 ;;
 x)
 exit
-menu
 ;;
 *)
-echo "Please enter an correct number"
+echo "Boh salah tekan"
+port-xvl
 ;;
 esac
