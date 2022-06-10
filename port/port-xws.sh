@@ -12,13 +12,13 @@ mkcp=$(cat /etc/xray/mkcp.json | grep port | sed 's/"//g' | sed 's/port//g' | se
 echo -e "======================================"
 echo -e "      Change Port XRAY Vmess"
 echo -e ""
-echo -e "     [1]  Change Port XRAY Vmess TCP $tls"
-echo -e "     [2]  Change Port XRAY Vmess None TCP $none"
-echo -e "     [3]  Change Port XRAY Vmess KCP $mkcp"
+echo -e "     [1]  Change Port XRAY Vmess TCP ${RED}$tls${NC}"
+echo -e "     [2]  Change Port XRAY Vmess None TCP ${RED}$none${NC}"
+echo -e "     [3]  Change Port XRAY Vmess KCP ${RED}$mkcp${NC}"
 echo -e "     [x]  Exit"
 echo -e "======================================"
 echo -e ""
-read -p "     Select From Options [1-3 or x] :  " prot
+read -p "  silahkan masukkan nomor [1-3 or x] :  "  prot                                                                                                                                                                                                 
 echo -e ""
 case $prot in
 1)
@@ -39,9 +39,10 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xr-vm-tls > /dev/null
-echo -e "\e[032;1mPort $tls1 modified successfully\e[0m"
-else
-echo "Port $tls1 is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port Xray Vmess $tls1${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $tls1 Is Already Used"                                                                                                                                                          
 fi
 ;;
 2)
@@ -63,9 +64,10 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xr-vm-ntls > /dev/null
-echo -e "\e[032;1mPort $none1 modified successfully\e[0m"
-else
-echo "Port $none1 is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port Xray Vmess $none1${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $none1 Is Already Used"                                                                                                                                                          
 fi
 ;;
 3)
@@ -86,16 +88,17 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xr-vm-mk.service > /dev/null
-echo -e "\e[032;1mPort $mkcp1 modified successfully\e[0m"
-else
-echo "Port $mkcp1 is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port Xray Vmess $mkcp1${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $mkcp1 Is Already Used"                                                                                                                                                          
 fi
 ;;
 x)
 exit
-menu
 ;;
 *)
-echo "Please enter an correct number"
+echo "Boh salah tekan"
+port-xws
 ;;
 esac
