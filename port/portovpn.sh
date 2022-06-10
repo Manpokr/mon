@@ -22,9 +22,10 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 echo -e "======================================"
+echo -e "         OpenVpn Port Changer"
 echo -e ""
-echo -e "   [1] Change Port TCP $ovpn"
-echo -e "   [2] Change Port UDP $ovpn2"
+echo -e "   [1] Change Port TCP ${RED}$ovpn${NC}"
+echo -e "   [2] Change Port UDP ${RED}$ovpn2${NC}"
 echo -e "   [x] Exit"
 echo -e ""
 echo -e "======================================"
@@ -87,9 +88,10 @@ cp /etc/openvpn/tcp.ovpn /home/vps/public_html/tcp.ovpn
 systemctl disable --now openvpn-server@server-tcp > /dev/null
 systemctl enable --now openvpn-server@server-tcp > /dev/null
 sed -i "s/$ovpn/$vpn/g" /etc/stunnel/stunnel.conf
-echo -e "\e[032;1mPort $vpn modified successfully\e[0m"
+clear
+echo -e "${GREEN}Succesfully Changed OpenVpn Port To $vpn${NC}"
 else
-echo "Port $vpn is used"
+echo -e "${RED}Error ! ${NC}Port $vpn Is Already Used"
 fi
 ;;
 2)
@@ -147,18 +149,17 @@ echo '</ca>' >> /etc/openvpn/udp.ovpn
 cp /etc/openvpn/udp.ovpn /home/vps/public_html/udp.ovpn
 systemctl disable --now openvpn-server@server-udp > /dev/null
 systemctl enable --now openvpn-server@server-udp > /dev/null
-echo -e "\e[032;1mPort $vpn modified successfully\e[0m"
+echo -e "${GREEN}Succesfully Changed OpenVpn Port To $vpn${NC}"
 else
-echo "Port $vpn is used"
+echo -e "${RED}Error ! ${NC}Port $vpn Is Already Used"
 fi
 ;;
 x)
 exit
-menu
 ;;
 *)
 echo "Boh salah tekan"
-changeport
+portovpn
 ;;
 esac
 
