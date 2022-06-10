@@ -100,7 +100,7 @@ shellversion+=" ${BASH_VERSION/-*}"
 versibash=$shellversion
 name=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $2}')
 exp=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $3}')
-                                                                                                                                                                       
+                                                                                                                                                                    
 clear                                                                                                                                                                                                                                                                
 echo -e "                                                                                         "                                                                                                                                                                  
 echo -e "\e[5;33m CPU Model            :\033[m $cname"                                                                                                                                                                                                                  
@@ -125,6 +125,7 @@ echo -e "\e[5;33m Script Version       :\033[m  Latest Versions"
 echo -e "\e[5;33m Bash Version         :\033[m ${PURPLE}$versibash${NC}"                                                                                                                                                                                                 
 echo -e "\e[5;33m Xray Version         :\033[m  ${PURPLE}$verxray${NC}"                                                                                                                                                                                                 
 echo -e "\e[5;33m V2ray Version        :\033[m  ${PURPLE}$verv2ray${NC}"                                                                                                                                                                                                
+echo -e "\e[5;33m Version              :\033[m  ${BLUE}$(cat /home/ver)${NC}"
 echo -e "\e[5;33m Certificate status   :\033[m  \e[33mExpired in ${tlsStatus} days\e[0m"                                                                                                                                                                                
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e "\e[33m Traffic\e[0m       \e[33mToday      Yesterday     Month   "                                                                                                                                                                                          
