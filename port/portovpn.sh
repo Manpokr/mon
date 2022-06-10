@@ -22,11 +22,11 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 echo -e "======================================"
-
-echo -e "[1]  Change Port TCP $ovpn"
-echo -e "[2]. Change Port UDP $ovpn2"
-echo -e "[3]. Exit"
-
+echo -e ""
+echo -e "   [1] Change Port TCP $ovpn"
+echo -e "   [2] Change Port UDP $ovpn2"
+echo -e "   [3] Exit"
+echo -e ""
 echo -e "======================================"
 
 read -p "Select From Options [ 1-3 ] : " prot
@@ -152,12 +152,13 @@ else
 echo "Port $vpn is used"
 fi
 ;;
-3)
+x)
 exit
 menu
 ;;
 *)
-echo "Please enter an correct number"
+echo "Boh salah tekan"
+changeport
 ;;
 esac
 
