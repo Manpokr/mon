@@ -51,7 +51,7 @@ sed -i "s/&# $user $exp/&# $user $exp4/g" /etc/xray/trojanxtls.json
 clear
 echo ""
 echo "================================"
-echo "  Xray/Trojan Account Renewed  "
+echo "  Xray/Tr-XTLS Account Renewed  "
 echo "================================"
 echo "Username  : $user"
 echo "Expired  : $exp4"
