@@ -181,7 +181,6 @@ systemctl restart sslh
 /etc/init.d/sslh restart
 
 # install webserver
-sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install nginx" 
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
@@ -198,7 +197,6 @@ chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
 wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Manpokr/mon/main/addon/index.html"
 /etc/init.d/nginx restart
-cd
 
 # install badvpn
 cd
