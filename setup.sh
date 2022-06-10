@@ -24,10 +24,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 domain=$(cat /etc/xray/domain)
 IP=$( curl -s ipinfo.io/ip)
-if [ -f "/etc/xray/domain" ]; then
-echo "Script Already Installed"
-exit 0
-fi
+
 # Getting
 BURIQ () {
     curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip > /root/tmp
@@ -99,7 +96,11 @@ echo -e "${res}"
 mkdir /var/lib/Manpokr;
 echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
-
+clear
+if [ -f "/etc/xray/domain" ]; then
+echo "Script Already Installed"
+exit 0
+fi
 
 #Domain
 echo ""
