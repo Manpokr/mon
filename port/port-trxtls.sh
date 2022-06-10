@@ -30,7 +30,7 @@ read -p "  silahkan masukkan nomor [1 or x] :  "  port
 echo -e ""                                                                                                                                           
 case $port in                                                                                                                                        
 1)                                                                                                                                                   
-read -p "Type New Port For Xray Trojan : " tr2                                                                                                       
+read -p "Type New Port For Xray Trojan XTLS : " tr2                                                                                                       
 if [ -z $tr2 ]; then                                                                                                                                 
 echo "Please Input Port"                                                                                                                             
 exit 0                                                                                                                                               
