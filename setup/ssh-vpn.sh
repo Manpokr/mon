@@ -271,13 +271,13 @@ accept = 789
 connect = 127.0.0.1:109
 [dropbear]
 accept = 777
-connect = 127.0.0.1:22
+connect = 127.0.0.1:441
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
-[ws-stunnel]                                                              
-accept = 444                                                             
-connect = 127.0.0.1:445
+#[ws-stunnel]                                                              
+#accept = 444                                                             
+#connect = 127.0.0.1:445
 END
 
 # make a certificate
