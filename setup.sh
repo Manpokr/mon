@@ -94,18 +94,18 @@ echo -ne "[ ${green}INFO${NC} ] Check permission : "
 echo -e "${res}"
 sleep 2
 
-mkdir /var/lib/Manpokr;
-echo "IP=" >> /var/lib/Manpokr/ipvps.conf
-echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
 clear
 if [ -f "/etc/xray/domain" ]; then
 echo "Script Already Installed"
 exit 0
 fi
 
-#Domain
+
 echo ""
 echo -e "[ ${green}INFO${NC} ] Current domain"
+mkdir /var/lib/Manpokr;
+echo "IP=" >> /var/lib/Manpokr/ipvps.conf
+echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh && chmod +x cf.sh && ./cf.sh
 
 #SSH & OPenVPN
