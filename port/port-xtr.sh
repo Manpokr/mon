@@ -15,7 +15,7 @@ echo -e "     [x]  Exit"
 echo -e ""
 echo -e "======================================"
 echo -e ""
-read -p "     Select From Options [1 or x] :  " port
+read -p "  silahkan masukkan nomor [1 or x] :  "  port                                                                                                                                                                                                 
 echo -e ""
 case $port in
 1)
@@ -37,16 +37,16 @@ netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart trojan > /dev/null
 clear
-echo -e "${GREEN}Succesfully Changed Xray Trojan Port To $tr2${NC}"
+echo -e "${GREEN}Succesfully Changed Xray Trojan Port $tr2${NC}"
 else
 echo -e "${RED}Error ! ${NC}Port $tr2 Is Already Used"
 fi
 ;;
 x)
 exit
-menu
 ;;
 *)
 echo "Please enter an correct number"
+port-xtr
 ;;
 esac
