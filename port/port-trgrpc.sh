@@ -19,18 +19,18 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 clear                                                                                                                                                                                                           
 tr="$(cat /etc/xray/trojangrpc.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/ //g')"                                                                                 
 echo -e "======================================"                                                                                                                                                                
-echo -e "         Xray Trojan Port Changer"                                                                                                                                                                     
+echo -e "         Xray Trojan GRPC Port Changer"                                                                                                                                                                     
 echo -e ""                                                                                                                                                                                                      
 echo -e "     [1]  Change Port Xray Trojan ${RED}$tr${NC}"                                                                                                                                                      
 echo -e "     [x]  Exit"                                                                                                                                                                                        
 echo -e ""                                                                                                                                                                                                      
 echo -e "======================================"                                                                                                                                                                
-echo -e ""                                                                                                                                                                                                      
-read -p "     Select From Options [1 or x] :  " port                                                                                                                                                            
+echo -e ""    
+read -p "  silahkan masukkan nomor [1 or x] :  "  port                                                                                                                                                                                                                                                                                                                                                                                          
 echo -e ""                                                                                                                                                                                                      
 case $port in                                                                                                                                                                                                   
 1)                                                                                                                                                                                                              
-read -p "Type New Port For Xray Trojan : " tr2                                                                                                                                                                  
+read -p "Type New Port For Xray Trojan GRPC : " tr2                                                                                                                                                                  
 if [ -z $tr2 ]; then                                                                                                                                                                                            
 echo "Please Input Port"                                                                                                                                                                                        
 exit 0                                                                                                                                                                                                          
@@ -48,16 +48,16 @@ netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null                                                                                                                                                                         
 systemctl restart trojangrpc > /dev/null                                                                                                                                                                        
 clear                                                                                                                                                                                                           
-echo -e "${GREEN}Succesfully Changed Xray Trojan Port To $tr2${NC}"                                                                                                                                             
+echo -e "${GREEN}Succesfully Changed Xray Trojan GRPC Port To $tr2${NC}"                                                                                                                                             
 else                                                                                                                                                                                                            
 echo -e "${RED}Error ! ${NC}Port $tr2 Is Already Used"                                                                                                                                                          
 fi                                                                                                                                                                                                              
 ;;                                                                                                                                                                                                              
 x)                                                                                                                                                                                                              
-exit                                                                                                                                                                                                            
-menu                                                                                                                                                                                                            
+exit                                                                                                                                                                                                                                                                                                                                                                                                                      
 ;;                                                                                                                                                                                                              
 *)                                                                                                                                                                                                              
-echo "Please enter an correct number"                                                                                                                                                                           
+echo "Boh salah tekan" 
+port-trgrpc                                                                                                                                                                          
 ;;                                                                                                                                                                                                              
 esac
