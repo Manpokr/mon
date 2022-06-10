@@ -26,8 +26,8 @@ echo -e "      [1] Change Port $wg"
 echo -e "      [x] Exit"
 echo -e ""
 echo -e "======================================"
-echo -e ""                                                                                                                                                                                                      
-read -p "     Select From Options [1 or x] :  " port                                                                                                                                                            
+echo -e ""  
+read -p "  silahkan masukkan nomor [1 or x] :  "  port                                                                                                                                                                                                 
 echo -e ""                                                                                                                                                                                                      
 case $port in                                                                                                                                                                                                   
 1)
@@ -57,6 +57,7 @@ exit
 menu                                                                                                                                                                                                            
 ;;                                                                                                                                                                                                              
 *)                                                                                                                                                                                                              
-echo "Boh salah tekan "                                                                                                                                                                           
+echo "Boh salah tekan "  
+portwg                                                                                                                                                                         
 ;;                                                                                                                                                                                                              
 esac
