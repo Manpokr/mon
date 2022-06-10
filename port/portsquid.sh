@@ -21,15 +21,16 @@ clear
 sqd="$(cat /etc/squid/squid.conf | grep -i http_port | awk '{print $2}' | head -n1)"
 sqd2="$(cat /etc/squid/squid.conf | grep -i http_port | awk '{print $2}' | tail -n1)"
 echo -e "======================================"
-
-echo -e "[1]. Change Port $sqd"
-echo -e "[2]. Change Port $sqd2"
-echo -e "[3]. Exit"
-
+echo -e "         Squid Port Changer"
+echo -e ""
+echo -e "    [1] Change Port ${RED}$sqd${NC}"
+echo -e "    [2] Change Port ${RED}$sqd2${NC}"
+echo -e "    [x] Exit"
+echo -e ""
 echo -e "======================================"
-
-read -p "Select From Options [ 1-3 ] : " prot
-
+echo -e ""
+read -p "  silahkan masukkan nomor [1-2 or x] :  "  prot                                                                                                                                                                                                 
+echo -e ""
 case $prot in
 1)
 read -p "New Port Squid: " squid
@@ -40,11 +41,11 @@ fi
 cek=$(netstat -nutlp | grep -w $squid)
 if [[ -z $cek ]]; then
 sed -i "s/$sqd/$squid/g" /etc/squid/squid.conf
-
 /etc/init.d/squid restart > /dev/null
-echo -e "\e[032;1mPort $squid modified successfully\e[0m"
-else
-echo "Port $squid is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port Squid $squid${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $squid Is Already Used"                                                                                                                                                          
 fi
 ;;
 2)
@@ -57,17 +58,18 @@ cek=$(netstat -nutlp | grep -w $squid)
 if [[ -z $cek ]]; then
 sed -i "s/$sqd2/$squid/g" /etc/squid/squid.conf
 /etc/init.d/squid restart > /dev/null
-echo -e "\e[032;1mPort $squid modified successfully\e[0m"
-else
-echo "Port $squid is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port Squid $squid${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $squid Is Already Used"                                                                                                                                                          
 fi
 ;;
-3)
+x)
 exit
-menu
 ;;
 *)
-echo "Please enter an correct number"
+echo "Boh salah tekan"
+portsquid
 ;;
 esac
 
