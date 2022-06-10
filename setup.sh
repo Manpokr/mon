@@ -217,9 +217,7 @@ clear
 echo "1.2" > /home/ver
 echo " Reboot 7 Sec"
 sleep 7
-chmod +x /var/run/screen
 clear
-sleep 2
 echo -e "[ ${green}INFO${NC} ] Installing Successfully!!"
 sleep 1
 rm -f setup.sh
