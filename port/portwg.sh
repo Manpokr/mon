@@ -47,9 +47,10 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl reload wg-quick@wg0 > /dev/null
-echo -e "\e[032;1mPort $wg2 modified successfully\e[0m"
-else
-echo "Port $wg2 is used"
+clear
+echo -e "${GREEN}Succesfully Changed Port WG $wg2${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $wg2 Is Already Used"                                                                                                                                                          
 fi
 ;;                                                                                                                                                                                                              
 x)                                                                                                                                                                                                              
