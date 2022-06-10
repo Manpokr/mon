@@ -214,7 +214,7 @@ rm -rf /root/ipvps
 rm -f /etc/ip
 rm -f /root/tmp
 clear
-echo "1.2" > /home/ver
+echo "Beta 2.0" > /home/ver
 echo " Reboot 7 Sec"
 sleep 7
 clear
