@@ -19,14 +19,14 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 clear                                                                                                                                                
 tr="$(cat /etc/xray/trojanxtls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/ //g')"                      
 echo -e "======================================"                                                                                                     
-echo -e "         Xray Trojan Port Changer"                                                                                                          
+echo -e "      Xray Trojan XTLS Port Changer"                                                                                                          
 echo -e ""                                                                                                                                           
 echo -e "     [1]  Change Port Xray Trojan ${RED}$tr${NC}"                                                                                           
 echo -e "     [x]  Exit"                                                                                                                             
 echo -e ""                                                                                                                                           
 echo -e "======================================"                                                                                                     
-echo -e ""                                                                                                                                           
-read -p "     Select From Options [1 or x] :  " port                                                                                                 
+echo -e ""  
+read -p "  silahkan masukkan nomor [1 or x] :  "  port                                                                                                                                                                                                                                                                                                                                
 echo -e ""                                                                                                                                           
 case $port in                                                                                                                                        
 1)                                                                                                                                                   
@@ -48,15 +48,16 @@ netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null                                                                                                              
 systemctl restart trojanxtls > /dev/null                                                                                                             
 clear                                                                                                                                                
-echo -e "${GREEN}Succesfully Changed Xray Trojan Port To $tr2${NC}"                                                                                  
+echo -e "${GREEN}Succesfully Changed Xray Trojan XTLS Port To $tr2${NC}"                                                                                  
 else                                                                                                                                                 
 echo -e "${RED}Error ! ${NC}Port $tr2 Is Already Used"                                                                                               
 fi                                                                                                                                                   
 ;;                                                                                                                                                   
-x)                                                                                                                                                   
-menu                                                                                                                                                 
+x)  
+exit                                                                                                                                                                                                                                                                                                 
 ;;                                                                                                                                                   
 *)                                                                                                                                                   
-echo "Please enter an correct number"                                                                                                                
+echo "Boh salah tekan"  
+port-trxtls                                                                                                              
 ;;                                                                                                                                                   
 esac
