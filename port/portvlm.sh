@@ -18,15 +18,15 @@ clear
 tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
 none="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 echo -e "======================================"
-
-echo -e "[1]. Change Port Vmess TLS $tls"
-echo -e "[2]. Change Port Vmess None TLS $none"
-echo -e "[3]. Exit"
-
+echo -e ""
+echo -e "    [1] Change Port Vmess TLS $tls"
+echo -e "    [2] Change Port Vmess None TLS $none"
+echo -e "    [x] Exit"
+echo -e ""
 echo -e "======================================"
-
-read -p "Select From Options [ 1-3 ] : " prot
-
+echo -e ""
+read -p "  silahkan masukkan nomor [1-2 or x] :  "  prot
+echo -e ""
 case $prot in
 1)
 read -p "New Port Vmess TLS : " tls1
@@ -48,9 +48,10 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xray.service > /dev/null
-echo -e "\e[032;1mPort $tls1 modified successfully\e[0m"
-else
-echo "Port $tls1 is used"
+clear                                                                                                                                                                                                           
+echo -e "${GREEN}Succesfully Changed Xray Vmess Tls Port $tls1${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $tls1 Is Already Used"                                                                                                                                                          
 fi
 ;;
 2)
@@ -74,16 +75,18 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save > /dev/null
 netfilter-persistent reload > /dev/null
 systemctl restart xray.service > /dev/null
-echo -e "\e[032;1mPort $none1 modified successfully\e[0m"
-else
-echo "Port $none1 is used"
+clear                                                                                                                                                                                                           
+echo -e "${GREEN}Succesfully Changed Xray Vmess ntls Port $none1${NC}"                                                                                                                                             
+else                                                                                                                                                                                                            
+echo -e "${RED}Error ! ${NC}Port $none1 Is Already Used"                                                                                                                                                          
 fi
 ;;
 3)
 exit
-menu
 ;;
 *)
-echo "Please enter an correct number"
+echo "Boh salah tekan"
+portvlm
 ;;
 esac
+
