@@ -92,6 +92,7 @@ echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check permission : "
 echo -e "${res}"
+sleep 2
 
 mkdir /var/lib/Manpokr;
 echo "IP=" >> /var/lib/Manpokr/ipvps.conf
@@ -104,7 +105,7 @@ fi
 
 #Domain
 echo ""
-echo -e "[ ${green}INFO${NC} ] Current domain : $domain"
+echo -e "[ ${green}INFO${NC} ] Current domain"
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh && chmod +x cf.sh && ./cf.sh
 
 #SSH & OPenVPN
@@ -222,11 +223,4 @@ clear
 sleep 2
 echo -e "[ ${green}INFO${NC} ] Installing Successfully!!"
 sleep 1
-echo -e "[ ${green}INFO${NC} ] Dont forget to reboot later"
-echo -ne "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
-read answer
-if [ "$answer" == "${answer#[Yy]}" ] ;then
-exit 0
-else
 reboot
-fi
