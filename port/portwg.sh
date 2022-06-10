@@ -21,8 +21,9 @@ NIC=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 clear
 wg="$(cat /etc/wireguard/params | grep SERVER_PORT | sed s'/SERVER_PORT=//g')"
 echo -e "======================================"
+echo -e "         Wireguard Port Changer"
 echo -e ""
-echo -e "      [1] Change Port $wg"
+echo -e "      [1] Change Port ${RED}$wg${NC}"
 echo -e "      [x] Exit"
 echo -e ""
 echo -e "======================================"
@@ -54,8 +55,7 @@ echo -e "${RED}Error ! ${NC}Port $wg2 Is Already Used"
 fi
 ;;                                                                                                                                                                                                              
 x)                                                                                                                                                                                                              
-exit                                                                                                                                                                                                            
-menu                                                                                                                                                                                                            
+exit                                                                                                                                                                                                                                                                                                                                                                                                                      
 ;;                                                                                                                                                                                                              
 *)                                                                                                                                                                                                              
 echo "Boh salah tekan "  
