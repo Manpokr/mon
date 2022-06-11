@@ -103,7 +103,7 @@ echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━�
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 auto-reboot 
-elif test $x -eq 0; then
+elif test $x -eq 100; then
 clear
 menu
 else
