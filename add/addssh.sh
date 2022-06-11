@@ -32,6 +32,8 @@ sqd="$(cat /etc/squid/squid.conf | grep -i http_port | awk '{print $2}' | head -
 sqd2="$(cat /etc/squid/squid.conf | grep -i http_port | awk '{print $2}' | tail -n1)"
 ovpn="$(netstat -nlpt | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
+ws="$(cat ~root/log-install.txt | grep -w "Websocket None TLS" | cut -d: -f2|sed 's/ //g')"
+ws1="$(cat ~root/log-install.txt | grep -w "Websocket TLS" | cut -d: -f2|sed 's/ //g')"
 clear
 systemctl restart ssh-ohp
 systemctl restart dropbear-ohp
@@ -56,8 +58,8 @@ echo -e "Port Squid    :$sqd $sqd2"
 echo -e "OHP SSH       : 8181"
 echo -e "OHP Dropbear  : 8282"
 echo -e "OHP OpenVPN   : 8383"
-echo -e "Ssh Ws SSL    : 443"
-echo -e "Ssh Ws No SSL : 8880"
+echo -e "Ssh Ws SSL    : $ws1"
+echo -e "Ssh Ws No SSL : $ws"
 echo -e "Ovpn Ws       : 2086"
 echo -e "Port TCP      : $ovpn"
 echo -e "Port UDP      : $ovpn2"
