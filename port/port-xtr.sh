@@ -6,7 +6,7 @@ GREEN="\e[0;32m"
 NC="\e[0m"
 
 #change port
-tr=$(cat /etc/xray/trojan.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
+tr=$(cat /etc/xray/trojan.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/   //g')
 echo -e "======================================"
 echo -e "         Xray Trojan Port Changer"
 echo -e ""
