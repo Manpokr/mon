@@ -39,10 +39,10 @@ ver=$VERSION_ID
 country=MY
 state=Malaysia
 locality=Malaysia
-organization=Ternet
-organizationalunit=Ternet
-commonname=manpokr
-email=manpokr@gmail.com
+organization=infinity
+organizationalunit=infinity
+commonname=localhost
+email=manpokr7@gmail.com
 
 # simple password minimal
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Manpokr/mon/main/addon/password"
@@ -154,40 +154,6 @@ apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rs
 echo "clear" >> .profile
 echo "neofetch" >> .profile
 
-# Install SSLH
-apt -y install sslh
-rm -f /etc/default/sslh
-
-# Settings SSLH
-cat > /etc/default/sslh <<-END
-# Default options for sslh initscript
-# sourced by /etc/init.d/sslh
-
-# Disabled by default, to force yourself
-# to read the configuration:
-# - /usr/share/doc/sslh/README.Debian (quick start)
-# - /usr/share/doc/sslh/README, at "Configuration" section
-# - sslh(8) via "man sslh" for more configuration details.
-# Once configuration ready, you *must* set RUN to yes here
-# and try to start sslh (standalone mode only)
-
-RUN=yes
-
-# binary to use: forked (sslh) or single-thread (sslh-select) version
-# systemd users: don't forget to modify /lib/systemd/system/sslh.service
-DAEMON=/usr/sbin/sslh
-
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:441  --ssl 127.0.0.1:777 --ssl 127.0.0.1:445 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
-
-END
-
-# Restart Service SSLH
-service sslh restart
-systemctl restart sslh
-/etc/init.d/sslh restart
-/etc/init.d/sslh status
-/etc/init.d/sslh restart
-
 # install webserver
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install nginx" 
@@ -247,7 +213,39 @@ apt -y install squid3
 wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Manpokr/mon/main/addon/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
+# Install SSLH
+apt -y install sslh
+rm -f /etc/default/sslh
 
+# Settings SSLH
+cat > /etc/default/sslh <<-END
+# Default options for sslh initscript
+# sourced by /etc/init.d/sslh
+
+# Disabled by default, to force yourself
+# to read the configuration:
+# - /usr/share/doc/sslh/README.Debian (quick start)
+# - /usr/share/doc/sslh/README, at "Configuration" section
+# - sslh(8) via "man sslh" for more configuration details.
+# Once configuration ready, you *must* set RUN to yes here
+# and try to start sslh (standalone mode only)
+
+RUN=yes
+
+# binary to use: forked (sslh) or single-thread (sslh-select) version
+# systemd users: don't forget to modify /lib/systemd/system/sslh.service
+DAEMON=/usr/sbin/sslh
+
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:441  --ssl 127.0.0.1:777 --ssl 127.0.0.1:445 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
+
+END
+
+# Restart Service SSLH
+service sslh restart
+systemctl restart sslh
+/etc/init.d/sslh restart
+/etc/init.d/sslh status
+/etc/init.d/sslh restart
 
 # setting vnstat
 apt -y install vnstat
@@ -266,7 +264,7 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-# install stunnel
+# install stunnel4
 apt install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
@@ -425,6 +423,8 @@ chmod +x kernel-updt
 
 echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
+echo "0 1 * * * root delexp" >> /etc/crontab
+
 # remove unnecessary files
 cd
 sleep 1
