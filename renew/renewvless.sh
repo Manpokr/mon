@@ -56,5 +56,4 @@ echo " =========================="
 echo " Client Name : $user"
 echo " Expired On  : $exp4"
 echo " =========================="
-read -p "Press Enter For Back To V2Ray/VLess Menu / CTRL+C To Cancel : "
-vless-menu
+echo "Script By Manternet"
