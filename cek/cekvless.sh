@@ -6,11 +6,14 @@
 RED="\e[1;31m"
 GREEN="\e[0;32m"
 NC="\e[0m"
+###################
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+###################
+clear
 
 # Validate Your IP Address
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-clear
 echo -n > /tmp/other.txt
 data=( `cat /etc/v2ray/vless.json | grep '^###' | cut -d ' ' -f 2`);
 echo "-------------------------------";
