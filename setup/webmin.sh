@@ -1,11 +1,17 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
-NC='\e[0m'
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0;37m'
+LIGHT='\033[0;37m'
 
+#############
+MYIP=$(wget -qO- ipinfo.io/ip);
 clear
+
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[Installed]${Font_color_suffix}"
 Error="${Red_font_prefix}[Not Installed]${Font_color_suffix}"
@@ -68,9 +74,9 @@ clear
 echo -e "================================"
 echo -e "   Webmin Menu $sts        "
 echo -e "================================"
-echo -e "1.Install Webmin"
-echo -e "2.Restart Webmin"
-echo -e "3.Uninstall Webmin"
+echo -e "[•1] Install Webmin"
+echo -e "[•2] Restart Webmin"
+echo -e "[•3]Uninstall Webmin"
 echo -e "================================"
 read -rp "Please Enter The Correct Number : " -e num
 if [[ "$num" = "1" ]]; then
@@ -81,6 +87,6 @@ elif [[ "$num" = "3" ]]; then
 uninstall
 else
 clear
-echo " You Entered The Wrong Number"
+echo " Boh salah tekan"
 menu
 fi
