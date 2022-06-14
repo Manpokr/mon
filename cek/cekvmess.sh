@@ -8,9 +8,8 @@ GREEN="\e[0;32m"
 NC="\e[0m"
 
 # Validate Your IP Address
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
 clear
+MYIP=$(wget -qO- ipinfo.io/ip);
 echo -n > /tmp/other.txt
 data=( `cat /etc/v2ray/config.json | grep '^###' | cut -d ' ' -f 2`);
 echo "-------------------------------";
