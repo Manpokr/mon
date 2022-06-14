@@ -4,7 +4,7 @@
 # Color
 RED="\e[1;31m"
 GREEN="\e[0;32m"
-NC="\e[0m"
+NORMAL="\e[0m"
 # ==========================================
 # Getting
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
