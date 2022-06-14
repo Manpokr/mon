@@ -31,14 +31,14 @@ clear
 echo -e "=================================="
 echo -e "       Status Autokill $sts       "
 echo -e "=================================="
-echo -e "1. AutoKill After 5 Minutes"
-echo -e "2. AutoKill After 10 Minutes"
-echo -e "3. AutoKill After 15 Minutes"
-echo -e "4. Turn Off AutoKill/MultiLogin"
-echo -e "5. Exit"
+echo -e "[•1] AutoKill After 5 Minutes"
+echo -e "[•2] AutoKill After 10 Minutes"
+echo -e "[•3] AutoKill After 15 Minutes"
+echo -e "[•4] Turn Off AutoKill/MultiLogin"
+echo -e "[•5] Exit"
 echo -e "=================================="                                                                                                          
 
-read -p "Select From Options [1-4 or x] :  " AutoKill
+read -p "silahkan masukkan nomor [1-4 or x] :  " AutoKill
 read -p "Multilogin Maximum Number Of Allowed: " max
 
 case $AutoKill in
