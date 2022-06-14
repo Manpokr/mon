@@ -9,7 +9,6 @@ NC="\e[0m"
 
 # Validate Your IP Address
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
 clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/akun.conf")
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
