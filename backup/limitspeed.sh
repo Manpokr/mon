@@ -54,8 +54,8 @@ clear
 echo -e "=================================="
 echo -e "    Limit Bandwidth Speed $sts    "
 echo -e "=================================="
-echo -e "[1]. Start Limit"
-echo -e "[2]. Stop Limit"
+echo -e "[•1] Start Limit"
+echo -e "[•2] Stop Limit"
 echo -e "==============================="
 read -rp "Please Enter The Correct Number : " -e num
 if [[ "$num" = "1" ]]; then
