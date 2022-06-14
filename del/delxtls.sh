@@ -1,18 +1,15 @@
 #!/bin/bash
 
-# // String
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHT='\033[0;37m'
-clear
+
+#################
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+###################
 
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
 clear
 
 # // Getting V2Ray Client Data
