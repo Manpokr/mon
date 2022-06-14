@@ -76,7 +76,7 @@ echo -e "   Webmin Menu $sts        "
 echo -e "================================"
 echo -e "[•1] Install Webmin"
 echo -e "[•2] Restart Webmin"
-echo -e "[•3]Uninstall Webmin"
+echo -e "[•3] Uninstall Webmin"
 echo -e "================================"
 read -rp "Please Enter The Correct Number : " -e num
 if [[ "$num" = "1" ]]; then
