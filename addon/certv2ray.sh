@@ -3,7 +3,7 @@
 # ==========================================
 # Color
 RED='\033[0;31m'
-NC='\033[0m'
+NC='\033[0;37m'
 GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
@@ -36,8 +36,8 @@ systemctl stop xray
 sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 clear
 cd .acme.sh
-echo "${RED}starting....,${NC}" 
-echo "Port 80 Akan di Hentikan Saat Proses install Cert"    
+echo -e "\033[0;32mstarting........\033[m"
+echo -e "Port ${RED}80${NC} Akan di Hentikan Saat Proses install Cert"
 bash acme.sh --set-default-ca --server letsencrypt
 bash acme.sh --issue -d $domain --standalone -k ec-256 --force
 bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
