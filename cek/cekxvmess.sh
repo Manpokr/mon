@@ -2,10 +2,13 @@
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
-MYIP=$(wget -qO- ifconfig.me/ip);
-echo "Checking VPS"
-#EDIT IZIN
+
+#################
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+###################
 clear
+MYIP=$(wget -qO- ifconfig.me/ip);
 echo -n > /tmp/other.txt
 data=( `cat /etc/xray/vmesstls.json | grep '^###' | cut -d ' ' -f 2`);
 echo "-----------------------------------------";
