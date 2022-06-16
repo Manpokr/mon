@@ -40,7 +40,7 @@ read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " 
 dom=$sub$domain
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#xray-trojan$/a\#&# '"$user na$exp"'\
+sed -i '/#xray-trojan$/a\#&# '"$user $exp"'\
 },{"password": "'""$user""'","email": "'""$user""'"' /etc/xray/trojan.json
 systemctl restart x-tr.service
 trojanlink="trojan://${user}@${dom}:${tr}?sni=$sni#$user"
