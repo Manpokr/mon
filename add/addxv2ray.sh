@@ -7,7 +7,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 clear
-domain=$(cat /etc/v2ray/domain)
+domain=$(cat /etc/xray/domain)
 tls=$(cat /etc/xray/vmesstls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
 none=$(cat /etc/xray/vmessnone.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
 mkcp=$(cat /etc/xray/mkcp.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
