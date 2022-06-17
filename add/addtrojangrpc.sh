@@ -20,6 +20,7 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
+domain=$(cat /etc/xray/domain)
 uuid=$(cat /proc/sys/kernel/random/uuid)
 tr="$(cat /etc/xray/trojangrpc.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
