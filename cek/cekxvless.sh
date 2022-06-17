@@ -50,4 +50,4 @@ echo "$oth";
 echo "-------------------------------"
 rm -rf /tmp/other.txt
 read -p "Press Enter For Back To XRay Menu / CTRL+C To Cancel : "
-menu-xray.
+menu-xray
