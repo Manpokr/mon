@@ -47,7 +47,6 @@ systemctl restart x-tr.service
 trojanlink="trojan://${user}@${dom}:${tr}?sni=$sni#$user"
 service cron restart
 clear
-IP=$(wget -qO- ipinfo.io/ip);
 echo -e "================================="
 echo -e "            XRAY TROJAN         " 
 echo -e "================================="
