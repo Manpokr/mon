@@ -47,19 +47,19 @@ cd
 fi
 done
 /etc/init.d/ssrmu restart
-data=( `cat /etc/xray/config.json | grep '^#&#' | cut -d ' ' -f 2`);
+data=( `cat /etc/xray/trojan.json | grep '^#&#' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#&# $user" "/etc/xray/config.json" | cut -d ' ' -f 3)
+exp=$(grep -w "^#&# $user" "/etc/xray/trojan.json" | cut -d ' ' -f 3)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
-sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
+sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojan.json
 fi
 done
-systemctl restart xray.service
+systemctl restart x-tr.service
 data=( `cat /etc/wireguard/wg0.conf | grep '^### Client' | cut -d ' ' -f 3`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -89,17 +89,127 @@ rm -f /etc/xray/vmess-$user-tls.json /etc/xray/vmess-$user-nontls.json
 fi
 done
 systemctl restart xray.service
-data=( `cat /etc/xray/config.json | grep '^####' | cut -d ' ' -f 2`);
+data=( `cat /etc/xray/vmesstls.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#### $user" "/etc/xray/config.json" | cut -d ' ' -f 3)
+exp=$(grep -w "^### $user" "/etc/xray/vmesstls.json" | cut -d ' ' -f 3)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
-sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/vmess.json
-sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/vmessnone.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vmess.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vmessnone.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/mkcp.json
 fi
 done
-systemctl restart xray.service
+systemctl restart xr-vm-ntls.service
+systemctl restart xr-vm-tls.service
+systemctl restart xr-vm-mk.service
+service cron restart
+data=( `cat /etc/xray/trojanxtls.json | grep '^#&#' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^#&# $user" "/etc/xray/trojanxtls.json" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojanxtls.json
+fi
+done
+systemctl restart trojanxtls.service
+data=( `cat /etc/xray/trojangrpc.json | grep '^#&#' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^#&# $user" "/etc/xray/trojangrpc.json" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojangrpc.json
+fi
+done
+systemctl restart trojangrpc.service
+data=( `cat /etc/xray/vmessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/xray/vmessgrpc.json" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vmessgrpc.json
+fi
+done
+systemctl restart vmess-grpc.service
+data=( `cat /etc/xray/vlessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/xray/vlessgrpc.json" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vlessgrpc.json
+fi
+done
+systemctl restart vless-grpc.service
+data=( `cat /etc/xray/vmessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/xray/vmessgrpc.json" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vmessgrpc.json
+fi
+done
+systemctl restart vmess-grpc.service
+data=( `cat /etc/xray/xrayxtls.json | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/xray/xrayxtls.json" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/xrayxtls.json
+fi
+done
+systemctl restart xtls.service
+data=( `cat /etc/xray/vmessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/xray/vmessgrpc.json" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vmessgrpc.json
+fi
+done
+systemctl restart vmess-grpc.service
+data=( `cat /etc/xray/vlesstls.json | grep '^###' | cut -d ' ' -f 2`);
+now=`date +"%Y-%m-%d"`
+for user in "${data[@]}"
+do
+exp=$(grep -w "^### $user" "/etc/xray/vlesstls.json" | cut -d ' ' -f 3)
+d1=$(date -d "$exp" +%s)
+d2=$(date -d "$now" +%s)
+exp2=$(( (d1 - d2) / 86400 ))
+if [[ "$exp2" = "0" ]]; then
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vlesstls.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vlessnone.json
+fi
+done
+systemctl restart xr-vl-ntls
+systemctl restart xr-vl-tls
