@@ -286,4 +286,5 @@ echo -e "[ ${green}INFO${NC} ] Installing Successfully!!"
 sleep 1
 rm -f setup.sh
 rm -f ins-xray.sh
+screen -S
 reboot
