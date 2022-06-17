@@ -13,7 +13,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 clear
 # // Input
 source /var/lib/Manpokr/ipvps.conf
-domain=$(cat /etc/v2ray/domain)
+domain=$(cat /etc/xray/domain)
 uuid=$(cat /proc/sys/kernel/random/uuid)
 
 tr="$(cat /etc/xray/trojanxtls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/ //g')"
