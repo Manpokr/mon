@@ -15,7 +15,7 @@ LIGHT='\033[0;37m'
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-
+IP=$( curl -s ipinfo.io/ip );
 clear
 source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
