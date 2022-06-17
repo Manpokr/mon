@@ -11,7 +11,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 
 clear
 source /var/lib/Manpokr/ipvps.conf
-domain=$(cat /etc/v2ray/domain)
+domain=$(cat /etc/xray/domain)
 tls="$(cat /etc/xray/vlesstls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')"
 none="$(cat /etc/xray/vlessnone.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
