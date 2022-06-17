@@ -90,12 +90,15 @@ systemctl restart xr-vm-tls.service
 systemctl restart xr-vm-mk.service
 service cron restart
 clear
+MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "================================="
 echo -e "            XRAY VMESS          " 
 echo -e "================================="
 echo -e "Remarks        : ${user}"
+echo -e "IP/Host        : ${MYIP}"
 echo -e "Domain         : ${domain}"
 echo -e "Subdomain      : ${dom}"
+echo -e "Sni            : ${sni}"
 echo -e "port TCP-TLS   : ${tls}"
 echo -e "port TCP-NONE  : ${none}"
 echo -e "port KCP       : ${mkcp}"
