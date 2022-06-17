@@ -11,7 +11,7 @@ NC="\e[0m"
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 clear
-uuid=$(cat /etc/trojan/uuid.txt)
+uuid=$(cat /proc/sys/kernel/random/uuid)
 source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
@@ -29,6 +29,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
+uuid=$(cat /proc/sys/kernel/random/uuid)
 MYIP=$(wget -qO- ipinfo.io/ip);
 domain=$(cat /etc/v2ray/domain)
 read -p "Expired (days): " masaaktif
