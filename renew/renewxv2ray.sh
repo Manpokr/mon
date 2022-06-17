@@ -45,7 +45,8 @@ exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/vmesstls.json
-sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/vmesstls.json
+sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/vmessnone.json
+sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/mkcp.json
 systemctl restart xray.service
 service cron restart
 clear
