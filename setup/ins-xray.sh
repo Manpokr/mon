@@ -746,7 +746,9 @@ END
 cat > /etc/xray/trojan.json <<END
 {
     "log": {
-        "loglevel": "warning"
+        "access": "/var/log/xray/access3.log",
+        "error": "/var/log/xray/error.log",
+        "loglevel": "info"
     },
     "inbounds": [
         {
