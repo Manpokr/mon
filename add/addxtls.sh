@@ -34,7 +34,7 @@ dom=$sub$domain
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 sed -i '/#XRay$/a\### '"$user $exp"'\
-            },{"id": "'""$uuid""'","flow": "'xtls-rprx-direct'","email": "'""$user""'"' /etc/xray/xrayxtls.json
+},{"id": "'""$uuid""'","flow": "'xtls-rprx-direct'","email": "'""$user""'"' /etc/xray/xrayxtls.json
 
 IP=$( curl -s ipinfo.io/ip )
 vd="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#$user"
