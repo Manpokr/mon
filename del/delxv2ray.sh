@@ -39,8 +39,7 @@ exp=$(grep -E "^### " "/etc/xray/vmesstls.json" | cut -d ' ' -f 3 | sed -n "${CL
 sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vmesstls.json
 sed -i "/^### $user $exp/,/^},{/d" /etc/xray/vmessnone.json
 sed -i "/^### $user $exp/,/^},{/d" /etc/xray/mkcp.json
-
-rm -f /etc/xray/$user-tls.json /etc/xray/$user-nontls.json /etc/xray/vmess-$user-mkcp.json
+rm -f /etc/xray/$user-tls.json /etc/xray/$user-none.json /etc/xray/vmess-$user-mkcp.json
 systemctl restart xr-vm-ntls.service
 systemctl restart xr-vm-tls.service
 systemctl restart xr-vm-mk.service
