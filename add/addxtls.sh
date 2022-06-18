@@ -33,7 +33,7 @@ read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " 
 dom=$sub$domain
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
-sed -i '/#XRay$/a\### '"$user | $exp"'\
+sed -i '/#XRay$/a\### '"$user $exp"'\
             },{"id": "'""$uuid""'","flow": "'xtls-rprx-direct'","email": "'""$user""'"' /etc/xray/xrayxtls.json
 
 IP=$( curl -s ipinfo.io/ip )
