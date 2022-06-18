@@ -37,7 +37,7 @@ user=$(grep -E "^#&# " "/etc/xray/trojan.json" | cut -d ' ' -f 2 | sed -n "${CLI
 exp=$(grep -E "^#&# " "/etc/xray/trojan.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojan.json
 sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojan.json
-systemctl restart xray.service
+systemctl restart x-tr.service
 service cron restart
 clear
 echo ""
