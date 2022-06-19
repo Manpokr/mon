@@ -5,7 +5,7 @@ hariini=`date +%d-%m-%Y`
 apt install msmtp-mta ca-certificates bsd-mailx -y
 cat > /etc/msmtprc << EOF
 defaults
-port 25
+port 587
 tls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 auth on
@@ -29,3 +29,7 @@ Client Installation Data
 Username : $Name
 IP       : $MYIP
 ━━━━━━━━━━━━━━━━━━━━━" | mail -s "Client Installation Data" smtp5313@gmail.com 
+
+
+#Backup
+wget https://raw.githubusercontent.com/Manpokr/mon/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
