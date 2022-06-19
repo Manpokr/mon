@@ -29,10 +29,8 @@ wget -O backup "https://raw.githubusercontent.com/Manpokr/mon/main/backup/backup
 wget -O restore "https://raw.githubusercontent.com/Manpokr/mon/main/backup/restore.sh"
 wget -O strt "https://raw.githubusercontent.com/Manpokr/mon/main/backup/strt.sh"
 wget -O limitspeed "https://raw.githubusercontent.com/Manpokr/mon/main/backup/limitspeed.sh"
-wget -O bckp "https://raw.githubusercontent.com/Manpokr/mon/main/backup/bckp.sh"
 chmod +x autobackup
 chmod +x backup
-chmod +x bckp
 chmod +x restore
 chmod +x strt
 chmod +x limitspeed
