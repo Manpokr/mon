@@ -22,12 +22,25 @@ LIGHT='\033[0;37m'
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-mody="raw.githubusercontent.com/Manpokr/mon/main/"
-mody="raw.githubusercontent.com/Manpokr/mon/main/"
-mody="raw.githubusercontent.com/Manpokr/mon/main/"
-mody="raw.githubusercontent.com/Manpokr/mon/main/"
-mody="raw.githubusercontent.com/Manpokr/mon/main/"
-mody="raw.githubusercontent.com/Manpokr/mon/main/"
+modyi="raw.githubusercontent.com/Manpokr/mon/main/"
+modyii="raw.githubusercontent.com/Manpokr/mon/main/"
+modyiii="raw.githubusercontent.com/Manpokr/mon/main/"
+modyiiii="raw.githubusercontent.com/Manpokr/mon/main/"
+modyiiiii="raw.githubusercontent.com/Manpokr/mon/main/"
+modyiiiiii="raw.githubusercontent.com/Manpokr/mon/main/"
+modyiiiiiii="raw.githubusercontent.com/Manpokr/mon/main/"
+modyiiiiiiii="raw.githubusercontent.com/Manpokr/mon/main/"
+modyiiiiiiiii="raw.githubusercontent.com/Manpokr/mon/main/"
+modya="raw.githubusercontent.com/Manpokr/mon/main/"
+modyaa="raw.githubusercontent.com/Manpokr/mon/main/"
+modyaaa="raw.githubusercontent.com/Manpokr/mon/main/"
+modyaaaa="raw.githubusercontent.com/Manpokr/mon/main/"
+modyaaaaa="raw.githubusercontent.com/Manpokr/mon/main/"
+
+
+
+
+
 
 domain=$(cat /etc/xray/domain)
 IP=$( curl -s ipinfo.io/ip)
@@ -142,45 +155,43 @@ IP       : $MYIP
 
 echo ""
 echo -e "[ ${green}INFO${NC} ] Current domain"
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh && chmod +x cf.sh && ./cf.sh
+wget https://${modyi}/addon/cf.sh && chmod +x cf.sh && ./cf.sh
 
 #SSH & OPenVPN
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
+wget https://${modyii}/setup/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
 
 #ShadowsocksR
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
+wget https://${modyiii}/setup/ssr.sh && chmod +x ssr.sh && screen -S ssr ./ssr.sh
 
 #Shadowsocks
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
+wget https://${modyiiii}/setup/sodosok.sh && chmod +x sodosok.sh && screen -S ss ./sodosok.sh
 
 #Wireguards
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/wg.sh && chmod +x wg.sh  && screen -S wg ./wg.sh
+wget https://${modyiiiii}/setup/wg.sh && chmod +x wg.sh  && screen -S wg ./wg.sh
 
 #XRay
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
+wget https://${modyiiiiii}/setup/ins-xray.sh && chmod +x ins-xray.sh && screen -S xray ./ins-xray.sh
 
 #V2Ray
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ins-vt.sh && chmod +x ins-vt.sh && screen -S vt ./ins-vt.sh
+wget https://${modya}/setup/ins-vt.sh && chmod +x ins-vt.sh && screen -S vt ./ins-vt.sh
 
 #Backup
-wget https://raw.githubusercontent.com/Manpokr/mon/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://${modyaa}/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
 # Websocket
-wget https://raw.githubusercontent.com/Manpokr/mon/main/websocket/ws.sh && chmod +x ws.sh && ./ws.sh 
+wget https://${modyaaa}/websocket/ws.sh && chmod +x ws.sh && ./ws.sh 
 
 #OHP 
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://${modyaaaa}/setup/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 
 #Cert
 apt install socat -y
-wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cert.sh && chmod +x cert.sh && ./cert.sh
+wget https://${modyaaaaa}/addon/cert.sh && chmod +x cert.sh && ./cert.sh
 
 #Warna
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Downloading extension !!"
 sleep 1
-apt install lolcat -y
-apt install toilet - y
 
 cd /usr/bin
 wget -O portovpn "https://raw.githubusercontent.com/Manpokr/mon/main/port/portovpn.sh"
@@ -242,7 +253,6 @@ rm -f /root/sodosok.sh
 rm -f /root/ssh-vpn.sh
 rm -f /root/wg.sh
 rm -f /root/ssr.sh
-rm -f /etc/ipsec.sh
 rm -f /root/set-br.sh
 rm -f /root/ohp.sh
 rm -f /root/ws.sh
