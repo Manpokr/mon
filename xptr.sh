@@ -2,16 +2,30 @@
 IP=$(wget -qO- ipinfo.io/ip);
 hariini=`date +%d-%m-%Y`
 
-data=( `cat /etc/xray/trojan.json | grep '^#&#' | cut -d ' ' -f 2`);
-now=`date +"%Y-%m-%d"`
-for user in "${data[@]}"
-do
-exp=$(grep -w "^#&# $user" "/etc/xray/trojan.json" | cut -d ' ' -f 3)
-d1=$(date -d "$exp" +%s)
-d2=$(date -d "$now" +%s)
-exp2=$(( (d1 - d2) / 86400 ))
-if [[ "$exp2" = "0" ]]; then
-sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojan.json
-fi
-done
-systemctl restart x-tr
+apt install msmtp-mta ca-certificates bsd-mailx -y
+cat > /etc/msmtprc << EOF
+defaults
+port 25
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+auth on
+logfile        ~/.msmtp.log
+# akun smpt
+account        smtptest
+host           smtp.gmail.com
+port           587
+from           smtptest - VPS Services
+user           smtp5313@gmail.com
+password       wgrbymeckwjjnpht
+account default : smtptest
+EOF
+
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $2}')
+echo "
+━━━━━━━━━━━━━━━━━━━━━
+Client Installation Data
+━━━━━━━━━━━━━━━━━━━━━
+Username : $Name
+IP       : $MYIP
+━━━━━━━━━━━━━━━━━━━━━" | mail -s "Client Installation Data" smtp5313@gmail.com 
