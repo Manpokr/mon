@@ -90,16 +90,15 @@ Tanggal : $date
 sleep 1
 clear
 echo -e " =============================="
-echo -e "         Autobackup Data       "
+echo -e "      Autobackup Data $sts     "
 echo -e " =============================="
-echo -e " Status $sts"
 echo -e "  1. Start Autobackup"
 echo -e "  2. Stop Autobackup"
 echo -e "  3. Tukar Email Penerima"
 echo -e "  4. Tukar Email Pengirim"
 echo -e "  5. Test Hantar Email"
 echo -e ""
-echo -e " Press CTRL+C to return"
+echo -e " Press CTRL+C to exit"
 echo -e ""
 echo -e " =============================="
 read -rp " Please Enter The Correct Number : " -e num
