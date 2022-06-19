@@ -4,6 +4,10 @@ green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- icanhazip.com);
 
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#########################
+
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[ON]${Font_color_suffix}"
 Error="${Red_font_prefix}[OFF]${Font_color_suffix}"
@@ -92,11 +96,11 @@ clear
 echo -e " =============================="
 echo -e "      Autobackup Data $sts     "
 echo -e " =============================="
-echo -e "  1. Start Autobackup"
-echo -e "  2. Stop Autobackup"
-echo -e "  3. Tukar Email Penerima"
-echo -e "  4. Tukar Email Pengirim"
-echo -e "  5. Test Hantar Email"
+echo -e "  [•1] Start Autobackup"
+echo -e "  [•2] Stop Autobackup"
+echo -e "  [•3] Tukar Email Penerima"
+echo -e "  [•4] Tukar Email Pengirim"
+echo -e "  [•5] Test Hantar Email"
 echo -e ""
 echo -e " Press CTRL+C to exit"
 echo -e ""
