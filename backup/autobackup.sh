@@ -2,6 +2,7 @@
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
+LIGHT='\e[0;37m'
 MYIP=$(wget -qO- icanhazip.com);
 
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
@@ -109,9 +110,9 @@ Tanggal : $date
 }
 sleep 1
 clear
-echo -e " =============================="
-echo -e "      Autobackup Data $sts     "
-echo -e " =============================="
+echo -e " \e[0;37m==============================\e[0m"
+echo -e "      \e[0;37mAutobackup Data\e[0m $sts"
+echo -e " \e[0;37m==============================\e[0m"
 echo -e "  [•1] Start Autobackup"
 echo -e "  [•2] Stop Autobackup"
 echo -e "  [•3] Tukar Email Penerima"
@@ -120,7 +121,7 @@ echo -e "  [•5] Test Hantar Email"
 echo -e ""
 echo -e " Press CTRL+C to exit"
 echo -e ""
-echo -e " =============================="
+echo -e " \e[0;37m==============================\e[0m"
 read -rp " Please Enter The Correct Number : " -e num
 if [[ "$num" = "1" ]]; then
 start
