@@ -47,9 +47,9 @@ echo -e ""
 case $opt in
 1) clear ; addhost ; exit ;;
 2) clear ; changeport ; exit ;;
-3) clear ; backup ; exit ;; #set.br
+3) clear ; autobackup ; exit ;; #set.br
 4) clear ; backup ; exit ;; #set.br
-5) clear ; backup-info ; exit ;; #set.br
+5) clear ; bckp ; exit ;; #set.br
 6) clear ; restore ; exit ;; #set.br
 7) clear ; wbmn ; exit ;;
 8) clear ; limitspeed ; exit ;; #set.br
