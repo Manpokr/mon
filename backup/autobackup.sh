@@ -46,6 +46,48 @@ clear
 echo " Autobackup Has Been Stopped"
 exit 0
 }
+function gantipenerima() {
+rm -rf /home/email
+echo "Please enter your email"
+read -rp "Email : " -e email
+cat <<EOF>>/home/email
+$email
+EOF
+}
+function gantipengirim() {
+echo "Please enter your email"
+read -rp "Email : " -e email
+echo "Please enter your Password email"
+read -rp "Password : " -e pwdd
+rm -rf /etc/msmtprc
+cat<<EOF>>/etc/msmtprc
+defaults
+tls on
+tls_starttls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+account default
+host smtp.gmail.com
+port 587
+auth on
+user $email
+from $email
+password $pwdd
+logfile ~/.msmtp.log
+EOF
+}
+function testemail() {
+email=$(cat /home/email)
+if [[ "$email" = "" ]]; then
+start
+fi
+email=$(cat /home/email)
+echo -e "
+Ini adalah isi email percobaaan hantar email dari vps
+IP VPS  : $IP
+Tanggal : $date
+" | mail -s "Percobaan Menghantar Email" $email
+}
+sleep 1
 clear
 echo -e " =============================="
 echo -e "         Autobackup Data       "
@@ -53,14 +95,26 @@ echo -e " =============================="
 echo -e " Status $sts"
 echo -e "  1. Start Autobackup"
 echo -e "  2. Stop Autobackup"
+echo -e "  3. Tukar Email Penerima"
+echo -e "  4. Tukar Email Pengirim"
+echo -e "  5. Test Hantar Email"
+echo -e ""
 echo -e " Press CTRL+C to return"
+echo -e ""
+echo -e " =============================="
 read -rp " Please Enter The Correct Number : " -e num
 if [[ "$num" = "1" ]]; then
 start
 elif [[ "$num" = "2" ]]; then
 stop
+elif [[ "$num" = "3" ]]; then
+gantipenerima
+elif [[ "$num" = "4" ]]; then
+gantipengirim
+elif [[ "$num" = "5" ]]; then
+testemail
 else
 clear
-echo " You Entered The Wrong Number"
-menu
+echo " Boh Salah Number"
+backup
 fi
