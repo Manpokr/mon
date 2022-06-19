@@ -100,12 +100,41 @@ echo "Script Already Installed"
 exit 0
 fi
 
-
-echo ""
-echo -e "[ ${green}INFO${NC} ] Current domain"
 mkdir /var/lib/Manpokr;
 echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
+
+clear
+apt install msmtp-mta ca-certificates bsd-mailx -y
+cat > /etc/msmtprc << EOF
+defaults
+port 587
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+auth on
+logfile        ~/.msmtp.log
+# akun smpt
+account        smtptest
+host           smtp.gmail.com
+port           587
+from           smtp5313@gmail.com
+user           smtp5313@gmail.com
+password       wgrbymeckwjjnpht
+account default : smtptest
+EOF
+
+MYIP=$(curl -sS ipv4.icanhazip.com)
+Name=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $2}')
+echo "
+━━━━━━━━━━━━━━━━━━━━━
+Client Installation Data
+━━━━━━━━━━━━━━━━━━━━━
+Username : $Name
+IP       : $MYIP
+━━━━━━━━━━━━━━━━━━━━━" | mail -s "Client Installation Data" smtp5313@gmail.com 
+
+echo ""
+echo -e "[ ${green}INFO${NC} ] Current domain"
 wget https://raw.githubusercontent.com/Manpokr/mon/main/addon/cf.sh && chmod +x cf.sh && ./cf.sh
 
 #SSH & OPenVPN
