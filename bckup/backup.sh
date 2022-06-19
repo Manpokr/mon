@@ -28,6 +28,7 @@ clear
 echo "Mohon Menunggu , Proses Backup sedang berlangsung !!"
 rm -rf /root/backup
 mkdir /root/backup
+
 cp /etc/passwd backup/
 cp /etc/group backup/
 cp /etc/shadow backup/
@@ -37,9 +38,9 @@ cp /etc/ppp/chap-secrets backup/chap-secrets
 cp /etc/ipsec.d/passwd backup/passwd1
 cp /etc/shadowsocks-libev/akun.conf backup/ss.conf
 cp -r /var/lib/crot/ backup/crot
-cp -r /home/sstp backup/sstp
 cp -r /etc/xray backup/xray
-cp -r /etc/trojan-go backup/trojan-go
+cp -r /etc/v2ray backup/v2ray
+cp /etc/crontab backup/crontab
 cp -r /usr/local/shadowsocksr/ backup/shadowsocksr
 cp -r /home/vps/public_html backup/public_html
 cd /root
