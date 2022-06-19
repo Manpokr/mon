@@ -16,6 +16,7 @@ $email
 EOF
 fi
 
+date=$(date +"%Y-%m-%d")
 clear
 echo Starting Backup Procces...
 rm -rf /root/backup
@@ -41,7 +42,6 @@ url=$(rclone link smtp:backup/$IP-$date.zip)
 id=(`echo $url | grep '^https' | cut -d'=' -f2`)
 link="https://drive.google.com/u/4/uc?id=${id}&export=download"
 domain=$(cat /etc/xray/domain)
-date=$(date +"%Y-%m-%d")
 isp=$(curl -s ipinfo.io/org)
 hostname=$(hostname)
 clear
