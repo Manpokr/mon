@@ -26,9 +26,8 @@ cp /etc/group backup/
 cp /etc/shadow backup/
 cp /etc/gshadow backup/
 cp -r /etc/wireguard backup/wireguard
-cp /etc/ppp/chap-secrets backup/chap-secrets
 cp /etc/shadowsocks-libev/akun.conf backup/ss.conf
-cp -r /var/lib/manpokr/ backup/manpokr
+cp -r /var/lib/Manpokr/ backup/Manpokr
 cp -r /etc/v2ray backup/v2ray
 cp -r /etc/xray backup/xray
 cp -r /etc/trojan backup/trojan
