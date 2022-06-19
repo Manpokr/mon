@@ -2,19 +2,25 @@
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
+
 MYIP=$(wget -qO- icanhazip.com);
-
+date=$(date +"%Y-%m-%d")
 IP=$(wget -qO- icanhazip.com);
+clear
+email=$(cat /home/email)
+if [[ "$email" = "" ]]; then
+echo "Masukkan Email Untuk Menerima Backup"
+read -rp "Email : " -e email
+cat <<EOF>>/home/email
+$email
+EOF
+fi
 
 clear
-echo " Enter Your Email To Receive Message"
-read -rp " Email: " -e email
-sleep 1
-echo Creating Directory...
-mkdir /root/backup
-sleep 1
 echo Starting Backup Procces...
-clear
+rm -rf /root/backup
+mkdir /root/backup
+
 cp /etc/passwd backup/
 cp /etc/group backup/
 cp /etc/shadow backup/
@@ -63,4 +69,4 @@ Tanggal       = $date
 Link Backup   = $link
 ==================================
 "
-echo "Please Check Your Email Inbox / Spam To Check Your Email"
+echo "Please Check Your $email Inbox / Spam To Check Your Email"
