@@ -20,7 +20,6 @@ cp group /etc/
 cp shadow /etc/
 cp gshadow /etc/
 cp -r wireguard /etc/
-cp chap-secrets /etc/ppp/
 cp ss.conf /etc/shadowsocks-libev/ss.conf
 cp -r Manpokr /var/lib/
 cp -r xray /etc/
