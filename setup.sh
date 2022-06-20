@@ -121,7 +121,6 @@ exit 0
 fi
 
 mkdir /var/lib/Manpokr;
-echo "IP=" >> /var/lib/Manpokr/ipvps.conf
 echo "IP=$( curl -s ipinfo.io/ip)" >> /var/lib/Manpokr/ipvps.conf
 
 clear
