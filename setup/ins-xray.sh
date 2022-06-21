@@ -5,6 +5,8 @@
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
+
+# Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
@@ -17,11 +19,14 @@ rm -f ins-xray.sh
 exit 0
 fi  
 clear
+
 echo "Xray Core"
 echo "Progress..."
 domain=$(cat /etc/xray/domain)
 
 # // Make Main Directory
+sleep 1
+echo -e "[ ${green}INFO$NC ] Make Main Directory"
 mkdir -p /usr/local/xray/
 
 # // Installation XRay Core
@@ -47,6 +52,8 @@ echo -e "[ ${green}INFO$NC ] Make Folder"
 mkdir -p /etc/xray/
 chmod 775 /etc/xray/
 
+sleep 1
+echo -e "[ ${green}INFO$NC ] Copy System ..."
 
 cat > /etc/systemd/system/xr-vm-tls.service << EOF
 [Unit]
@@ -1117,6 +1124,8 @@ systemctl restart trojangrpc
 systemctl enable trojanxtls
 systemctl restart trojanxtls
 
+sleep 1
+echo -e "[ ${green}INFO$NC ] Downloading File ..."
 cd /usr/bin
 
 wget -O addxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxv2ray.sh"
@@ -1196,5 +1205,5 @@ yellow "xray/trojan"
 
 rm -f ins-xray.sh
 
-
+clear
 
