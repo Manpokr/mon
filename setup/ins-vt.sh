@@ -20,14 +20,17 @@ domain=$(cat /etc/v2ray/domain)
 apt-get install netfilter-persistent -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
+
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting ntpdate"
 ntpdate pool.ntp.org
 apt -y install chrony
 timedatectl set-ntp true
+
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable chronyd"
 systemctl enable chronyd && systemctl restart chronyd
+
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable chrony"
 systemctl enable chrony && systemctl restart chrony
@@ -48,6 +51,9 @@ sleep 1
 echo -e "[ ${green}INFO$NC ] Setting config v2ray/vmess"
 service squid start
 uuid=$(cat /proc/sys/kernel/random/uuid)
+
+sleep 1
+echo -e "[ ${green}INFO$NC ] Copy Json File"
 cat> /etc/v2ray/config.json << END
 {
   "log": {
@@ -466,6 +472,7 @@ cat > /etc/trojan/config.json << END
     }
 }
 END
+
 cat > /etc/systemd/system/trojan.service << END
 [Unit]
 Description=Trojan
@@ -483,6 +490,7 @@ END
 cat > /etc/trojan/uuid.txt << END
 $uuid
 END
+
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
@@ -497,6 +505,7 @@ iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
+
 sleep 1
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
@@ -510,6 +519,9 @@ systemctl restart trojan
 systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
+
+sleep 1
+echo -e "[ ${green}INFO$NC ] Downloading..."
 cd /usr/bin
 wget -O addvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addvmess.sh"
 wget -O addvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addvless.sh"
@@ -549,3 +561,5 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "V2Ray/Vmess"
 yellow "V2Ray/Vless"
 yellow "V2Ray/Trojan"
+
+clear
