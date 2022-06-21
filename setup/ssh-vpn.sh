@@ -156,10 +156,8 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 curl https://raw.githubusercontent.com/Manpokr/mon/main/addon/nginx.conf > /etc/nginx/nginx.conf
 curl https://raw.githubusercontent.com/Manpokr/mon/main/addon/vps.conf > /etc/nginx/conf.d/vps.conf
-
-#sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
-#useradd -m vps;
-
+sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
+useradd -m vps;
 mkdir -p /home/vps/public_html
 echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
