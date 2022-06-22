@@ -147,10 +147,10 @@ echo "neofetch" >> .profile
 # install webserver
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install nginx" 
-cd
-apt -y install nginx
-cd
-#apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
+#cd
+#apt -y install nginx
+#cd
+apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
@@ -432,7 +432,7 @@ cd
 apt autoclean -y
 apt -y remove --purge unscd
 apt-get -y --purge remove samba*;
-apt-get -y --purge remove apache2*;
+#apt-get -y --purge remove apache2*;
 apt-get -y --purge remove bind9*;
 apt-get -y remove sendmail*
 apt autoremove -y
