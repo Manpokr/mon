@@ -147,11 +147,11 @@ echo "neofetch" >> .profile
 # install webserver
 sleep 1
 echo -e "[ ${green}INFO$NC ] Install nginx" 
+cd
+apt -y install nginx
+cd
+#apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 #cd
-#apt -y install nginx
-cd
-apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
-cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 curl https://raw.githubusercontent.com/Manpokr/mon/main/addon/nginx.conf > /etc/nginx/nginx.conf
