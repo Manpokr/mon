@@ -64,7 +64,7 @@ elif [[ "$num" = "2" ]]; then
 stop
 else
 clear
-echo " You Entered The Wrong Number"
-menu
+echo " Boh salah tekan "
+limitspeed
 fi
 
