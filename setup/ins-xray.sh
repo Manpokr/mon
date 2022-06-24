@@ -395,7 +395,7 @@ cat > /etc/xray/vlesstls.json <<END
   },
   "inbounds": [
     {
-      "port": 6565,
+      "port": 2083,
       "protocol": "vless",
       "settings": {
         "clients": [
