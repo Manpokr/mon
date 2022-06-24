@@ -20,6 +20,8 @@ exit 0
 fi  
 clear
 
+timedatectl set-timezone Asia/Kuala_Lumpur
+date
 echo "Xray Core"
 echo "Progress..."
 domain=$(cat /etc/xray/domain)
@@ -27,30 +29,54 @@ domain=$(cat /etc/xray/domain)
 # // Make Main Directory
 sleep 1
 echo -e "[ ${green}INFO$NC ] Make Main Directory"
-mkdir -p /usr/local/xray/
+#mkdir -p /usr/local/xray/
+
+# / / Ambil Xray Core Version Terbaru
+latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
+
+# / / Installation Xray Core
+xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
+
+# / / Make Main Directory
+mkdir -p /usr/bin/xray
+mkdir -p /etc/xray
+
+# / / Unzip Xray Linux 64
+cd `mktemp -d`
+curl -sL "$xraycore_link" -o xray.zip
+unzip -q xray.zip && rm -rf xray.zip
+mv xray /usr/local/bin/xray
+chmod +x /usr/local/bin/xray
+
+# Make Folder XRay
+mkdir -p /var/log/xray/
+
+
+
+
 
 # // Installation XRay Core
-sleep 1
-echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
-wget -q -O /usr/local/xray/xray "https://raw.githubusercontent.com/Manpokr/mon/main/core/xray" 
-rm -f xray
-sleep 1
+#sleep 1
+#echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
+#wget -q -O /usr/local/xray/xray "https://raw.githubusercontent.com/Manpokr/mon/main/core/xray" 
+#rm -f xray
+#sleep 1
 
-echo -e "[ ${green}INFO$NC ] Downloading & Installing geosite"
-wget -q -O /usr/local/xray/geosite.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geosite.dat"
-rm -f geosite.dat
-sleep 1
+#echo -e "[ ${green}INFO$NC ] Downloading & Installing geosite"
+#wget -q -O /usr/local/xray/geosite.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geosite.dat"
+#rm -f geosite.dat
+#sleep 1
 
-echo -e "[ ${green}INFO$NC ] Downloading & Installing geoip"
-wget -q -O /usr/local/xray/geoip.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geoip.dat"
-chmod +x /usr/local/xray/xray
-rm -f geoip.dat
+#cho -e "[ ${green}INFO$NC ] Downloading & Installing geoip"
+#wget -q -O /usr/local/xray/geoip.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geoip.dat"
+#chmod +x /usr/local/xray/xray
+#rm -f geoip.dat
 sleep 1
 
 # // Make XRay Mini Root Folder
 echo -e "[ ${green}INFO$NC ] Make Folder"
-mkdir -p /etc/xray/
-chmod 775 /etc/xray/
+#mkdir -p /etc/xray/
+#chmod 775 /etc/xray/
 
 sleep 1
 echo -e "[ ${green}INFO$NC ] Copy System ..."
@@ -200,9 +226,9 @@ WantedBy=multi-user.target
 EOF
 
 echo -e "[ ${green}INFO$NC ] Downloading & Installing Plugin Xray"
-wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/plugin-xray.sh && chmod +x plugin-xray.sh && ./plugin-xray.sh
-rm -f /root/plugin-xray.sh
-sleep 1
+#wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/plugin-xray.sh && chmod +x plugin-xray.sh && ./plugin-xray.sh
+#rm -f /root/plugin-xray.sh
+#sleep 1
 
 echo -e "[ ${green}INFO$NC ] Setting config xray/vmess"
 service squid start
