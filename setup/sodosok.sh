@@ -3,7 +3,6 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
 
 clear
 source /etc/os-release
@@ -106,3 +105,6 @@ chmod +x renewss
 chmod +x trialss
 cd
 rm -f /root/sodosok.sh
+
+# // End
+clear
