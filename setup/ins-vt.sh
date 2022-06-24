@@ -15,45 +15,37 @@ exit 0
 fi    
 clear
 
-#V2Ray Core
+# // V2Ray Core
 domain=$(cat /etc/v2ray/domain)
 apt-get install netfilter-persistent -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
-
-sleep 1
-echo -e "[ ${green}INFO$NC ] Setting ntpdate"
 ntpdate pool.ntp.org
 apt -y install chrony
 timedatectl set-ntp true
 
-sleep 1
-echo -e "[ ${green}INFO$NC ] Enable chronyd"
+# // Enabled Chronyd
 systemctl enable chronyd && systemctl restart chronyd
-
-sleep 1
-echo -e "[ ${green}INFO$NC ] Enable chrony"
 systemctl enable chrony && systemctl restart chrony
+
+# // Time Asia
 timedatectl set-timezone Asia/Kuala_Lumpur
 chronyc sourcestats -v
 chronyc tracking -v
 date
 root
-# install v2ray
-sleep 1
-echo -e "[ ${green}INFO$NC ] Downloading & Installing v2ray core"
 
+# // Install V2ray
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
+
+# // Make Trojan Folder
 mkdir -p /etc/trojan
 bash -c "$(wget -q -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
-sleep 1
-echo -e "[ ${green}INFO$NC ] Setting config v2ray/vmess"
+
+# // Json File
 service squid start
 uuid=$(cat /proc/sys/kernel/random/uuid)
-
-sleep 1
-echo -e "[ ${green}INFO$NC ] Copy Json File"
 cat> /etc/v2ray/config.json << END
 {
   "log": {
@@ -63,7 +55,7 @@ cat> /etc/v2ray/config.json << END
   },
   "inbounds": [
     {
-      "port": 342,
+      "port": 8443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -160,7 +152,7 @@ cat> /etc/v2ray/none.json << END
   },
   "inbounds": [
     {
-      "port": 982,
+      "port": 8445,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -248,7 +240,7 @@ cat> /etc/v2ray/vless.json << END
   },
   "inbounds": [
     {
-      "port": 2083,
+      "port": 8443,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -344,7 +336,7 @@ cat> /etc/v2ray/vnone.json << END
   },
   "inbounds": [
     {
-      "port": 8889,
+      "port": 8445,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -491,23 +483,19 @@ cat > /etc/trojan/uuid.txt << END
 $uuid
 END
 
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
+# // Iptables
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8880 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8889 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8445 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8445 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
-sleep 1
-echo -e "$yell[SERVICE]$NC Restart All service"
+# // Restart V2ray
 systemctl daemon-reload
 systemctl enable v2ray@none.service
 systemctl start v2ray@none.service
@@ -520,9 +508,9 @@ systemctl enable trojan
 systemctl restart v2ray
 systemctl enable v2ray
 
-sleep 1
-echo -e "[ ${green}INFO$NC ] Downloading..."
+# // Download File
 cd /usr/bin
+
 wget -O addvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addvmess.sh"
 wget -O addvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addvless.sh"
 wget -O addtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addtrojan.sh"
@@ -554,12 +542,9 @@ chmod +x trialvmess
 chmod +x trialvless
 chmod +x trialtrojan
 cd
-rm -f ins-vt.sh
 
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-yellow "V2Ray/Vmess"
-yellow "V2Ray/Vless"
-yellow "V2Ray/Trojan"
-
+yellow "V2Ray"
+rm -f ins-vt.sh
 clear
