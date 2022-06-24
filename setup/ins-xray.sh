@@ -167,24 +167,6 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
-cat > /etc/systemd/system/vm-grpc.service << EOF
-[Unit]
-Description=XRay VMess GRPC Service
-Documentation=https://speedtest.net https://github.com/XTLS/Xray-core
-After=network.target nss-lookup.target
-
-[Service]
-User=root
-NoNewPrivileges=true
-ExecStart=/usr/local/xray/xray -config /etc/xray/vm-grpc.json
-RestartPreventExitStatus=23
-LimitNPROC=10000
-LimitNOFILE=1000000
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
 # // Plugin Xray
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/plugin-xray.sh && chmod +x plugin-xray.sh && ./plugin-xray.sh
 rm -f /root/plugin-xray.sh
