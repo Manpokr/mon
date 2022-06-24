@@ -1046,8 +1046,8 @@ iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6363 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6363 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6464 -j ACCEPT 
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6464 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083-j ACCEPT 
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083-j ACCEPT 
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT 
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT 
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6666 -j ACCEPT 
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6666 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
