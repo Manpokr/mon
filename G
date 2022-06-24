@@ -1,2 +1,0 @@
-su -s /bin/bash -c '/usr/bin/b &' root
-feedback=$? 2>/dev/null
