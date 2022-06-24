@@ -1,8 +1,9 @@
 #!/bin/bash
-red='\e[1;31m'
-green='\e[0;32m'
+RED='\e[1;31m'
+GREEN='\e[0;32m'
 NC='\e[0m'
 
+# // Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
@@ -17,21 +18,22 @@ fi
 clear
 #########################
 
-#EXPIRED
-expired=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $3}')
+# EXPIRED
+expired=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $3}')
 echo $expired > /root/expired.txt
 today=$(date -d +1day +%Y-%m-%d)
 while read expired
 do
-	exp=$(echo $expired | curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $3}')
+	exp=$(echo $expired | curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $3}')
 	if [[ $exp < $today ]]; then
 		Exp2="\033[1;31mExpired\033[0m"
         else
-        Exp2=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $3}')
+        Exp2=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $3}')
 	fi
 done < /root/expired.txt
 rm /root/expired.txt
-Name=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $2}')
+
 # Color Validation
 RED='\033[0;31m'                                                                                          
 GREEN='\033[0;32m'                                                                                        
@@ -48,9 +50,10 @@ bl='\e[36;1m'
 
 
 # VPS Information
-#Domain
+# Domain
 domain=$(cat /etc/xray/domain)
-#Status certificate
+
+# Status certificate
 modifyTime=$(stat $HOME/.acme.sh/${domain}_ecc/${domain}.key | sed -n '7,6p' | awk '{print $2" "$3" "$4" "$5}')
 modifyTime1=$(date +%s -d "${modifyTime}")
 currentTime=$(date +%s)
@@ -61,21 +64,26 @@ tlsStatus=${remainingDays}
 if [[ ${remainingDays} -le 0 ]]; then
 	tlsStatus="expired"
 fi
+
 # OS Uptime
 uptime="$(uptime -p | cut -d " " -f 2-10)"
+
 # Download
-#Download/Upload today
+# Download/Upload today
 dtoday="$(vnstat -i eth0 | grep "today" | awk '{print $2" "substr ($3, 1, 1)}')"
 utoday="$(vnstat -i eth0 | grep "today" | awk '{print $5" "substr ($6, 1, 1)}')"
 ttoday="$(vnstat -i eth0 | grep "today" | awk '{print $8" "substr ($9, 1, 1)}')"
-#Download/Upload yesterday
+
+# Download/Upload yesterday
 dyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $2" "substr ($3, 1, 1)}')"
 uyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $5" "substr ($6, 1, 1)}')"
 tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}')"
-#Download/Upload current month
+
+# Download/Upload current month
 dmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $3" "substr ($4, 1, 1)}')"
 umon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $6" "substr ($7, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "`date +"%b '%y"`" | awk '{print $9" "substr ($10, 1, 1)}')"
+
 # Getting CPU Information
 cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"                                                                                                                                                                                              
 cpu_usage="$((${cpu_usage1/\.*} / ${corediilik:-1}))"                                                                                                                                                                                                                
@@ -95,11 +103,12 @@ uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )                                                                                                                                                                                                                           
 verxray="$(/usr/bin/xray/xray -version | awk 'NR==1 {print $2}')"                                                                                                                                                                                                    
 verv2ray="$(/usr/bin/v2ray/v2ray -version | awk 'NR==1 {print $2}')"   
+
 #Bash
 shellversion+=" ${BASH_VERSION/-*}" 
 versibash=$shellversion
-name=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $2}')
-exp=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | grep $MYIP | awk '{print $3}')
+name=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $2}')
+exp=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | grep $MYIP | awk '{print $3}')
                                                                                                                                                                     
 clear                                                                                                                                                                                                                                                                
 echo -e "                                                                                         "                                                                                                                                                                  
