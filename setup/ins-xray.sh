@@ -1162,6 +1162,7 @@ chmod +x trialxvmess
 chmod +x trialgrpc
 chmod +x trialtrxtls
 chmod +x trialtrgrpc
+cd
 
 # // End
 sleep 1
