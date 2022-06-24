@@ -2,9 +2,8 @@
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-clear
+
+###################
 # Ohp Script
 # My Telegram : https://t.me/Manternet
 # ==========================================
@@ -20,7 +19,6 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
 
 # Download File Ohp
 wget https://github.com/lfasmpao/open-http-puncher/releases/download/0.1/ohpserver-linux32.zip
@@ -147,22 +145,24 @@ sleep 0.5
 printf 'CHECKING LISTENING PORT\n'
 if [ -n "$(ss -tupln | grep ohpserver | grep -w 8181)" ]
 then
-	echo 'SSH OHP Redirection Running'
+	echo '${CYAN}SSH OHP Redirection Running${NC}'
 else
-	echo 'SSH OHP Redirection Not Found, please check manually'
+	echo '${RED}SSH OHP Redirection Not Found, please check manually${NC}'
 fi
 sleep 0.5
 if [ -n "$(ss -tupln | grep ohpserver | grep -w 8282)" ]
 then
-	echo 'Dropbear OHP Redirection Running'
+	echo '${CYAN}Dropbear OHP Redirection Running${NC}'
 else
-	echo 'Dropbear OHP Redirection Not Found, please check manually'
+	echo '${RED}Dropbear OHP Redirection Not Found, please check manually${NC}'
 fi
 sleep 0.5
 if [ -n "$(ss -tupln | grep ohpserver | grep -w 8383)" ]
 then
-	echo 'OpenVPN OHP Redirection Running'
+	echo '${CYAN}OpenVPN OHP Redirection Running${NC}'
 else
-	echo 'OpenVPN OHP Redirection Not Found, please check manually'
+	echo '${RED}OpenVPN OHP Redirection Not Found, please check manually${NC}'
 fi
 sleep 0.5
+# // End
+clear
