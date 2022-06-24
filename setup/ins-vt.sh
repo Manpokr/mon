@@ -548,6 +548,7 @@ chmod +x trialvless
 chmod +x trialtrojan
 cd
 
+# // End
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 yellow "V2Ray"
