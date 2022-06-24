@@ -6,7 +6,7 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 
-# Getting
+# // Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
@@ -20,47 +20,27 @@ exit 0
 fi  
 clear
 
-timedatectl set-timezone Asia/Kuala_Lumpur
-date
+# // Setup
 echo "Xray Core"
 echo "Progress..."
 domain=$(cat /etc/xray/domain)
+timedatectl set-timezone Asia/Kuala_Lumpur
+date
 
 # // Make Main Directory
-sleep 1
-echo -e "[ ${green}INFO$NC ] Make Main Directory"
 mkdir -p /usr/local/xray/
 
 # // Installation XRay Core
-sleep 1
-echo -e "[ ${green}INFO$NC ] Downloading & Installing xray core"
-
 wget -q -O /usr/local/xray/xray "https://raw.githubusercontent.com/Manpokr/mon/main/core/xray" 
-rm -f xray
-sleep 1
-
-echo -e "[ ${green}INFO$NC ] Downloading & Installing geosite"
-
 wget -q -O /usr/local/xray/geosite.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geosite.dat"
-rm -f geosite.dat
-sleep 1
-
-cho -e "[ ${green}INFO$NC ] Downloading & Installing geoip"
-
 wget -q -O /usr/local/xray/geoip.dat "https://raw.githubusercontent.com/Manpokr/mon/main/addon/geoip.dat"
 chmod +x /usr/local/xray/xray
-rm -f geoip.dat
-sleep 1
 
 # // Make XRay Mini Root Folder
-echo -e "[ ${green}INFO$NC ] Make Folder"
-
 mkdir -p /etc/xray/
 chmod 775 /etc/xray/
 
-sleep 1
-echo -e "[ ${green}INFO$NC ] Copy System ..."
-
+# // Systemd Xray
 cat > /etc/systemd/system/xr-vm-tls.service << EOF
 [Unit]
 Description=XRay TLS Service
@@ -205,13 +185,11 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
-echo -e "[ ${green}INFO$NC ] Downloading & Installing Plugin Xray"
-
+# // Plugin Xray
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/plugin-xray.sh && chmod +x plugin-xray.sh && ./plugin-xray.sh
 rm -f /root/plugin-xray.sh
-sleep 1
 
-echo -e "[ ${green}INFO$NC ] Setting config xray/vmess"
+# // Json File Xray
 service squid start
 uuid=$(cat /proc/sys/kernel/random/uuid)
 password="$(tr -dc 'a-z0-9A-Z' </dev/urandom | head -c 16)"
@@ -1005,6 +983,8 @@ cat > /etc/xray/trojanxtls.json << END
 }
 
 END
+
+# // Systemd Xray
 cat > /etc/systemd/system/vmess-grpc.service << EOF
 [Unit]
 Description=XRay VMess GRPC Service
@@ -1077,6 +1057,7 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
+# // Iptables
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6565-j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6565-j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6161 -j ACCEPT
@@ -1106,7 +1087,7 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
-echo -e "$green[SERVICE]$NC Restart Xray Service"
+# // Restart Xray
 systemctl daemon-reload
 systemctl enable xr-vm-tls.service
 systemctl start xr-vm-tls.service
@@ -1131,8 +1112,7 @@ systemctl restart trojangrpc
 systemctl enable trojanxtls
 systemctl restart trojanxtls
 
-sleep 1
-echo -e "[ ${green}INFO$NC ] Downloading File ..."
+# // Download File
 cd /usr/bin
 
 wget -O addxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxv2ray.sh"
@@ -1204,13 +1184,10 @@ chmod +x trialgrpc
 chmod +x trialtrxtls
 chmod +x trialtrgrpc
 
+# // End
 sleep 1
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-yellow "xray/Vmess"
-yellow "xray/Vless"
-yellow "xray/trojan"
-
+yellow "XRAY"
 rm -f ins-xray.sh
-
 clear
 
