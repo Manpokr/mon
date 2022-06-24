@@ -1043,13 +1043,13 @@ EOF
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6565-j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6565-j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6161 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6161 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6262 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6262 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6363 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6363 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6060 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6060 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6161 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6262 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6363 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6464 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6464 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6666 -j ACCEPT
