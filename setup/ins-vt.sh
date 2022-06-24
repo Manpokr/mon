@@ -547,6 +547,7 @@ chmod +x trialvmess
 chmod +x trialvless
 chmod +x trialtrojan
 cd
+echo "#user" > /etc/trojan/akun.conf
 
 # // End
 sleep 1
