@@ -1,9 +1,12 @@
 #!/bin/bash
+# XRay Installation
+# Mod by Manternet
+# ==================================
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
 
-# Getting
+# // Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
@@ -17,11 +20,12 @@ exit 0
 fi
 clear
 
+# // Install
 echo "SSH & Ovpn"
 echo "Progress..."
 sleep 3
 # ==================================================
-# initializing var
+# // Initializing Var
 export DEBIAN_FRONTEND=noninteractive
 MYIP=$(wget -qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
@@ -29,7 +33,7 @@ NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 source /etc/os-release
 ver=$VERSION_ID
 
-#detail nama perusahaan
+# // Detail Nama Perusahaan
 country=MY
 state=Malaysia
 locality=Malaysia
@@ -38,14 +42,14 @@ organizationalunit=infinity
 commonname=localhost
 email=manpokr7@gmail.com
 
-# simple password minimal
+# // Simple Password Minimal
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/Manpokr/mon/main/addon/password"
 chmod +x /etc/pam.d/common-password
 
-# go to root
+# // Go To Root
 cd
 
-# Edit file /etc/systemd/system/rc-local.service
+# // Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
 Description=/etc/rc.local
@@ -61,7 +65,7 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-# nano /etc/rc.local
+# // nano /etc/rc.local
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
 # rc.local
@@ -71,35 +75,29 @@ feedback=$? 2>/dev/null
 exit 0
 END
 
-# Ubah izin akses
+# // Ubah Izin Akses
 chmod +x /etc/rc.local
 
-# enable rc local
-sleep 1
-echo -e "[ ${green}INFO$NC ] Enable system rc local"
-
+# // Enable Rc local
 systemctl enable rc-local
 systemctl start rc-local.service
 
-# disable ipv6
-sleep 1
-echo -e "[ ${green}INFO$NC ] Disable ipv6"
-
+# // Disable Ipv6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-#update
+# // Update
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
 
-# install wget and curl
+# // Install Wget And Curl
 apt -y install wget curl
 apt -y install net-tools
 
-# Install Requirements Tools
+# // Install Requirements Tools
 apt install ruby -y
 apt install python -y
 apt install make -y
@@ -132,24 +130,21 @@ apt install libssl-dev -y
 apt install libssl1.0-dev -y
 apt install dos2unix -y
 
-# set time GMT +8
-sleep 1
-echo -e "[ ${green}INFO$NC ] Set zona local time to Asia/Kuala_Lumpur GMT+7"
-
+# // Set Time GMT +8
 ln -fs /usr/share/zoneinfo/Asia/Kuala_Lumpur /etc/localtime
 
-# set locale
+# // Set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
-# install
+# // Install Fix-Missing
 apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
 echo "clear" >> .profile
 echo "neofetch" >> .profile
 
-# install webserver
+# // Install Webserver
+echo -e ""
+echo -e "[ ${CYAN}INFO$NC ] Install nginx" 
 sleep 1
-echo -e "[ ${green}INFO$NC ] Install nginx" 
-
 cd
 apt -y install nginx
 sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
@@ -170,14 +165,10 @@ wget -O /home/vps/public_html/index.html "https://raw.githubusercontent.com/Manp
 service php7.4-fpm restart
 cd
 
-# install badvpn
+# // Install Badvpn
 cd
-echo -e "[ ${green}INFO$NC ] Installing badvpn for game support..."
-
 wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/Manpokr/mon/main/addon/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
-sleep 1
-echo -e "[ ${green}INFO$NC ] Screen badvpn detected"
 
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -191,16 +182,11 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7600 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7700 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
-
-echo -e "[ ${red}CLOSE$NC ] Closing screen "
-     
-# setting port ssh
+   
+# // Setting Port Ssh
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 
-# install dropbear
-sleep 1
-echo -e "[ ${green}INFO$NC ] Install Dropbear"
-
+# // Install Dropbear
 apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=143/g' /etc/default/dropbear
@@ -209,17 +195,17 @@ echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
 
-# install squid
+# // Install Squid
 cd
 apt -y install squid3
 wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/Manpokr/mon/main/addon/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
-# Install SSLH
+# // Install SSLH
 apt -y install sslh
 rm -f /etc/default/sslh
 
-# Settings SSLH
+# // Settings SSLH
 cat > /etc/default/sslh <<-END
 # Default options for sslh initscript
 # sourced by /etc/init.d/sslh
@@ -242,14 +228,14 @@ DAEMON_OPTS="--user sslh --listen 0.0.0.0:441 --ssh 127.0.0.1:109 --tls 127.0.0.
 
 END
 
-# Restart Service SSLH
+# // Restart Service SSLH
 service sslh restart
 systemctl restart sslh
 /etc/init.d/sslh restart
 /etc/init.d/sslh status
 /etc/init.d/sslh restart
 
-# setting vnstat
+# // Setting Vnstat
 apt -y install vnstat
 /etc/init.d/vnstat restart
 apt -y install libsqlite3-dev
@@ -266,7 +252,7 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-# install stunnel4
+# // Install Stunnel4
 apt install stunnel4 -y
 cat > /etc/stunnel/stunnel.conf <<-END
 cert = /etc/stunnel/stunnel.pem
@@ -283,31 +269,26 @@ connect = 127.0.0.1:441
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194
-#[ws-stunnel]                                                              
-#accept = 444                                                             
-#connect = 127.0.0.1:445
+
 END
 
-# make a certificate
+# // Make A Certificate
 openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
-# konfigurasi stunnel
+# // Konfigurasi Stunnel
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
-#OpenVPN
-sleep 1
-echo -e "[ ${green}INFO$NC ] Install Openvpn"
-
+# // Download OpenVPN
 wget https://raw.githubusercontent.com/Manpokr/mon/main/setup/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
-# install fail2ban
+# // Install Fail2ban
 apt -y install fail2ban
 
-# Instal DDOS Flate
+# // Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
 	echo; echo; echo "Please un-install the previous version first"
 	exit 0
@@ -316,10 +297,6 @@ else
 fi
 clear
 
-sleep 1
-echo -e "[ ${green}INFO$NC ] Install DOS-Deflate"
-sleep 1
-echo -e "[ ${green}INFO$NC ] Downloading source files..."
 echo; echo 'Installing DOS-Deflate 0.6'; echo
 echo; echo -n 'Downloading source files...'
 wget -q -O /usr/local/ddos/ddos.conf http://www.inetbase.com/scripts/ddos/ddos.conf
@@ -339,19 +316,14 @@ echo; echo 'Installation has completed.'
 echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
-# banner /etc/issue.net
-sleep 1
-echo -e "[ ${green}INFO$NC ] Settings banner"
-
+# // Banner /etc/issue.net
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
-# Ganti Banner
+# // Ganti Banner
 wget -O /etc/issue.net "https://raw.githubusercontent.com/Manpokr/mon/main/addon/issue.net"
 
-# blockir torrent
-echo -e "[ ${green}INFO$NC ] Set iptables"
-
+# // Blockir Torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -368,7 +340,7 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
-# download script
+# // Download Script
 cd /usr/bin
 wget -O addhost "https://raw.githubusercontent.com/Manpokr/mon/main/add/addhost.sh"
 wget -O about "https://raw.githubusercontent.com/Manpokr/mon/main/add/about.sh"
@@ -430,7 +402,7 @@ echo "0 5 * * * root clearlog && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 echo "0 0 * * * root delexp" >> /etc/crontab
 
-# remove unnecessary files
+# // Remove Unnecessary Files
 cd
 apt autoclean -y
 apt -y remove --purge unscd
@@ -439,7 +411,8 @@ apt-get -y --purge remove apache2*;
 apt-get -y --purge remove bind9*;
 apt-get -y remove sendmail*
 apt autoremove -y
-# finishing
+
+# // Finishing
 cd
 chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/nginx restart
@@ -453,6 +426,7 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/vnstat restart
 /etc/init.d/fail2ban restart
 /etc/init.d/squid restart
+
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
@@ -470,8 +444,8 @@ rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
 
-# finihsing
-sleep 1
-yellow "SSH & OVPN install successfully"
+# // End
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+yellow"SSH & OVPN install successfully"
 sleep 5
 clear
