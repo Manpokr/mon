@@ -39,7 +39,7 @@ cd .acme.sh
 echo -e "\033[0;32mstarting........\033[m"
 echo -e "Port ${RED}80${NC} Akan di Hentikan Saat Proses install Cert"
 bash acme.sh --set-default-ca --server letsencrypt
-bash acme.sh --issue -d $domain --standalone -k ec-256 --force
+bash acme.sh --issue --dns_cf -d $domain --standalone -k ec-256 --force
 bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
 systemctl start xray.service
 systemctl start v2ray
@@ -50,4 +50,4 @@ echo Done
 sleep 0.5 
 clear
 neofetch
-rm -f certv2ray.sh
+rm -f certv2ray
