@@ -2,8 +2,8 @@
 # XRay Installation
 # Mod by Manternet
 # ==================================
-red='\e[1;31m'
-green='\e[0;32m'
+RED='\e[1;31m'
+GREEN='\e[0;32m'
 NC='\e[0m'
 
 # // Getting
@@ -1040,22 +1040,16 @@ WantedBy=multi-user.target
 EOF
 
 # // Iptables
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6565-j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6565-j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6161 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6161 -j ACCEPT /
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6161 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6262 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6262 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6363 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6363 -j ACCEPT /
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6363 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6060 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6060 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6464 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6464 -j ACCEPT /
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6464 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6666 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6565-j ACCEPT /
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6565-j ACCEPT 
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6666 -j ACCEPT /
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6666 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2089 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2089 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 880 -j ACCEPT
@@ -1064,6 +1058,10 @@ iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2099 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2099 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2088 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2088 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2089 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2089 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 756 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 756 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
@@ -1096,7 +1094,6 @@ systemctl restart trojanxtls
 
 # // Download File
 cd /usr/bin
-
 wget -O addxvmess "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxv2ray.sh"
 wget -O addxvless "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxvless.sh"
 wget -O addxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/add/addxtrojan.sh"
