@@ -24,6 +24,9 @@ clear
 echo "Xray Core"
 echo "Progress..."
 domain=$(cat /etc/xray/domain)
+apt update -y
+apt upgrade  -y
+apt install zip unzip gzip curl wget nano vim -y
 timedatectl set-timezone Asia/Kuala_Lumpur
 date
 
@@ -1166,8 +1169,7 @@ cd
 
 # // End
 sleep 1
-yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-yellow "XRAY"
+echo -e "${RED}XRAY${NC}"
 rm -f ins-xray.sh
 clear
 
