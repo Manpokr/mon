@@ -1168,8 +1168,8 @@ chmod +x trialtrgrpc
 cd
 
 # // End
-sleep 1
-echo -e "${RED}XRAY${NC}"
+sleep 3
+echo -e "${RED}XRay INSTALL DONE${NC}"
 rm -f ins-xray.sh
 clear
 
