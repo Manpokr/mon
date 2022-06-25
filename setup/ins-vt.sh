@@ -550,7 +550,7 @@ echo "#user" > /etc/trojan/akun.conf
 
 # // End
 sleep 1
-yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-yellow "V2Ray"
+echo -e "${RED}V2Ray INSTALL DONE${NC}"
 rm -f ins-vt.sh
+screen
 clear
