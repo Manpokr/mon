@@ -1,5 +1,6 @@
 #!/bin/bash
 # ==================================================
+RED='\e[1;31m'
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
@@ -97,4 +98,6 @@ chmod +x addwg
 chmod +x delwg
 chmod +x renewwg
 cd
+sleep 3
+echo -e "${RED}WG INSTALL DONE${NC}"
 rm -f /root/wg.sh
