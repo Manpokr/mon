@@ -549,8 +549,7 @@ cd
 echo "#user" > /etc/trojan/akun.conf
 
 # // End
-sleep 1
+sleep 3
 echo -e "${RED}V2Ray INSTALL DONE${NC}"
 rm -f ins-vt.sh
-screen
 clear
