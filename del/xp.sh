@@ -85,7 +85,7 @@ sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojan.json
 fi
 done
 systemctl restart x-tr.service
-service cron restart
+
 
 #Autodel xvless 
 data=( `cat /etc/xray/vlesstls.json | grep '^###' | cut -d ' ' -f 2`);
@@ -123,7 +123,7 @@ done
 systemctl restart xr-vm-ntls.service
 systemctl restart xr-vm-tls.service
 systemctl restart xr-vm-mk.service
-service cron restart
+
 
 #Autodel trxtls
 data=( `cat /etc/xray/trojanxtls.json | grep '^#&#' | cut -d ' ' -f 2`);
@@ -139,7 +139,7 @@ sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojanxtls.json
 fi
 done
 systemctl restart trojanxtls.service
-service cron restart
+
 
 #Autodel trgrpc 
 data=( `cat /etc/xray/trojangrpc.json | grep '^#&#' | cut -d ' ' -f 2`);
@@ -155,7 +155,6 @@ sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojangrpc.json
 fi
 done
 systemctl restart trojangrpc.service
-service cron restart
 
 #Autodel grpc
 data=( `cat /etc/xray/vmessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
@@ -226,7 +225,7 @@ fi
 done
 systemctl restart v2ray
 systemctl restart v2ray@none
-service cron restart
+
 
 #Autodel Vtrojan
 data=( `cat /etc/trojan/akun.conf | grep '^###' | cut -d ' ' -f 2`);
