@@ -156,7 +156,7 @@ cat> /etc/v2ray/none.json << END
   },
   "inbounds": [
     {
-      "port": 8445,
+      "port": 8444,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -244,7 +244,7 @@ cat> /etc/v2ray/vless.json << END
   },
   "inbounds": [
     {
-      "port": 8443,
+      "port": 8445,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -340,7 +340,7 @@ cat> /etc/v2ray/vnone.json << END
   },
   "inbounds": [
     {
-      "port": 8445,
+      "port": 8446,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -490,10 +490,14 @@ END
 # // Iptables
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8444 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8444 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8445 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8445 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8446 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8446 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
