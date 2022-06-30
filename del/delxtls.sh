@@ -14,17 +14,17 @@ clear
 
 # // Getting V2Ray Client Data
 CLIENT_001=$(grep -c -E "^### " "/etc/xray/xrayxtls.json")
-echo "    =================================================="
-echo "             LIST VLESS Xtls CLIENT ON THIS VPS"
-echo "    =================================================="
-grep -e "^### " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2-8 | nl -s ') '
+echo "=================================================="
+echo "       LIST VLESS XTLS CLIENT ON THIS VPS"
+echo "=================================================="
+grep -e "^### " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_002} -ge 1 && ${CLIENT_002} -le ${CLIENT_001} ]]; do
 		if [[ ${CLIENT_002} == '1' ]]; then
-                echo "    =================================================="
-			read -rp "    Please Input an Client Number (1-${CLIENT_001}) : " CLIENT_002
+                echo "=================================================="
+			read -rp "Please Input an Client Number (1-${CLIENT_001}) : " CLIENT_002
 		else
-                echo "    =================================================="
-			read -rp "    Please Input an Client Number (1-${CLIENT_001}) : " CLIENT_002
+                echo "=================================================="
+			read -rp "Please Input an Client Number (1-${CLIENT_001}) : " CLIENT_002
 		fi
 	done
 
@@ -40,8 +40,6 @@ systemctl restart xtls.service
 
 # // Clear
 clear
-clear && clear && clear
-clear;clear;clear
 
 # // Successfull
 echo ""
