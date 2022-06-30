@@ -2,14 +2,13 @@
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-MYIP=$(wget -qO- ifconfig.me/ip);
-echo "Checking VPS"
+
 # EDIT IZIN
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-
 MYIP=$(curl -sS ipv4.icanhazip.com)
+echo "Checking VPS"
 clear
 source /var/lib/Manpokr/ipvps.conf
 domain=$(cat /etc/xray/domain)
