@@ -24,16 +24,17 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-tr="$(cat /etc/xray/trojanxtls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')"
+tr="$(cat /etc/xray/trojanxtls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/ //g')"
 user=dev-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 exp=1
+domain=$(cat /etc/xray/domain)
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#trojan-xtls$/a\#&# '"$user $exp"'\
+sed -i '/#trojan-xtls$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/trojanxtls.json
 
 trojanlink0="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#$user"
@@ -43,12 +44,14 @@ trojanlink3="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow
 systemctl restart trojanxtls.service
 service cron restart
 clear
-
-echo -e "======-Xray/TROJAN-XTLS-======"
+echo -e "================================="
+echo -e "          XRAY TR-XTLS          "
+echo -e "================================="
 echo -e "Remarks   : ${user}"
 echo -e "IP/Host   : ${MYIP}"
 echo -e "Domain    : ${domain}"
 echo -e "Subdomain : $dom"
+echo -e "Sni/Bug   : $sni"
 echo -e "Port      : ${tr}"
 echo -e "Key       : ${user}"
 echo -e "Password  : ${uuid}"
@@ -64,4 +67,4 @@ echo -e "=============================="
 echo -e "Created   : $hariini"
 echo -e "Expired   : $exp"
 echo -e "=============================="
-echo -e "Script By Manternet"
+echo -e "ScriptMod By Manternet"
