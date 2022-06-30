@@ -25,11 +25,13 @@ tls=$( cat /etc/v2ray/vless.json | grep port | sed 's/"//g' | sed 's/port//g' | 
 none=$( cat /etc/v2ray/vnone.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g');
 user=dev-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 exp=1
+domain=$(cat /etc/v2ray/domain)
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/v2ray/vless.json
@@ -44,7 +46,10 @@ echo -e "================================="
 echo -e "            V2RAY VLESS          "
 echo -e "================================="
 echo -e "Remarks        : ${user}"
-echo -e "Domain         : ${dom}"
+echo -e "IP/Host        : ${MYIP}"
+echo -e "Domain         : ${domain}"
+echo -e "SubDomain      : ${dom}"
+echo -e "Sni/Bug        : ${sni}"
 echo -e "port TCP       : $tls"
 echo -e "port none TCP  : $none"
 echo -e "id             : ${uuid}"
@@ -56,4 +61,7 @@ echo -e "link TLS       : ${vlesslink2}"
 echo -e "================================="
 echo -e "link TCP       : ${vlesslink1}"
 echo -e "================================="
+echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
+echo -e "================================="
+echo -e "ScriptMod By Manternet"
