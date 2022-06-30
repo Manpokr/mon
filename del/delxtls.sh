@@ -13,11 +13,11 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 clear
 
 # // Getting V2Ray Client Data
-CLIENT_001=$(grep -c -E "^#DEPAN " "/etc/xray/xrayxtls.json")
+CLIENT_001=$(grep -c -E "^### " "/etc/xray/xrayxtls.json")
 echo "    =================================================="
-echo "               LIST VLESS CLIENT ON THIS VPS"
+echo "             LIST VLESS Xtls CLIENT ON THIS VPS"
 echo "    =================================================="
-grep -e "^#DEPAN " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2-8 | nl -s ') '
+grep -e "^### " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2-8 | nl -s ') '
 	until [[ ${CLIENT_002} -ge 1 && ${CLIENT_002} -le ${CLIENT_001} ]]; do
 		if [[ ${CLIENT_002} == '1' ]]; then
                 echo "    =================================================="
@@ -29,14 +29,14 @@ grep -e "^#DEPAN " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2-8 | nl -s ') '
 	done
 
 # // String For Username && Expired Date
-client=$(grep "^#DEPAN " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 4 | sed -n "${CLIENT_002}"p)
-expired=$(grep "^#DEPAN " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 8 | sed -n "${CLIENT_002}"p)
+user=$(grep -E "^### " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_002}"p)                       
+exp=$(grep -E "^### " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_002}"p)
 
 # // Removing Data From Server Configuration
-sed -i "/^#DEPAN Username : $client | Expired : $expired/,/^#BELAKANG Username : $client | Expired : $expired/d" /etc/xray/xrayxtls.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/xrayxtls.json
 
 # // Restarting XRay Service
-systemctl restart xray-mini
+systemctl restart xtls.service
 
 # // Clear
 clear
@@ -44,4 +44,11 @@ clear && clear && clear
 clear;clear;clear
 
 # // Successfull
-echo -e "${OKEY} Username ( ${YELLOW}$client${NC} ) Has Been Removed !"
+echo ""
+echo "================================"
+echo "   Xray/Xtls Account Deleted   "
+echo "================================"
+echo "Username  : $user"
+echo "Expired   : $exp"
+echo "================================"
+echo "ScriptMod By Manternet"
