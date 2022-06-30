@@ -19,6 +19,7 @@ exp=1
 read -p "SNI (bug): " sni 
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/vmesstls.json
@@ -105,4 +106,7 @@ echo -e "Link None TCP  : ${vmesslink2}"
 echo -e "================================="
 echo -e "Link KCP       : ${vmesslink3}"
 echo -e "================================="
+echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
+echo -e "================================="
+echo -e "ScriptMod By Manternet"
