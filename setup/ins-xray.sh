@@ -1161,7 +1161,8 @@ chmod +x renewgrpc
 chmod +x renewtrxtls
 chmod +x renewtrgrpc
 chmod +x trialxvmess
-chmod +x trialxvmess
+chmod +x trialxvless
+chmod +x trialxtrojan
 chmod +x trialgrpc
 chmod +x trialtrxtls
 chmod +x trialtrgrpc
