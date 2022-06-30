@@ -40,8 +40,9 @@ systemctl restart x-tr.service
 trojanlink="trojan://${user}@${dom}:${tr}?sni=$sni#$user"
 service cron restart
 clear
-
-echo -e "======-Xray/TROJAN-======"
+echo -e "=========================="
+echo -e "       Xray/TROJAN"
+echo -e "=========================="
 echo -e "Remarks   : ${user}"
 echo -e "IP/Host   : ${MYIP}"
 echo -e "Domain    : ${domain}"
