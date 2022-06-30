@@ -40,7 +40,7 @@ read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " 
 dom=$sub$domain
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
-sed -i '/#xray-trojan-grpc$/a\#&# '"$user $exp"'\
+sed -i '/#xray-trojan-grpc$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/trojangrpc.json
 
 trojanlink1="trojan://$uuid@$dom:${tr}?mode=gun&security=tls&type=grpc&serviceName=GunService&sni=${sni}#${user}"
@@ -63,3 +63,5 @@ echo -e "Link TR        : ${trojanlink1}"
 echo -e "================================="
 echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
+echo -e "================================="
+echo -e "ScriptMod By Manternet"
