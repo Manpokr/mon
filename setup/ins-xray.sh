@@ -1131,7 +1131,7 @@ wget -O trialxtrojan "https://raw.githubusercontent.com/Manpokr/mon/main/trial/t
 wget -O trialgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialgrpc.sh"
 wget -O trialtrxtls "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialtrxtls.sh"
 wget -O trialtrgrpc "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialtrgrpc.sh"
-
+wget -O trialxtls "https://raw.githubusercontent.com/Manpokr/mon/main/trial/trialxtls.sh"
 chmod +x addxvmess
 chmod +x addxvless
 chmod +x addxtrojan
@@ -1166,6 +1166,7 @@ chmod +x trialxtrojan
 chmod +x trialgrpc
 chmod +x trialtrxtls
 chmod +x trialtrgrpc
+chmod +x trialxtls
 cd
 
 # // End
