@@ -48,5 +48,7 @@ oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
 echo "----------------------------------------"
-echo "Script By Manternet"
+echo "ScriptMod By Manternet"
 rm -rf /tmp/other.txt
+read -p "Press Enter For Back To XRay Menu / CTRL+C To Cancel : "
+menu-xray
