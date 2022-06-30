@@ -49,7 +49,7 @@ systemctl restart xtls.service
 clear                                                                     
 echo ""                                                                   
 echo "==============================="                                    
-echo "  Xray/Xtls  Account Renewed  "                                       
+echo "   Xray/Xtls Account Renewed  "                                       
 echo "==============================="                                    
 echo "Username  : $user"                                                  
 echo "Expired   : $exp4"                                                                                    
