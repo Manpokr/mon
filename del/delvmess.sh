@@ -42,10 +42,10 @@ rm -f /etc/v2ray/$user-tls.json /etc/v2ray/$user-none.json
 systemctl restart v2ray
 systemctl restart v2ray@none
 clear
-echo " V2RAY Account Deleted Successfully"
-echo " =========================="
-echo " Client Name : $user"
-echo " Expired On  : $exp"
-echo " =========================="
-read -p "Press Enter For Back To V2Ray/VMess Menu / CTRL+C To Cancel : "
-menu-v2ray
+echo "=========================="
+echo "   V2RAY Account Deleted "
+echo "=========================="
+echo "Client Name : $user"
+echo "Expired On  : $exp"
+echo "=========================="
+echo "ScriptMod By Manternet"
