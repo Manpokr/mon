@@ -13,7 +13,7 @@ echo "Checking VPS"
 clear
 IP=$( curl -s ipinfo.io/ip );
 uuid=$(cat /etc/trojan/uuid.txt)
-source /var/lib/manpokr/ipvps.conf
+source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 fi
@@ -30,16 +30,21 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 echo -e "### $user $exp" >> /etc/trojan/akun.conf
 systemctl restart trojan
 trojanlink="trojan://${user}@${dom}:${tr}?sni=$sni#$user"
-echo -e "======TROJAN-======"
+clear
+echo -e "=========================="
+echo -e "       V2RAY TROJAN "
+echo -e "=========================="
 echo -e "Remarks   : ${user}"
 echo -e "IP/Host   : ${MYIP}"
 echo -e "Domain    : ${domain}"
 echo -e "Subdomain : $dom"
+echo -e "Sni/Bug   : $sni"
 echo -e "Port      : ${tr}"
 echo -e "Key       : ${user}"
-echo -e "Created   : $hariini"
-echo -e "Expired   : $exp"
 echo -e "=========================="
 echo -e "Link TR  : ${trojanlink}"
 echo -e "=========================="
-echo -e "Script By Manternet"
+echo -e "Created   : $hariini"
+echo -e "Expired   : $exp"
+echo -e "=========================="
+echo -e "ScriptMod By Manternet"
