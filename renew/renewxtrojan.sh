@@ -37,6 +37,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/trojan.json")
 read -p "Expired (Days) : " masaaktif
 user=$(grep -E "^### " "/etc/xray/trojan.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/trojan.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -44,6 +45,7 @@ exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/trojan.json
+
 clear
 echo ""
 echo "================================"
