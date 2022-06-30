@@ -14,7 +14,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -n > /tmp/other.txt
-data=( `cat /etc/xray/trojanxtls.json | grep '^#&#' | cut -d ' ' -f 2`);
+data=( `cat /etc/xray/trojanxtls.json | grep '^###' | cut -d ' ' -f 2`);
 echo "-----------------------------------------";
 echo "------=[ Trojan Xtls User Login ]=-------";
 echo "-----------------------------------------";
