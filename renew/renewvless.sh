@@ -40,6 +40,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/v2ray/vless.json")
 read -p "Expired (days): " masaaktif
 user=$(grep -E "^### " "/etc/v2ray/vless.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/v2ray/vless.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -49,11 +50,13 @@ exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/v2ray/vless.json
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/v2ray/vnone.json
 service cron restart
+
 clear
 echo ""
-echo " VLESS Account Was Successfully Renewed"
-echo " =========================="
-echo " Client Name : $user"
-echo " Expired On  : $exp4"
-echo " =========================="
-echo "Script By Manternet"
+echo "=========================="
+echo "   VLESS Account Renewed"
+echo "=========================="
+echo "Client Name : $user"
+echo "Expired On  : $exp4"
+echo "=========================="
+echo "ScriptMod By Manternet"
