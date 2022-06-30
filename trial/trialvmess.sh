@@ -16,20 +16,22 @@ clear
 
 IP=$( curl -s ipinfo.io/ip );
 clear
-source /var/lib/manpokr/ipvps.conf
+source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 else
-domain=$(cat /root/domain)
+domain=$(cat /etc/v2ray/domain)
 fi
 tls=$(cat /etc/v2ray/config.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
 none=$(cat /etc/v2ray/none.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')
 user=dev-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 exp=1
+domain=$(cat /etc/v2ray/domain)
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "SNI (BUG)     : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/v2ray/config.json
@@ -78,8 +80,10 @@ echo -e "================================="
 echo -e "            V2RAY VMESS          " 
 echo -e "================================="
 echo -e "Remarks        : ${user}"
+echo -e "IP/Host        : ${MYIP}"
 echo -e "Domain         : ${domain}"
 echo -e "Subdomain      : ${dom}"
+echo -e "Sni/Bug        : ${sni}"
 echo -e "port TCP       : ${tls}"
 echo -e "port none TCP  : ${none}"
 echo -e "port KCP       : ${mkcp}"
@@ -93,5 +97,7 @@ echo -e "Link TLS       : ${vmesslink1}"
 echo -e "================================="
 echo -e "Link None TLS  : ${vmesslink2}"
 echo -e "================================="
+echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
-
+echo -e "================================="
+echo -e "ScriptMod By Manternet"
