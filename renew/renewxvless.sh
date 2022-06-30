@@ -37,6 +37,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/vlesstls.json")
 read -p "Expired (Days) : " masaaktif
 user=$(grep -E "^### " "/etc/xray/vlesstls.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/vlesstls.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -46,6 +47,7 @@ exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/vlesstls.json
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/vlessnone.json
 service cron restart
+
 clear
 echo ""
 echo "==============================="
