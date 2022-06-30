@@ -41,6 +41,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/akun.conf")
 read -p "Expired (days): " masaaktif
 user=$(grep -E "^### " "/etc/trojan/akun.conf" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/trojan/akun.conf" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -48,11 +49,13 @@ exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/trojan/akun.conf
+
 clear
 echo ""
-echo " Trojan Account Was Successfully Renewed"
-echo " =========================="
-echo " Client Name : $user"
-echo " Expired On  : $exp4"
-echo " =========================="
-echo "Script By Manternet"
+echo "=========================="
+echo "  Trojan Account Renewed"
+echo "=========================="
+echo "Client Name : $user"
+echo "Expired On  : $exp4"
+echo "=========================="
+echo "ScriptMod By Manternet"
