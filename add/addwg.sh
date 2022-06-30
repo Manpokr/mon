@@ -108,5 +108,5 @@ echo -e "================================="
 echo -e "Created  : $hariini"
 echo -e "Expired  : $exp"
 echo -e "================================="
-echo -e "Script By Manternet"
+echo -e "ScriptMod By Manternet"
 rm -f /root/wg0-client-$CLIENT_NAME.conf
