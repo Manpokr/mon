@@ -11,8 +11,8 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
-source /var/lib/manpokr/ipvps.conf
-domain=$(cat /etc/v2ray/domain)
+source /var/lib/Manpokr/ipvps.conf
+domain=$(cat /etc/xray/domain)
 tls="$(cat /etc/xray/vlesstls.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')"
 none="$(cat /etc/xray/vlessnone.json | grep port | sed 's/"//g' | sed 's/port//g' | sed 's/://g' | sed 's/,//g' | sed 's/       //g')"
 uuid=$(cat /proc/sys/kernel/random/uuid)
@@ -35,8 +35,10 @@ echo -e "================================="
 echo -e "            XRAY VLESS          "
 echo -e "================================="
 echo -e "Remarks        : ${user}"
+echo -e "IP/Host        : ${MYIP}"
 echo -e "Domain         : ${domain}"
 echo -e "Subdomain      : ${dom}"
+echo -e "Sni/bug        : ${sni}"
 echo -e "port TCP       : $tls"
 echo -e "port none TCP  : $none"
 echo -e "id             : ${uuid}"
