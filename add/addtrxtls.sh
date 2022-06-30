@@ -34,7 +34,7 @@ read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " 
 dom=$sub$domain
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 hariini=`date -d "0 days" +"%Y-%m-%d"`
-sed -i '/#trojan-xtls$/a\#&# '"$user $exp"'\
+sed -i '/#trojan-xtls$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","flow": "'xtls-rprx-direct'","email": "'""$user""'"' /etc/xray/trojanxtls.json
 
 systemctl restart trojanxtls
@@ -66,3 +66,5 @@ echo -e "Splice         : ${trojanlink3}"
 echo -e "================================="
 echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
+echo -e "================================="
+echo -e "ScriptMod By Manternet"
