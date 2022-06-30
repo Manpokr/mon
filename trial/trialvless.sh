@@ -15,7 +15,7 @@ echo "Checking VPS"
 clear
 IP=$( curl -s ipinfo.io/ip );
 clear
-source /var/lib/manpokr/ipvps.conf
+source /var/lib/Manpokr/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 else
@@ -50,12 +50,12 @@ echo -e "IP/Host        : ${MYIP}"
 echo -e "Domain         : ${domain}"
 echo -e "SubDomain      : ${dom}"
 echo -e "Sni/Bug        : ${sni}"
-echo -e "port TCP       : $tls"
-echo -e "port none TCP  : $none"
+echo -e "port Ws tls    : $tls"
+echo -e "port Ws none   : $none"
 echo -e "id             : ${uuid}"
 echo -e "Encryption     : none"
-echo -e "network        : tcp"
-echo -e "path           : /xray"
+echo -e "network        : WS"
+echo -e "path           : /v2ray"
 echo -e "================================="
 echo -e "link TLS       : ${vlesslink2}"
 echo -e "================================="
