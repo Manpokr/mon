@@ -8,7 +8,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 MYIP=$(curl -sS ipv4.icanhazip.com)
 
 clear
-domain=$(cat /etc/v2ray/domain)
+domain=$(cat /etc/xray/domain)
 tls=$(cat /etc/xray/vmessgrpc.json | grep port | awk '{print $2}' | sed 's/,//g')
 vl=$(cat /etc/xray/vlessgrpc.json | grep port | awk '{print $2}' | sed 's/,//g')
 user=dev-`</dev/urandom tr -dc X-Z0-9 | head -c4`
@@ -17,6 +17,7 @@ uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "SNI (bug) : " sni
 read -p "Subdomain (EXP : manternet.xyz. / Press Enter If Only Using Hosts) : " sub
 dom=$sub$domain
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/vmessgrpc.json
@@ -47,17 +48,20 @@ clear
 echo -e "================================="
 echo -e "            XRAY GRPC            " 
 echo -e "================================="
-echo -e "Remarks           : ${user}"
-echo -e "Domain            : ${domain}"
-echo -e "Port VMess        : ${tls}"
-echo -e "Port VLess        : $vl"
-echo -e "ID                : ${uuid}"
-echo -e "Alter ID          : 0"
-echo -e "Mode              : Gun"
-echo -e "Security          : TLS"
-echo -e "Type              : grpc"
-echo -e "Service Name      : GunService"
-echo -e "SNI               : $sni"
+echo -e "Remarks        : ${user}"
+echo -e "IP/Host        : ${MYIP}"
+echo -e "Domain         : ${domain}"
+echo -e "SubDomain      : ${dom}"
+echo -e "Sni/Bug        : ${sni}"
+echo -e "Port VMess     : ${tls}"
+echo -e "Port VLess     : ${vl}"
+echo -e "ID             : ${uuid}"
+echo -e "Alter ID       : 0"
+echo -e "Mode           : Gun"
+echo -e "Security       : TLS"
+echo -e "Type           : grpc"
+echo -e "Service Name   : GunService"
+echo -e "SNI            : $sni"
 echo -e "================================="
 echo -e "Link VMess GRPC  : "
 echo -e "${vmesslink1}"
@@ -65,5 +69,7 @@ echo -e "================================="
 echo -e "Link VLess GRPC  : "
 echo -e "${vlesslink1}"
 echo -e "================================="
+echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
 echo -e "=================================" 
+echo -e "ScriptMod By Manternet"
