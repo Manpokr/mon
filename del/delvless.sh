@@ -41,10 +41,10 @@ sed -i "/^### $user $exp/,/^},{/d" /etc/v2ray/vnone.json
 systemctl restart v2ray@vless
 systemctl restart v2ray@none
 clear
-echo " Vless Account Deleted Successfully"
-echo " =========================="
-echo " Client Name : $user"
-echo " Expired On  : $exp"
-echo " =========================="
-read -p "Press Enter For Back To V2Ray/VLess Menu / CTRL+C To Cancel : "
-menu-v2ray
+echo "=========================="
+echo "   Vless Account Deleted "
+echo "=========================="
+echo "Client Name : $user"
+echo "Expired On  : $exp"
+echo "=========================="
+echo "ScriptMod By Manternet"
