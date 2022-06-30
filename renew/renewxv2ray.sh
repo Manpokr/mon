@@ -38,6 +38,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/xray/vmesstls.json")
 read -p "Expired (Days): " masaaktif
 user=$(grep -E "^### " "/etc/xray/vmesstls.json" | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/vmesstls.json" | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
@@ -49,6 +50,7 @@ sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/vmessnone.json
 sed -i "s/### $user $exp/### $user $exp4/g" /etc/xray/mkcp.json
 systemctl restart xray.service
 service cron restart
+
 clear
 echo ""
 echo "==============================="
