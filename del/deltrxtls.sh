@@ -42,7 +42,7 @@ service cron restart
 clear
 echo ""
 echo "================================"
-echo "  Xray/Trojan Account Deleted  "
+echo " Xray/Tr-Xtls Account Deleted  "
 echo "================================"
 echo "Username  : $user"
 echo "Expired   : $exp"
