@@ -2,14 +2,13 @@
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
-MYIP=$(wget -qO- ifconfig.me/ip);
-echo "Checking VPS"
 
 # CREATED XTLS
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
-
+MYIP=$(wget -qO- ifconfig.me/ip);
+echo "Checking VPS"
 clear
 source /var/lib/Manpokr/ipvps.conf
 domain=$(cat /etc/xray/domain)
@@ -41,7 +40,7 @@ vd="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=
 vu="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=$sni#$user"
 vs="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#$user"
 vsu="vless://$uuid@$dom:$port?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice-udp443&sni=$sni#$user"
-systemctl restart xtls
+systemctl restart xtls.service
 clear
 echo -e "================================="
 echo -e "        XRAY VLESS XTLS         "
@@ -64,5 +63,5 @@ echo -e "Splice         : ${vsu}"
 echo -e "================================="
 echo -e "Created        : $hariini"
 echo -e "Expired On     : $exp"
-echo -e "=========================="
-echo -e "Script By Manternet"
+echo -e "================================="
+echo -e "ScriptMod By Manternet"
