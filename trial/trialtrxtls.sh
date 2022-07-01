@@ -35,8 +35,9 @@ dom=$sub$domain
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojan-xtls$/a\### '"$user $exp"'\
-},{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/trojanxtls.json
+},{"password": "'""$uuid""'","flow": "'xtls-rprx-direct'","email": "'""$user""'"' /etc/xray/trojanxtls.json
 
+# // Link TR-XTLS
 trojanlink0="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=$sni#$user"
 trojanlink1="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow=xtls-rprx-direct-udp443&sni=$sni#$user"
 trojanlink2="trojan://$uuid@$dom:$tr?security=xtls&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=$sni#$username"
