@@ -1,7 +1,7 @@
 #!/bin/bash
 # My Telegram : https://t.me/Manternet
 # ==========================================
-# Color
+# // Color
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
@@ -12,21 +12,22 @@ NC='\033[0;37m'
 LIGHT='\033[0;37m'
 
 # ==========================================
-# Getting
+# // Getting
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ########################
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo "Checking VPS"                                                                                                               
-IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )                       
+IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | awk '{print $4}' | grep $MYIP )                       
 if [[ $MYIP = $IZIN ]]; then                                                                                                      
 echo -e "${NC}${GREEN}Permission Accepted...${NC}"                                                                                
 else                                                                                                                              
 echo -e "${NC}${RED}Permission Denied!${NC}";                                                                                     
 echo -e "${NC}${LIGHT}Please Contact Admin!!"                                                                                     
-rm -f changeport.sh                                                                                                                    
+rm -f changeport                                                                                                                  
 exit 0                                                                                                                            
-fi                                                                                                                                                                                                                                                  
+fi                
+                                                                                                                                                                                                                                  
 clear
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e "\033[30;5;47m                   ⇱ PORT CHANGER ⇲               \033[m"
