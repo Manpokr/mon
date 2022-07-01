@@ -17,13 +17,13 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
-IZIN=$(curl -sS https://raw.githubusercontent.com/manternet/ipvps/main/ip | awk '{print $4}' | grep $MYIP )
+IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | awk '{print $4}' | grep $MYIP )
 if [[ $MYIP = $IZIN ]]; then
-echo -e "${NC}${GREEN}Permission Accepted...${NC}"
+echo -e "${GREEN}Permission Accepted...${NC}"
 else
-echo -e "${NC}${RED}Permission Denied!${NC}";
-echo -e "${NC}${LIGHT}Please Contact Admin!!"
-rm -f certv2ray.sh
+echo -e "${RED}Permission Denied!${NC}";
+echo -e "${LIGHT}Please Contact Admin!!"
+rm -f certv2ray
 exit 0
 fi
 clear
