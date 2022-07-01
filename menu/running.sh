@@ -1,4 +1,5 @@
 #!/bin/bash
+# // Running Menu
 RED='\033[0;31m'
 NC='\033[0m'
 GREEN='\033[0;32m'
@@ -19,6 +20,17 @@ NC='\e[0m'
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 PERMISSION
+MYIP=$(wget -qO- ipinfo.io/ip);
+echo "Checking VPS"
+IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | awk '{print $4}' | grep $MYIP )
+if [[ $MYIP = $IZIN ]]; then
+echo -e "${GREEN}Permission Accepted...${NC}"
+else
+echo -e "${RED}Permission Denied!${NC}";
+echo -e "${LIGHT}Please Contact Admin!!"
+rm -f running
+exit 0
+fi  
 clear
 
 # CHEK STATUS                                                                                                                                                                 
