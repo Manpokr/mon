@@ -1,4 +1,5 @@
 #!/bin/bash
+# // Warna
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 ORANGE='\033[0;33m'
@@ -8,7 +9,22 @@ CYAN='\033[0;36m'
 NC='\033[0;37m'
 LIGHT='\033[0;37m'
 
+# // Getting                                                                                                                      
+MYIP=$(wget -qO- ipinfo.io/ip);                                                                                                   
+echo "Checking VPS"                                                                                                               
+IZIN=$(curl -sS https://raw.githubusercontent.com/Manpokr/mon/main/ip | awk '{print $4}' | grep $MYIP )                           
+if [[ $MYIP = $IZIN ]]; then                                                                                                      
+echo -e "${GREEN}Permission Accepted...${NC}"                                                                                     
+else                                                                                                                              
+echo -e "${RED}Permission Denied!${NC}";                                                                                          
+echo -e "${LIGHT}Please Contact Admin!!"                                                                                          
+rm -f bw.sh  
+rm -f bw                                                                                                                     
+exit 0                                                                                                                            
+fi                                                                                                                                
 clear
+
+# // Menu Bw
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[m"
 echo -e "\033[30;5;47m                ⇱ BANDWITH MONITOR ⇲              \033[m"
 echo -e "\033[5;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[37m"
