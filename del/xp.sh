@@ -7,14 +7,14 @@ NC='\033[0m'
 GREEN='\033[0;32m'
 
 # ==========================================
-# Getting
+# // Getting
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #######################
 MYIP=$(curl -sS ipv4.icanhazip.com)
 clear
 
-# Autodel ss
+# // Autodel ss
 data=( `cat /etc/shadowsocks-libev/akun.conf | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -35,7 +35,7 @@ fi
 done
 systemctl start shadowsocks-libev-server@$user-http.service
 
-#Autodel ssr
+# // Autodel ssr
 data=( `cat /usr/local/shadowsocksr/akun.conf | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -54,7 +54,7 @@ done
 /etc/init.d/ssrmu restart
 
 ###############
-#Autodel wireguard 
+# // Autodel wireguard 
 data=( `cat /etc/wireguard/wg0.conf | grep '^### Client' | cut -d ' ' -f 3`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -71,23 +71,22 @@ done
 systemctl restart wg-quick@wg0
 ##############
 
-#Autodel xtrojan 
-data=( `cat /etc/xray/trojan.json | grep '^#&#' | cut -d ' ' -f 2`);
+# // Autodel xtrojan 
+data=( `cat /etc/xray/trojan.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#&# $user" "/etc/xray/trojan.json" | cut -d ' ' -f 3)
+exp=$(grep -w "^### $user" "/etc/xray/trojan.json" | cut -d ' ' -f 3)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
-sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojan.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/trojan.json
 fi
 done
 systemctl restart x-tr.service
 
-
-#Autodel xvless 
+# // Autodel xvless 
 data=( `cat /etc/xray/vlesstls.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -104,7 +103,7 @@ done
 systemctl restart xr-vl-ntls
 systemctl restart xr-vl-tls
 
-#Autodel Xvmess 
+# // Autodel Xvmess 
 data=( `cat /etc/xray/vmesstls.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -125,38 +124,38 @@ systemctl restart xr-vm-tls.service
 systemctl restart xr-vm-mk.service
 
 
-#Autodel trxtls
-data=( `cat /etc/xray/trojanxtls.json | grep '^#&#' | cut -d ' ' -f 2`);
+# // Autodel trxtls
+data=( `cat /etc/xray/trojanxtls.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#&# $user" "/etc/xray/trojanxtls.json" | cut -d ' ' -f 3)
+exp=$(grep -w "^### $user" "/etc/xray/trojanxtls.json" | cut -d ' ' -f 3)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
-sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojanxtls.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/trojanxtls.json
 fi
 done
 systemctl restart trojanxtls.service
 
 
-#Autodel trgrpc 
-data=( `cat /etc/xray/trojangrpc.json | grep '^#&#' | cut -d ' ' -f 2`);
+# // Autodel trgrpc 
+data=( `cat /etc/xray/trojangrpc.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
-exp=$(grep -w "^#&# $user" "/etc/xray/trojangrpc.json" | cut -d ' ' -f 3)
+exp=$(grep -w "^### $user" "/etc/xray/trojangrpc.json" | cut -d ' ' -f 3)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
-sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/trojangrpc.json
+sed -i "/^### $user $exp/,/^},{/d" /etc/xray/trojangrpc.json
 fi
 done
 systemctl restart trojangrpc.service
 
-#Autodel grpc
+# // Autodel grpc
 data=( `cat /etc/xray/vmessgrpc.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -174,7 +173,7 @@ done
 systemctl restart vmess-grpc.service
 systemctl restart vless-grpc.service
 
-#Autodel vlxtls. ×
+# // Autodel vlxtls
 data=( `cat /etc/xray/xrayxtls.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -191,7 +190,7 @@ systemctl restart xtls.service
 
 #################
 # V2ray
-# Autodel vless
+# // Autodel vless
 data=( `cat /etc/v2ray/vless.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -208,7 +207,7 @@ done
 systemctl restart v2ray@vless
 systemctl restart v2ray@vnone
 
-#Autodel vmess
+#, // Autodel vmess
 data=( `cat /etc/v2ray/config.json | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
@@ -227,7 +226,7 @@ systemctl restart v2ray
 systemctl restart v2ray@none
 
 
-#Autodel Vtrojan
+# // Autodel Vtrojan
 data=( `cat /etc/trojan/akun.conf | grep '^###' | cut -d ' ' -f 2`);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
