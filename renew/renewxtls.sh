@@ -17,17 +17,25 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 MYIP=$(wget -qO- ipinfo.io/ip);
 clear
 CLIENT_001=$( grep -c -E "^### " "/etc/xray/xrayxtls.json" )
-echo "=================================================="
-echo "      LIST VLESS XTLS CLIENT ON THIS VPS"
-echo "=================================================="
-grep -e "^### " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2-3 | nl -s ') '
+	if [[ ${CLIENTS_001} == '0' ]]; then
+		clear
+		echo ""
+		echo "You have no existing clients!"
+		exit 1
+	fi
+	clear
+	echo ""
+	echo " Client Xray Xtls Renew"
+	echo " Press CTRL+C to return"
+	echo -e "==============================="
+        grep -e "^### " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_002} -ge 1 && ${CLIENT_002} -le ${CLIENT_001} ]]; do
 		if [[ ${CLIENT_002} == '1' ]]; then
-                echo "=================================================="
-			read -rp "Please Input an Client Number (1-${CLIENT_001}) : " CLIENT_002
+	        echo -e "==============================="
+	        read -rp " Select one client (1-${CLIENT_001}) : " CLIENT_002
 		else
-                echo "=================================================="
-			read -rp "Please Input an Client Number (1-${CLIENT_001}) : " CLIENT_002
+  	        echo -e "==============================="
+		read -rp " Select one client (1-${CLIENT_001}) : " CLIENT_002
 		fi
 	done
 # // Expired Date                                                                                                   
