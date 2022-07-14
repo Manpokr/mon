@@ -27,15 +27,18 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/trojan/akun.conf")
 
 	clear
 	echo ""
-	echo "Select the existing client you want to renew"
+	echo " Client V2ray Trojan renew"
 	echo " Press CTRL+C to return"
 	echo -e "==============================="
+        echo "     No  User  Expired "
 	grep -E "^### " "/etc/trojan/akun.conf" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_NUMBER} -ge 1 && ${CLIENT_NUMBER} -le ${NUMBER_OF_CLIENTS} ]]; do
 		if [[ ${CLIENT_NUMBER} == '1' ]]; then
-			read -rp "Select one client [1]: " CLIENT_NUMBER
+	echo -e "==============================="
+	read -rp " Select one client [1]: " CLIENT_NUMBER
 		else
-			read -rp "Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
+	echo -e "==============================="
+	read -rp " Select one client [1-${NUMBER_OF_CLIENTS}]: " CLIENT_NUMBER
 		fi
 	done
 read -p "Expired (days): " masaaktif
