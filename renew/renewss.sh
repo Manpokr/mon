@@ -24,7 +24,7 @@ NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/etc/shadowsocks-libev/akun.conf")
 
 	clear
 	echo ""
-	echo "Select the existing client you want to renew"
+	echo " Client Shadowsocks renew"
 	echo " Press CTRL+C to return"
 	echo -e "==============================="
         echo "     No  User  Expired "
