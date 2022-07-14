@@ -12,12 +12,14 @@ clear
 ##########
 MYIP=$(wget -qO- ifconfig.me/ip);
 echo -n > /tmp/other.txt
-data=( `cat /etc/xray/xrayxtls.json | grep '^###' | cut -d ' ' -f 2`);                                                              echo "-------------------------------";
+data=( `cat /etc/xray/xrayxtls.json | grep '^###' | cut -d ' ' -f 2`);                                                           
 echo "-----------------------------------------";
 echo "-------=[ XRAY Xtls User Login ]=-------";
-echo "-----------------------------------------";                                                                                            for akun in "${data[@]}"
+echo "-----------------------------------------";                                                                                            
+for akun in "${data[@]}"
 do
-if [[ -z "$akun" ]]; then                                                                                                           akun="tidakada"
+if [[ -z "$akun" ]]; then                                                                                                           
+akun="tidakada"
 fi
 echo -n > /tmp/ipvless.txt
 data2=( `netstat -anp | grep ESTABLISHED | grep tcp6 | grep xray | awk '{print $5}' | cut -d: -f1 | sort | uniq`);
@@ -39,14 +41,14 @@ else
 jum2=$(cat /tmp/ipvless.txt | nl)
 echo "user : $akun";
 echo "$jum2";
-echo "-------------------------------"
+echo "-----------------------------------------";                                                                                            
 fi
 rm -rf /tmp/ipvmess.txt
 done
 oth=$(cat /tmp/other.txt | sort | uniq | nl)
 echo "other";
 echo "$oth";
-echo "-------------------------------"
+echo "-----------------------------------------";
 echo "ScriptMod By Manternet"
 rm -rf /tmp/other.txt
 read -p "Press Enter For Back To XRay Menu / CTRL+C To Cancel : "
