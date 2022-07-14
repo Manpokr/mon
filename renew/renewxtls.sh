@@ -28,6 +28,7 @@ CLIENT_001=$( grep -c -E "^### " "/etc/xray/xrayxtls.json" )
 	echo " Client Xray Xtls Renew"
 	echo " Press CTRL+C to return"
 	echo -e "==============================="
+ 	echo "     No  User  Expired "
         grep -e "^### " "/etc/xray/xrayxtls.json" | cut -d ' ' -f 2-3 | nl -s ') '
 	until [[ ${CLIENT_002} -ge 1 && ${CLIENT_002} -le ${CLIENT_001} ]]; do
 		if [[ ${CLIENT_002} == '1' ]]; then
