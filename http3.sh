@@ -1,3 +1,5 @@
+curl -O https://nginx.org/download/nginx-1.19.1.tar.gz
+
 # Install GCC
 yum -y install gcc-c++
 # Install CMAKE3
@@ -7,6 +9,7 @@ cd cmake-3.*
 ./bootstrap --prefix=/usr/local
 make -j$(nproc)
 make install
+git clone --recursive https://github.com/cloudflare/quiche
 tar xvzf nginx-1.19.1.tar.gz
 cd nginx-1.19.1
 patch -p01 < ../quiche/extras/nginx/nginx-1.16.patch
