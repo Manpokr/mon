@@ -1,0 +1,6 @@
+rm -rf /root/.acme.sh;
+mkdir -p /root/.acme.sh;
+wget -q -O /root/.acme.sh/acme.sh "https://releases.wildydev21.com/vpn-script/Resource/Core/acme.sh";
+chmod +x /root/.acme.sh/acme.sh;
+sudo /root/.acme.sh/acme.sh --register-account -m vpn-script@wildydev21.com;
+sudo /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256 -ak ec-256;
