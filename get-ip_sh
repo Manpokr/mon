@@ -22,7 +22,7 @@ export OKEY="[${GREEN} OKEY ${NC}]";
 export IP_INFO_API=$( curl -s http://ip-api.com/json );
 
 # // 1 is using ip-api
-cat > /root/ip-detail.txt << END
+cat <<EOF > /root/ip-detail.txt
 IP='$( echo ${IP_INFO_API} | jq -r '.query' )'
 ASN='$( echo ${IP_INFO_API} | jq -r '.as' | cut -d " " -f 2 )'
 ISP='$( echo ${IP_INFO_API} | jq -r '.as' | cut -d " " -f 2-100 )'
@@ -32,4 +32,4 @@ CITY='$( echo ${IP_INFO_API} | jq -r '.city' )'
 COUNTRY='$( echo ${IP_INFO_API} | jq -r '.country' )'
 COUNTRYCODE='$( echo ${IP_INFO_API} | jq -r '.countryCode' )'
 TIMEZONE='$( echo ${IP_INFO_API} | jq -r '.timezone' )'
-END
+EOF
