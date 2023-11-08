@@ -1,6 +1,142 @@
-### owner 2025-03-25 2a01:4f9:6a:49e7:1053:2a97:10aa:0001 OFF TRUE *
-### owner 2025-03-25 195.140.194.219 OFF TRUE *
-### owner 2025-03-25 104.28.249.52 OFF TRUE *
-### owner 2025-03-25 104.28.192.158 OFF TRUE *
-### owner 2025-03-25 104.28.253.42 OFF TRUE *
+#!/bin/bash
+# (C) Copyright 2022-2023
+# ==================================================================
+# Name        : VPN Script Auto Installation Script
+# Created     : ( 26 May 2023 )
+# OS Support  : Ubuntu & Debian
+# Auther      : Manternet
+# ==================================================================
 
+function data_colour() {
+        # // Export Color & Information
+        export RED='\033[0;31m';
+        export GREEN='\033[0;32m';
+        export YELLOW='\033[0;33m';
+        export LIGHT='\033[0;37m';
+        export NC='\033[0m';
+        # // Export Banner Status Information
+        export ERROR="[${RED} ERROR ${NC}]";
+        export INFO="[${YELLOW} INFO ${NC}]";
+        export OKEY="[${RED} OKEY ${NC}]";
+        # // Github user
+        export GIT_NYA="https://"
+	export USER_NYA="https://"
+        # // Exporting maklumat rangkaian
+	source /root/ip-detail.txt;
+        export domain=$(cat /usr/local/etc/xray/domain);
+ 	export IP_NYA="$IP";
+}
+
+function install_xray() {
+    echoContent skyBlue "\n进度  $1/${totalProgress} : Xray版本管理"
+    if [[ ! -d "/etc/v2ray-agent/xray/" ]]; then
+        echoContent red " ---> 没有检测到安装目录，请执行脚本安装内容"
+        menu
+        exit 0
+    fi
+    echoContent red "\n=============================================================="
+    echoContent yellow "1.升级Xray-core"
+    echoContent yellow "2.升级Xray-core 预览版"
+    echoContent yellow "3.回退Xray-core"
+    echoContent yellow "4.关闭Xray-core"
+    echoContent yellow "5.打开Xray-core"
+    echoContent yellow "6.重启Xray-core"
+    echoContent yellow "7.更新geosite、geoip"
+    echoContent yellow "8.设置自动更新geo文件[每天凌晨更新]"
+    echoContent red "=============================================================="
+    read -r -p "请选择:" selectXrayType
+    if [[ "${selectXrayType}" == "1" ]]; then
+        updateXray
+    elif [[ "${selectXrayType}" == "2" ]]; then
+
+        prereleaseStatus=true
+        updateXray
+
+    elif [[ "${selectXrayType}" == "3" ]]; then
+        echoContent yellow "\n1.只可以回退最近的五个版本"
+        echoContent yellow "2.不保证回退后一定可以正常使用"
+        echoContent yellow "3.如果回退的版本不支持当前的config，则会无法连接，谨慎操作"
+        echoContent skyBlue "------------------------Version-------------------------------"
+        curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=5" | jq -r ".[]|select (.prerelease==false)|.tag_name" | awk '{print ""NR""":"$0}'
+        echoContent skyBlue "--------------------------------------------------------------"
+        read -r -p "请输入要回退的版本:" selectXrayVersionType
+        version=$(curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=5" | jq -r ".[]|select (.prerelease==false)|.tag_name" | awk '{print ""NR""":"$0}' | grep "${selectXrayVersionType}:" | awk -F "[:]" '{print $2}')
+        if [[ -n "${version}" ]]; then
+            updateXray "${version}"
+        else
+            echoContent red "\n ---> 输入有误，请重新输入"
+            xrayVersionManageMenu 1
+        fi
+    elif [[ "${selectXrayType}" == "4" ]]; then
+        handleXray stop
+    elif [[ "${selectXrayType}" == "5" ]]; then
+        handleXray start
+    elif [[ "${selectXrayType}" == "6" ]]; then
+        reloadCore
+    elif [[ "${selectXrayType}" == "7" ]]; then
+        updateGeoSite
+    elif [[ "${selectXrayType}" == "8" ]]; then
+        installCronUpdateGeo
+    fi
+}
+
+updateXray() {
+    readInstallType
+    if [[ -z "${coreInstallType}" ]]; then
+        if [[ -n "$1" ]]; then
+            version=$1
+        else
+            version=$(curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=1" | jq -r ".[]|select (.prerelease==${prereleaseStatus})|.tag_name")
+        fi
+
+        echoContent green " ---> Xray-core版本:${version}"
+
+        wget -c -q "${wgetShowProgressStatus}" -P /etc/v2ray-agent/xray/ "https://github.com/XTLS/Xray-core/releases/download/${version}/${xrayCoreCPUVendor}.zip"
+
+        unzip -o "/etc/v2ray-agent/xray/${xrayCoreCPUVendor}.zip" -d /etc/v2ray-agent/xray >/dev/null
+        rm -rf "/etc/v2ray-agent/xray/${xrayCoreCPUVendor}.zip"
+        chmod 655 /etc/v2ray-agent/xray/xray
+        handleXray stop
+        handleXray start
+    else
+        echoContent green " ---> 当前Xray-core版本:$(/etc/v2ray-agent/xray/xray --version | awk '{print $2}' | head -1)"
+
+        if [[ -n "$1" ]]; then
+            version=$1
+        else
+            version=$(curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=1" | jq -r ".[].tag_name")
+        fi
+
+        if [[ -n "$1" ]]; then
+            read -r -p "回退版本为${version}，是否继续？[y/n]:" rollbackXrayStatus
+            if [[ "${rollbackXrayStatus}" == "y" ]]; then
+                echoContent green " ---> 当前Xray-core版本:$(/etc/v2ray-agent/xray/xray --version | awk '{print $2}' | head -1)"
+
+                handleXray stop
+                rm -f /etc/v2ray-agent/xray/xray
+                updateXray "${version}"
+            else
+                echoContent green " ---> 放弃回退版本"
+            fi
+        elif [[ "${version}" == "v$(/etc/v2ray-agent/xray/xray --version | awk '{print $2}' | head -1)" ]]; then
+            read -r -p "当前版本与最新版相同，是否重新安装？[y/n]:" reInstallXrayStatus
+            if [[ "${reInstallXrayStatus}" == "y" ]]; then
+                handleXray stop
+                rm -f /etc/v2ray-agent/xray/xray
+                rm -f /etc/v2ray-agent/xray/xray
+                updateXray
+            else
+                echoContent green " ---> 放弃重新安装"
+            fi
+        else
+            read -r -p "最新版本为:${version}，是否更新？[y/n]:" installXrayStatus
+            if [[ "${installXrayStatus}" == "y" ]]; then
+                rm -f /etc/v2ray-agent/xray/xray
+                updateXray
+            else
+                echoContent green " ---> 放弃更新"
+            fi
+
+        fi
+    fi
+}
