@@ -28,57 +28,37 @@ function data_colour() {
 }
 
 function install_xray() {
-    echoContent skyBlue "\n进度  $1/${totalProgress} : Xray版本管理"
-    if [[ ! -d "/etc/v2ray-agent/xray/" ]]; then
-        echoContent red " ---> 没有检测到安装目录，请执行脚本安装内容"
-        menu
-        exit 0
-    fi
-    echoContent red "\n=============================================================="
-    echoContent yellow "1.升级Xray-core"
-    echoContent yellow "2.升级Xray-core 预览版"
-    echoContent yellow "3.回退Xray-core"
-    echoContent yellow "4.关闭Xray-core"
-    echoContent yellow "5.打开Xray-core"
-    echoContent yellow "6.重启Xray-core"
-    echoContent yellow "7.更新geosite、geoip"
-    echoContent yellow "8.设置自动更新geo文件[每天凌晨更新]"
-    echoContent red "=============================================================="
-    read -r -p "请选择:" selectXrayType
-    if [[ "${selectXrayType}" == "1" ]]; then
-        updateXray
-    elif [[ "${selectXrayType}" == "2" ]]; then
-
-        prereleaseStatus=true
-        updateXray
-
-    elif [[ "${selectXrayType}" == "3" ]]; then
-        echoContent yellow "\n1.只可以回退最近的五个版本"
-        echoContent yellow "2.不保证回退后一定可以正常使用"
-        echoContent yellow "3.如果回退的版本不支持当前的config，则会无法连接，谨慎操作"
-        echoContent skyBlue "------------------------Version-------------------------------"
-        curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=5" | jq -r ".[]|select (.prerelease==false)|.tag_name" | awk '{print ""NR""":"$0}'
-        echoContent skyBlue "--------------------------------------------------------------"
-        read -r -p "请输入要回退的版本:" selectXrayVersionType
-        version=$(curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=5" | jq -r ".[]|select (.prerelease==false)|.tag_name" | awk '{print ""NR""":"$0}' | grep "${selectXrayVersionType}:" | awk -F "[:]" '{print $2}')
-        if [[ -n "${version}" ]]; then
-            updateXray "${version}"
-        else
-            echoContent red "\n ---> 输入有误，请重新输入"
-            xrayVersionManageMenu 1
+        if [[ ! -d "/usr/local/bin/xray" ]]; then
+            clear; echo -e ""; echo -e "${ERROR} Directory is not detected !"; exit 0;
         fi
-    elif [[ "${selectXrayType}" == "4" ]]; then
-        handleXray stop
-    elif [[ "${selectXrayType}" == "5" ]]; then
-        handleXray start
-    elif [[ "${selectXrayType}" == "6" ]]; then
-        reloadCore
-    elif [[ "${selectXrayType}" == "7" ]]; then
-        updateGeoSite
-    elif [[ "${selectXrayType}" == "8" ]]; then
-        installCronUpdateGeo
-    fi
+            echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}";
+            echo -e "                  ${RED}•••${NC} [ ${BG}XRAY UPDATE VERSION${NC} ] ${RED}•••${NC}";
+            echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}";
+            echo -e "";
+            curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=5" | jq -r ".[]|select (.prerelease==false) |.tag_name" | awk '{print "(${CYAN}"NR"${NC})${RED}•${NC} ${LIGHT}Xray-core official"" = ${NC}"$0}'
+          #  echo -e " (${CYAN}01${NC}) ${RED}•${NC} ${LIGHT}Xray-core official prerelease ${XRAY_OFF1}${NC}";
+         #   echo -e " (${CYAN}02${NC}) ${RED}•${NC} ${LIGHT}Xray-core official releases ${XRAY_OFF2}${NC}";
+            #echo -e " (${CYAN}03${NC}) ${RED}•${NC} ${LIGHT}Xray-core Mods ${XRAY_OFF3}${NC}";
+            echo -e "";
+            echo -e " (${RED}00${NC}) ${RED}•${NC} ${LIGHT}Back to menu${NC}";
+            echo -e "";
+            echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}";
+            echo -e -n " ${LIGHT}Select menu (${GREEN} 0 - 3 ${NC}${LIGHT})${NC} = "; read xraytype
+            export version=$(curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=5" | jq -r ".[]|select (.prerelease==false)|.tag_name" | awk '{print ""NR"""="$0}' | grep "${xraytype}=" | awk -F "[=]" '{print $2}')
+            if [[ "${xraytype}" == "1" | "${xraytype}" == "2"  ]]; then
+                wget -c -P /usr/local/bin/ "https://github.com/XTLS/Xray-core/releases/download/${version}/Xray-linux-64.zip";
+	        unzip -o /usr/local/bin/Xray-linux-64.zip -d /usr/local/bin/;
+                rm -rf /usr/local/bin/Xray-linux-64.zip;
+	        chmod 655 /usr/local/bin/xray;
+
+            elif [[ "${xraytype}" == "3" ]]; then
+                  wget -q -O /usr/local/bin/ "https://github.com/dharak36/Xray-core/releases/download/${version}/xray.linux.64bit";
+                  chmod 655 /usr/local/bin/xray;
+             else
+                clear; echo -e " ${ERROR} Please Input The Correct Number !";
+             fi
 }
+            
 
 updateXray() {
     readInstallType
