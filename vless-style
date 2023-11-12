@@ -1,0 +1,101 @@
+#!/bin/bash
+# (C) Copyright 2022-2023
+# ==================================================================
+# Name        : VPN Script Auto Installation Script
+# Created     : ( 26 May 2023 )
+# OS Support  : Ubuntu & Debian
+# Auther      : Manternet
+# ==================================================================
+
+# // Export Color & Information
+export NC='\e[0m';
+export GRAY='\e[1;30m';
+export RED='\e[1;31m';
+export GREEN='\e[1;32m';
+export BROWN='\e[1;33m';
+export BLUE='\e[1;34m';
+export PURPLE='\e[1;35m';
+export CYAN='\e[1;36m';
+export LIGHT='\e[1;37m';
+export BLUEC="\e[5;36m";
+
+function line() {
+ 	echo -e " ${GRAY}─────────────────────────────────────────────${NC}";
+}
+
+function logo() {
+        clear;
+        echo -e "";
+	line;
+	echo -e "                ${BLUEC}MANTERNET TUNNEL${NC}";
+	line;
+}
+
+function credit() {
+        sleep 1;
+	line;
+        echo -e "              ${BROWN}Thank you for using";
+        echo -e "           Script Credit by Manternet${NC}";
+	line;
+}
+
+function vless_cfg() {
+        echo -e "                     ${PURPLE}VLESS${NC}";
+}
+
+function slow_cfg() {
+        echo -e "                  ${PURPLE}XRAY DNS TLS${NC}";
+}
+
+function info_cfg() {
+        echo -e " Remarks      = ${user}";
+	echo -e " Myip         = ${IP_NYA}";
+	echo -e " Subdomain    = ${domain}";
+	echo -e " Limit quota  = ${limit_nya}";
+	echo -e " Port tls     =${xtls}";
+	echo -e " Port none    =${none}";
+	echo -e " Network      = WS, GRPC, H2C";
+	echo -e " Grpc type    = Gun & Multi";
+	echo -e " User id      = ${uuid}";
+}
+
+function dns_cfg() {
+	echo -e " Slowdns port (PORT) = ${xtls1}";
+	echo -e " Name server  (NS)   = ${ns_nya}";
+	echo -e " Public key   (KEY)  = ${pub_key}";
+}
+
+function link_cfg() {
+	echo -e " VLESS WS TLS LINK";
+	echo -e "  ${vlesslink1}\n";
+        line;
+	echo -e " VLESS WS LINK";
+	echo -e "  ${vlesslink2}\n";
+        line;
+        echo -e " VLESS H2 TLS LINK";
+	echo -e "  ${vlesslink4}\n";
+	line;
+	echo -e " VLESS GRPC TLS LINK";
+	echo -e "  ${vlesslink3}\n";
+}
+
+function exp_cfg() {
+        echo -e " Date expired    = $exp1";
+}
+
+function main_cfg() {
+	logo;
+	vless_cfg;
+	line;
+	info_cfg;
+	line;
+	slow_cfg;
+	line;
+	dns_cfg;
+	line;
+	link_cfg;
+	line;
+	exp_cfg;
+	credit;
+}
+main_cfg;
