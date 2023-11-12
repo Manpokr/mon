@@ -23,8 +23,8 @@ export INFO="(${CYAN} INFO ${NC})";
 export PS1="${BG1} INFO ${NC}";
 export OKEY="(${GREEN} OKEY ${NC})";
 # // Patch user git
-export URL_INSTALL="https://manternetvpn.multiportaio.fun/vpn404";
-export URL_PRMISION="https://manternetvpn.multiportaio.fun/register";
+export URL_INSTALL="";
+export URL_PRMISION="https://";
 # // Exporting maklumat rangkaia
 source /root/ip-detail.txt;
 export IP_NYA="$IP";
