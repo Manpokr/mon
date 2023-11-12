@@ -23,15 +23,10 @@ export INFO="(${CYAN} INFO ${NC})";
 export PS1="${BG1} INFO ${NC}";
 export OKEY="(${GREEN} OKEY ${NC})";
 # // Patch user git
-export URL_INSTALL="";
+export URL_INSTALL="https://";
 export URL_PRMISION="https://";
-# // Exporting maklumat rangkaia
-source /root/ip-detail.txt;
-export IP_NYA="$IP";
 # // Domain name
-export domain=$(cat /usr/local/etc/xray/domain);
-# // Funstion bar
-source /usr/bin/bar-run;
+export domain=$(cat /etc/xray/domain);
 
 function cekroot() {
         # // Checking Your Running On Root
@@ -42,7 +37,7 @@ function permision() {
 	# // Exporting maklumat rangkaian
         export DAYS=$(date -d "0 days" +"%Y-%m-%d");
 	# // Chekking Client Permision
-	if [[ $IP_NYA == "$(curl -sS ${URL_PRMISION}/ip | awk '{print $4}' | grep $IP_NYA )" ]]; then > /dev/null 2>&1;
+	if [[ $IP_NYA == "$(curl -sS ${URL_PRMISION} | awk '{print $4}' | grep $IP_NYA )" ]]; then > /dev/null 2>&1;
             export skip='true';
         else
 	    clear;
@@ -51,7 +46,7 @@ function permision() {
         fi
 
         # // Chekking Client Expired
-        if [[ "$(curl -sS ${URL_PRMISION}/ip | grep $IP_NYA | awk '{print $3}')" > $DAYS ]]; then > /dev/null 2>&1;
+        if [[ "$(curl -sS ${URL_PRMISION} | grep $IP_NYA | awk '{print $3}')" > $DAYS ]]; then > /dev/null 2>&1;
             export skip='true';
         else
 	    clear;
@@ -65,38 +60,41 @@ function line() {
 }
 
 function logo() {
-        clear
+        clear;
 	echo -e "";
-        echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}";
-        echo -e "                ${RED}•••${NC} [ ${BG}Manternet Tunnel${NC} ] ${RED}•••${NC}";
-        echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}";
+	line;
+	echo -e "                ${RED}•••${NC} [ ${BG}Manternet Tunnel${NC} ] ${RED}•••${NC}";
+        line;
+	echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}";
 }
 
 function credit() {
-	sleep 1
-        echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}";
-	echo -e "${BG}                    Thank you for using"
+	sleep 1;
+	line;
+	echo -e "                    ${BROWN}Thank you for using"
 	echo -e "                Script Credit by Manternet"
-	echo -e "${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}";
+	line;
 }
 
 function progress() {
 	logo;
 	fun_bar 'xrayupdate'; tput dl1;
-        echo -e "\r               ( ${GREEN}Success update Xray-core !${NC} )"; tput cnorm;
-        credit; back;
+        echo -e "\r               ( ${GREEN}Success update Xray-core !${NC} )\n"; tput cnorm;
+        credit; exit 0;
 }
 
 function back() {
 	echo -e "";
-	echo -e -n "Press ( ${BLUE}Enter${NC} ) to return to the menu or CTRL+C to exit"; read menu; main-menu
+	echo -e -n "Press ( ${BLUE}Enter${NC} ) to return or CTRL+C to exit"; read menu; main-menu
 }
 
 function updatemenu() {
-        if [[ ! -f "/usr/local/bin/xray" ]]; then
-            clear; echo -e ""; echo -e "${ERROR} Directory is not detected !"; exit 0;
+        if [[ ! -f "/xray/path" ]]; then
+            logo;
+	    echo -e "";
+	    echo -e " ${ERROR} Directory is not detected !\n"; credit; exit 0;
         fi
-            export XVER_NYA="$(/usr/local/bin/xray -version | awk NR==1 | cut -d " " -f 1-2 )";
+            export XVER_NYA="$(/xray/path -version | awk NR==1 | cut -d " " -f 1-2 )";
 	    logo;
 	    echo -e " Current Xray-core Version = ${GREEN}${XVER_NYA}${NC}";
 	    echo -e "";
@@ -114,18 +112,20 @@ function xrayupdate() {
         export xversion="$(echo ${xraytype} | sed 's/0//g')";
 	export version=$(curl -s "https://api.github.com/repos/XTLS/Xray-core/releases?per_page=5" | jq -r ".[]|select (.prerelease==false)|.tag_name" | awk '{print ""NR"""="$0}' | grep "${xversion}=" | awk -F "[=]" '{print $2}');
 	if [[ "${xraytype}" == "1" || "${xraytype}" == "2" || "${xraytype}" == "01" || "${xraytype}" == "02" ]]; then
-	    wget -c -P /usr/local/bin/ "https://github.com/XTLS/Xray-core/releases/download/${version}/Xray-linux-64.zip";
-            unzip -o /usr/local/bin/Xray-linux-64.zip -d /usr/local/bin/;
-            rm -rf /usr/local/bin/Xray-linux-64.zip;
-            chmod 655 /usr/local/bin/xray;
+	    wget -c -P /xray/path "https://github.com/XTLS/Xray-core/releases/download/${version}/Xray-linux-64.zip";
+            unzip -o /xray/path/Xray-linux-64.zip -d /xray/path/;
+            rm -rf /xray/path/Xray-linux-64.zip;
+            chmod 655 /xray/path/xray;
 
         elif [[ "${xraytype}" == "3" || "${xraytype}" == "03" ]]; then
-	    wget -c -P /usr/local/bin/ "https://github.com/dharak36/Xray-core/releases/download/v1.0.0/xray.linux.64bit";
-            mv -f /usr/local/bin/xray.linux.64bit /usr/local/bin/xray
-            rm -rf /usr/local/bin/xray-linux-64bit;
-            chmod 655 /usr/local/bin/xray;
+	    wget -c -P /xray/path/ "https://github.com/dharak36/Xray-core/releases/download/v1.0.0/xray.linux.64bit";
+            mv -f /xray/path/xray.linux.64bit /xray/path/xray
+            rm -rf /xray/path/xray-linux-64bit;
+            chmod 655 /xray/path/xray;
        else
-            clear; echo -e " ${ERROR} Please Input The Correct Number !";
+            logo;
+	    echo -e "";
+	    echo -e " ${ERROR} Please Input The Correct Number !\n"; credit; exit 0;
      fi
 }
 
